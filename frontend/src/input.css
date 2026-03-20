@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap');
+@import "tailwindcss";
+
+@theme {
+    --color-primary: oklch(0 0 0);
+    --color-secondary: oklch(1 0 0);
+    --color-accent: oklch(0.7709 0.215571 132.4509);
+
+    --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+    --font-ubuntu: "Ubuntu Sans"
+}
+
+@layer components {
+
+    /* Buttons */
+    .btn-primary {
+        @apply bg-primary text-secondary border-2 border-secondary hover:bg-secondary hover:text-primary hover:border-primary font-bold p-4 rounded-md transition-all;
+    }
+    .btn-secondary {
+        @apply bg-secondary text-primary border-2 border-primary hover:bg-primary hover:text-secondary hover:border-secondary font-bold p-4 rounded-md transition-all;
+    }
+    .btn-accent {
+        @apply bg-accent text-primary border-2 border-secondary hover:bg-primary hover:text-accent font-bold p-4 rounded-md transition-all;
+    }
+    .btn-primary-accent{
+        @apply bg-primary text-secondary border-2 border-secondary p-4 hover:bg-accent hover:text-primary hover:border-secondary font-bold  rounded-md transition-all;
+    }
+
+    /* Cards */
+    .card-primary {
+        @apply  max-w-sm bg-primary border-2 border-secondary rounded-lg px-8 py-8 hover:scale-110 transition-transform duration-200 hover:text-primary hover:bg-secondary 
+        hover:border-primary cursor-pointer h-full justify-between text-secondary ;
+    }
+    .card-secondary {
+        @apply max-w-sm bg-secondary border-2 border-primary rounded-lg px-8 py-8 hover:scale-110 transition-transform duration-200 hover:text-secondary hover:bg-primary 
+        hover:border-secondary cursor-pointer h-full justify-between text-primary ;
+    }
+    .card-accent {
+        @apply max-w-sm bg-accent border-2 border-secondary text-primary rounded-lg px-8 py-8 hover:scale-110 transition-transform duration-200 hover:text-accent hover:bg-primary cursor-pointer h-full justify-between ;
+    }
+    .card-primary-accent {
+        @apply max-w-sm bg-primary border-2 border-secondary rounded-lg px-8 py-8 hover:scale-110 transition-transform duration-200 hover:text-primary hover:bg-accent 
+        hover:border-none cursor-pointer h-full justify-between text-secondary ;
+    }
+
+    .card-image iframe {
+        width: 1200px;      /* actual page width */
+        height: 900px;      /* actual page height */
+        transform: scale(0.3);
+        transform-origin: top left;
+        border: none;
+        pointer-events: none; /* prevents iframe blocking link click */
+    }
+    .card-title {
+        @apply text-2xl font-bold mb-2;
+    }
+    .card-subtitle {
+        @apply text-sm uppercase tracking-widest mb-3 opacity-70 hover:opacity-100;
+    }
+    .card-content {
+        @apply text-base leading-relaxed;
+    }
+
+
+    /* Card Link */
+    .card-link-primary {
+        @apply max-w-xl min-w-md shadow-2xl bg-primary shadow-accent text-secondary hover:scale-105 hover:rotate-5 peer-hover:rotate-12 transition-all duration-200;
+    }
+    .card-link-secondary {
+        @apply max-w-xl min-w-md shadow-2xl bg-secondary shadow-amber-200 text-primary hover:scale-105 hover:rotate-5 peer-hover:rotate-12 transition-all duration-200;
+    }
+    .card-link-accent {
+        @apply max-w-xl min-w-md shadow-2xl bg-accent/90 shadow-primary text-primary hover:scale-105 hover:rotate-5 peer-hover:rotate-12 transition-all duration-200;
+    }
+
+    .card-link-image img {
+        @apply w-full object-cover overflow-hidden
+    }
+    .card-link-primary-text {
+       @apply px-4 py-8 flex gap-6 border border-primary group-hover:border-secondary border-t-0 rounded-b-md
+    }
+    .card-link-secondary-text {
+       @apply px-4 py-8 flex gap-6 border border-secondary group-hover:border-accent border-t-0 rounded-b-md
+    }
+    .card-link-accent-text {
+       @apply px-4 py-8 flex gap-6 border border-accent group-hover:border-primary border-t-0 rounded-b-md
+    }
+    .card-link-svg {
+        @apply  w-16 h-14 rounded-xl px-2 flex justify-center items-center
+    }
+    .card-link-title {
+        @apply text-2xl font-bold mb-2;
+    }
+    .card-link-subtitle {
+        @apply opacity-80 mb-4
+    }
+    .card-link-content {
+        @apply text-sm space-y-1   opacity-80
+    }
+    
+
+    .card-portfolio-primary {
+        @apply flex flex-col justify-end max-w-2xl min-h-80 min-w-md rounded bg-primary  border-secondary text-secondary hover:scale-105 transition-all duration-200
+    }
+    .card-portfolio-secondary {
+        @apply flex flex-col justify-end max-w-2xl min-h-80 min-w-md rounded bg-secondary border-primary text-primary hover:bg-primary hover:text-secondary hover:scale-105 transition-all duration-200
+    }
+    .card-portfolio-accent {
+        @apply flex flex-col justify-end max-w-2xl min-h-80 min-w-md rounded bg-accent/90 border-0  border-secondary text-primary hover:scale-105 transition-all duration-200
+    }
+
+    .card-portfolio-image {
+    @apply relative w-full aspect-[16/9] overflow-hidden bg-black ;
+    }
+    .card-portfolio-image img {
+        @apply absolute top-0 left-0 border-0 object-cover;
+    }
+
+    .card-portfolio-image iframe {
+        @apply absolute top-0 left-0 border-0;
+
+        width: 1280px;     /* normal website width */
+        height: 800px;     /* normal viewport */
+
+        transform: scale(0.35);
+        transform-origin: top left;
+    }
+    .card-portfolio-text {
+        @apply px-4 py-3 border rounded-b-lg 
+    }
+    .card-portfolio-title {
+        @apply text-2xl font-bold mb-2
+    }
+    .card-portfolio-subtitle {
+        @apply  opacity-80 uppercase tracking-widest  text-sm font-extralight hover:opacity-100
+    }
+
+
+    .card-primary-accent-image {
+        @apply max-w-sm bg-primary border-2 border-secondary rounded-lg  hover:scale-110 transition-transform duration-200 hover:text-primary hover:bg-accent 
+        hover:border-none cursor-pointer h-full justify-between text-secondary;
+    }
+    /* .card-image {
+        @apply w-full h-56 relative overflow-hidden
+    } */
+
+
+
+}
+
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+.fx-shadow:hover {
+    box-shadow: 8px 8px 0 0 rgba(0, 0, 0, 1);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}

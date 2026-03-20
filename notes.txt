@@ -1,0 +1,15 @@
+.HTML - cleaner code:
+|"([A-Za-z0-9_-]+)\.html"
+"../$1/"
+
+
+Replace asset loc:
+\b(css|js|fonts|images|scss|asset|assets)\/   or   "(css|js|fonts|images|scss|assets)/
+/static/web-designs/{{design}}/$1/                 "/static/web-designs/{{design}}/$1/
+
+
+Perfect Replacement: \b(href|src?)=(["'])(?!/static|https?:|#|\.\./|["'])([^"']+)
+                   : $1=$2/static/web-designs/{{design}}/$3
+
+
+If bg is set using data-setbg=" then this will update it: data-setbg="/static/web-designs/{{design}}/
