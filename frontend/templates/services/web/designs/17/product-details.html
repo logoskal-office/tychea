@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "inverse-on-surface": "#9c9d9d",
+              "on-secondary-fixed": "#4b3d2b",
+              "surface-container": "#ebeeef",
+              "on-error": "#fff7f6",
+              "on-tertiary-container": "#5d5c56",
+              "primary": "#5f5e5e",
+              "surface-bright": "#f9f9f9",
+              "secondary": "#6c5c48",
+              "on-surface-variant": "#5a6061",
+              "outline-variant": "#adb3b4",
+              "on-primary-fixed-variant": "#5c5b5b",
+              "tertiary-dim": "#55534e",
+              "tertiary-container": "#f7f3ec",
+              "on-background": "#2d3435",
+              "on-secondary-container": "#5e4f3c",
+              "surface-container-highest": "#dde4e5",
+              "primary-dim": "#535252",
+              "inverse-primary": "#ffffff",
+              "background": "#f9f9f9",
+              "secondary-fixed": "#f5dfc5",
+              "surface-container-lowest": "#ffffff",
+              "error-dim": "#4e0309",
+              "tertiary-fixed-dim": "#e9e5de",
+              "surface-container-low": "#f2f4f4",
+              "primary-fixed": "#e5e2e1",
+              "secondary-container": "#f5dfc5",
+              "on-error-container": "#752121",
+              "on-tertiary-fixed": "#4b4a44",
+              "tertiary-fixed": "#f7f3ec",
+              "on-secondary": "#fff8f2",
+              "on-primary": "#faf7f6",
+              "on-surface": "#2d3435",
+              "inverse-surface": "#0c0f0f",
+              "on-tertiary-fixed-variant": "#686660",
+              "surface-dim": "#d4dbdd",
+              "on-primary-fixed": "#403f3f",
+              "primary-container": "#e5e2e1",
+              "on-primary-container": "#525151",
+              "on-tertiary": "#fdf8f1",
+              "error-container": "#fe8983",
+              "surface-variant": "#dde4e5",
+              "surface": "#f9f9f9",
+              "outline": "#757c7d",
+              "on-secondary-fixed-variant": "#695945",
+              "surface-tint": "#5f5e5e",
+              "secondary-dim": "#60513d",
+              "primary-fixed-dim": "#d6d4d3",
+              "surface-container-high": "#e4e9ea",
+              "tertiary": "#615f5a",
+              "secondary-fixed-dim": "#e7d1b8",
+              "error": "#9f403d"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            font-size: 1.25rem;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .serif-heading { font-family: 'Noto Serif', serif; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-secondary-fixed">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-stone-50/80 backdrop-blur-xl">
+<div class="flex justify-between items-center w-full px-12 py-6 max-w-screen-2xl mx-auto">
+<span class="text-xl font-serif tracking-widest text-neutral-900 uppercase">ARCHITECTURA</span>
+<div class="hidden md:flex items-center gap-12">
+<a class="text-neutral-500 hover:text-neutral-900 transition-colors font-serif italic text-lg tracking-tight" href="#">Collections</a>
+<a class="text-neutral-900 border-b border-neutral-800 pb-1 font-serif italic text-lg tracking-tight" href="#">Atelier</a>
+<a class="text-neutral-500 hover:text-neutral-900 transition-colors font-serif italic text-lg tracking-tight" href="#">Spaces</a>
+<a class="text-neutral-500 hover:text-neutral-900 transition-colors font-serif italic text-lg tracking-tight" href="#">Journal</a>
+<a class="text-neutral-500 hover:text-neutral-900 transition-colors font-serif italic text-lg tracking-tight" href="#">Contact</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="hover:opacity-70 transition-opacity duration-300">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</button>
+<button class="hover:opacity-70 transition-opacity duration-300">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="pt-24">
+<!-- Atelier Page Header / Hero Section -->
+<section class="max-w-screen-2xl mx-auto px-12 py-20 flex flex-col md:flex-row items-baseline gap-12">
+<div class="flex-1">
+<span class="text-[11px] font-label tracking-[0.2em] uppercase text-secondary mb-4 block">Collection 2024 / Living</span>
+<h1 class="text-7xl md:text-8xl font-headline tracking-tighter text-on-surface leading-none mb-8">Etherea Modular</h1>
+</div>
+<div class="max-w-md bg-surface-container-high p-10">
+<p class="text-body-md text-on-surface-variant leading-relaxed italic">
+                    Designed by Marcello Rossi, the Etherea Modular Sofa represents the intersection of structural rigor and organic comfort. A floating architecture that redefines the domestic landscape.
+                </p>
+<div class="mt-8">
+<button class="bg-primary text-on-primary px-8 py-4 text-[11px] tracking-[0.2em] uppercase transition-all hover:bg-secondary">Configure Your Piece</button>
+</div>
+</div>
+</section>
+<!-- Product Gallery - Asymmetric Bento Grid -->
+<section class="max-w-screen-2xl mx-auto px-12 grid grid-cols-12 gap-6 pb-20">
+<div class="col-span-12 md:col-span-8 aspect-[16/10] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Wide shot of a minimalist grey modular sofa in a bright loft" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqqAZUJiqw1Y7Gi2klCr3dX4L6QTVoi4bY_7YD8qcltPZbPhfvdQBbtAKSRsmmRkeTW5HAMEodVyyH5q7p7lNQX2Klm_dSxbDttEc1vX4FHs6wmeaK5TOkhbl00X_xDQ1M7Jbt7gb8g2GpE6PFEWZLgLP4Mt9B99_AlIyryMI1hT7yqg9tuR4qBoCdLc_pC7yi6gB-xg6cYKjPnI3oj2YzDivl5WRknJ3z6nigxN0sPQcJSnp4fvDQY0vw_fwLGxcFD8KdkrNqyZe5"/>
+</div>
+<div class="col-span-12 md:col-span-4 grid grid-rows-2 gap-6">
+<div class="bg-surface-container-low aspect-square overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Close up of high quality grey fabric texture on sofa arm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDn60lHggZDv54kfM_sNgpvVsX75-96OVO9IR_b8F8uCRoxYx6oJPHblPymwbjhFGlT4U9iBZS5yx84lMNk3gBhRL4ce6LbsCQsDI1-0rlrHxpGjnCo221c-Ud4MCltuas4rJ2_8WTBkkO1ySbEvE4rv2QdGgufWh0RRQK7IuBJP3XXIlD3tac5b-eKwZ6gz6cBsR5kNdW6Hy1oHYnQwnCJ3XVQ4EqkTUzzgL9mVvZG1CgOg2oG0kHUsjoFSBZbCW7UI9z378osJ0-y"/>
+</div>
+<div class="bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Detail shot of solid oak base legs of modern sofa" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7N4TftWjhOx6wyGA5v2Ok0Bnht-uHuC2gd2nFzATZNCYsnxYjFCR_lHA1gKyY30m__UoPv35tdUEbjzSwYNTlhQr8aAQ7qel8Vg1L71vYzS2GqzmcbYwjWs7U4boitvzV1QhLh4lvaDOF_z9IFL2vGfpCf5X47JqBjk1eI-FZQRF-uRJDXSh25qswOSL403zFK5_qq3UhYw-0wySsqxZrPmFXFVzo3UMsiGUILk9DXUMGcxB2mmvYZ9a14YXsKP9PXBUUu7k55K4a"/>
+</div>
+</div>
+<div class="col-span-12 md:col-span-4 aspect-[4/5] bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Abstract interior view showing the profile of a modular couch" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBxzVHgsf8sjqy4tYRfcsMyFWCBF4Lvt7uARj9r57RfhafivjPf-43Cw1XKdGWWUPZW6lXS9O-oULKIuJxByzvOaqhg2KbNTzV74vBGDoF2PUPhULX0bUT93UfBnBzuoTtI1KLH2lPNiEtaUKwAf8f8PXP6HzYHRUPYRLm91dz5BGeU6Q4NKEdeOuQh-46e2CAELGmCcOdgP2DO2hj68ZaRuHD9n98bLgZ8b5qsr6bxFdWyH05Jg7nGEsCrj2z9clnJnkEINmPMqPN"/>
+</div>
+<div class="col-span-12 md:col-span-8 aspect-[16/7] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Atmospheric shot of a minimalist living room with wooden accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWbwYGJoGKD2fx1lgBGqhWr5YQrX_DNBHcXr3Flwc8LSz0soMK7rYqGYy3FEBWp0xqMZKdMNnTyw0ILXy8W7n5Syetd3RgFaH2BUcmz_ICHIbI8OL7hGkCq3ZGlioJJ1QWBP5AraF8w6edyYUe103YoMEQi4z0PL-hMa_tm-zrZbDYuG_FWCTAwR3GsgRCVArdyffsvDbPhjYItAP0K-_jC_U8k-r4sj6znXeV5DmWkDB6r8CEA13gk5EJqjAw0Wk9f_1KLBH4rWBg"/>
+</div>
+</section>
+<!-- Material Selection - Tonal Layers -->
+<section class="bg-surface-container-low py-32">
+<div class="max-w-screen-2xl mx-auto px-12">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+<div class="md:col-span-4">
+<h2 class="text-4xl font-headline mb-6">The Materiality</h2>
+<p class="text-on-surface-variant leading-relaxed">Choose from our curated selection of sustainably sourced finishes. Every texture is chosen for its tactile resonance and longevity.</p>
+</div>
+<div class="md:col-span-8">
+<div class="space-y-16">
+<!-- Category: Fabrics -->
+<div>
+<h3 class="text-[11px] tracking-[0.2em] uppercase font-label text-secondary mb-8">Selected Fabrics</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="group cursor-pointer">
+<div class="aspect-square bg-stone-200 mb-3 border-2 border-transparent group-hover:border-secondary transition-all"></div>
+<p class="text-[10px] uppercase tracking-widest font-label">Linen / Bone</p>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-square bg-stone-400 mb-3 border-2 border-transparent group-hover:border-secondary transition-all"></div>
+<p class="text-[10px] uppercase tracking-widest font-label">Boucle / Mist</p>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-square bg-stone-600 mb-3 border-2 border-transparent group-hover:border-secondary transition-all"></div>
+<p class="text-[10px] uppercase tracking-widest font-label">Velvet / Anthracite</p>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-square bg-[#6c5c48] mb-3 border-2 border-transparent group-hover:border-secondary transition-all"></div>
+<p class="text-[10px] uppercase tracking-widest font-label">Wool / Tobacco</p>
+</div>
+</div>
+</div>
+<!-- Category: Bases -->
+<div>
+<h3 class="text-[11px] tracking-[0.2em] uppercase font-label text-secondary mb-8">Structure Finishes</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="group cursor-pointer">
+<div class="aspect-square bg-[#d6ccbd] mb-3 border-2 border-transparent group-hover:border-secondary transition-all"></div>
+<p class="text-[10px] uppercase tracking-widest font-label">Natural Oak</p>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-square bg-[#3a352f] mb-3 border-2 border-transparent group-hover:border-secondary transition-all"></div>
+<p class="text-[10px] uppercase tracking-widest font-label">Smoked Eucalyptus</p>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-square bg-[#2d3435] mb-3 border-2 border-transparent group-hover:border-secondary transition-all"></div>
+<p class="text-[10px] uppercase tracking-widest font-label">Brushed Steel</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Specifications - Architectural Blueprint Style -->
+<section class="max-w-screen-2xl mx-auto px-12 py-32">
+<div class="flex flex-col md:flex-row gap-20">
+<div class="flex-1">
+<h2 class="text-4xl font-headline mb-12">Dimensions &amp; Detail</h2>
+<div class="space-y-8">
+<div class="flex justify-between items-baseline pb-4 border-b border-outline-variant/15">
+<span class="text-[11px] font-label uppercase tracking-widest text-secondary">Overall Width</span>
+<span class="text-body-md font-medium text-on-surface">320 cm / 126 in</span>
+</div>
+<div class="flex justify-between items-baseline pb-4 border-b border-outline-variant/15">
+<span class="text-[11px] font-label uppercase tracking-widest text-secondary">Depth</span>
+<span class="text-body-md font-medium text-on-surface">110 cm / 43.3 in</span>
+</div>
+<div class="flex justify-between items-baseline pb-4 border-b border-outline-variant/15">
+<span class="text-[11px] font-label uppercase tracking-widest text-secondary">Seat Height</span>
+<span class="text-body-md font-medium text-on-surface">42 cm / 16.5 in</span>
+</div>
+<div class="flex justify-between items-baseline pb-4 border-b border-outline-variant/15">
+<span class="text-[11px] font-label uppercase tracking-widest text-secondary">Core Composition</span>
+<span class="text-body-md font-medium text-on-surface">Variable-density polyurethane foam</span>
+</div>
+</div>
+</div>
+<div class="flex-1 bg-surface-container-highest p-12 flex items-center justify-center">
+<div class="w-full aspect-[4/3] border border-on-surface/5 flex flex-col items-center justify-center space-y-4">
+<span class="material-symbols-outlined scale-[2.5] text-outline-variant" data-icon="architecture">architecture</span>
+<p class="text-[10px] uppercase tracking-[0.3em] font-label text-on-surface-variant">View Technical Drawings PDF</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Find a Store Call to Action -->
+<section class="bg-primary text-on-primary py-24">
+<div class="max-w-screen-2xl mx-auto px-12 flex flex-col md:flex-row items-center justify-between gap-12 text-center md:text-left">
+<div>
+<h2 class="text-5xl font-headline mb-4">Experience Etherea</h2>
+<p class="text-on-primary/70 text-lg italic serif-heading">Visit our Atelier to experience the comfort and craftsmanship in person.</p>
+</div>
+<div class="flex flex-col md:flex-row gap-6">
+<button class="bg-surface text-on-surface px-10 py-5 text-[11px] tracking-[0.2em] uppercase transition-all hover:bg-secondary-fixed">Find a Store</button>
+<button class="border border-on-primary/20 px-10 py-5 text-[11px] tracking-[0.2em] uppercase transition-all hover:bg-on-primary hover:text-primary">Book a Consultation</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-stone-200/30 bg-stone-100">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-20 max-w-screen-2xl mx-auto">
+<div class="col-span-1 md:col-span-1">
+<span class="text-lg font-serif tracking-widest mb-8 block">ARCHITECTURA</span>
+<p class="text-[11px] tracking-[0.1em] text-neutral-500 leading-loose">
+                    Curating space since 1978. Our philosophy is rooted in the quiet strength of architectural purity.
+                </p>
+</div>
+<div>
+<h4 class="text-[11px] tracking-[0.1em] font-label font-bold text-neutral-900 uppercase mb-8">Atelier</h4>
+<ul class="space-y-4">
+<li><a class="text-[11px] tracking-[0.1em] uppercase text-neutral-500 hover:text-stone-600 underline underline-offset-4 transition-all" href="#">Collections</a></li>
+<li><a class="text-[11px] tracking-[0.1em] uppercase text-neutral-500 hover:text-stone-600 underline underline-offset-4 transition-all" href="#">Custom Atelier</a></li>
+<li><a class="text-[11px] tracking-[0.1em] uppercase text-neutral-500 hover:text-stone-600 underline underline-offset-4 transition-all" href="#">Sustainability</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-[11px] tracking-[0.1em] font-label font-bold text-neutral-900 uppercase mb-8">Corporate</h4>
+<ul class="space-y-4">
+<li><a class="text-[11px] tracking-[0.1em] uppercase text-neutral-500 hover:text-stone-600 underline underline-offset-4 transition-all" href="#">Press</a></li>
+<li><a class="text-[11px] tracking-[0.1em] uppercase text-neutral-500 hover:text-stone-600 underline underline-offset-4 transition-all" href="#">Careers</a></li>
+<li><a class="text-[11px] tracking-[0.1em] uppercase text-neutral-500 hover:text-stone-600 underline underline-offset-4 transition-all" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-[11px] tracking-[0.1em] font-label font-bold text-neutral-900 uppercase mb-8">Follow</h4>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-neutral-500 cursor-pointer hover:text-neutral-900" data-icon="share">share</span>
+<span class="material-symbols-outlined text-neutral-500 cursor-pointer hover:text-neutral-900" data-icon="camera">camera</span>
+</div>
+</div>
+</div>
+<div class="px-12 py-8 border-t border-stone-200/30 max-w-screen-2xl mx-auto flex justify-between items-center">
+<p class="text-[11px] tracking-[0.1em] uppercase text-neutral-500">© 2024 ARCHITECTURA. ALL RIGHTS RESERVED.</p>
+<div class="flex gap-8">
+<span class="text-[11px] tracking-[0.1em] uppercase text-neutral-400">Milan</span>
+<span class="text-[11px] tracking-[0.1em] uppercase text-neutral-400">London</span>
+<span class="text-[11px] tracking-[0.1em] uppercase text-neutral-400">New York</span>
+</div>
+</div>
+</footer>
+</body></html>

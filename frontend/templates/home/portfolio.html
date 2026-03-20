@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header class="my-4">
+        {% include 'navbar.html' %}
+    </header>
+    <h1 class="mx-8">
+    <span class="font-extralight text-5xl bg-accent px-2">
+        Checkout Our Previous Work
+        </span>
+    </h1>
+    <div class="my-12 mx-12 grid grid-cols-2 gap-8 max-w-7xl">
+
+        <a class="card-portfolio-primary" href="https://asttrading.org">
+            <div>
+                <img src="/media/images/portfolio/ast-trading.png" loading="lazy" class="card-portfolio-image">
+            </div>
+            <div class="card-portfolio-text">
+                <div class="card-portfolio-title">AST Trading</div>
+                <p class="card-portfolio-subtitle text-gray-50">In collabaration with another developer group we built an e-commerce and showroom site for AST Trading.</p>
+            </div>
+        </a>
+        
+        <a class="card-portfolio-primary" href="https://asttrading.org">
+            <div class="card-portfolio-image">
+                <img src="/media/images/portfolio/melat-perfume.png" loading="lazy" class="">
+            </div>
+            <div class="card-portfolio-text">
+                <div class="card-portfolio-title">Melat Perfume</div>
+                <p class="card-portfolio-subtitle text-gray-50">In collabaration with another developer group we built an e-commerce and branding site for Melat Perfume.</p>
+            </div>
+        </a>
+        
+        <a class="card-portfolio-primary" href="https://soaziagency.com">
+            <div >
+                <img src="/media/images/portfolio/soazi-agency.png" loading="lazy" class="card-portfolio-image">
+            </div>
+            <div class="card-portfolio-text">
+                <div class="card-portfolio-title">Soazi Agency</div>
+                <p class="card-portfolio-subtitle text-gray-50">We delivered a modern and responsive lander website for one of the biggest foreign employment agencies in Ethiopa.</p>
+            </div>
+        </a>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development | {{SITE_NAME}}</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+
+<header class="mb-4">
+    {% include 'navbar.html' %}
+</header>
+
+<main class="max-w-7xl mx-auto px-4">
+
+    <!-- HERO -->
+    <section class="py-4">
+        <h1 class="text-4xl md:text-5xl font-light mb-6">
+            <span class="bg-accent p-2">
+                Web Development
+            </span>
+        </h1>
+
+        <p class="text-lg max-w-2xl text-gray-600">
+            Pick a design temlpate of your preference
+        </p>
+    </section>
+
+
+    <!-- DESIGN LISTINGS -->
+    <section class="py-12 pt-0">
+
+        <h2 class="text-5xl font-bold mb-2">
+            Choose a Design
+        </h2>
+        <p class="uppercase font-extralight tracking-tight"></p>
+
+        <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3 max-w-7xl">
+
+          {% for design in designs %}
+                    {% if design.url %}
+                    <a href="{{ design.url }}" class="scale-90 -mb-2">
+                    {% else %}
+                    <a href="{% url 'web-design-redirect' design.design %}" class=" scale-90 -mb-2">
+                    {% endif %}
+                        <div class="card-portfolio-primary">
+                            <div class="card-portfolio-image">
+                                {% if design.preview %}
+                                <img src="{{design.preview.url}}" frameborder="0"></img>
+                                {% else %}
+                                <iframe src="{% url 'web-design-page' design.design 'index' %}" frameborder="0"></iframe>
+                                {% endif %}
+                            </div>
+                            <div class="card-portfolio-text border-t-0">
+                                <div class="card-portfolio-title">
+                                    {{design.name}}
+                                </div>
+                                <div class="card-portfolio-subtitle">
+                                    {% for category in design.category.all %}
+                                        {{ category }}{% if not forloop.last %}, {% endif %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    {% endfor %}
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- FEATURES SECTION -->
+    <section class="py-20">
+
+        <h2 class="text-5xl font-bold mb-8 text-center">
+            Select Features
+        </h2>
+
+        <p class="text-xl text-center mb-16 text-gray-600">
+            Step 3: Complete your website by selecting powerful features.
+        </p>
+
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+
+            <div class="card-primary">
+                <h3 class="text-xl font-semibold mb-3">
+                    Contact Forms
+                </h3>
+                <p>
+                    Allow visitors to easily reach you with built-in contact forms.
+                </p>
+            </div>
+
+            <div class="card-primary">
+                <h3 class="text-xl font-semibold mb-3">
+                    Blog System
+                </h3>
+                <p>
+                    Publish articles, updates, and announcements with a built-in blog.
+                </p>
+            </div>
+
+            <div class="card-primary">
+                <h3 class="text-xl font-semibold mb-3">
+                    SEO Optimization
+                </h3>
+                <p>
+                    Improve your search visibility with optimized page structure.
+                </p>
+            </div>
+
+            <div class="card-primary">
+                <h3 class="text-xl font-semibold mb-3">
+                    Analytics Integration
+                </h3>
+                <p>
+                    Track visitors and performance with integrated analytics tools.
+                </p>
+            </div>
+
+            <div class="card-primary">
+                <h3 class="text-xl font-semibold mb-3">
+                    CMS Editing
+                </h3>
+                <p>
+                    Easily update content without needing technical knowledge.
+                </p>
+            </div>
+
+            <div class="card-primary">
+                <h3 class="text-xl font-semibold mb-3">
+                    E-Commerce
+                </h3>
+                <p>
+                    Sell products or services online with a secure checkout system.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+</body>
+</html>

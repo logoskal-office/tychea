@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "inverse-on-surface": "#9c9d9d",
+              "on-secondary-fixed": "#4b3d2b",
+              "surface-container": "#ebeeef",
+              "on-error": "#fff7f6",
+              "on-tertiary-container": "#5d5c56",
+              "primary": "#5f5e5e",
+              "surface-bright": "#f9f9f9",
+              "secondary": "#6c5c48",
+              "on-surface-variant": "#5a6061",
+              "outline-variant": "#adb3b4",
+              "on-primary-fixed-variant": "#5c5b5b",
+              "tertiary-dim": "#55534e",
+              "tertiary-container": "#f7f3ec",
+              "on-background": "#2d3435",
+              "on-secondary-container": "#5e4f3c",
+              "surface-container-highest": "#dde4e5",
+              "primary-dim": "#535252",
+              "inverse-primary": "#ffffff",
+              "background": "#f9f9f9",
+              "secondary-fixed": "#f5dfc5",
+              "surface-container-lowest": "#ffffff",
+              "error-dim": "#4e0309",
+              "tertiary-fixed-dim": "#e9e5de",
+              "surface-container-low": "#f2f4f4",
+              "primary-fixed": "#e5e2e1",
+              "secondary-container": "#f5dfc5",
+              "on-error-container": "#752121",
+              "on-tertiary-fixed": "#4b4a44",
+              "tertiary-fixed": "#f7f3ec",
+              "on-secondary": "#fff8f2",
+              "on-primary": "#faf7f6",
+              "on-surface": "#2d3435",
+              "inverse-surface": "#0c0f0f",
+              "on-tertiary-fixed-variant": "#686660",
+              "surface-dim": "#d4dbdd",
+              "on-primary-fixed": "#403f3f",
+              "primary-container": "#e5e2e1",
+              "on-primary-container": "#525151",
+              "on-tertiary": "#fdf8f1",
+              "error-container": "#fe8983",
+              "surface-variant": "#dde4e5",
+              "surface": "#f9f9f9",
+              "outline": "#757c7d",
+              "on-secondary-fixed-variant": "#695945",
+              "surface-tint": "#5f5e5e",
+              "secondary-dim": "#60513d",
+              "primary-fixed-dim": "#d6d4d3",
+              "surface-container-high": "#e4e9ea",
+              "tertiary": "#615f5a",
+              "secondary-fixed-dim": "#e7d1b8",
+              "error": "#9f403d"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9f9f9;
+            color: #2d3435;
+        }
+        .serif-italic { font-family: 'Noto Serif', serif; font-style: italic; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-surface selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-stone-50/80 dark:bg-stone-900/80 backdrop-blur-xl">
+<div class="flex justify-between items-center w-full px-12 py-6 max-w-screen-2xl mx-auto">
+<div class="text-xl font-serif tracking-widest text-neutral-900 dark:text-neutral-50 uppercase">
+                ARCHITECTURA
+            </div>
+<div class="hidden md:flex items-center space-x-12">
+<a class="text-neutral-900 dark:text-white border-b border-neutral-800 dark:border-white pb-1 font-serif italic text-lg tracking-tight transition-all duration-500" href="#">Collections</a>
+<a class="text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-200 transition-colors font-serif italic text-lg tracking-tight" href="#">Atelier</a>
+<a class="text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-200 transition-colors font-serif italic text-lg tracking-tight" href="#">Spaces</a>
+<a class="text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-200 transition-colors font-serif italic text-lg tracking-tight" href="#">Journal</a>
+<a class="text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-200 transition-colors font-serif italic text-lg tracking-tight" href="#">Contact</a>
+</div>
+<div class="flex items-center space-x-6">
+<button class="hover:opacity-70 transition-opacity duration-300">
+<span class="material-symbols-outlined text-neutral-800">shopping_bag</span>
+</button>
+<button class="hover:opacity-70 transition-opacity duration-300">
+<span class="material-symbols-outlined text-neutral-800">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-20">
+<!-- Atelier Page Header -->
+<header class="max-w-screen-2xl mx-auto px-12 mb-24 flex flex-col md:flex-row items-end gap-12">
+<div class="flex-1">
+<h1 class="font-headline text-6xl md:text-8xl tracking-tighter leading-none text-on-surface">
+                    Pure <br/><span class="serif-italic">Form</span>
+</h1>
+</div>
+<div class="w-full md:w-1/3 bg-surface-container-high p-12">
+<p class="font-body text-body-lg text-on-surface-variant leading-relaxed">
+                    A curated selection of architectural elements. Each piece is an investigation into material integrity, designed to define the void within a modern interior.
+                </p>
+</div>
+</header>
+<!-- Filters Section -->
+<section class="max-w-screen-2xl mx-auto px-12 mb-16 overflow-x-auto no-scrollbar">
+<div class="flex items-center space-x-16 border-b border-outline-variant/20 pb-6 whitespace-nowrap">
+<button class="font-label text-[0.6875rem] uppercase tracking-[0.2em] text-secondary font-semibold">All Collections</button>
+<button class="font-label text-[0.6875rem] uppercase tracking-[0.2em] text-on-surface-variant hover:text-on-surface transition-colors">Sofas &amp; Seating</button>
+<button class="font-label text-[0.6875rem] uppercase tracking-[0.2em] text-on-surface-variant hover:text-on-surface transition-colors">Wardrobe Systems</button>
+<button class="font-label text-[0.6875rem] uppercase tracking-[0.2em] text-on-surface-variant hover:text-on-surface transition-colors">Kitchen Atelier</button>
+<button class="font-label text-[0.6875rem] uppercase tracking-[0.2em] text-on-surface-variant hover:text-on-surface transition-colors">Tables &amp; Desks</button>
+<button class="font-label text-[0.6875rem] uppercase tracking-[0.2em] text-on-surface-variant hover:text-on-surface transition-colors">Lighting</button>
+<div class="flex-grow"></div>
+<button class="flex items-center space-x-2 text-on-surface-variant">
+<span class="font-label text-[0.6875rem] uppercase tracking-[0.2em]">Filter</span>
+<span class="material-symbols-outlined text-sm">tune</span>
+</button>
+</div>
+</section>
+<!-- Product Gallery Bento Grid -->
+<section class="max-w-screen-2xl mx-auto px-12">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-10">
+<!-- Main Featured Card (Sofas) -->
+<div class="md:col-span-8 group cursor-pointer">
+<div class="aspect-[16/9] overflow-hidden bg-surface-container mb-6">
+<img alt="Luxury minimalist sofa" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105" data-alt="Minimalist grey sofa in white studio" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDc8porR8K9y5tsSbn7kx6mfh-YhyoXUfPBECB-HiFBLrBKGS3fs43Pc9HzLzzjazq9xZhOy5C6LCKtL8P4zyDaPPPqxzk5fVL_WMN7SN0_b3uEoIeLTADT2tm7WC4irc6ibXFXbi0S2ZO8njqTJLiBQ1W0MTP_P08KfwQ8bMgRkF23tbPpnfwKpmc97YjOF1huW75n9LcpZQPupwptZSbH8u_xj2zKfwG0S1QL6UxYGw7k4ES5o7zFPun_9Ph5KjTi43HFXnX1r_Ui"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<span class="font-label text-[0.6875rem] uppercase tracking-[0.2em] text-secondary mb-2 block">Sofas</span>
+<h3 class="font-headline text-2xl text-on-surface">The Linear Modular System</h3>
+</div>
+<span class="font-body text-sm text-on-surface-variant">From $8,400</span>
+</div>
+</div>
+<!-- Secondary Card (Wardrobes) -->
+<div class="md:col-span-4 group cursor-pointer">
+<div class="aspect-[4/5] overflow-hidden bg-surface-container-low mb-6">
+<img alt="Modern wardrobe system" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105" data-alt="Monolithic dark oak wardrobe with lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHsmqp1ryZfjJ8HXRdc6IBY3OzAs2qj0Ffu-TjMaQzC9Ekln8ZqwAjm-WvguQErQRjsEKDmAZ_CZWDY260_jSQw4ZQHoqGAas9HyfTbQxrFCu2WLFbra6i_iZxUkTQ7GLFBjblgFbDp51t1Vh_jn-3Ss_UrvShG-oyopR0sEZtUnRVIGnIeHB_whFpq0qNMd8DNxol-CPJFL8KqnHh8koXQejswTCVAzbo0BjqEq_-SY9IzeZ0AZVzKh54TDBkr1l2RxPEmBGR8Cum"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<span class="font-label text-[0.6875rem] uppercase tracking-[0.2em] text-secondary mb-2 block">Wardrobes</span>
+<h3 class="font-headline text-2xl text-on-surface">Obsidian Case</h3>
+</div>
+<span class="font-body text-sm text-on-surface-variant">From $12,200</span>
+</div>
+</div>
+<!-- Tonal Shift Spacer / Quote -->
+<div class="md:col-span-12 py-24 bg-surface-container-low my-12 flex flex-col items-center justify-center text-center px-6">
+<p class="font-headline text-3xl md:text-4xl text-on-surface max-w-3xl leading-relaxed italic">
+                        "The essence of the space is not the wall, but the volume it contains."
+                    </p>
+<span class="mt-8 font-label text-[0.6875rem] uppercase tracking-[0.4em] text-secondary">Architectural Manifesto</span>
+</div>
+<!-- Kitchen Atelier -->
+<div class="md:col-span-4 group cursor-pointer">
+<div class="aspect-square overflow-hidden bg-surface-container mb-6">
+<img alt="Luxury kitchen design" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105" data-alt="Stone kitchen island with brass details" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfC1kwCaM9W1vHDc7JWzzUlMPyZvqnk5peHwFsKUumBaFj-oUK-sRkltVsr-MTeOiVqYeo0ulzdZcw56_NUvh5faWi-vuxvH7n5WDtNXH80FBY4wBtrHQnNwnN_UgTxnyI33HNJFz4i_NwIzWdEGxCmHq9tEXgELB00rfNbG0Rh7sE4PbIDJqyg_6D86xoNrDg4FA9HwQW9gwgXgAoJmZfwrzlpF_wCg4a2J9rg7f-3iODIQsJJRsu5kV9nXPiQtLfkn4KwSrUk9FS"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<span class="font-label text-[0.6875rem] uppercase tracking-[0.2em] text-secondary mb-2 block">Kitchens</span>
+<h3 class="font-headline text-2xl text-on-surface">Travertine Island</h3>
+</div>
+<span class="font-body text-sm text-on-surface-variant">Price upon request</span>
+</div>
+</div>
+<!-- Additional Product -->
+<div class="md:col-span-4 group cursor-pointer">
+<div class="aspect-square overflow-hidden bg-surface-container-low mb-6">
+<img alt="Refined dining table" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105" data-alt="Solid oak dining table minimalist design" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDB7yYUlgb2nu1EFFcXk1FHffobEcPa96PQfB-v4x8xRN2lDAxiQ654Eqz5HdgI5Uva6H6UMI0KVeYWZmv0bLUJ4A0BQJPTsPR9AAEpEZwN8ILoCX0h_aelvZIh_aMsvf89c1sLuZ-i0QhY0zcyIUPYcysSbUCy8BKerrNRm5s083JtnWtaDI62IhH4y1LlNfNL08v8PXMqu6bpsLywBDpC2KHu1JLFZ_5BzWwrM8uW6gi_VPS2k4HrlxOwk02o40FDjFNw0Xa2lxJ"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<span class="font-label text-[0.6875rem] uppercase tracking-[0.2em] text-secondary mb-2 block">Tables</span>
+<h3 class="font-headline text-2xl text-on-surface">Linen Oak Surface</h3>
+</div>
+<span class="font-body text-sm text-on-surface-variant">From $4,900</span>
+</div>
+</div>
+<!-- Additional Product -->
+<div class="md:col-span-4 group cursor-pointer">
+<div class="aspect-square overflow-hidden bg-surface-container mb-6">
+<img alt="Luxury lighting fixture" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105" data-alt="Suspended glass sculptural light fixture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMLr7oBVpHVvizaFuvMXo60lYCR1w-z9HDIRpgDV2ybQOoN3-JrAj4eO_QZUJII7NXm4Ve8XP5lehfx2M17XH2h3eXeq23tghWdL10i0eDGVoTE-tgYU3xgwKgaPiNiEP9FhR5ee_V8LzYLnWMMh7vfx3yrLOQ7k9Xw7sbBbGAcgNmBXZrIxuZcw6aNWBNmbjb5GZlgo6BoJoyS3bYfhNhJwu8oJyjx32GmOk6a8AiDTVsOLvdHPHApnzMPJBUKecIl_h9sDtx_V5M"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<span class="font-label text-[0.6875rem] uppercase tracking-[0.2em] text-secondary mb-2 block">Lighting</span>
+<h3 class="font-headline text-2xl text-on-surface">Halo Suspension</h3>
+</div>
+<span class="font-body text-sm text-on-surface-variant">$2,150</span>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section with Glassmorphism -->
+<section class="max-w-screen-2xl mx-auto px-12 mt-32">
+<div class="relative w-full aspect-[21/9] flex items-center justify-center overflow-hidden">
+<img alt="Interior overview" class="absolute inset-0 w-full h-full object-cover grayscale brightness-50" data-alt="Wide shot of a luxury villa interior" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgmD0DoZ82XhNzjm7hsLzUO3PWMsGAjsiy4Yve8zDKCNa4RTqJZGIg857FHjW1j3bvC4wiZdAPN_GFSArBnuCXx5c2nSVHiJ7ZWYWRSCOVJ4SLI0UfJDc9ygInZDziPu7gOHhScs7DEAMdOEWfJfzSUvBfBKOLE6kP67LS5NTXUzjY4bEGX-fl0YeAGmvuzzksztganRQ2djQ3Lkvokw8T6WYGZkCizUsN2JmlUjJnHVWg2cv8EhcwhOOErHrm7C-1ZeTZCqaypzT-"/>
+<div class="relative z-10 bg-surface/80 backdrop-blur-xl p-16 text-center max-w-2xl">
+<h2 class="font-headline text-4xl mb-6 text-on-surface">Bespoke Architectural Planning</h2>
+<p class="font-body text-on-surface-variant mb-10 leading-relaxed">
+                        Consult with our atelier to design your environment from the ground up. We provide a full-scale visualization of your space.
+                    </p>
+<button class="px-10 py-4 bg-primary text-on-primary font-label text-[0.75rem] uppercase tracking-[0.2em] hover:bg-secondary transition-all">
+                        Request Atelier Consult
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-stone-200/30 dark:border-stone-800/30 bg-stone-100 dark:bg-stone-950">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-20 max-w-screen-2xl mx-auto">
+<div class="md:col-span-1">
+<span class="text-lg font-serif tracking-widest mb-8 block text-neutral-900 dark:text-neutral-100">ARCHITECTURA</span>
+<p class="font-body text-[11px] tracking-[0.05em] text-neutral-500 leading-relaxed">
+                    Elevating the human experience through intentional design and material honesty.
+                </p>
+</div>
+<div>
+<h4 class="font-label text-[11px] tracking-[0.2em] uppercase text-neutral-900 dark:text-white mb-8 font-bold">Inquiries</h4>
+<ul class="space-y-4">
+<li><a class="font-sans text-[11px] tracking-[0.1em] uppercase text-neutral-500 hover:text-stone-600 dark:hover:text-stone-300 underline underline-offset-4 transition-all" href="#">Sustainability</a></li>
+<li><a class="font-sans text-[11px] tracking-[0.1em] uppercase text-neutral-500 hover:text-stone-600 dark:hover:text-stone-300 underline underline-offset-4 transition-all" href="#">Press</a></li>
+<li><a class="font-sans text-[11px] tracking-[0.1em] uppercase text-neutral-500 hover:text-stone-600 dark:hover:text-stone-300 underline underline-offset-4 transition-all" href="#">Careers</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label text-[11px] tracking-[0.2em] uppercase text-neutral-900 dark:text-white mb-8 font-bold">Legal</h4>
+<ul class="space-y-4">
+<li><a class="font-sans text-[11px] tracking-[0.1em] uppercase text-neutral-500 hover:text-stone-600 dark:hover:text-stone-300 underline underline-offset-4 transition-all" href="#">Privacy Policy</a></li>
+<li><a class="font-sans text-[11px] tracking-[0.1em] uppercase text-neutral-500 hover:text-stone-600 dark:hover:text-stone-300 underline underline-offset-4 transition-all" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label text-[11px] tracking-[0.2em] uppercase text-neutral-900 dark:text-white mb-8 font-bold">Connect</h4>
+<div class="flex space-x-6 text-neutral-500">
+<span class="material-symbols-outlined text-xl hover:text-neutral-900 cursor-pointer transition-colors">public</span>
+<span class="material-symbols-outlined text-xl hover:text-neutral-900 cursor-pointer transition-colors">mail</span>
+<span class="material-symbols-outlined text-xl hover:text-neutral-900 cursor-pointer transition-colors">call</span>
+</div>
+</div>
+</div>
+<div class="px-12 py-10 border-t border-stone-200/20 max-w-screen-2xl mx-auto flex justify-between items-center">
+<span class="font-sans text-[11px] tracking-[0.1em] uppercase text-neutral-500">© 2024 ARCHITECTURA. ALL RIGHTS RESERVED.</span>
+<button class="font-sans text-[11px] tracking-[0.1em] uppercase text-neutral-500 hover:text-neutral-900 flex items-center">
+                BACK TO TOP <span class="material-symbols-outlined ml-2 text-sm">arrow_upward</span>
+</button>
+</div>
+</footer>
+</body></html>

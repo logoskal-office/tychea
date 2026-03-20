@@ -1,0 +1,13 @@
+<nav class="flex items-center justify-between px-10 py-2 border-b border-gray-200 font-ubuntu">
+    <a href="{% url 'home-page' %}" class="text-2xl font-black tracking-tighter uppercase">
+        Ty<span class="text-accent">chea</span>
+    </a>
+    <div class="hidden md:flex space-x-6 items-center font-medium text-primary text-md">
+        <a href="{% url 'components-page' %}" class="hover:text-accent transition-colors">Components</a>
+        <a href="{% url 'services-page' %}" class="hover:text-accent transition-colors">Services</a>
+        <a href="{% url 'portfolio-page' %}" class="hover:text-accent transition-colors">Portfolio</a>
+        <a href="{% url 'about-page' %}" class="hover:text-accent transition-colors">About</a>
+        <a href="{% url 'contact-page' %}" class="hover:text-accent transition-colors">Contact</a>
+        <a href="#" class="btn-primary-accent px-6 py-2.5 rounded-full text-xs">Work With Us</a>
+    </div>
+</nav>

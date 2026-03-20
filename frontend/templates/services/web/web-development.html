@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development | {{SITE_NAME}}</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="scale">
+    <header class="mb-4">
+        {% include 'navbar.html' %}
+    </header>
+        
+    <section class="mx-auto p-2">
+        <div class="my-10">
+            <h1 class="text-4xl md:text-5xl font-light mb-6">
+            <span class="bg-accent p-2">
+                Web Development
+            </span>
+            </h1>
+
+        <p class="text-lg max-w-2xl text-gray-600">
+            Choose a professionally designed website template and launch your online
+            presence quickly. Each design is optimized for performance, mobile
+            responsiveness, and modern aesthetics.
+        </p>
+        </div>
+
+        <div class="flex flex-col gap-12 bg-gray-200/60 p-2 rounded-lg overflow-x-auto">
+            <div>
+                <h1 class="text-5xl font-bold"> Choose A Design</h1>
+                <div class="flex gap-8 pt-12 pb-4 px-16 mb-12 py-6 overflow-auto scale-110">
+                    
+                    {% for design in designs %}
+                    {% if design.url %}
+                    <a href="{{ design.url }}" class="flex-none">
+                    {% else %}
+                    <a href="{% url 'web-design-redirect' design.design %}" class="  flex-none">
+                    {% endif %}
+                        <div class="card-portfolio-primary">
+                            <div class="card-portfolio-image">
+                                {% if design.preview %}
+                                <img src="{{design.preview.url}}" frameborder="0"></img>
+                                {% else %}
+                                <iframe src="{% url 'web-design-page' design.design 'index' %}" frameborder="0"></iframe>
+                                {% endif %}
+                            </div>
+                            <div class="card-portfolio-text border-t-0">
+                                <div class="card-portfolio-title">
+                                    {{design.name}}
+                                </div>
+                                <div class="card-portfolio-subtitle">
+                                    {% for category in design.category.all %}
+                                        {{ category }}{% if not forloop.last %}, {% endif %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="-mt-16 mx-auto text-center">
+                <a href="{% url 'web-designs-page' %}" class="btn-accent">
+                    View More ...
+                </a>
+            </div>
+
+            <h1 class="text-6xl font-bold mb-8">Select Features</h1>
+            <div class="grid grid-cols-4 gap-8 max-w-7xl">
+            {% for feature in features %}
+                <div class="border-2 border-primary p-4 py-2 bg-secondary text-primary hover:bg-primary hover:text-secondary rounded-sm hover:scale-103 transition flex flex-col justify-around">
+                        <div class="card-title line-clamp-2 tracking-tight">{{feature.name}}</div>
+                        <div class="card-subtitle line-clamp-2">{{feature.description}}</div>
+                </div>
+            {% endfor %}
+            </div>
+            <h1 class="text-4xl font-semibold text-center mb-8">3 Complete Your Site</h1>
+        </div>
+
+    </section>
+</body>
+</html>
