@@ -13,3 +13,22 @@ Perfect Replacement: \b(href|src?)=(["'])(?!/static|https?:|#|\.\./|["'])([^"']+
 
 
 If bg is set using data-setbg=" then this will update it: data-setbg="/static/web-designs/{{design}}/
+
+Features:
+    Email
+    Direct Messaging & Call Links
+    Booking, Ordering, & Reservation branded as separate
+    Inquiry/Questions
+
+Contact Stem Medica with a new offer
+
+Add medical importers to the list
+
+if they say they haven't needed it yet,
+say it's like mobile banking, you don't think you need it until you have it and realize how much easier it makes your life.
+
+Medical importers seems a pretty big industry, maybe we should target them specifically.
+https://www.efda.gov.et/wp-content/uploads/2019/03/List-of-Human-Medicine-and-Medical-EquipmentsSupplies-Exporter-Importer-and-Wholesalers.pdf
+
+Dental places:
+Would really sell the booking feature

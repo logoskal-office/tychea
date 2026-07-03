@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact &amp; Appointments | {{CLIENT_NAME}} Specialty Clinic</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Montserrat:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error": "#ffffff",
+                    "inverse-on-surface": "#ebf1ff",
+                    "tertiary-fixed": "#d5e6df",
+                    "surface-bright": "#f9f9ff",
+                    "on-tertiary-fixed": "#101e1a",
+                    "outline": "#6f7973",
+                    "surface": "#f9f9ff",
+                    "on-surface-variant": "#3f4944",
+                    "surface-container-highest": "#dce2f3",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#3b4a44",
+                    "primary-fixed-dim": "#8bd6b6",
+                    "surface-container": "#e7eefe",
+                    "on-background": "#151c27",
+                    "error": "#ba1a1a",
+                    "inverse-primary": "#8bd6b6",
+                    "surface-variant": "#dce2f3",
+                    "tertiary-fixed-dim": "#bacac3",
+                    "inverse-surface": "#2a313d",
+                    "secondary-container": "#64f9bc",
+                    "on-primary-container": "#8bd6b7",
+                    "primary": "#004532",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed": "#002116",
+                    "background": "#f9f9ff",
+                    "outline-variant": "#bec9c2",
+                    "on-secondary-container": "#00714e",
+                    "surface-container-high": "#e2e8f8",
+                    "surface-dim": "#d3daea",
+                    "on-surface": "#151c27",
+                    "tertiary": "#303f3a",
+                    "on-secondary": "#ffffff",
+                    "surface-tint": "#1b6b51",
+                    "primary-fixed": "#a6f2d1",
+                    "secondary-fixed": "#68fcbf",
+                    "primary-container": "#065f46",
+                    "surface-container-low": "#f0f3ff",
+                    "on-secondary-fixed-variant": "#005137",
+                    "secondary-fixed-dim": "#45dfa4",
+                    "secondary": "#006c4b",
+                    "on-tertiary-container": "#bacbc3",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed": "#002114",
+                    "on-primary-fixed-variant": "#00513b",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-container": "#475650"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "base": "4px",
+                    "gutter": "24px",
+                    "margin-desktop": "80px",
+                    "margin-mobile": "16px",
+                    "max-width": "1280px"
+            },
+            "fontFamily": {
+                    "display-lg-mobile": ["Montserrat"],
+                    "display-lg": ["Montserrat"],
+                    "headline-md": ["Montserrat"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-sm": ["Montserrat"]
+            },
+            "fontSize": {
+                    "display-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["30px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bento-card {
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .bento-card:hover {
+            transform: translateY(-4px);
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(6, 95, 70, 0.1);
+        }
+
+        /* Animation Styles */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal {
+                transition: none !important;
+                opacity: 1 !important;
+                transform: none !important;
+            }
+            .animate-entrance {
+                animation: none !important;
+            }
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+        .animate-header {
+            animation: slideDown 0.5s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            opacity: 0;
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="bg-surface border-b border-outline-variant fixed top-0 left-0 right-0 z-50 h-20 animate-header">
+<nav class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto h-full">
+<div class="font-headline-sm text-headline-sm font-bold text-primary">{{CLIENT_NAME}}</div>
+<!-- Desktop Nav Links -->
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="../">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="../services">Services</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">About</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="../team">Team</a>
+<a class="text-primary border-b-2 border-primary pb-1 font-body-md" href="#">Contact</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-3 rounded-full font-label-md transition-all hover:opacity-90 cursor-pointer">
+            Book Appointment
+        </button>
+</nav>
+</header>
+<main class="pt-32 pb-24 px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto">
+<!-- Hero Section Header -->
+<section class="mb-16 text-center max-w-3xl mx-auto animate-fade-in" style="animation-delay: 0.1s;">
+<span class="text-primary font-label-md uppercase tracking-widest mb-4 block">Get in touch</span>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-background mb-6">Schedule Your Visit to {{CLIENT_NAME}}</h1>
+<p class="text-body-lg text-on-surface-variant">Experience world-class dental care in the heart of Addis Ababa. Our team is ready to provide you with a healthy, beautiful smile.</p>
+</section>
+<!-- Main Content Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- Left Column: Contact Info & Map (Bento Style) -->
+<div class="lg:col-span-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-6">
+<!-- Contact Cards with on-load animations -->
+<div class="bg-surface-container-low p-8 rounded-xl border border-outline-variant bento-card animate-fade-in" style="animation-delay: 0.2s;">
+<div class="flex items-start space-x-4 mb-6">
+<div class="bg-secondary-container p-3 rounded-lg text-on-secondary-container">
+<span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm mb-2">Our Clinic</h3>
+<p class="text-on-surface-variant leading-relaxed">
+                            Bole Road, Millennium Building 4th Floor<br/>
+                            Addis Ababa, Ethiopia
+                        </p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-8 rounded-xl border border-outline-variant bento-card animate-fade-in" style="animation-delay: 0.3s;">
+<div class="flex items-start space-x-4 mb-6">
+<div class="bg-secondary-container p-3 rounded-lg text-on-secondary-container">
+<span class="material-symbols-outlined" data-icon="call">call</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm mb-2">Phone</h3>
+<p class="text-on-surface-variant">+251 11 662 1234</p>
+<p class="text-on-surface-variant">+251 91 123 4567</p>
+</div>
+</div>
+</div>
+<!-- Map Placeholder -->
+<div class="lg:col-span-1 md:col-span-2 bg-surface-container-highest rounded-xl border border-outline-variant overflow-hidden h-[350px] relative bento-card animate-fade-in" style="animation-delay: 0.4s;">
+<div class="absolute inset-0 bg-cover bg-center grayscale contrast-75 opacity-80" data-alt="A clean, minimalist high-angle map view of Addis Ababa's Bole area showing main boulevards and urban landmarks in a muted teal and gray color palette. The map is presented in a modern UI aesthetic with simplified road networks and a focused pin on the clinic location, maintaining a clinical and professional healthcare vibe." data-location="Addis Ababa" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAMbN1F_aKNfalCnLBd8yK8_5M-vdyCxTCk7U_Tv8pWt4xFcKwM_ob_9zkzgZsiI8jVLI0MvBet6HRMSZnKZar2kEv2_uJvxcYi1HH5amW9sf3WRkdAWfOXiGTe2Y2EZCTUH2-2sNbnjdej0-eb-PGfK2GCGI_WDkpWezWq7wMeoM2OgQo21Ia_HLoYskpU7mYDX1pO_9QYKAGegzLiQflV7IVoExOGcXEFtuJpVTCKp0dcJRgrLEbiSjQoHmuQO7e_Vomp-4_vYujC')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4 bg-surface p-4 rounded-lg shadow-lg flex items-center space-x-3">
+<span class="material-symbols-outlined text-primary" data-icon="near_me">near_me</span>
+<span class="font-label-md">Open in Google Maps</span>
+</div>
+</div>
+</div>
+<!-- Right Column: Appointment Form with scroll reveal -->
+<div class="lg:col-span-7 bg-surface-container-lowest p-8 md:p-12 rounded-xl border border-primary/10 shadow-sm reveal">
+<h2 class="font-headline-md text-headline-md text-primary mb-8">Book an Appointment</h2>
+<form class="grid grid-cols-1 md:grid-cols-2 gap-6" id="appointmentForm">
+<div class="space-y-2">
+<label class="font-label-md text-on-surface" for="name">Full Name</label>
+<input class="w-full bg-surface-container border border-outline-variant rounded-lg p-4 focus:border-primary transition-all text-body-md" id="name" placeholder="Enter your name" required="" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-on-surface" for="phone">Phone Number</label>
+<input class="w-full bg-surface-container border border-outline-variant rounded-lg p-4 focus:border-primary transition-all text-body-md" id="phone" placeholder="+251 ..." required="" type="tel"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-on-surface" for="service">Select Service</label>
+<select class="w-full bg-surface-container border border-outline-variant rounded-lg p-4 focus:border-primary transition-all text-body-md appearance-none" id="service">
+<option value="">Choose a treatment</option>
+<option value="general">General Checkup</option>
+<option value="orthodontics">Orthodontics (Braces)</option>
+<option value="implants">Dental Implants</option>
+<option value="whitening">Teeth Whitening</option>
+<option value="emergency">Emergency Care</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-on-surface" for="date">Preferred Date</label>
+<input class="w-full bg-surface-container border border-outline-variant rounded-lg p-4 focus:border-primary transition-all text-body-md" id="date" required="" type="date"/>
+</div>
+<div class="md:col-span-2 space-y-2">
+<label class="font-label-md text-on-surface" for="notes">Additional Notes (Optional)</label>
+<textarea class="w-full bg-surface-container border border-outline-variant rounded-lg p-4 focus:border-primary transition-all text-body-md resize-none" id="notes" placeholder="Tell us about your concern..." rows="4"></textarea>
+</div>
+<div class="md:col-span-2 mt-4">
+<button class="w-full bg-primary text-on-primary py-4 rounded-full font-label-md text-lg hover:bg-primary-container transition-colors shadow-lg shadow-primary/20 flex justify-center items-center gap-2" type="submit">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+                        Confirm Request
+                    </button>
+<p class="text-center text-on-surface-variant text-sm mt-4">We will call you back within 1-2 business hours to confirm.</p>
+</div>
+</form>
+</div>
+</div>
+<!-- FAQ / Help Section with scroll reveal -->
+<section class="mt-24 border-t border-outline-variant pt-24 reveal">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<div>
+<h3 class="font-headline-sm text-headline-sm mb-4">Emergency Support</h3>
+<p class="text-on-surface-variant mb-6">Suffering from severe tooth pain or dental trauma? Call our 24/7 emergency line for immediate assistance.</p>
+<a class="text-primary font-bold flex items-center gap-2" href="tel:+251911234567">
+<span class="material-symbols-outlined" data-icon="emergency">emergency</span>
+                    +251 911 234 567
+                </a>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm mb-4">Office Hours</h3>
+<ul class="text-on-surface-variant space-y-2">
+<li class="flex justify-between"><span>Mon - Fri:</span> <span>8:30 AM - 6:00 PM</span></li>
+<li class="flex justify-between"><span>Saturday:</span> <span>9:00 AM - 4:00 PM</span></li>
+<li class="flex justify-between font-bold text-error"><span>Sunday:</span> <span>Closed</span></li>
+</ul>
+</div>
+<div class="flex flex-col justify-center">
+<div class="bg-tertiary-fixed p-6 rounded-xl border border-outline-variant text-center">
+<p class="font-headline-sm text-headline-sm text-on-tertiary-fixed mb-2">Need Help?</p>
+<p class="text-on-tertiary-fixed-variant mb-4">Check our FAQs for common dental insurance questions.</p>
+<button class="text-primary font-label-md border-b-2 border-primary">Read FAQs</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low border-t border-outline-variant mt-12">
+<div class="w-full py-12 px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="md:col-span-1">
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface mb-4">{{CLIENT_NAME}}</div>
+<p class="text-on-surface-variant text-sm">Providing exceptional dental care with cutting-edge technology and a compassionate heart in Addis Ababa.</p>
+</div>
+<div>
+<h4 class="font-label-md text-primary mb-6">Services</h4>
+<ul class="space-y-3">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Teeth Whitening</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Orthodontics</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Dental Implants</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Pediatric Care</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-primary mb-6">Support</h4>
+<ul class="space-y-3">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Emergency Care</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">FAQs</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-primary mb-6">Newsletter</h4>
+<p class="text-on-surface-variant text-sm mb-4">Get healthy smile tips delivered.</p>
+<div class="flex gap-2">
+<input class="bg-surface border border-outline-variant rounded-lg px-3 py-2 text-sm focus:border-primary w-full" placeholder="Email" type="email"/>
+<button class="bg-primary text-on-primary p-2 rounded-lg"><span class="material-symbols-outlined text-sm" data-icon="send">send</span></button>
+</div>
+</div>
+</div>
+<div class="w-full border-t border-outline-variant py-6 px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto">
+<p class="text-on-surface-variant text-center md:text-left text-sm">
+            © 2024 {{CLIENT_NAME}} Specialty Clinic. All rights reserved. Addis Ababa, Ethiopia.
+        </p>
+</div>
+</footer>
+<!-- Animation & Micro-interaction Script -->
+<script>
+    // Intersection Observer for scroll reveals
+    const revealCallback = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    };
+
+    const options = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(revealCallback, options);
+    
+    // Check for prefers-reduced-motion
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!prefersReducedMotion) {
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    } else {
+        // If reduced motion is preferred, just show everything immediately
+        document.querySelectorAll('.reveal').forEach(el => el.classList.add('active'));
+    }
+
+    // Appointment Form Logic
+    document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const btn = this.querySelector('button[type="submit"]');
+        const originalContent = btn.innerHTML;
+        
+        // Loading state
+        btn.innerHTML = '<span class="material-symbols-outlined animate-spin" data-icon="progress_activity">progress_activity</span> Processing...';
+        btn.disabled = true;
+
+        setTimeout(() => {
+            btn.innerHTML = '<span class="material-symbols-outlined" data-icon="check_circle">check_circle</span> Sent Successfully!';
+            btn.classList.replace('bg-primary', 'bg-secondary');
+            
+            setTimeout(() => {
+                btn.innerHTML = originalContent;
+                btn.classList.replace('bg-secondary', 'bg-primary');
+                btn.disabled = false;
+                this.reset();
+            }, 3000);
+        }, 1500);
+    });
+
+    // Simple input focus effects
+    const inputs = document.querySelectorAll('input, select, textarea');
+    inputs.forEach(input => {
+        input.addEventListener('focus', () => {
+            const label = input.parentElement.querySelector('label');
+            if(label) label.classList.add('text-primary');
+        });
+        input.addEventListener('blur', () => {
+            const label = input.parentElement.querySelector('label');
+            if(label) label.classList.remove('text-primary');
+        });
+    });
+</script>
+</body></html>

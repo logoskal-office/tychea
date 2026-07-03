@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Web Systems &amp; Infrastructure | TYCHEA</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&amp;family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#f9f9f9",
+                        "primary": "#000000",
+                        "on-background": "#1b1b1b",
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#f9f9f9",
+                        "on-primary-fixed-variant": "#474747",
+                        "surface-dim": "#dadada",
+                        "on-secondary-fixed-variant": "#304f00",
+                        "accent-lime": "#84CC16",
+                        "surface-container": "#eeeeee",
+                        "on-secondary-fixed": "#102000",
+                        "border-main": "#000000",
+                        "on-surface": "#1b1b1b",
+                        "surface-muted": "#F4F4F5",
+                        "on-secondary-container": "#457000",
+                        "primary-fixed-dim": "#c6c6c6",
+                        "surface-tint": "#5e5e5e",
+                        "secondary": "#416900",
+                        "tertiary": "#000000",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "secondary-fixed": "#acf847",
+                        "surface-container-high": "#e8e8e8",
+                        "tertiary-container": "#1a1c1c",
+                        "surface-container-low": "#f3f3f3",
+                        "primary-container": "#1b1b1b",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-on-surface": "#f1f1f1",
+                        "on-primary-fixed": "#1b1b1b",
+                        "on-tertiary-container": "#838484",
+                        "inverse-primary": "#c6c6c6",
+                        "error-container": "#ffdad6",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#91db2a",
+                        "background": "#f9f9f9",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#e2e2e2",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#acf847",
+                        "outline": "#7e7576",
+                        "tertiary-fixed": "#e2e2e2",
+                        "primary-fixed": "#e2e2e2",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-tertiary": "#ffffff",
+                        "outline-variant": "#cfc4c5",
+                        "on-surface-variant": "#4c4546",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#848484",
+                        "inverse-surface": "#303030"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-lg": "4rem",
+                        "stack-md": "2rem",
+                        "stack-sm": "1rem",
+                        "grid-margin": "2rem",
+                        "stack-xs": "0.5rem",
+                        "grid-gutter": "1px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Plus Jakarta Sans"],
+                        "label-mono": ["Courier Prime"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.2em", "fontWeight": "800" }],
+                        "label-mono": ["14px", { "lineHeight": "1", "letterSpacing": "0em", "fontWeight": "400" }],
+                        "headline-lg": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.4", "letterSpacing": "0em", "fontWeight": "600" }],
+                        "display-lg": ["72px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .brutalist-button {
+            transition: all 0.1s ease;
+        }
+        .brutalist-button:hover {
+            transform: translate(-12px, -12px);
+            box-shadow: 12px 12px 0px 0px #84CC16;
+        }
+        .brutalist-card {
+            transition: all 0.1s ease;
+        }
+        .brutalist-card:hover {
+            transform: translate(-8px, -8px);
+            box-shadow: 8px 8px 0px 0px #84CC16;
+        }
+        .corner-marker-tl { position: absolute; top: 0; left: 0; width: 16px; height: 16px; border-top: 2px solid #000; border-left: 2px solid #000; }
+        .corner-marker-tr { position: absolute; top: 0; right: 0; width: 16px; height: 16px; border-top: 2px solid #000; border-right: 2px solid #000; }
+        .corner-marker-bl { position: absolute; bottom: 0; left: 0; width: 16px; height: 16px; border-bottom: 2px solid #000; border-left: 2px solid #000; }
+        .corner-marker-br { position: absolute; bottom: 0; right: 0; width: 16px; height: 16px; border-bottom: 2px solid #000; border-right: 2px solid #000; }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-surface text-primary min-h-screen flex flex-col antialiased selection:bg-accent-lime selection:text-primary">
+<!-- TopNavBar -->
+
+{% include 'navbar.html' %}
+
+<main class="flex-grow  no-scrollbar">
+<!-- Hero Section -->
+<section class="relative w-full border-b border-main px-grid-margin py-24 md:py-32 max-w-[1440px] mx-auto">
+<div class="corner-marker-tl"></div>
+<div class="corner-marker-tr"></div>
+<div class="corner-marker-bl"></div>
+<div class="corner-marker-br"></div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-stack-md items-center">
+<div class="md:col-span-8">
+<p class="font-label-mono text-label-mono text-on-primary-fixed-variant mb-4">// CORE INFRASTRUCTURE</p>
+<h1 class="font-display-lg text-display-lg text-primary uppercase mb-8 border-b-8 border-accent-lime inline-block">Web Systems &amp; Infrastructure</h1>
+<p class="font-body-lg text-body-lg text-on-surface max-w-2xl mb-8">
+                        We engineer robust, scalable backend systems designed for high-performance operations. From complex booking engines to custom ERP integrations, our architecture is built for industrial-grade reliability.
+                    </p>
+<a class="inline-flex items-center gap-2 bg-primary text-on-primary font-label-caps text-label-caps px-8 py-4 border border-main brutalist-button uppercase tracking-widest" href="#features">
+                        EXPLORE SYSTEMS <span class="material-symbols-outlined text-sm">arrow_downward</span>
+</a>
+</div>
+<div class="hidden md:flex md:col-span-4 justify-end">
+<div class="w-full aspect-square border border-main p-4 bg-surface-container-highest relative flex items-center justify-center overflow-hidden group">
+<div class="absolute inset-0 bg-accent-lime opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+<span class="material-symbols-outlined text-[120px] text-primary" style="font-variation-settings: 'FILL' 0; font-weight: 200;">architecture</span>
+<div class="absolute bottom-4 right-4 font-label-mono text-[10px] text-on-primary-fixed-variant">SYS_DIAGRAM_V2</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Features Grid -->
+<section class="relative w-full border-b border-main px-grid-margin py-24 max-w-[1440px] mx-auto">
+<div class="corner-marker-tl"></div>
+<div class="corner-marker-tr"></div>
+<div class="corner-marker-bl"></div>
+<div class="corner-marker-br"></div>
+<div class="flex flex-col md:flex-row md:justify-between md:items-end mb-16 gap-6">
+  <div>
+    <h2 class="font-headline-lg text-headline-lg text-primary uppercase border-l-8 border-accent-lime pl-4">Design Templates</h2>
+    <p class="font-body-md text-body-md text-on-primary-fixed-variant mt-4 max-w-xl">Pre-engineered structural frameworks for rapid deployment.</p>
+  </div>
+  <div class="flex gap-4">
+    <button id="scroll-left-btn" class="w-12 h-12 border border-main flex items-center justify-center bg-surface hover:bg-accent-lime hover:text-primary transition-colors brutalist-button" aria-label="Scroll Left">
+      <span class="material-symbols-outlined">arrow_back</span>
+    </button>
+    <button id="scroll-right-btn" class="w-12 h-12 border border-main flex items-center justify-center bg-surface hover:bg-accent-lime hover:text-primary transition-colors brutalist-button" aria-label="Scroll Right">
+      <span class="material-symbols-outlined">arrow_forward</span>
+    </button>
+  </div>
+</div>
+<div id="designs-scroll-container" class=" flex overflow-x-auto gap-6 py-8 px-2 bg-surface border-y border-main no-scrollbar scroll-smooth snap-x snap-mandatory">
+  {% for design in designs %}
+  <div class="flex-shrink-0 w-[300px] md:w-[360px] bg-surface border border-main p-6 relative overflow-hidden group brutalist-card snap-start">
+    <div class="aspect-video bg-surface-container-highest border border-main mb-6 flex items-center justify-center relative overflow-hidden">
+      {% if design.thumbnail %}
+        <img src="{{ design.thumbnail.url }}" alt="{{ design.name }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+      {% else %}
+        <div class="absolute inset-0 bg-accent-lime opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+        <span class="material-symbols-outlined text-6xl text-primary opacity-25">
+          {% if "dental" in design.slug %}
+            medical_services
+          {% elif "agency" in design.slug or "modela" in design.slug %}
+            camera_front
+          {% elif "career" in design.slug or "employ" in design.slug %}
+            work
+          {% elif "iswear" in design.slug %}
+            gavel
+          {% elif "smma" in design.slug %}
+            campaign
+          {% else %}
+            dashboard_customize
+          {% endif %}
+        </span>
+      {% endif %}
+    </div>
+    <p class="font-label-mono text-[10px] text-accent-lime uppercase mb-2">
+      {% for sector in design.sectors.all %}
+        {{ sector.name }}{% if not forloop.last %}, {% endif %}
+      {% empty %}
+        Uncategorized
+      {% endfor %}
+    </p>
+    <h3 class="font-headline-md text-headline-md text-primary mb-6 truncate" title="{{ design.name }}">{{ design.name }}</h3>
+    <div class="font-label-mono text-label-mono text-on-primary-fixed-variant border-t border-main pt-4 flex justify-between items-center">
+      {% if design.link %}
+        <a class="hover:text-accent-lime transition-colors flex items-center gap-2" href="{{ design.url }}" target="_blank">
+          LIVE DEMO <span class="material-symbols-outlined text-sm">open_in_new</span>
+        </a>
+      {% else %}
+        <a class="hover:text-accent-lime transition-colors flex items-center gap-2" href="{% url 'design-detail-page' design.slug %}">
+          EXPLORE <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </a>
+      {% endif %}
+      <span class="text-xs text-on-primary-fixed-variant">RATING: {{ design.rating }}/5</span>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const container = document.getElementById('designs-scroll-container');
+    const leftBtn = document.getElementById('scroll-left-btn');
+    const rightBtn = document.getElementById('scroll-right-btn');
+    
+    if (container && leftBtn && rightBtn) {
+      leftBtn.addEventListener('click', () => {
+        container.scrollBy({ left: -360, behavior: 'smooth' });
+      });
+      rightBtn.addEventListener('click', () => {
+        container.scrollBy({ left: 360, behavior: 'smooth' });
+      });
+    }
+  });
+</script>
+</section><section class="w-full border-b border-main bg-surface px-grid-margin py-24 max-w-[1440px] mx-auto" id="features">
+<div class="mb-16">
+<h2 class="font-headline-lg text-headline-lg text-primary uppercase border-l-8 border-accent-lime pl-4">System Architecture</h2>
+<p class="font-body-md text-body-md text-on-primary-fixed-variant mt-4 max-w-xl">Modular components designed for seamless integration and robust data handling across enterprise environments.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[-1px] bg-main border-y border-main">
+<!-- Card 1 -->
+<div class="bg-primary border border-accent-lime p-8 relative overflow-hidden group brutalist-card m-[1px] text-accent-lime">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-accent-lime">calendar_month</span>
+</div>
+<span class="material-symbols-outlined text-3xl text-accent-lime mb-6 block" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+<h3 class="font-headline-md text-headline-md text-accent-lime mb-3">Booking &amp; Scheduling</h3>
+<p class="font-body-md text-body-md text-on-primary mb-6">High-concurrency scheduling systems with real-time conflict resolution and multi-timezone support.</p>
+<div class="font-label-mono text-label-mono text-accent-lime border-t border-accent-lime pt-4 flex justify-between items-center">
+<span>MOD_BKG_01</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-accent-lime border border-main p-8 relative overflow-hidden group brutalist-card m-[1px] text-primary">
+<div class="absolute top-0 right-0 p-4 opacity-25 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-primary">event_seat</span>
+</div>
+<span class="material-symbols-outlined text-3xl text-primary mb-6 block" style="font-variation-settings: 'FILL' 1;">event_seat</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">Reservation Engines</h3>
+<p class="font-body-md text-body-md text-primary mb-6">Complex logic handlers for dynamic pricing, yield management, and multi-tier capacity allocation.</p>
+<div class="font-label-mono text-label-mono text-primary border-t border-main pt-4 flex justify-between items-center">
+<span>MOD_RSV_02</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-accent-lime border border-main p-8 relative overflow-hidden group brutalist-card m-[1px] text-primary">
+<div class="absolute top-0 right-0 p-4 opacity-25 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-primary">mail</span>
+</div>
+<span class="material-symbols-outlined text-3xl text-primary mb-6 block" style="font-variation-settings: 'FILL' 1;">mail</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">Custom SMTP/Email Systems</h3>
+<p class="font-body-md text-body-md text-primary mb-6">Dedicated transactional mail infrastructure ensuring high deliverability, IP reputation management, and secure routing.</p>
+<div class="font-label-mono text-label-mono text-primary border-t border-main pt-4 flex justify-between items-center">
+<span>MOD_EML_03</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface border border-main p-8 relative overflow-hidden group brutalist-card m-[1px]">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-accent-lime">inventory_2</span>
+</div>
+<span class="material-symbols-outlined text-3xl text-primary mb-6 block" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">Inventory Management</h3>
+<p class="font-body-md text-body-md text-on-surface mb-6">Real-time stock tracking, automated reordering algorithms, and multi-warehouse synchronization.</p>
+<div class="font-label-mono text-label-mono text-on-primary-fixed-variant border-t border-main pt-4 flex justify-between items-center">
+<span>MOD_INV_04</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="bg-primary border border-accent-lime p-8 relative overflow-hidden group brutalist-card m-[1px] text-accent-lime">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-accent-lime">account_tree</span>
+</div>
+<span class="material-symbols-outlined text-3xl text-accent-lime mb-6 block" style="font-variation-settings: 'FILL' 1;">account_tree</span>
+<h3 class="font-headline-md text-headline-md text-accent-lime mb-3">ERP Integration</h3>
+<p class="font-body-md text-body-md text-on-primary mb-6">Seamless bi-directional data flow between legacy enterprise resource planning tools and modern web interfaces.</p>
+<div class="font-label-mono text-label-mono text-accent-lime border-t border-accent-lime pt-4 flex justify-between items-center">
+<span>MOD_ERP_05</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+<!-- Empty Card for Grid Alignment -->
+<div class="bg-surface-container border border-main p-8 relative hidden lg:flex items-center justify-center m-[1px]">
+<span class="font-label-mono text-label-mono text-on-primary-fixed-variant opacity-50">AWAITING_DEPLOYMENT</span>
+</div>
+</div>
+</section>
+<!-- Designs Section CTA -->
+<section class="w-full bg-accent-lime px-grid-margin py-24 max-w-[1440px] mx-auto border-b border-main relative">
+<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#000 1px, transparent 1px); background-size: 20px 20px;"></div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-lg items-center relative z-10">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary uppercase mb-6">Frontend Execution</h2>
+<p class="font-body-lg text-body-lg text-primary mb-8">
+                        Our backend infrastructure is paired with high-performance, structurally sound frontend frameworks. We prioritize performance, accessibility, and precision in our UI implementations.
+                    </p>
+<ul class="space-y-4 mb-10 font-label-mono text-label-mono text-primary">
+<li class="flex items-center gap-3 border-b border-primary pb-2"><span class="text-primary">■</span> React / Next.js Frameworks</li>
+<li class="flex items-center gap-3 border-b border-primary pb-2"><span class="text-primary">■</span> Vue / Nuxt Ecosystems</li>
+<li class="flex items-center gap-3 border-b border-primary pb-2"><span class="text-primary">■</span> Custom WebGL Integrations</li>
+<li class="flex items-center gap-3 border-b border-primary pb-2"><span class="text-primary">■</span> Brutalist &amp; Neumorphic Component Libraries</li>
+</ul>
+<a class="inline-block bg-primary text-on-primary font-label-caps text-label-caps px-8 py-4 border border-main brutalist-button uppercase tracking-widest text-center w-full md:w-auto" href="#">
+                        VIEW DESIGN PORTFOLIO
+                    </a>
+</div>
+<div class="border-2 border-main bg-surface p-4 relative h-full min-h-[400px]">
+<div class="absolute top-0 right-0 bg-primary text-accent-lime font-label-caps text-[10px] px-2 py-1 border-b border-l border-main">UI_PREVIEW</div>
+<div class="h-full w-full border border-main bg-surface-muted flex flex-col p-4 gap-4">
+<div class="w-full h-8 bg-surface border border-main flex items-center px-2">
+<div class="w-2 h-2 rounded-full bg-primary mr-2"></div>
+<div class="w-2 h-2 rounded-full bg-primary opacity-50 mr-2"></div>
+<div class="w-2 h-2 rounded-full bg-primary opacity-25"></div>
+</div>
+<div class="flex-grow border border-main bg-surface p-4 flex flex-col gap-4">
+<div class="h-6 w-1/3 bg-accent-lime border border-main"></div>
+<div class="h-4 w-full bg-surface-container border border-main"></div>
+<div class="h-4 w-5/6 bg-surface-container border border-main"></div>
+<div class="mt-auto grid grid-cols-2 gap-4">
+<div class="h-24 bg-surface-container border border-main"></div>
+<div class="h-24 bg-surface-container border border-main"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-stack-lg border-t border-main bg-primary dark:bg-surface-container-highest">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md w-full px-grid-margin py-stack-md max-w-[1440px] mx-auto">
+<div class="flex flex-col gap-4">
+<span class="font-headline-md text-headline-md text-on-primary">TYCHEA</span>
+<p class="font-label-mono text-label-mono text-on-primary-fixed-variant">
+                    ©2024 TYCHEA ENGINEERING. ALL RIGHTS RESERVED.
+                </p>
+</div>
+<div class="flex flex-col md:items-end justify-center">
+<nav class="flex flex-col md:flex-row gap-4 font-label-mono text-label-mono">
+<a class="text-on-primary-fixed-variant hover:text-accent-lime transition-colors" href="#">Documentation</a>
+<a class="text-on-primary-fixed-variant hover:text-accent-lime transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-primary-fixed-variant hover:text-accent-lime transition-colors" href="#">Terms of Service</a>
+<a class="text-on-primary-fixed-variant hover:text-accent-lime transition-colors" href="#">Status</a>
+</nav>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap');
+@import "tailwindcss";
+
+
+@theme {
+    --color-primary: oklch(0 0 0);
+    --color-secondary: oklch(1 0 0);
+    --color-accent: oklch(0.7709 0.215571 132.4509);
+
+    --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+    --font-ubuntu: "Ubuntu Sans"
+}
+
+
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+.fx-shadow:hover {
+    box-shadow: 8px 8px 0 0 rgba(0, 0, 0, 1);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}

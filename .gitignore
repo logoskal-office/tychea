@@ -2,3 +2,6 @@
 /templates/
 notes.txt
 /trash/
+__pycache__
+/node_modules/
+/misc/

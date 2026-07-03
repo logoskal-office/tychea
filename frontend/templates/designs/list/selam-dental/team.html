@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Meet Our Experts | {{CLIENT_NAME}} Clinic</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:wght@100..900&display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "on-surface": "#191c1d",
+                "error-container": "#ffdad6",
+                "surface-container-highest": "#e1e3e4",
+                "primary-fixed": "#cde5ff",
+                "surface-container-low": "#f3f4f5",
+                "on-surface-variant": "#404850",
+                "error": "#ba1a1a",
+                "secondary-container": "#9cecfb",
+                "inverse-on-surface": "#f0f1f2",
+                "primary-fixed-dim": "#94ccff",
+                "on-primary-container": "#f3f7ff",
+                "on-tertiary-fixed-variant": "#284c53",
+                "on-secondary-fixed-variant": "#004f59",
+                "outline-variant": "#bfc7d1",
+                "on-secondary-fixed": "#001f24",
+                "secondary-fixed-dim": "#83d3e1",
+                "inverse-primary": "#94ccff",
+                "primary-container": "#0077b6",
+                "on-tertiary": "#ffffff",
+                "surface": "#f8f9fa",
+                "tertiary-fixed": "#c3e9f1",
+                "surface-bright": "#f8f9fa",
+                "surface-tint": "#006399",
+                "surface-container": "#edeeef",
+                "tertiary-container": "#53777e",
+                "surface-dim": "#d9dadb",
+                "primary": "#005d90",
+                "surface-container-high": "#e7e8e9",
+                "outline": "#707881",
+                "on-error-container": "#93000a",
+                "background": "#f8f9fa",
+                "on-secondary-container": "#016d7a",
+                "surface-container-lowest": "#ffffff",
+                "secondary-fixed": "#9feffe",
+                "on-error": "#ffffff",
+                "tertiary-fixed-dim": "#a8cdd5",
+                "on-tertiary-fixed": "#001f24",
+                "on-tertiary-container": "#e7fbff",
+                "on-primary-fixed": "#001d32",
+                "inverse-surface": "#2e3132",
+                "tertiary": "#3b5e65",
+                "on-secondary": "#ffffff",
+                "on-primary": "#ffffff",
+                "secondary": "#006875",
+                "on-primary-fixed-variant": "#004b74",
+                "surface-variant": "#e1e3e4",
+                "on-background": "#191c1d"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "section-gap-mobile": "64px",
+                "card-padding": "32px",
+                "gutter": "24px",
+                "container-max-width": "1200px",
+                "base": "8px",
+                "section-gap-desktop": "120px"
+            },
+            "fontFamily": {
+                "headline-sm": ["Montserrat"],
+                "body-lg": ["Inter"],
+                "display-lg": ["Montserrat"],
+                "headline-md": ["Montserrat"],
+                "body-md": ["Inter"],
+                "label-md": ["Inter"],
+                "display-lg-mobile": ["Montserrat"]
+            },
+            "fontSize": {
+                "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                "display-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .card-shadow {
+            box-shadow: 0px 4px 20px rgba(0, 119, 182, 0.05);
+        }
+        .card-shadow-hover:hover {
+            box-shadow: 0px 8px 30px rgba(0, 119, 182, 0.12);
+            transform: translateY(-4px);
+        }
+        .clinic-gradient {
+            background: linear-gradient(135deg, #f8f9fa 0%, #CAF0F8 100%);
+        }
+        .glass-nav {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="docked full-width top-0 sticky z-50 bg-surface/90 glass-nav shadow-sm h-20">
+<div class="flex justify-between items-center w-full px-gutter max-w-container-max-width mx-auto h-full">
+<a class="font-headline-md text-headline-md font-bold text-primary" href="../">{{CLIENT_NAME}}</a>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="../services">Services</a>
+<a class="font-label-md text-label-md text-primary font-bold border-b-2 border-primary" href="#">Meet the Team</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">About</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="../contact">Contact</a>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-3 rounded-xl font-label-md text-label-md font-bold hover:opacity-90 transition-all active:scale-95 duration-150">
+                Book Appointment
+            </button>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative py-section-gap-desktop overflow-hidden">
+<div class="absolute inset-0 z-0 opacity-10">
+<div class="absolute top-0 right-0 w-96 h-96 bg-primary-fixed rounded-full blur-3xl"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-secondary-fixed rounded-full blur-3xl"></div>
+</div>
+<div class="max-w-container-max-width mx-auto px-gutter relative z-10 text-center">
+<span class="inline-block py-2 px-4 rounded-full bg-secondary-container/30 text-secondary font-label-md text-label-md mb-6">
+                    Our Experts
+                </span>
+<h1 class="font-display-lg text-display-lg md:text-display-lg-mobile text-primary mb-6">
+                    Meet Our Experts
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                    Leading the way in Ethiopian dentistry. Our team of world-class specialists combines global expertise with deep local roots to provide your family with exceptional care.
+                </p>
+</div>
+</section>
+<!-- Team Highlights (Bios) -->
+<section class="pb-section-gap-desktop">
+<div class="max-w-container-max-width mx-auto px-gutter">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Lead Dentist -->
+<div class="bg-surface-container-lowest p-card-padding rounded-xl card-shadow border border-outline-variant/30 flex flex-col items-center text-center transition-all duration-300 card-shadow-hover">
+<div class="w-48 h-48 rounded-full overflow-hidden mb-6 ring-4 ring-primary/10">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a female Ethiopian lead dentist with a warm, confident smile. She is wearing a crisp white laboratory coat and a light blue stethoscope around her neck. The background is a soft-focus, modern dental clinic with clean white surfaces and Gentle Teal accents, illuminated by bright, clinical high-key lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuChYSOosZEYzkjBbK1ZC4-uLOMHlU7F-nQ-6Tx_7LlypdruOh0p9f91wqeW-hSEXrC5QhU--1Oojxq4kdldqTlTP90WfMY344mbTMCXUid_j4gJZRmuwH40OQaTSXZ9XkUGAWDbZpcHl5wj8P1MWJmvPgRWT-zkFJNAFfuSG4iJf3wkGLgO2NSw6Nl_anMHpQkzSGoWJE2rkZzNJF0i8pZsmpmtYFMjPsX5RwHg849j9S7_YowZ4YEMzwQ5I2E9xf6JWR8kffinwx7M"/>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-1">Dr. {{CLIENT_NAME_SOLO}}awit Tadesse</h3>
+<p class="font-label-md text-label-md text-secondary uppercase tracking-widest mb-4">Lead Dentist & Founder</p>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            With over 15 years of experience in restorative dentistry, Dr. {{CLIENT_NAME_SOLO}}awit is dedicated to transforming smiles through precision and compassion.
+                        </p>
+</div>
+<!-- Senior Orthodontist -->
+<div class="bg-surface-container-lowest p-card-padding rounded-xl card-shadow border border-outline-variant/30 flex flex-col items-center text-center transition-all duration-300 card-shadow-hover">
+<div class="w-48 h-48 rounded-full overflow-hidden mb-6 ring-4 ring-primary/10">
+<img class="w-full h-full object-cover" data-alt="A professional portrait of a light-skinned Ethiopian male orthodontist in his early 40s. He is wearing professional dark blue medical scrubs. He has a friendly and approachable expression, standing in a brightly lit, high-end medical facility. The aesthetic is clean and minimal, reflecting clinical excellence and hygienic precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBZ9zW7Q9OocXt8KbbtGZhLNVlKc4PvOd1kO1wrJpIHnOVcyr3VdQb9FG1ASfqkXJC04MNX5WAoz1chfvHgQoOCDT-vXc3M1St_OsZkQgINkXGrnmAwbUSd6DgF3UodbWkFhJi19f1dcI_Tadr4SWkXg4p7KLiNbBoIWOlSMZzCupKMnF_9fd8joewWP3gO-ht-Fqwu_XczAsS59vC2WJw2QA94WYxRKU8Rk0ApqiWkBW_xfZwGoK7aVx7Q0JbG7QvQD13TVjguZRj"/>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-1">Dr. Henok Bekele</h3>
+<p class="font-label-md text-label-md text-secondary uppercase tracking-widest mb-4">Senior Orthodontist</p>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            Specializing in advanced orthodontic alignment, Dr. Henok utilizes the latest digital scanning technology to create perfect results for all ages.
+                        </p>
+</div>
+<!-- Head Nurse -->
+<div class="bg-surface-container-lowest p-card-padding rounded-xl card-shadow border border-outline-variant/30 flex flex-col items-center text-center transition-all duration-300 card-shadow-hover">
+<div class="w-48 h-48 rounded-full overflow-hidden mb-6 ring-4 ring-primary/10">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a light-skinned Ethiopian woman serving as a head nurse. She is wearing teal medical scrubs and has a gentle, welcoming smile. The lighting is soft and ambient, creating a warm and compassionate medical atmosphere. The background shows a clean, organized clinical environment with subtle hints of medical equipment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD89zrb8pNdZ27hmU1Smmlwje1PKzvRoXRWUSvCo-ReYlEsIp0pNawxxQOMBJVoqF4PGJf5U92NEQTlRYWGxhWYOcwS9pZLZvRPM6PHnkzIlTq_GfClXp3LN4B2SEX9kZgFsFUur6pEvYfXz5g22uYZAnmNubKwpzrFphtqd8UuuMk6AmQs-5ulg5x_Q6onVORkRL_-J3LSFpNvp43Z1hD_Ha_cpxpS_DZ_a-VI6iMSP57RpHGLaly6M0U115eHzKwS5-AusUy6PZsL"/>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-1">Nurse Tigist Lema</h3>
+<p class="font-label-md text-label-md text-secondary uppercase tracking-widest mb-4">Head of Patient Care</p>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            Nurse Tigist ensures every patient journey is comfortable and stress-free. Her expertise in pediatric care makes her a favorite for our youngest patients.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Philosophy Section -->
+<section class="py-section-gap-desktop bg-primary text-on-primary relative overflow-hidden">
+<div class="absolute inset-0 opacity-10">
+<svg height="100%" preserveaspectratio="none" viewbox="0 0 100 100" width="100%">
+<defs>
+<pattern height="10" id="grid" patternunits="userSpaceOnUse" width="10">
+<path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" stroke-width="0.5"></path>
+</pattern>
+</defs>
+<rect fill="url(#grid)" height="100%" width="100%"></rect>
+</svg>
+</div>
+<div class="max-w-container-max-width mx-auto px-gutter flex flex-col md:flex-row items-center gap-16 relative z-10">
+<div class="flex-1">
+<h2 class="font-display-lg text-display-lg mb-8">Our Philosophy of Gentle Care</h2>
+<div class="space-y-6">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-secondary-fixed text-3xl">verified_user</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm mb-2">Patient-First Comfort</h4>
+<p class="opacity-80">We utilize anxiety-reducing techniques and soft-touch technology to ensure your visit is as relaxing as a spa treatment.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-secondary-fixed text-3xl">biotech</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm mb-2">Modern Precision</h4>
+<p class="opacity-80">Our clinic is equipped with the latest European and American dental technology for faster, painless procedures.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex-1 w-full">
+<div class="aspect-video rounded-xl overflow-hidden shadow-2xl relative">
+<img class="w-full h-full object-cover" data-alt="An interior shot of a luxury dental clinic lobby in Addis Ababa. The space features white marble floors, light wood accents, and plush seating in sand and teal tones. High-key natural lighting pours in from large windows. A professional receptionist, a light-skinned Ethiopian woman, is visible in the background, reinforcing a welcoming and high-end healthcare environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJxc66ykv40nddREjV6doeN39iLtNJuH0W7xklYWu0K81KNBEWGjXD62hjLtjfnqtBBuZBgGre_ZvLzAaRwj2JIDS-GsN3bLgEvf62S-tuwAHE-1kOgys7nWTrfXc0LWDFijVGHyUlok3JaeTFa9Jxy_5QQOkRS8h9g_G-hs5f6veY69EBLTpHZnSH8fdCrWFCchkpatip1pNQ3f00hSl-MZRB-aj_cBvkk7qdInJZe7DO3B0kDDBDgLIAXF_9vMxjaledeqd4WeyE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Full Team Grid -->
+<section class="py-section-gap-desktop">
+<div class="max-w-container-max-width mx-auto px-gutter">
+<div class="flex flex-col items-center mb-16">
+<h2 class="font-headline-md text-headline-md text-primary mb-4">Dedicated to Your Health</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl text-center">Our support staff and specialists work together to provide a seamless experience from the moment you walk through our doors.</p>
+</div>
+<!-- Bento Grid Layout for Team -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+<!-- Staff 1 -->
+<div class="group relative overflow-hidden rounded-xl h-80 bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A professional headshot of an Ethiopian dental assistant, a woman with a kind expression. She is wearing hygienic teal scrubs. The lighting is bright and clean, typical of a professional medical clinic. The focus is sharp on her face, with a soft-focus clinical background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqgGq2daELU1QHhVYD0I3cqOasWcfyf1uWdPo8O3Spy7DlnNHaKfoU6uSDGIny3WaZlqaLdzXcGh7mqihecxbwKYLLYlBSawN4XF5g-1JTBsQWxdOK73MzqCUa5gLho_n5jmRTIlVWdJxee0STFgjXhyjNo5sy7HDNM9402k9k78exMQYa3yZ83ST4CouwrUfHQ4S4cqUX_-Xv5ZtqeB5DhLi8HbeFw-aiFfD2IFYFP9BFyjExb1rH2rMjRq5nUEQdiX-hqEkqlaWC"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<span class="text-white font-headline-sm text-headline-sm">Marta Yilma</span>
+<span class="text-secondary-fixed font-label-md text-label-md">Dental Assistant</span>
+</div>
+</div>
+<!-- Staff 2 -->
+<div class="group relative overflow-hidden rounded-xl h-80 bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A professional portrait of a light-skinned Ethiopian female dental hygienist in white medical uniform. She is smiling warmly towards the camera in a modern, brightly lit dental office. The background is minimalist and exceptionally clean, highlighting clinical excellence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRbAjCaQbbXCkRccc7cd_uOvBeYfg1wdgtlXpej9F7_O-c-0Yt-zaneeFI4DhTe4Ixbw_YxbKpP_KygcZeEwo8kepytVsrWvpiFV0TsUkTn08M0OMTRAQLH1YdzDTJW41a3kQeoNuxlNJQ7-7kVOuS00gSe2GYK3sudCwmVuQr0Yj0TNL8WFuPoq4Pv3Ark-vtpcypFLuBNV5TkmabFavDU2I3WwjHZXerGYA6iLP7I5TkJBvIpaaT48NVuzrugccWh_MUe38zR3gh"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<span class="text-white font-headline-sm text-headline-sm">Rahel Gidey</span>
+<span class="text-secondary-fixed font-label-md text-label-md">Dental Hygienist</span>
+</div>
+</div>
+<!-- Staff 3 -->
+<div class="group relative overflow-hidden rounded-xl h-80 bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A high-quality professional portrait of a female Ethiopian medical receptionist with a pleasant and professional demeanor. She is standing at a clean, modern white reception desk with clinical blue accents. The lighting is soft and airy, creating an inviting atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9OjJ2ZsexXfUH4lllNpeTGyYsZ9_Dsx45WUrbIgOcHVOHc7tlURDX6Q5E58-BCAJ5AJFld05R6fm5PX_RCB_nefIFtHhWip_wTVQlmOVEPmL-ADNpe2wLOZcFMkKY78nGrBNk-Od2ooKpuRiGSCNIu1rcXqKMtOiA7LAbSG7o9R2536_9t2PJ5FuKSSs-ccYgetMxizDfCOm87c-jKVBUFLukAIt5W1ksSNVjPSmWsPjQU8shZgTsJ5KRbibW4Em0smrR2PXV6H0T"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<span class="text-white font-headline-sm text-headline-sm">Eden Kebede</span>
+<span class="text-secondary-fixed font-label-md text-label-md">Patient Coordinator</span>
+</div>
+</div>
+<!-- Staff 4 -->
+<div class="group relative overflow-hidden rounded-xl h-80 bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A professional portrait of a light-skinned Ethiopian female dentist specializing in pediatric care. She is wearing colorful, friendly-patterned medical scrubs suitable for children. She has a bright, trustworthy smile, set against a clean and warm medical background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRthrcOBc0mAMrKuGeWG3YaERYLDcu4eCgnt7CmabstCaTYHRZ-k0HPf306vAKuU02i1Wi53CeUyDq7f11vDJH9X1Nql-5zQyuHookmhYmKCC8-XKA9IzPjSM26TS9c2R8DpKWCuMJSConCpfAj3zwZ_WQ2293KPF5vfjrLB_Ds_uvPonQR64rhR8ywcB6UwGcEjuUq6csPcBqIed4sYqgMfoD2Om_9MIvMW6dd2WKE2_Ok6WHwZKT_bZ9ng4Jb-uknKL3FySEFKa8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<span class="text-white font-headline-sm text-headline-sm">Dr. Sara Melaku</span>
+<span class="text-secondary-fixed font-label-md text-label-md">Pediatric Dentist</span>
+</div>
+</div>
+<!-- Staff 5 -->
+<div class="group relative overflow-hidden rounded-xl h-80 bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A professional portrait of an Ethiopian female nurse practitioner in a clinical setting. She is wearing light grey scrubs and is looking professionally at the camera. The setting is bright with high-key lighting, emphasizing hygiene and trust. The overall aesthetic is modern medical excellence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIShF5Cnu0jNXCzGTD35n5TpOn8a_hxadt3gU_lnLdErlsYl8wWc0zOqamSMGGLaliGmVLhqjff-cMX0A_jiC5zsb5SOgXTUpfM9xtz2KcYe9Ne4pHcd0YtqML7BkjIgQL-Mp3Z0lZJLhWVP20ZqeuNfrNn4nHuYKLROy_zsXIePUNenyR7zXsQtthgh55WpAlAhtiNUJvvt8IPDgPA5iHz2QSbbC37y3yaWYkLpmklf-sa_ZxFeDFKtZ5CG4xd3bNb76PO1uQJb0T"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<span class="text-white font-headline-sm text-headline-sm">Hanna Tesfaye</span>
+<span class="text-secondary-fixed font-label-md text-label-md">Clinical Nurse</span>
+</div>
+</div>
+<!-- Staff 6 -->
+<div class="group relative overflow-hidden rounded-xl h-80 bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A professional portrait of a light-skinned Ethiopian male dental surgeon in blue surgical scrubs. He has a serious yet reassuring expression. The lighting is precise, reflecting a high-standard surgical environment. The background is clean and clinical with subtle blue tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3mI9ITpbV8cgtOHRxMBCA3O-sRE3R3cFtYcORMQpCZ5qxavNPvO65k-haC7lvZIgCk5AaU4LRrvasw8VVc6msP4qeCKCdKghDOTnK3KzntEmbbFASOkHXLV-EQgBnN4rBk0JR_2UG7VkCvaeKun4mKvcK5ntKn5jyH8Xxjb9ZrhW35mLfS23zFaOnCWaPHrZHM5b5mWArYXIwqbYOSezFDWsiiADfh5gago4ZVLixFhq9k4ne-AOlqJAavP1T_ZvDS9l4dUrK_t3d"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<span class="text-white font-headline-sm text-headline-sm">Dr. Elias Gebre</span>
+<span class="text-secondary-fixed font-label-md text-label-md">Oral Surgeon</span>
+</div>
+</div>
+<!-- Staff 7 -->
+<div class="group relative overflow-hidden rounded-xl h-80 bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A professional headshot of a female Ethiopian clinic administrator. She is wearing business-professional attire in a modern medical office. She looks organized and friendly. The background is a minimalist office with clean lines and bright, high-key lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB39SWP6NatuNOqap6cEiuGss6AgjLklbE76zsIfIGBNEy9NXfaRldbxDrWcZkFZxuIk1C5S-TFk0K_gNPFU14PMfQWjeVkgnHTP9ZJYe49xFBZgsibc-ZUQ467yygG5uoFyiMKJGk1dQw5ak-XY6ypg7Ym-yow13liOySF9lX5oi6uMz0w1ZTEtdyTxraaIaoYT1DCTqKhD0ac3IQyQCUpeBj6nzW4rmuc5dFCRkcwyuiTswWAFDdy7zqgZQYD6eOQq3tk2EUn24p1"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<span class="text-white font-headline-sm text-headline-sm">Meron Haile</span>
+<span class="text-secondary-fixed font-label-md text-label-md">Clinic Administrator</span>
+</div>
+</div>
+<!-- Staff 8 -->
+<div class="group relative overflow-hidden rounded-xl h-80 bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A professional portrait of an Ethiopian female dental technician in a laboratory setting. She is wearing a white lab coat and safety glasses. She is looking confidently at the camera. The laboratory is bright and high-tech, emphasizing precision and medical expertise." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVIqBlC3gMvlUpVAohrMI2C8SEXIjJ6GNkvtO9ye7zO7DTzXvYYLWMZZOqM6WXq2JRbFWzIeoNlT9aiEk1w2EPtb97jiXtnhNF8H8wJbesHLG2Kubl-96J9JO7AABL2KvEkTLsZY4FLXrJmxKINkkNOzs-cmi8vfyLsHpPN_jI3CeGg3kIQ3xX-cyyP13WzUxYmNo6sG9GF3JCyEIkSWQgmokgsDi96qBacRgFLkrxL3VtcHHeDWo4epiXQZDjeoNVquiXy1102xdt"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<span class="text-white font-headline-sm text-headline-sm">Bezawit Negash</span>
+<span class="text-secondary-fixed font-label-md text-label-md">Lab Technician</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-section-gap-desktop bg-surface-container-low">
+<div class="max-w-container-max-width mx-auto px-gutter text-center">
+<h2 class="font-display-lg text-display-lg text-primary mb-6">Ready for your best smile yet?</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl mx-auto">Our team is ready to welcome you. Experience world-class dental care right here in Ethiopia.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<button class="bg-primary text-on-primary px-10 py-4 rounded-xl font-headline-sm text-headline-sm hover:opacity-90 transition-all shadow-lg active:scale-95 duration-150">
+                        Book Your Consultation
+                    </button>
+<button class="bg-secondary-container text-on-secondary-container px-10 py-4 rounded-xl font-headline-sm text-headline-sm hover:opacity-90 transition-all active:scale-95 duration-150">
+                        View All Services
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low full-width">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-base px-gutter py-section-gap-desktop max-w-container-max-width mx-auto">
+<div class="flex flex-col gap-4">
+<a class="font-headline-sm text-headline-sm font-bold text-primary" href="#">{{CLIENT_NAME}}</a>
+<p class="font-body-md text-body-md text-on-surface-variant">© 2024 {{CLIENT_NAME}} Clinic. All rights reserved. Providing Ethiopian families with world-class oral care.</p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-md text-label-md text-primary font-bold uppercase tracking-widest">Specialties</h4>
+<div class="flex flex-col gap-2">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors" href="#">General Dentistry</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Orthodontics</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Cosmetic Dentistry</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Pediatric Care</a>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-md text-label-md text-primary font-bold uppercase tracking-widest">Company</h4>
+<div class="flex flex-col gap-2">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors" href="#">About Us</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Meet the Team</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Testimonials</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Contact</a>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-md text-label-md text-primary font-bold uppercase tracking-widest">Legal</h4>
+<div class="flex flex-col gap-2">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Terms of Service</a>
+</div>
+<div class="flex gap-4 mt-4">
+<span class="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform">public</span>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform">phone_iphone</span>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform">alternate_email</span>
+</div>
+</div>
+</div>
+</footer>
+<!-- Script for subtle interactive reveal -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('opacity-100');
+                        entry.target.classList.remove('opacity-0', 'translate-y-10');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('section > div').forEach(section => {
+                section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+                observer.observe(section);
+            });
+        });
+    </script>
+</body></html>

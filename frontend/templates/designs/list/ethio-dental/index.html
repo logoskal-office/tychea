@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>{{CLIENT_NAME}} Specialty Clinic | Professional Dental Care in Addis Ababa</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&amp;family=Inter:wght@400;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Montserrat:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error": "#ffffff",
+                    "inverse-on-surface": "#ebf1ff",
+                    "tertiary-fixed": "#d5e6df",
+                    "surface-bright": "#f9f9ff",
+                    "on-tertiary-fixed": "#101e1a",
+                    "outline": "#6f7973",
+                    "surface": "#f9f9ff",
+                    "on-surface-variant": "#3f4944",
+                    "surface-container-highest": "#dce2f3",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#3b4a44",
+                    "primary-fixed-dim": "#8bd6b6",
+                    "surface-container": "#e7eefe",
+                    "on-background": "#151c27",
+                    "error": "#ba1a1a",
+                    "inverse-primary": "#8bd6b6",
+                    "surface-variant": "#dce2f3",
+                    "tertiary-fixed-dim": "#bacac3",
+                    "inverse-surface": "#2a313d",
+                    "secondary-container": "#64f9bc",
+                    "on-primary-container": "#8bd6b7",
+                    "primary": "#004532",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed": "#002116",
+                    "background": "#f9f9ff",
+                    "outline-variant": "#bec9c2",
+                    "on-secondary-container": "#00714e",
+                    "surface-container-high": "#e2e8f8",
+                    "surface-dim": "#d3daea",
+                    "on-surface": "#151c27",
+                    "tertiary": "#303f3a",
+                    "on-secondary": "#ffffff",
+                    "surface-tint": "#1b6b51",
+                    "primary-fixed": "#a6f2d1",
+                    "secondary-fixed": "#68fcbf",
+                    "primary-container": "#065f46",
+                    "surface-container-low": "#f0f3ff",
+                    "on-secondary-fixed-variant": "#005137",
+                    "secondary-fixed-dim": "#45dfa4",
+                    "secondary": "#006c4b",
+                    "on-tertiary-container": "#bacbc3",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed": "#002114",
+                    "on-primary-fixed-variant": "#00513b",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-container": "#475650"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "base": "4px",
+                    "gutter": "24px",
+                    "margin-desktop": "80px",
+                    "margin-mobile": "16px",
+                    "max-width": "1280px"
+            },
+            "fontFamily": {
+                    "display-lg-mobile": ["Montserrat"],
+                    "display-lg": ["Montserrat"],
+                    "headline-md": ["Montserrat"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-sm": ["Montserrat"]
+            },
+            "fontSize": {
+                    "display-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["30px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        /* Animation States */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(30px);
+            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Stagger delays */
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+        .delay-400 { transition-delay: 400ms; }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal, .reveal-left, .reveal-right {
+                transition: none !important;
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Top Navigation Bar -->
+<header class="bg-surface sticky top-0 z-50 border-b border-outline-variant">
+<nav class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto h-20">
+<div class="font-headline-sm text-headline-sm font-bold text-primary">{{CLIENT_NAME}}</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="font-body-md text-body-md text-primary border-b-2 border-primary pb-1 transition-all duration-200" href="#">Home</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="services">Services</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">About</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="team">Team</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="contact">Contact</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-md text-label-md hover:bg-primary-container hover:text-on-primary-container transition-all duration-300 shadow-sm">
+            Book Appointment
+        </button>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative overflow-hidden bg-surface-container-low py-16 md:py-24">
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div class="z-10 reveal">
+<span class="inline-block bg-secondary-container text-on-secondary-container px-4 py-1 rounded-full font-label-md text-label-md mb-6 reveal delay-100">
+                    Excellence in Ethiopian Dental Care
+                </span>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-6 reveal delay-200">
+                    A Brighter Smile for a Better Tomorrow
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-xl reveal delay-300">
+                    Welcome to {{CLIENT_NAME}} Specialty Clinic. We combine state-of-the-art global dental technology with the warmth of Ethiopian hospitality to provide world-class specialty care.
+                </p>
+<div class="flex flex-wrap gap-4 reveal delay-400">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-full font-label-md text-label-md flex items-center gap-2 hover:bg-primary-container transition-all">
+                        Book Your Visit <span class="material-symbols-outlined">calendar_today</span>
+</button>
+<button class="border border-primary text-primary px-8 py-4 rounded-full font-label-md text-label-md hover:bg-primary-fixed transition-all">
+                        View Our Services
+                    </button>
+</div>
+</div>
+<div class="relative reveal-right delay-200">
+<div class="absolute -top-12 -left-12 w-64 h-64 bg-primary-fixed-dim/20 rounded-full blur-3xl"></div>
+<div class="relative rounded-xl overflow-hidden shadow-2xl border border-white/50">
+<img class="w-full aspect-[4/5] object-cover" data-alt="A professional and friendly Ethiopian dentist with a warm, welcoming smile, wearing a clean white clinical coat in a modern, brightly lit dental office. The background shows advanced dental equipment in a soft-focus clinical setting with a calming emerald green color palette. The lighting is high-key and optimistic, reflecting professionalism and trust in a healthcare environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2vZb7JiaC7HQZY_n-1j7qj7sqJnky9-kLhEeLd7oL98x4whttZuniPqUU3n4s-CXQProbryOQAI_CLACCIGEPrKN7TMBPJNleqngdpLhB7EbOhDTvfnhUHSq8CkESVct-cizjBNg3kPrtGZrkttxE_Hot0li8xVo7ykZtbJV2iyDxQVFXuk6c8RvAVb7A-x1UFlwjhyvXvSKlzoe3QQ_Ir4XpLCm2E0y7wp1LaXSrYV7I6PcZ7lTd0zFsyXChhc448T3dKINwE-CM"/>
+</div>
+<div class="absolute -bottom-6 -right-6 glass-card p-6 rounded-xl border border-outline-variant shadow-lg max-w-[200px] reveal delay-400">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">5-Star Care</span>
+</div>
+<p class="text-xs text-on-surface-variant leading-tight">Voted the most patient-centric clinic in Addis Ababa.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- About Us Brief -->
+<section class="py-24 bg-surface section-reveal">
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-5 reveal-left">
+<h2 class="font-headline-md text-headline-md text-primary mb-6">Redefining Specialty Dental Care in Ethiopia</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                        At {{CLIENT_NAME}}, we believe that everyone deserves a healthy, beautiful smile. Founded on the principles of integrity and expertise, our clinic has grown into one of Addis Ababa's leading dental specialty centers. 
+                    </p>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">
+                        We offer a sterilized, modern environment where patient comfort is prioritized above all else. Our team consists of highly trained specialists dedicated to precision and gentle care.
+                    </p>
+<ul class="space-y-4">
+<li class="flex items-center gap-3 reveal delay-100">
+<span class="material-symbols-outlined text-secondary">check_circle</span>
+<span class="font-body-md text-body-md">Advanced Diagnostic Imaging</span>
+</li>
+<li class="flex items-center gap-3 reveal delay-200">
+<span class="material-symbols-outlined text-secondary">check_circle</span>
+<span class="font-body-md text-body-md">Specialized Post-Treatment Support</span>
+</li>
+<li class="flex items-center gap-3 reveal delay-300">
+<span class="material-symbols-outlined text-secondary">check_circle</span>
+<span class="font-body-md text-body-md">Eco-friendly Clinical Practices</span>
+</li>
+</ul>
+</div>
+<div class="md:col-span-7 grid grid-cols-2 gap-4">
+<div class="space-y-4 pt-12">
+<img class="w-full rounded-xl object-cover aspect-square reveal-right delay-100" data-alt="A detailed view of a modern dental treatment room at {{CLIENT_NAME}} Clinic in Addis Ababa. The space is immaculately clean with white walls and subtle emerald green accents. Advanced dental technology and a comfortable treatment chair are visible, illuminated by soft, professional lighting that creates a sterile yet calming atmosphere for patients." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAQqtHpcCB5_spxq_NBG4jETwkjrYHFVSKOqkc76HMYpl3c4y6nFVgPTtTCyhfgvKgiGeKQ0fmJ-lgjKzmj4E2tiodYJQzTMxCopY-b9G4qaCn3g6-chtfigwm_eN_BdwkK7X7eHFRXgDwdDpBugehg2L6iHxApLhuPHELtckKwUN2hifsSvrb-joiDmSSnMSpw4hiwGv40U_QQ4HQztJYNWZuBiIURcGhF7zhJKitNnRSb6U-E9opqrMlaNzfknz3AXxJ_N42bdJ9"/>
+<div class="bg-primary p-8 rounded-xl text-on-primary reveal-right delay-200">
+<div class="text-3xl font-bold mb-1">15+</div>
+<div class="font-label-md text-label-md opacity-90">Years Experience</div>
+</div>
+</div>
+<div class="space-y-4">
+<div class="bg-surface-container-high p-8 rounded-xl border border-outline-variant reveal-right delay-300">
+<div class="text-3xl font-bold text-primary mb-1">5000+</div>
+<div class="font-label-md text-label-md text-on-surface-variant">Happy Patients</div>
+</div>
+<img class="w-full rounded-xl object-cover aspect-square reveal-right delay-400" data-alt="A portrait of a smiling Ethiopian patient at {{CLIENT_NAME}} Specialty Clinic, looking happy and confident after a successful dental procedure. The setting is bright and clean with a high-end feel. The image should convey joy, health, and a premium patient experience within the Ethiopian context, using soft natural lighting and a minimalist aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYUGEdOqxBvaII9rEUGMnkd3a7N1n8RY1TpaDZeJYUCS0rVniZi9OyHsaT7BTi0Xy4rqf3mlCxzWCUEUpOT-kU38Lvg0WAfrscD8rB_0SdDu0bTH0Pj8h_x4sV7QZgC3_tNFBmY9ySZF25m4H95ncJk_pdUN1KSxaO6_D96dYuCiVuyHqP6WsWly1GRcN4u23HSankO3X-JeDfdb-BZYRWdSqg6vmvznB6BHd0iA1jV2VIviEaExRama0Z_lTT6xxOZQ0-6PmTE4ro"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Specialty Services - Bento Grid -->
+<section class="py-24 bg-surface-container-low section-reveal">
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-16 reveal">
+<h2 class="font-headline-md text-headline-md text-primary mb-4">Our Specialty Services</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">
+                    We provide comprehensive dental solutions tailored to your unique needs, using the latest clinical techniques and materials.
+                </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Orthodontics -->
+<div class="bg-surface p-8 rounded-xl border border-outline-variant hover:border-primary transition-all duration-300 group reveal delay-100">
+<div class="w-14 h-14 bg-primary-fixed rounded-xl flex items-center justify-center mb-6 text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">dentistry</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-3">Orthodontics</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                        Straighten your smile with modern braces or clear aligners. We treat adults and children with precision.
+                    </p>
+<a class="text-primary font-label-md text-label-md flex items-center gap-1 group-hover:gap-3 transition-all" href="#">
+                        Learn More <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<!-- Dental Implants -->
+<div class="bg-surface p-8 rounded-xl border border-outline-variant hover:border-primary transition-all duration-300 group reveal delay-200">
+<div class="w-14 h-14 bg-primary-fixed rounded-xl flex items-center justify-center mb-6 text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">medical_services</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-3">Dental Implants</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                        Restore missing teeth with permanent, natural-looking implants that function just like your real ones.
+                    </p>
+<a class="text-primary font-label-md text-label-md flex items-center gap-1 group-hover:gap-3 transition-all" href="#">
+                        Learn More <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<!-- General Care -->
+<div class="bg-surface p-8 rounded-xl border border-outline-variant hover:border-primary transition-all duration-300 group reveal delay-300">
+<div class="w-14 h-14 bg-primary-fixed rounded-xl flex items-center justify-center mb-6 text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">health_and_safety</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-3">General Care</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                        Preventative screenings, professional cleanings, and emergency dental care for the whole family.
+                    </p>
+<a class="text-primary font-label-md text-label-md flex items-center gap-1 group-hover:gap-3 transition-all" href="#">
+                        Learn More <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-20 relative overflow-hidden section-reveal">
+<div class="absolute inset-0 bg-primary"></div>
+<div class="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
+<div class="grid grid-cols-4 gap-4 rotate-12 scale-150">
+<div class="h-32 bg-white rounded-lg"></div>
+<div class="h-32 bg-white rounded-lg"></div>
+<div class="h-32 bg-white rounded-lg"></div>
+<div class="h-32 bg-white rounded-lg"></div>
+</div>
+</div>
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop relative z-10 text-center">
+<h2 class="font-headline-md text-headline-md text-on-primary mb-6 reveal">Ready for a Healthier Smile?</h2>
+<p class="font-body-lg text-body-lg text-on-primary/80 mb-10 max-w-2xl mx-auto reveal delay-100">
+                Experience the highest standard of dental care in Ethiopia. Our team is ready to help you achieve the smile you've always wanted.
+            </p>
+<div class="flex flex-wrap justify-center gap-4 reveal delay-200">
+<button class="bg-secondary-fixed text-on-secondary-fixed px-10 py-4 rounded-full font-label-md text-label-md hover:brightness-105 transition-all shadow-xl">
+                    Schedule an Appointment
+                </button>
+<button class="border border-white/30 text-white px-10 py-4 rounded-full font-label-md text-label-md hover:bg-white/10 transition-all">
+                    Call +251 11 000 0000
+                </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low py-12 px-margin-mobile md:px-margin-desktop border-t border-outline-variant section-reveal">
+<div class="max-w-max-width mx-auto grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="space-y-4 reveal">
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface">{{CLIENT_NAME}}</div>
+<p class="text-on-surface-variant text-sm pr-4">
+                Specialized dental clinic providing world-class care in the heart of Addis Ababa. Leading with innovation and empathy.
+            </p>
+</div>
+<div class="space-y-4 reveal delay-100">
+<h4 class="font-label-md text-label-md text-primary uppercase">Quick Links</h4>
+<ul class="space-y-2">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors text-sm" href="#">About Us</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors text-sm" href="#">Our Services</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors text-sm" href="#">Meet the Team</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors text-sm" href="#">Emergency Care</a></li>
+</ul>
+</div>
+<div class="space-y-4 reveal delay-200">
+<h4 class="font-label-md text-label-md text-primary uppercase">Support</h4>
+<ul class="space-y-2">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors text-sm" href="#">Privacy Policy</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors text-sm" href="#">Terms of Service</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors text-sm" href="#">FAQs</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors text-sm" href="#">Patient Portal</a></li>
+</ul>
+</div>
+<div class="space-y-4 reveal delay-300">
+<h4 class="font-label-md text-label-md text-primary uppercase">Location</h4>
+<p class="text-on-surface-variant text-sm">
+                Bole Sub City, Near Medhanialem Mall<br/>
+                Addis Ababa, Ethiopia
+            </p>
+<div class="flex gap-4">
+<a class="text-primary hover:text-secondary-container transition-colors" href="#"><span class="material-symbols-outlined">face_nod</span></a>
+<a class="text-primary hover:text-secondary-container transition-colors" href="#"><span class="material-symbols-outlined">photo_camera</span></a>
+<a class="text-primary hover:text-secondary-container transition-colors" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+</div>
+</div>
+</div>
+<div class="max-w-max-width mx-auto mt-12 pt-8 border-t border-outline-variant text-center md:text-left reveal">
+<p class="text-on-surface-variant text-sm">© 2024 {{CLIENT_NAME}} Specialty Clinic. All rights reserved. Addis Ababa, Ethiopia.</p>
+</div>
+</footer>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Respect prefers-reduced-motion
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        if (!prefersReducedMotion) {
+            const observerOptions = {
+                threshold: 0.15,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        // Optionally unobserve after revealing
+                        // revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Targets for reveal animations
+            const animatedElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+            animatedElements.forEach(el => revealObserver.observe(el));
+
+            // Initial load for hero content (in case they are already in view)
+            setTimeout(() => {
+                document.querySelectorAll('.relative.overflow-hidden.bg-surface-container-low .reveal, .relative.overflow-hidden.bg-surface-container-low .reveal-right').forEach(el => {
+                    el.classList.add('active');
+                });
+            }, 100);
+        } else {
+            // If reduced motion is preferred, just show everything immediately
+            document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
+                el.classList.add('active');
+            });
+        }
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                e.preventDefault();
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    });
+</script>
+</body></html>

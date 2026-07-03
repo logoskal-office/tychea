@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Our Team | {{CLIENT_NAME}} Specialty Clinic</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error": "#ffffff",
+                    "inverse-on-surface": "#ebf1ff",
+                    "tertiary-fixed": "#d5e6df",
+                    "surface-bright": "#f9f9ff",
+                    "on-tertiary-fixed": "#101e1a",
+                    "outline": "#6f7973",
+                    "surface": "#f9f9ff",
+                    "on-surface-variant": "#3f4944",
+                    "surface-container-highest": "#dce2f3",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#3b4a44",
+                    "primary-fixed-dim": "#8bd6b6",
+                    "surface-container": "#e7eefe",
+                    "on-background": "#151c27",
+                    "error": "#ba1a1a",
+                    "inverse-primary": "#8bd6b6",
+                    "surface-variant": "#dce2f3",
+                    "tertiary-fixed-dim": "#bacac3",
+                    "inverse-surface": "#2a313d",
+                    "secondary-container": "#64f9bc",
+                    "on-primary-container": "#8bd6b7",
+                    "primary": "#004532",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed": "#002116",
+                    "background": "#f9f9ff",
+                    "outline-variant": "#bec9c2",
+                    "on-secondary-container": "#00714e",
+                    "surface-container-high": "#e2e8f8",
+                    "surface-dim": "#d3daea",
+                    "on-surface": "#151c27",
+                    "tertiary": "#303f3a",
+                    "on-secondary": "#ffffff",
+                    "surface-tint": "#1b6b51",
+                    "primary-fixed": "#a6f2d1",
+                    "secondary-fixed": "#68fcbf",
+                    "primary-container": "#065f46",
+                    "surface-container-low": "#f0f3ff",
+                    "on-secondary-fixed-variant": "#005137",
+                    "secondary-fixed-dim": "#45dfa4",
+                    "secondary": "#006c4b",
+                    "on-tertiary-container": "#bacbc3",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed": "#002114",
+                    "on-primary-fixed-variant": "#00513b",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-container": "#475650"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "base": "4px",
+                    "gutter": "24px",
+                    "margin-desktop": "80px",
+                    "margin-mobile": "16px",
+                    "max-width": "1280px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Montserrat", "sans-serif"],
+                    "headline-md": ["Montserrat", "sans-serif"],
+                    "headline-sm": ["Montserrat", "sans-serif"],
+                    "body-lg": ["Inter", "sans-serif"],
+                    "body-md": ["Inter", "sans-serif"],
+                    "label-md": ["Inter", "sans-serif"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                    "headline-md": ["30px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                    "headline-sm": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                    "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                    "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                    "label-md": ["14px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .doctor-card:hover .doctor-image {
+            transform: scale(1.05);
+        }
+        .hero-pattern {
+            background-color: #f9f9ff;
+            background-image: radial-gradient(#004532 0.5px, transparent 0.5px), radial-gradient(#004532 0.5px, #f9f9ff 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0,10px 10px;
+            opacity: 0.05;
+        }
+
+        /* Animation States */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(40px);
+            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Entrance Effects */
+        .fade-in-up {
+            animation: fadeInUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal, .reveal-left, .reveal-right, .fade-in-up {
+                animation: none !important;
+                transition: none !important;
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md selection:bg-secondary-fixed selection:text-on-secondary-fixed overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="bg-surface sticky top-0 z-50 border-b border-outline-variant">
+<nav class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto h-20">
+<div class="font-headline-sm text-headline-sm font-bold text-primary">{{CLIENT_NAME}}</div>
+<!-- Desktop Links -->
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="../">Home</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="../services">Services</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">About</a>
+<a class="font-body-md text-primary border-b-2 border-primary pb-1" href="#">Team</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="../contact">Contact</a>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-label-md uppercase tracking-wider hover:bg-primary-container transition-all">Book Appointment</button>
+</div>
+<!-- Mobile Menu Trigger -->
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative py-24 overflow-hidden bg-surface-container-low">
+<div class="absolute inset-0 hero-pattern"></div>
+<div class="relative z-10 max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop text-center">
+<span class="inline-block px-4 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-md mb-6 fade-in-up" style="animation-delay: 0.1s">Expert Healthcare</span>
+<h1 class="font-display-lg text-display-lg text-primary mb-6 fade-in-up" style="animation-delay: 0.2s">Meet Our Specialists</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto fade-in-up" style="animation-delay: 0.3s">
+            A team of dedicated professionals committed to providing the highest quality dental care in Addis Ababa. Our experts combine international standards with local compassion.
+        </p>
+</div>
+</section>
+<!-- Bento Grid Profiles -->
+<section class="py-24 max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Lead Doctor (Large Card) - Entrance Animation on Load -->
+<div class="md:col-span-8 group doctor-card bg-surface border border-outline-variant rounded-xl overflow-hidden flex flex-col md:flex-row transition-all duration-300 hover:border-primary/30 fade-in-up" style="animation-delay: 0.4s">
+<div class="md:w-1/2 overflow-hidden h-[400px] md:h-auto">
+<img class="doctor-image w-full h-full object-cover transition-transform duration-500" data-alt="A professional headshot of a senior male Ethiopian dentist in his late 40s, wearing clean white clinical scrubs. He has a warm, confident smile and stands in a bright, modern dental clinic corridor with soft-focus medical equipment in the background. The lighting is high-key and professional, using a primary emerald green and clean white color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYQkbkb1bJy3_wauylhehkw8ewnQJJBdYCX5fR7oniHGG8miGjoq_zfejyjoXxSXSgg4wFoyxzm5VWqPQPwCDbbzlEhVQAeFj7aQI_74RhLcsK-PNlKClozL-ZhHWUuoTQYhC0r4uMoj5FCHixPOxwAg5rAenbi01ukXwmCivWOwjT1_JIeAZN7MnJyHTohKdGJO-HcETnGgN8DOmuw_yjGmtuAIrRQ83VBHCBaO81gDn13NWiY7ALvmoZC8Dtwwgc7w-UWwOklvll"/>
+</div>
+<div class="md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="text-primary font-label-md uppercase tracking-widest">Medical Director</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-2">Dr. Dawit Mekonnen</h2>
+<h3 class="text-secondary font-semibold mb-6">Senior Implantologist &amp; Oral Surgeon</h3>
+<p class="text-on-surface-variant font-body-md mb-8">
+                    With over 15 years of experience across Europe and Ethiopia, Dr. Dawit leads our clinical excellence program. He specializes in complex oral reconstructions and restorative dentistry, ensuring every patient regains their perfect smile.
+                </p>
+<div class="flex gap-4">
+<a class="p-2 rounded-lg border border-outline-variant text-on-surface-variant hover:text-primary hover:border-primary transition-all" href="#">
+<span class="material-symbols-outlined">description</span>
+</a>
+<a class="p-2 rounded-lg border border-outline-variant text-on-surface-variant hover:text-primary hover:border-primary transition-all" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Secondary Doctor (Vertical Card) - Scroll Reveal -->
+<div class="md:col-span-4 group doctor-card bg-surface border border-outline-variant rounded-xl overflow-hidden flex flex-col transition-all duration-300 hover:border-primary/30 reveal">
+<div class="h-64 overflow-hidden">
+<img class="doctor-image w-full h-full object-cover transition-transform duration-500" data-alt="A professional portrait of a young female Ethiopian dental specialist in a modern medical setting. She is wearing a teal-colored dental uniform and has a friendly, welcoming expression. The background is a minimalist, clean dental office with sage green accents. Professional studio lighting emphasizes a trust-building, clinical yet approachable aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1XZddHHlrR1g9cmrWjzhSbc1sf40kesp7tW6_HvS0VOj27plMjjvVhcs2UbxA8nNMsPnoPRS8sRnowuPMnodVmhf7R8_Fv9p5VF3LEQRfngUqGjM4cm5EFS-h8rC2dRoHGtuNcoFJ7pGwnyhtsZDtzCZV2mg4aDs7C3wK5O8CXpzqSigrc7sU6fCWK_tkKJLE94C3NCeDbNoxWnQb7oJoyVqK2dY5cUni9NRXuJGkNZYfsbIESyfTYC5Argt14UFnv2-bl7vjo6Kx"/>
+</div>
+<div class="p-8 flex flex-col h-full">
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-1">Dr. Selamawit Tadesse</h2>
+<h3 class="text-secondary font-medium mb-4">Orthodontics Specialist</h3>
+<p class="text-on-surface-variant font-body-md text-sm mb-6 flex-grow">
+                    Expert in modern alignment techniques, including invisible braces. Dr. Selamawit is dedicated to creating beautiful, healthy smiles for patients of all ages.
+                </p>
+<div class="pt-6 border-t border-outline-variant flex justify-between items-center">
+<span class="text-label-md font-semibold text-primary">MSc. Orthodontics</span>
+<span class="material-symbols-outlined text-outline">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Grid Item 3 - Scroll Reveal -->
+<div class="md:col-span-4 group doctor-card bg-surface border border-outline-variant rounded-xl overflow-hidden flex flex-col transition-all duration-300 hover:border-primary/30 reveal">
+<div class="h-64 overflow-hidden">
+<img class="doctor-image w-full h-full object-cover transition-transform duration-500" data-alt="A professional headshot of a male Ethiopian pediatric dentist in his 30s. He wears a light green clinical coat and a warm, patient-friendly smile. The background is a brightly lit, cheerful pediatric dental office with soft clinical details. High-quality photography with soft shadows and a professional medical color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-ucF043woblFz3i44gke-VNDUoWZjU38nuUu_VoqyNFfJHkiIouMujyqcw9L50jzlZTU0-Rl_91xYw_sKehBd8zYEsLkTgVZ5qpH7JtjYu2jBzXfp5fHCRQ_RJz5gdeBygN4V0bRAneqqy-gwBMOcSE5vtLOJS6G-Nx-RfjgC3Z1hdgSX6Cy7t8jcRakFZTgnyjQNdvuXY8oYmZ7DJlI6FOWcLSQX87N3HDNkrrDOX3IRjCoTKeFwY45xo_WfXved7erBIWlkOjf-"/>
+</div>
+<div class="p-8 flex flex-col h-full">
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-1">Dr. Yonas Bekele</h2>
+<h3 class="text-secondary font-medium mb-4">Pediatric Dentist</h3>
+<p class="text-on-surface-variant font-body-md text-sm mb-6 flex-grow">
+                    Known for his gentle touch and patient-first approach, Dr. Yonas makes every child's visit to the dentist a positive, educational, and fun experience.
+                </p>
+<div class="pt-6 border-t border-outline-variant flex justify-between items-center">
+<span class="text-label-md font-semibold text-primary">Child Care Expert</span>
+<span class="material-symbols-outlined text-outline">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Grid Item 4 - Scroll Reveal -->
+<div class="md:col-span-4 group doctor-card bg-surface border border-outline-variant rounded-xl overflow-hidden flex flex-col transition-all duration-300 hover:border-primary/30 reveal">
+<div class="h-64 overflow-hidden">
+<img class="doctor-image w-full h-full object-cover transition-transform duration-500" data-alt="A professional studio portrait of a female Ethiopian endodontist wearing a white clinical jacket and a stethoscope. She has a confident and reliable expression. The background is a sleek, modern dental laboratory with emerald and white tones. Soft, diffused lighting creates a premium, high-end healthcare aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhAzonhKZuUYO0EUqrVmJuUE1gUs2ddCfT1hizPTYiQWt5H-uUr2_-6cINFOOl8blb64q8CZVwalZ8ZMEwFP8JAnfUqJhaT_29O1VkFSTlcCgH6YajyNDg7Mb1xGMsd47chjyhPV4JNU_JaNMGJugCdCxN45yvMuu39iJ4hGBcr_q4O2_CX4GWXee0hT4igKlKNHcx5opLQ8UjReHv0Tdm55DLbPMhuRqdf_voHx0xTq6auLRSjAEZMYKosvOaDksJeVABGVYh9JbK"/>
+</div>
+<div class="p-8 flex flex-col h-full">
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-1">Dr. Hana Gebre</h2>
+<h3 class="text-secondary font-medium mb-4">Endodontist</h3>
+<p class="text-on-surface-variant font-body-md text-sm mb-6 flex-grow">
+                    Specializing in root canal therapy and microsurgery, Dr. Hana uses advanced technology to save teeth and relieve pain with precision and care.
+                </p>
+<div class="pt-6 border-t border-outline-variant flex justify-between items-center">
+<span class="text-label-md font-semibold text-primary">Micro-Surgery Pro</span>
+<span class="material-symbols-outlined text-outline">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Grid Item 5 - Scroll Reveal -->
+<div class="md:col-span-4 group bg-primary rounded-xl p-8 flex flex-col justify-between text-on-primary reveal">
+<div>
+<h2 class="font-headline-sm text-headline-sm mb-4">Join Our Growing Expert Team</h2>
+<p class="opacity-80 mb-6">We are always looking for passionate dental specialists to join Addis Ababa's most modern clinic.</p>
+</div>
+<button class="w-full bg-on-primary text-primary py-3 rounded-lg font-label-md hover:bg-secondary-fixed transition-colors">VIEW CAREERS</button>
+</div>
+</div>
+</section>
+<!-- Stats Section - Scroll Reveal -->
+<section class="bg-surface-container py-16 mb-24 reveal">
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-2 md:grid-cols-4 gap-gutter text-center">
+<div class="stats-item">
+<div class="font-display-lg text-primary mb-2">25+</div>
+<div class="font-label-md text-on-surface-variant uppercase tracking-widest">Specialists</div>
+</div>
+<div class="stats-item">
+<div class="font-display-lg text-primary mb-2">12k</div>
+<div class="font-label-md text-on-surface-variant uppercase tracking-widest">Happy Patients</div>
+</div>
+<div class="stats-item">
+<div class="font-display-lg text-primary mb-2">15</div>
+<div class="font-label-md text-on-surface-variant uppercase tracking-widest">Award Won</div>
+</div>
+<div class="stats-item">
+<div class="font-display-lg text-primary mb-2">10</div>
+<div class="font-label-md text-on-surface-variant uppercase tracking-widest">Modern Labs</div>
+</div>
+</div>
+</section>
+<!-- Contact/CTA Section - Scroll Reveal Side Entrance -->
+<section class="mb-24 max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop reveal">
+<div class="bg-surface border border-outline-variant rounded-xl p-12 flex flex-col md:flex-row items-center justify-between gap-8">
+<div class="max-w-xl">
+<h2 class="font-headline-md text-headline-md text-primary mb-4">Want to consult with a specialist?</h2>
+<p class="text-on-surface-variant">Our team is ready to help you achieve your dental goals. Book a consultation today with any of our experts.</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-full font-label-md uppercase tracking-wider hover:bg-primary-container transition-all">Book Now</button>
+<button class="border border-primary text-primary px-8 py-4 rounded-full font-label-md uppercase tracking-wider hover:bg-surface-container transition-all">View All Services</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low border-t border-outline-variant">
+<div class="w-full py-12 px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="col-span-1 md:col-span-1">
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface mb-4">{{CLIENT_NAME}}</div>
+<p class="text-on-surface-variant text-sm mb-6">
+                Providing world-class dental care with heart, right in the center of Addis Ababa.
+            </p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer">face_nod</span>
+<span class="material-symbols-outlined text-primary cursor-pointer">share</span>
+<span class="material-symbols-outlined text-primary cursor-pointer">mail</span>
+</div>
+</div>
+<div>
+<h4 class="font-label-md text-on-surface mb-4">Quick Links</h4>
+<ul class="space-y-2">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Emergency Care</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">FAQs</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-on-surface mb-4">Our Services</h4>
+<ul class="space-y-2">
+<li class="text-on-surface-variant">General Dentistry</li>
+<li class="text-on-surface-variant">Orthodontics</li>
+<li class="text-on-surface-variant">Oral Surgery</li>
+<li class="text-on-surface-variant">Cosmetic Dentistry</li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-on-surface mb-4">Location</h4>
+<p class="text-on-surface-variant text-sm mb-4">
+                Bole Atlas Area, Next to Sapphire Hotel<br/>
+                Addis Ababa, Ethiopia
+            </p>
+<div class="h-32 rounded-lg bg-surface-container overflow-hidden">
+<div class="w-full h-full flex items-center justify-center text-outline opacity-50" data-location="Addis Ababa">
+<span class="material-symbols-outlined text-4xl">location_on</span>
+</div>
+</div>
+</div>
+</div>
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop py-6 border-t border-outline-variant text-center md:text-left">
+<p class="text-on-surface-variant text-sm">© 2024 {{CLIENT_NAME}} Specialty Clinic. All rights reserved. Addis Ababa, Ethiopia.</p>
+</div>
+</footer>
+<script>
+    // Accessibility check: Prefers-reduced-motion
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Scroll Reveal implementation using IntersectionObserver
+    const setupScrollReveal = () => {
+        if (prefersReducedMotion) return;
+
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    // Sequential delay for elements revealed in the same frame
+                    const delay = index * 100;
+                    setTimeout(() => {
+                        entry.target.classList.add('active');
+                    }, delay);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Targeted reveal elements
+        document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
+            revealObserver.observe(el);
+        });
+    };
+
+    // Card shadow interactions (preserved and improved)
+    document.querySelectorAll('.doctor-card').forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.classList.add('shadow-xl', '-translate-y-1');
+        });
+        card.addEventListener('mouseleave', () => {
+            card.classList.remove('shadow-xl', '-translate-y-1');
+        });
+    });
+
+    // Initialize on load
+    window.addEventListener('DOMContentLoaded', setupScrollReveal);
+</script>
+</body></html>

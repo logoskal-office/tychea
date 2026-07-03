@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Job Listings | {{CLIENT_NAME}}</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Work+Sans:wght@400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100..900&family=Work+Sans:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#ffffff",
+                        "surface-variant": "#e4e2dd",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#30312e",
+                        "on-secondary-fixed-variant": "#673d00",
+                        "surface": "#fbf9f4",
+                        "secondary": "#865309",
+                        "surface-dim": "#dbdad5",
+                        "on-error": "#ffffff",
+                        "inverse-primary": "#adc7f8",
+                        "primary-fixed-dim": "#adc7f8",
+                        "surface-container": "#f0eee9",
+                        "surface-tint": "#455f8a",
+                        "on-primary-fixed": "#001b3d",
+                        "tertiary": "#001d09",
+                        "tertiary-fixed": "#bdefc3",
+                        "on-primary-fixed-variant": "#2c4770",
+                        "secondary-fixed-dim": "#fdb96a",
+                        "background": "#fbf9f4",
+                        "on-background": "#1b1c19",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#234f30",
+                        "surface-container-high": "#eae8e3",
+                        "secondary-fixed": "#ffddba",
+                        "surface-container-low": "#f5f3ee",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed": "#2b1700",
+                        "on-primary-container": "#7a94c2",
+                        "on-tertiary-fixed": "#00210b",
+                        "on-surface-variant": "#43474e",
+                        "outline-variant": "#c4c6d0",
+                        "on-tertiary-container": "#709e78",
+                        "primary-container": "#0d2c54",
+                        "primary": "#001736",
+                        "outline": "#74777f",
+                        "surface-container-highest": "#e4e2dd",
+                        "tertiary-container": "#043417",
+                        "on-secondary-container": "#774800",
+                        "on-surface": "#1b1c19",
+                        "tertiary-fixed-dim": "#a2d2a8",
+                        "inverse-on-surface": "#f2f1ec",
+                        "primary-fixed": "#d6e3ff",
+                        "surface-bright": "#fbf9f4",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#fdb96a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "container-max": "1280px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "caption": ["Work Sans"],
+                        "headline-xl": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "body-md": ["Work Sans"],
+                        "label-md": ["Work Sans"],
+                        "body-lg": ["Work Sans"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .stable-shadow {
+            box-shadow: 0 4px 8px -2px rgba(0, 23, 54, 0.1);
+        }
+        .stable-shadow-hover:hover {
+            box-shadow: 0 8px 16px -4px rgba(0, 23, 54, 0.15);
+        }
+        input:focus, select:focus {
+            outline: none;
+            border-color: #001736 !important;
+            border-width: 2px !important;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="w-full top-0 sticky z-50 bg-surface dark:bg-surface-dim border-b border-surface-variant dark:border-outline-variant transition-all duration-300">
+<div class="max-w-container-max mx-auto px-margin-desktop flex justify-between items-center h-20">
+<div class="flex items-center gap-base">
+<span class="text-headline-md font-headline-md font-bold text-primary dark:text-primary-fixed">{{CLIENT_NAME}}</span>
+</div>
+<nav class="hidden md:flex items-center gap-gutter">
+<a class="text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-colors duration-200 cursor-pointer active:scale-95 font-body-md text-body-md" href="../">Home</a>
+<a class="text-primary dark:text-primary-fixed font-bold border-b-2 border-secondary hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-colors duration-200 cursor-pointer active:scale-95 font-body-md text-body-md" href="#">Job Listings</a>
+<a class="text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-colors duration-200 cursor-pointer active:scale-95 font-body-md text-body-md" href="../workers">Workers</a>
+<a class="text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-colors duration-200 cursor-pointer active:scale-95 font-body-md text-body-md" href="../about/">About Us</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="hidden lg:block font-label-md text-label-md text-primary px-4 py-2 hover:bg-surface-container-low transition-colors">Job Seeker Login</button>
+<button class="bg-primary text-on-primary px-6 py-3 rounded-[4px] font-label-md text-label-md hover:bg-secondary transition-colors duration-200 cursor-pointer active:scale-95">Post a Job</button>
+</div>
+</div>
+</header>
+<main class="flex-grow max-w-container-max mx-auto px-margin-desktop py-12 w-full">
+<!-- Hero Section -->
+<div class="mb-12">
+<h1 class="font-headline-xl text-headline-xl text-primary mb-4">Available Job Openings</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Connect with reputable employers across the Gulf region. We facilitate ethical recruitment for domestic staff, specialized care providers, and hospitality professionals.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-4 gap-gutter">
+<!-- Filters Sidebar -->
+<aside class="lg:col-span-1 space-y-gutter">
+<div class="bg-surface-container-lowest border border-surface-variant p-6 rounded-lg sticky top-32">
+<h2 class="font-headline-md text-headline-md text-primary mb-6">Filter Results</h2>
+<div class="space-y-6">
+<!-- Search -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2">Keyword</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-xl">search</span>
+<input class="w-full pl-10 pr-4 py-3 bg-white border border-outline-variant rounded-[4px] font-body-md focus:ring-0" placeholder="Search roles..." type="text"/>
+</div>
+</div>
+<!-- Location -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2">Country</label>
+<select class="w-full px-4 py-3 bg-white border border-outline-variant rounded-[4px] font-body-md focus:ring-0 appearance-none">
+<option>All Countries</option>
+<option>United Arab Emirates</option>
+<option>Saudi Arabia</option>
+<option>Qatar</option>
+<option>Kuwait</option>
+</select>
+</div>
+<!-- Job Type -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2">Job Category</label>
+<div class="space-y-3">
+<label class="flex items-center gap-3 cursor-pointer">
+<input class="w-5 h-5 rounded-[2px] border-outline text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-body-md">Domestic Helper</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer">
+<input class="w-5 h-5 rounded-[2px] border-outline text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-body-md">Nanny / Childcare</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer">
+<input checked="" class="w-5 h-5 rounded-[2px] border-outline text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-body-md">Caretaker / Elderly Care</span>
+</label>
+</div>
+</div>
+<button class="w-full bg-surface-container-high text-primary font-label-md py-3 rounded-[4px] hover:bg-surface-variant transition-colors">Clear All Filters</button>
+</div>
+</div>
+</aside>
+<!-- Job List -->
+<section class="lg:col-span-3 space-y-6">
+<!-- Sorting Header -->
+<div class="flex flex-col sm:flex-row justify-between items-center bg-surface-container-low p-4 rounded-lg border border-surface-variant mb-4">
+<p class="font-body-md text-on-surface-variant mb-2 sm:mb-0">Showing <span class="font-bold text-primary">124</span> open positions</p>
+<div class="flex items-center gap-4">
+<span class="font-label-md text-label-md text-outline">Sort by:</span>
+<select class="bg-transparent border-none font-label-md text-label-md text-primary p-0 focus:ring-0 cursor-pointer">
+<option>Newest First</option>
+<option>Salary: High to Low</option>
+<option>Urgent Only</option>
+</select>
+</div>
+</div>
+<!-- Job Card 1 -->
+<div class="bg-surface-container-lowest border border-surface-variant p-6 rounded-lg stable-shadow stable-shadow-hover transition-all duration-300">
+<div class="flex flex-col md:flex-row gap-6">
+<div class="w-full md:w-48 h-32 flex-shrink-0 bg-surface-container rounded-lg overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="Professional landscape of modern Dubai skyline at sunset with golden warm lighting, emphasizing a sense of opportunity and growth in the Gulf region. High-end architectural photography with deep navy shadows and warm gold highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXsoqmT_ymtjGFiLNt98LjrP-fTgIoQGPSAL2-aRgSFIl-bw6prU9FT1cnT9acu7WMIpLv4br7C0HEGLEHqcRtD_KV3wsQFTjGvF6eS8eAXwSKFK5uPZcvyQ2RcxFkA1f4z52lOoWpX0_fK6WoCyFmRO6pjXQosmio8AXXZY9hC8k-i9N66dTJk-RHK2SgezTHbfKJvUqIDIGGtj7B-f6zUGmmYdGHgrkAFxYlQNmOCMLJlojDEJfDtTUouDy3INvuMs7LLxH43w"/>
+<div class="absolute top-2 left-2 bg-secondary text-on-secondary px-2 py-1 text-[10px] font-bold uppercase tracking-wider rounded">Urgent</div>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-primary">Senior Childcare Nanny</h3>
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-md text-label-md">AED 3,500 - 5,000 /mo</span>
+</div>
+<div class="flex flex-wrap gap-4 mb-4">
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-xl">location_on</span>
+<span class="font-body-md">Dubai, UAE</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-xl">work</span>
+<span class="font-body-md">Full-time, Live-in</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-xl">history</span>
+<span class="font-body-md">Posted 2 days ago</span>
+</div>
+</div>
+<div class="mb-6">
+<p class="text-on-surface-variant line-clamp-2">Experienced nanny required for a family of four. Must have at least 3 years of international experience with toddlers and basic first aid certification.</p>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-outline-variant">
+<div class="flex gap-2">
+<span class="bg-tertiary-fixed text-on-tertiary-fixed-variant px-3 py-1 rounded-[4px] font-label-md text-label-md">Fluent English</span>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed-variant px-3 py-1 rounded-[4px] font-label-md text-label-md">First Aid Cert</span>
+</div>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-[4px] font-label-md text-label-md hover:bg-secondary transition-colors duration-200">Apply Now</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Job Card 2 -->
+<div class="bg-surface-container-lowest border border-surface-variant p-6 rounded-lg stable-shadow stable-shadow-hover transition-all duration-300">
+<div class="flex flex-col md:flex-row gap-6">
+<div class="w-full md:w-48 h-32 flex-shrink-0 bg-surface-container rounded-lg overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="Elegant interior of a luxury Riyadh villa with soft parchment-colored walls and refined furniture. The lighting is soft and natural, pouring in from large windows, creating a peaceful and supportive home environment. Corporate modern aesthetic with tactile details." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCetIWf7O2z5rh65NqNM103XOd7GIfuUki0l5Fcn2zD9BvBgGts1B0LyIkW6GZnP0V4MeSM0McUF40TINIIBINo5_vchlsKdswAbcxvVeGr6SzFZNhA5OgBf5Jg625N8TtfvEOJcLP8MchIyE_Xt8ggo4VJkctNyJpzC6yBl7F8aXFs7NbPfT9G7exHEYwkfSaDSd7cDwahP-UNojruAKeNSAoQfIrQEXA1cf31DrHEOjErQv-oj8uLAYdCO0d5dykgi3NKNH-AAA"/>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-primary">Certified Elderly Caretaker</h3>
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-md text-label-md">SAR 3,000 - 4,200 /mo</span>
+</div>
+<div class="flex flex-wrap gap-4 mb-4">
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-xl">location_on</span>
+<span class="font-body-md">Riyadh, KSA</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-xl">work</span>
+<span class="font-body-md">Permanent Placement</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-xl">history</span>
+<span class="font-body-md">Posted 5 days ago</span>
+</div>
+</div>
+<div class="mb-6">
+<p class="text-on-surface-variant line-clamp-2">Seeking a compassionate and patient caretaker for an elderly couple. Experience with mobility assistance and medication management is essential.</p>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-outline-variant">
+<div class="flex gap-2">
+<span class="bg-tertiary-fixed text-on-tertiary-fixed-variant px-3 py-1 rounded-[4px] font-label-md text-label-md">Healthcare Background</span>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed-variant px-3 py-1 rounded-[4px] font-label-md text-label-md">2+ Yrs Exp</span>
+</div>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-[4px] font-label-md text-label-md hover:bg-secondary transition-colors duration-200">Apply Now</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Job Card 3 -->
+<div class="bg-surface-container-lowest border border-surface-variant p-6 rounded-lg stable-shadow stable-shadow-hover transition-all duration-300">
+<div class="flex flex-col md:flex-row gap-6">
+<div class="w-full md:w-48 h-32 flex-shrink-0 bg-surface-container rounded-lg overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="A clean, organized kitchen in a modern Doha apartment, featuring marble countertops and professional-grade appliances. The image is bright and airy with a high-trust, grounded aesthetic. Deep-blue tinted shadows provide depth and structure to the scene." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYbB3zQLieKRp6noW_Qpwzp0YWf0gbBth9OAK351nHFn6UCVABpGpcXY2xQrAd6rf6byvvwsSEAoEgBQM7ONxgGnfpqv64m8v2CnuB3liWVLolwk-wl-qO7BAY7HmPk9z10pv9yYwDUQhIScwqh_HKKV8zvqlV6Z4ITNPrfxOhHl12CUjJEhubKu9xdY8i6Cswmf5t2aV-MmIGFiPUNlslSSOGGdN7_zQdT_HQDON-76ChVMFsbdLJEAAV8YucAIcC4mpiJ0thsQ"/>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-primary">Lead Domestic Household Manager</h3>
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-md text-label-md">QAR 4,000 - 5,500 /mo</span>
+</div>
+<div class="flex flex-wrap gap-4 mb-4">
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-xl">location_on</span>
+<span class="font-body-md">Doha, Qatar</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-xl">work</span>
+<span class="font-body-md">Contract</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-xl">history</span>
+<span class="font-body-md">Posted 1 week ago</span>
+</div>
+</div>
+<div class="mb-6">
+<p class="text-on-surface-variant line-clamp-2">Manage all household operations including cooking, cleaning schedules, and grocery procurement. High attention to detail and previous management experience required.</p>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-outline-variant">
+<div class="flex gap-2">
+<span class="bg-tertiary-fixed text-on-tertiary-fixed-variant px-3 py-1 rounded-[4px] font-label-md text-label-md">Cooking Skills</span>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed-variant px-3 py-1 rounded-[4px] font-label-md text-label-md">Management</span>
+</div>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-[4px] font-label-md text-label-md hover:bg-secondary transition-colors duration-200">Apply Now</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="flex justify-center items-center gap-2 pt-8">
+<button class="w-10 h-10 flex items-center justify-center rounded border border-outline-variant text-primary hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded bg-primary text-on-primary font-bold">1</button>
+<button class="w-10 h-10 flex items-center justify-center rounded border border-outline-variant text-primary hover:bg-surface-container transition-colors">2</button>
+<button class="w-10 h-10 flex items-center justify-center rounded border border-outline-variant text-primary hover:bg-surface-container transition-colors">3</button>
+<span class="px-2 text-outline">...</span>
+<button class="w-10 h-10 flex items-center justify-center rounded border border-outline-variant text-primary hover:bg-surface-container transition-colors">12</button>
+<button class="w-10 h-10 flex items-center justify-center rounded border border-outline-variant text-primary hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-auto bg-primary dark:bg-primary-container text-on-primary dark:text-on-primary-container">
+<div class="max-w-container-max mx-auto px-margin-desktop py-16 flex flex-col md:flex-row justify-between items-start gap-gutter">
+<div class="max-w-sm">
+<span class="text-headline-md font-headline-md text-on-primary dark:text-on-primary-container mb-4 block">{{CLIENT_NAME}}</span>
+<p class="font-body-md text-body-md opacity-80 mb-6">Ethiopia's premier ethical recruitment agency, connecting talent with secure opportunities in the Gulf region since 2012.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full border border-on-primary/20 flex items-center justify-center hover:bg-on-primary/10 transition-colors" href="#">
+<span class="material-symbols-outlined">public</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-on-primary/20 flex items-center justify-center hover:bg-on-primary/10 transition-colors" href="#">
+<span class="material-symbols-outlined">mail</span>
+</a>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-x-16 gap-y-8">
+<div class="space-y-4">
+<h4 class="font-label-md text-label-md text-secondary-fixed">Quick Links</h4>
+<ul class="space-y-2">
+<li><a class="font-body-md text-body-md opacity-80 hover:opacity-100 hover:text-secondary-fixed transition-all" href="#">Job Listings</a></li>
+<li><a class="font-body-md text-body-md opacity-80 hover:opacity-100 hover:text-secondary-fixed transition-all" href="#">Success Stories</a></li>
+<li><a class="font-body-md text-body-md opacity-80 hover:opacity-100 hover:text-secondary-fixed transition-all" href="#">Ethical Charter</a></li>
+<li><a class="font-body-md text-body-md opacity-80 hover:opacity-100 hover:text-secondary-fixed transition-all" href="#">Contact Us</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-md text-label-md text-secondary-fixed">Resources</h4>
+<ul class="space-y-2">
+<li><a class="font-body-md text-body-md opacity-80 hover:opacity-100 hover:text-secondary-fixed transition-all" href="#">Privacy Policy</a></li>
+<li><a class="font-body-md text-body-md opacity-80 hover:opacity-100 hover:text-secondary-fixed transition-all" href="#">Terms of Service</a></li>
+<li><a class="font-body-md text-body-md opacity-80 hover:opacity-100 hover:text-secondary-fixed transition-all" href="#">Applicant Guide</a></li>
+<li><a class="font-body-md text-body-md opacity-80 hover:opacity-100 hover:text-secondary-fixed transition-all" href="#">Employer Portal</a></li>
+</ul>
+</div>
+</div>
+<div class="w-full md:w-auto border-t md:border-t-0 border-on-primary/10 pt-8 md:pt-0 mt-8 md:mt-0">
+<p class="font-label-md text-label-md mb-2">© 2024 {{CLIENT_NAME}}. Committed to Ethical Recruitment.</p>
+<p class="font-caption text-caption opacity-60">Licensed by the Ministry of Labor and Skills, Ethiopia.</p>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction for job cards
+        document.querySelectorAll('.stable-shadow-hover').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-2px)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Sticky header transition
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('py-2', 'bg-surface/95', 'backdrop-blur-sm');
+                header.querySelector('.max-w-container-max').classList.remove('h-20');
+                header.querySelector('.max-w-container-max').classList.add('h-16');
+            } else {
+                header.classList.remove('py-2', 'bg-surface/95', 'backdrop-blur-sm');
+                header.querySelector('.max-w-container-max').classList.add('h-20');
+                header.querySelector('.max-w-container-max').classList.remove('h-16');
+            }
+        });
+    </script>
+</body></html>

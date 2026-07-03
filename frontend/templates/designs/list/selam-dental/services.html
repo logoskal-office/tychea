@@ -1,0 +1,380 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Comprehensive Dental Services | {{CLIENT_NAME}} Clinic</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind Config Execution -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface": "#191c1d",
+                    "error-container": "#ffdad6",
+                    "surface-container-highest": "#e1e3e4",
+                    "primary-fixed": "#cde5ff",
+                    "surface-container-low": "#f3f4f5",
+                    "on-surface-variant": "#404850",
+                    "error": "#ba1a1a",
+                    "secondary-container": "#9cecfb",
+                    "inverse-on-surface": "#f0f1f2",
+                    "primary-fixed-dim": "#94ccff",
+                    "on-primary-container": "#f3f7ff",
+                    "on-tertiary-fixed-variant": "#284c53",
+                    "on-secondary-fixed-variant": "#004f59",
+                    "outline-variant": "#bfc7d1",
+                    "on-secondary-fixed": "#001f24",
+                    "secondary-fixed-dim": "#83d3e1",
+                    "inverse-primary": "#94ccff",
+                    "primary-container": "#0077b6",
+                    "on-tertiary": "#ffffff",
+                    "surface": "#f8f9fa",
+                    "tertiary-fixed": "#c3e9f1",
+                    "surface-bright": "#f8f9fa",
+                    "surface-tint": "#006399",
+                    "surface-container": "#edeeef",
+                    "tertiary-container": "#53777e",
+                    "surface-dim": "#d9dadb",
+                    "primary": "#005d90",
+                    "surface-container-high": "#e7e8e9",
+                    "outline": "#707881",
+                    "on-error-container": "#93000a",
+                    "background": "#f8f9fa",
+                    "on-secondary-container": "#016d7a",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed": "#9feffe",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed-dim": "#a8cdd5",
+                    "on-tertiary-fixed": "#001f24",
+                    "on-tertiary-container": "#e7fbff",
+                    "on-primary-fixed": "#001d32",
+                    "inverse-surface": "#2e3132",
+                    "tertiary": "#3b5e65",
+                    "on-secondary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "secondary": "#006875",
+                    "on-primary-fixed-variant": "#004b74",
+                    "surface-variant": "#e1e3e4",
+                    "on-background": "#191c1d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "section-gap-mobile": "64px",
+                    "card-padding": "32px",
+                    "gutter": "24px",
+                    "container-max-width": "1200px",
+                    "base": "8px",
+                    "section-gap-desktop": "120px"
+            },
+            "fontFamily": {
+                    "headline-sm": ["Montserrat"],
+                    "body-lg": ["Inter"],
+                    "display-lg": ["Montserrat"],
+                    "headline-md": ["Montserrat"],
+                    "body-md": ["Inter"],
+                    "label-md": ["Inter"],
+                    "display-lg-mobile": ["Montserrat"]
+            },
+            "fontSize": {
+                    "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .ambient-card-shadow {
+            box-shadow: 0px 4px 20px rgba(0, 119, 182, 0.05);
+        }
+        .ambient-card-shadow:hover {
+            box-shadow: 0px 8px 30px rgba(0, 119, 182, 0.12);
+        }
+        .hero-pattern {
+            background-color: #f8f9fa;
+            background-image: radial-gradient(#90E0EF 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="bg-surface/90 backdrop-blur-md sticky top-0 z-50 shadow-sm h-20">
+<div class="flex justify-between items-center w-full px-gutter max-w-container-max-width mx-auto h-full">
+<a class="font-headline-md text-headline-md font-bold text-primary" href="../">{{CLIENT_NAME}}</a>
+<!-- Desktop Links -->
+<div class="hidden md:flex items-center gap-8">
+<a class="text-primary font-bold border-b-2 border-primary font-label-md text-label-md" href="#">Services</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="../team">Meet the Team</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">About</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="../contact">Contact</a>
+<button class="bg-primary-container text-on-primary-container px-6 py-3 rounded-xl font-label-md text-label-md hover:opacity-90 transition-all active:scale-95 duration-150 ml-4">
+                    Book Appointment
+                </button>
+</div>
+<!-- Mobile Menu Trigger (Visual Only) -->
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<header class="relative py-section-gap-mobile md:py-section-gap-desktop hero-pattern overflow-hidden">
+<div class="max-w-container-max-width mx-auto px-gutter text-center relative z-10">
+<span class="inline-block px-4 py-1.5 mb-6 rounded-full bg-secondary-container/30 text-primary font-label-md text-label-md tracking-wider">OUR EXPERTISE</span>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-6 max-w-3xl mx-auto">
+                    Comprehensive Dental Services
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-10">
+                    From routine maintenance to advanced surgical procedures, we provide world-class oral care rooted in clinical excellence and compassionate Ethiopian hospitality.
+                </p>
+<div class="flex flex-wrap justify-center gap-4">
+<div class="flex items-center gap-2 text-primary font-label-md">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                        Modern Equipment
+                    </div>
+<div class="flex items-center gap-2 text-primary font-label-md">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                        Certified Specialists
+                    </div>
+<div class="flex items-center gap-2 text-primary font-label-md">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                        Family Centric
+                    </div>
+</div>
+</div>
+</header>
+<!-- Services Breakdown -->
+<section class="max-w-container-max-width mx-auto px-gutter py-section-gap-desktop space-y-section-gap-desktop">
+<!-- Section 1: General Dentistry -->
+<div class="grid md:grid-cols-2 gap-16 items-center">
+<div class="relative group">
+<div class="absolute inset-0 bg-primary/5 rounded-3xl -rotate-2 group-hover:rotate-0 transition-transform duration-500"></div>
+<img class="relative z-10 w-full aspect-[4/3] object-cover rounded-3xl ambient-card-shadow" data-alt="A professional dental examination room in Addis Ababa featuring high-tech equipment and pristine white interiors. A skilled Ethiopian male dentist in a clean blue lab coat is explaining a digital X-ray to a patient. The room is flooded with soft, natural light, creating a hygienic and trustworthy medical environment in a modern clinical style with Hygienic Blue accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmq_wvyTUQhqwGRk4S7o3vJ3NsuME0nFQgqPSVs0pVbCn7cNMWYvtHSM-bDSGg47EVRQWd5QPrfS7Hc8ThulQn9kq7LGSSbyOfoJZA8lTTCD3LLRz4SLNU_XlaoTItXyHFtvcqq2JBvho-HOPJoPPQYjkh2F7qoIwnZZRUrumzLOovHvNA5HKgHL0Aq_CcnfHMn34nKqYdrJ-0Mx8VqAB96gTHxELxBe4x53PkDYWrf-oih6J_-j9O_z6KfMCCbd76lZzw80kmm6iV">
+</div>
+<div class="space-y-6">
+<h2 class="font-headline-md text-headline-md text-primary">General Dentistry</h2>
+<p class="text-on-surface-variant font-body-md text-body-md leading-relaxed">
+                        The foundation of a healthy life begins with routine oral care. Our general dentistry services focus on prevention, early detection, and maintenance to ensure your smile remains strong and functional for a lifetime.
+                    </p>
+<ul class="space-y-3">
+<li class="flex items-start gap-3 text-on-surface">
+<span class="material-symbols-outlined text-primary mt-1">verified</span>
+<span>Professional Cleaning &amp; Scaling</span>
+</li>
+<li class="flex items-start gap-3 text-on-surface">
+<span class="material-symbols-outlined text-primary mt-1">verified</span>
+<span>Comprehensive Oral Examinations</span>
+</li>
+<li class="flex items-start gap-3 text-on-surface">
+<span class="material-symbols-outlined text-primary mt-1">verified</span>
+<span>Composite Fillings (Tooth-Colored)</span>
+</li>
+</ul>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-xl font-label-md text-label-md hover:bg-primary/90 transition-all active:scale-95">
+                        Learn More
+                    </button>
+</div>
+</div>
+<!-- Section 2: Pediatric Care (Reversed) -->
+<div class="grid md:grid-cols-2 gap-16 items-center">
+<div class="order-2 md:order-1 space-y-6">
+<h2 class="font-headline-md text-headline-md text-primary">Pediatric Care</h2>
+<p class="text-on-surface-variant font-body-md text-body-md leading-relaxed">
+                        We create a friendly, anxiety-free environment for our youngest patients. Our team specializes in gentle techniques that build trust and encourage lifelong healthy habits for Ethiopian children.
+                    </p>
+<ul class="space-y-3">
+<li class="flex items-start gap-3 text-on-surface">
+<span class="material-symbols-outlined text-primary mt-1">child_care</span>
+<span>Child-Friendly Checkups</span>
+</li>
+<li class="flex items-start gap-3 text-on-surface">
+<span class="material-symbols-outlined text-primary mt-1">child_care</span>
+<span>Fluoride Treatments &amp; Sealants</span>
+</li>
+<li class="flex items-start gap-3 text-on-surface">
+<span class="material-symbols-outlined text-primary mt-1">child_care</span>
+<span>Early Orthodontic Assessment</span>
+</li>
+</ul>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-xl font-label-md text-label-md hover:bg-primary/90 transition-all active:scale-95">
+                        Learn More
+                    </button>
+</div>
+<div class="relative group order-1 md:order-2">
+<div class="absolute inset-0 bg-secondary/5 rounded-3xl rotate-2 group-hover:rotate-0 transition-transform duration-500"></div>
+<img class="relative z-10 w-full aspect-[4/3] object-cover rounded-3xl ambient-card-shadow" data-alt="A warm and welcoming pediatric dental room in Ethiopia. A kind Ethiopian female nurse with a gentle smile is showing a colorful tooth model to a happy 7-year-old Ethiopian boy. The lighting is bright and warm, with soft teal accents in the room decor. The atmosphere is compassionate, alleviates anxiety, and emphasizes the clinical excellence of the clinic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCK_s5g8lpTVB9iyh8EPJBMQZkx0CKaTZ_9Xmz-Ela49QOFwmnTFx7-KcxlMUCNb4_JFVZzHlRZIrLTGaxMHiuDlmc6x8JyDDfvQYZJzst7VLjQ1uhtED5SVhWbfyy9z9bI6Hym6x6izRE1cQu6fu56f5445KIYpSCHhu-Z68n-ByFczZzfX_c845CIwK1NM4bFxArUwR_lP-DD9K3GxWYjppsLGyw7MavuiEtdRj9ipAbclk1HCaoOjX6FVNHBL2GKkl3e794DRYmr">
+</div>
+</div>
+<!-- Section 3: Orthodontics -->
+<div class="grid md:grid-cols-2 gap-16 items-center">
+<div class="relative group">
+<div class="absolute inset-0 bg-primary/5 rounded-3xl -rotate-2 group-hover:rotate-0 transition-transform duration-500"></div>
+<img class="relative z-10 w-full aspect-[4/3] object-cover rounded-3xl ambient-card-shadow" data-alt="A macro close-up shot of modern, high-quality orthodontic braces and clear aligner technology. The image is shot in a high-key medical style with soft focus backgrounds of a modern dental laboratory. Crystal clear lighting highlights the precision of the medical-grade materials. The color palette is dominated by hygienic whites and soft Gentle Teal reflections, symbolizing premium dental care." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-I1O6NNdl-hpDfakjPKC4eWcJb0tOLmnMPD8kxD2hPtucbPQOF3apiUzEyAQMgxzw6FyWHdyA5y1IzVf4HY-x5UuAJHoLiwRKxsJo-x6U-PkWbtK89RtAhP-0J1fuNTAKPeV--HPN1VrgeADQLC4iR58FEm-wuN9OQ97kRzL4NpocuTFrwL5irGPTtoP5PSooY8fJle7n1E1CB3mNwO16O1gYNzhqzmo_JV_Yc8G8AqVYNbvNuSQwYmMdEV4PDtqOzCcN_iV8JfT-">
+</div>
+<div class="space-y-6">
+<h2 class="font-headline-md text-headline-md text-primary">Orthodontics</h2>
+<p class="text-on-surface-variant font-body-md text-body-md leading-relaxed">
+                        Achieve the perfect alignment with our advanced orthodontic solutions. We offer both traditional and modern invisible options tailored to your lifestyle and aesthetic preferences.
+                    </p>
+<ul class="space-y-3">
+<li class="flex items-start gap-3 text-on-surface">
+<span class="material-symbols-outlined text-primary mt-1">straighten</span>
+<span>Clear Aligner Therapy (Invisalign)</span>
+</li>
+<li class="flex items-start gap-3 text-on-surface">
+<span class="material-symbols-outlined text-primary mt-1">straighten</span>
+<span>Traditional Metal &amp; Ceramic Braces</span>
+</li>
+<li class="flex items-start gap-3 text-on-surface">
+<span class="material-symbols-outlined text-primary mt-1">straighten</span>
+<span>Retainers &amp; Post-Treatment Care</span>
+</li>
+</ul>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-xl font-label-md text-label-md hover:bg-primary/90 transition-all active:scale-95">
+                        Learn More
+                    </button>
+</div>
+</div>
+<!-- Section 4: Oral Surgery (Reversed) -->
+<div class="grid md:grid-cols-2 gap-16 items-center">
+<div class="order-2 md:order-1 space-y-6">
+<h2 class="font-headline-md text-headline-md text-primary">Oral Surgery</h2>
+<p class="text-on-surface-variant font-body-md text-body-md leading-relaxed">
+                        Complex dental issues require specialized surgical expertise. From dental implants to wisdom tooth extractions, our surgeons utilize the latest technology to ensure safe, efficient, and pain-free procedures.
+                    </p>
+<ul class="space-y-3">
+<li class="flex items-start gap-3 text-on-surface">
+<span class="material-symbols-outlined text-primary mt-1">medical_services</span>
+<span>Dental Implant Placement</span>
+</li>
+<li class="flex items-start gap-3 text-on-surface">
+<span class="material-symbols-outlined text-primary mt-1">medical_services</span>
+<span>Wisdom Teeth Extraction</span>
+</li>
+<li class="flex items-start gap-3 text-on-surface">
+<span class="material-symbols-outlined text-primary mt-1">medical_services</span>
+<span>Bone Grafting &amp; Sinus Lifts</span>
+</li>
+</ul>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-xl font-label-md text-label-md hover:bg-primary/90 transition-all active:scale-95">
+                        Learn More
+                    </button>
+</div>
+<div class="relative group order-1 md:order-2">
+<div class="absolute inset-0 bg-secondary/5 rounded-3xl rotate-2 group-hover:rotate-0 transition-transform duration-500"></div>
+<img class="relative z-10 w-full aspect-[4/3] object-cover rounded-3xl ambient-card-shadow" data-alt="A focused image of a modern, sterile surgical suite within a high-end Ethiopian dental clinic. Professional medical surgical lights illuminate a clean, high-tech patient chair. In the background, a display shows a high-resolution 3D CT scan of a jaw. The mood is one of absolute sterile precision and advanced medical technology, using a palette of clinical white and Hygienic Blue." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDp-Od17XfXy5Q-VZPiNorapzyey6TtYRs3mCF0HXwF9uTByLMsDeC21vQSL2CvM_AC93yHLR-sD8YQmO-XLYXSbdfG5TaK7X-4VDIF96M5rDPcvzhw81r3Juxvp4YCZFkh6p1iSKrEV2n3bhTy9ztFQ7IAoFDIpbv7p2Ixaif4SGdAWUDWt50XRw_Y5s6YDfOeh_Ef9xHwAkeIzAfB102N-X6oV1CAIVLGVFwVGXjajA50k2vJEqqVcGYvluC10BwlzJ6nzg65G-vp">
+</div>
+</div>
+</section>
+<!-- Insurance & Inquiry Section -->
+<section class="bg-surface-container-low py-section-gap-desktop">
+<div class="max-w-container-max-width mx-auto px-gutter">
+<div class="bg-surface-container-lowest rounded-[2rem] p-8 md:p-16 ambient-card-shadow border border-outline-variant/30 text-center max-w-4xl mx-auto">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-6">Payment &amp; Insurance</h3>
+<p class="text-on-surface-variant font-body-md text-body-md mb-10 max-w-2xl mx-auto">
+                        We are committed to making high-quality dental care accessible. We work with major insurance providers and offer flexible payment plans common in the Ethiopian medical sector.
+                    </p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
+<div class="p-6 rounded-2xl bg-surface">
+<span class="material-symbols-outlined text-secondary-container text-4xl mb-4" style="font-variation-settings: 'FILL' 1;">account_balance</span>
+<h4 class="font-bold text-primary mb-2">Direct Bank Transfer</h4>
+<p class="text-sm text-on-surface-variant">CBE, Awash, &amp; Abyssinia supported.</p>
+</div>
+<div class="p-6 rounded-2xl bg-surface">
+<span class="material-symbols-outlined text-secondary-container text-4xl mb-4" style="font-variation-settings: 'FILL' 1;">payments</span>
+<h4 class="font-bold text-primary mb-2">TeleBirr / M-Pesa</h4>
+<p class="text-sm text-on-surface-variant">Instant mobile payment at reception.</p>
+</div>
+<div class="p-6 rounded-2xl bg-surface">
+<span class="material-symbols-outlined text-secondary-container text-4xl mb-4" style="font-variation-settings: 'FILL' 1;">security</span>
+<h4 class="font-bold text-primary mb-2">Insurance</h4>
+<p class="text-sm text-on-surface-variant">Direct billing for major corporate plans.</p>
+</div>
+</div>
+<button class="bg-secondary-container text-on-secondary-container px-10 py-4 rounded-xl font-label-md text-label-md hover:bg-secondary-fixed transition-all active:scale-95 inline-flex items-center gap-2">
+<span class="material-symbols-outlined">help_outline</span>
+                        Inquire About Pricing
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low border-t border-outline-variant/20">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-base px-gutter py-section-gap-desktop max-w-container-max-width mx-auto">
+<div class="space-y-4">
+<div class="font-headline-sm text-headline-sm font-bold text-primary">{{CLIENT_NAME}}</div>
+<p class="text-on-surface-variant text-body-md">Providing Ethiopian families with world-class oral care and compassionate service.</p>
+</div>
+<div class="space-y-4">
+<h5 class="font-bold text-primary font-label-md uppercase tracking-widest">Our Services</h5>
+<ul class="space-y-2">
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors font-label-md" href="#">General Dentistry</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors font-label-md" href="#">Orthodontics</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors font-label-md" href="#">Cosmetic Dentistry</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors font-label-md" href="#">Pediatric Care</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h5 class="font-bold text-primary font-label-md uppercase tracking-widest">Clinic</h5>
+<ul class="space-y-2">
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors font-label-md" href="#">About Us</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors font-label-md" href="#">Privacy Policy</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors font-label-md" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h5 class="font-bold text-primary font-label-md uppercase tracking-widest">Contact</h5>
+<p class="text-on-surface-variant font-label-md">Bole Road, Addis Ababa, Ethiopia</p>
+<p class="text-on-surface-variant font-label-md">+251 11 000 0000</p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform">face_nod</span>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform">alternate_email</span>
+</div>
+</div>
+</div>
+<div class="max-w-container-max-width mx-auto px-gutter py-8 border-t border-outline-variant/10 text-center">
+<p class="text-on-surface-variant text-label-md">© 2024 {{CLIENT_NAME}} Clinic. All rights reserved. Providing Ethiopian families with world-class oral care.</p>
+</div>
+</footer>
+<script>
+        // Micro-interaction for scroll reveals
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.grid > div').forEach(el => {
+            el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+            observer.observe(el);
+        });
+    </script>
+</body></html>

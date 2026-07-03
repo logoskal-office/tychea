@@ -1,0 +1,442 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>{{CLIENT_NAME_SOLO}} Agency | Premium Recruitment Architecture</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Work+Sans:wght@400;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#dcc0c2",
+                        "outline": "#897173",
+                        "on-error": "#ffffff",
+                        "inverse-primary": "#ffb2bb",
+                        "on-surface-variant": "#564244",
+                        "surface-dim": "#dcd9d9",
+                        "on-secondary-fixed-variant": "#5d4201",
+                        "on-tertiary-fixed-variant": "#474745",
+                        "on-primary-container": "#fb7b90",
+                        "primary-fixed": "#ffd9dd",
+                        "primary-fixed-dim": "#ffb2bb",
+                        "background": "#fcf9f8",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed": "#400012",
+                        "error": "#ba1a1a",
+                        "on-background": "#1c1b1b",
+                        "on-secondary-fixed": "#261900",
+                        "on-surface": "#1c1b1b",
+                        "surface-container-highest": "#e5e2e1",
+                        "tertiary": "#242422",
+                        "inverse-surface": "#313030",
+                        "on-primary-fixed-variant": "#842038",
+                        "tertiary-fixed": "#e5e2df",
+                        "surface-container-low": "#f6f3f2",
+                        "primary-container": "#72102b",
+                        "inverse-on-surface": "#f3f0ef",
+                        "surface-bright": "#fcf9f8",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#e9c176",
+                        "tertiary-container": "#393937",
+                        "surface-container-high": "#eae7e7",
+                        "secondary-fixed": "#ffdea5",
+                        "error-container": "#ffdad6",
+                        "primary": "#4f0018",
+                        "on-tertiary": "#ffffff",
+                        "surface-container": "#f0eded",
+                        "secondary": "#775a19",
+                        "surface": "#fcf9f8",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#1c1c1a",
+                        "surface-tint": "#a4384e",
+                        "on-secondary": "#ffffff",
+                        "surface-variant": "#e5e2e1",
+                        "secondary-container": "#fed488",
+                        "on-tertiary-container": "#a4a3a0",
+                        "tertiary-fixed-dim": "#c8c6c3",
+                        "on-secondary-container": "#785a1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0rem",
+                        "lg": "0rem",
+                        "xl": "0rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "container-max": "1280px",
+                        "gutter": "32px",
+                        "margin-desktop": "80px",
+                        "margin-mobile": "20px",
+                        "section-padding": "120px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Playfair Display"],
+                        "headline-md": ["Playfair Display"],
+                        "body-md": ["Work Sans"],
+                        "body-lg": ["Work Sans"],
+                        "display-lg": ["Playfair Display"],
+                        "label-caps": ["Work Sans"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hero-gradient {
+            background: linear-gradient(to right, rgba(79, 0, 24, 0.95), rgba(79, 0, 24, 0.7), transparent);
+        }
+        .gold-border {
+            border-color: #e9c176;
+        }
+        .luxury-card {
+            border: 1px solid #e5e2e1;
+            transition: all 0.3s ease;
+        }
+        .luxury-card:hover {
+            border-color: #72102b;
+            background-color: #fcf9f8;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md">
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-background/95 backdrop-blur-sm border-b border-outline-variant">
+<div class="flex justify-between items-center px-margin-mobile md:px-8 py-unit w-full mx-auto h-16">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-3xl">architecture</span>
+<span class="font-headline-md text-headline-md text-primary tracking-widest uppercase">{{CLIENT_NAME_SOLO}} AGENCY</span>
+</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="font-label-caps text-label-caps text-primary border-b border-primary py-1 tracking-widest" href="#expertise">EXPERTISE</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors tracking-widest" href="#about">ABOUT</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors tracking-widest" href="#services">SERVICES</a>
+<a class="px-6 py-3 bg-primary text-on-primary font-label-caps text-label-caps tracking-widest hover:bg-primary-container transition-all" href="#contact">CONTACT</a>
+</div>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative min-h-screen flex items-center pt-20">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 hero-gradient z-10"></div>
+<div class="w-full h-full bg-cover bg-center" style="background-image: url(&quot;https://lh3.googleusercontent.com/aida/AP1WRLt0v0X3DpgcEfgpqo1T6cEzXip8yaj0BadsaBI_G43fH4meG2hFxFuCTtUgzQWpOQkcg7k1d3huD_LVSo_zBwDzG4__R9_P2Fsi_5gOgrNz9VzzHjogfMJ8voCHxlKPyXgVTwCakZDFqAARmYz-WrGJYp18zTVlvQ5U2_7Q0lAR2Di7MMO8J2GLNSdp-ETZoBBTv6k8gM9OOgo-gMIE83fP-W3nq-tolE3Qper3ff52NF-kyx6QIpUdqWI&quot;);"></div>
+</div>
+<div class="relative z-20 w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="max-w-2xl text-on-primary">
+<span class="font-label-caps text-label-caps tracking-[0.3em] uppercase opacity-80 mb-6 block">Legacy Professional Recruitment</span>
+<h1 class="font-display-lg text-display-lg mb-8 leading-tight">Your Gateway to Gulf Employment</h1>
+<p class="font-body-lg text-body-lg mb-10 opacity-90 max-w-lg leading-relaxed transition-all duration-700 opacity-100 translate-y-0">
+                    Connecting Ethiopia's finest professionals with premier opportunities in Saudi Arabia and Kuwait. Experience architectural precision in human capital.
+                </p>
+<div class="flex flex-col sm:flex-row gap-6">
+<a class="px-10 py-5 bg-secondary-fixed text-primary font-label-caps text-label-caps tracking-widest font-bold hover:bg-secondary-fixed-dim transition-all text-center" href="#services">EXPLORE SERVICES</a>
+<a class="px-10 py-5 border border-on-primary text-on-primary font-label-caps text-label-caps tracking-widest hover:bg-on-primary hover:text-primary transition-all text-center" href="#contact">OUR OFFICE</a>
+</div>
+</div>
+</div>
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+<span class="material-symbols-outlined text-on-primary opacity-50">expand_more</span>
+</div>
+</header>
+<!-- About Section -->
+<section class="py-section-padding bg-background" id="about">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid md:grid-cols-2 gap-20 items-center">
+<div class="relative">
+<div class="aspect-[3/4] relative overflow-hidden">
+<img alt="Professional Staff" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLs60NQm-v_hRrdsgmtrw9okCiIZcVQOyw3xf41o-uPp0m415c_uokH2jRnyP_WroIjK4fGF5FIqf03aq9TD8T3_naC5ZGOskQE6iYK5Ou5kMG-VHh0SlZSy0_C7MxHpw2LBGX4F1ni_Io3Z_ar7c-3A0-XtF0HRFuTE0KFxPEMjSHsFcWKm_7bQ052TzcOWJh7H8J9ntloLHWlbNxGLCAiVKcctzathMvkV1MREIiAxCrR7TSFuQeNRzpo">
+</div>
+<div class="absolute -bottom-10 -right-10 w-2/3 aspect-[3/4] hidden md:block border-8 border-background">
+<img alt="Agency Training" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLt23AMF627__v4V2hNntgV_MGNyJqzFaR7PTE8WDHPfsUtWE8SMh228hm8uJS4lxzhlSUdJEMs-2RbIAm2zr-xsBpnNN2OoWlYxjAR3z7pQufkY6kwJhuI_FL0pqihuWmXwDbHMuuR1lSK7yH1FwmG7Qg1zgc6ObHBXzumq9FcqNE4ahUBbwlYFh3bybmyu0aZ4PgPpsWfILATJI-weTGFsVniGV9LyfRsG-Ivltr_EwrEDXGm1izYlRw">
+</div>
+</div>
+<div class="flex flex-col gap-8">
+<div class="w-20 h-px bg-primary"></div>
+<h2 class="font-headline-lg text-headline-lg text-primary transition-all duration-700 opacity-100 translate-y-0">Leading Employment Agency in Ethiopia</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed transition-all duration-700 opacity-100 translate-y-0">
+                        {{CLIENT_NAME_SOLO}} Agency specializes in providing top-tier, reliable domestic staff to Saudi Arabia and Kuwait. With years of elite experience, we ensure that both employers and employees find their perfect match, with full legal compliance and ethical practices as our foundation.
+                    </p>
+<ul class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4">
+<li class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary-fixed-dim" style="font-variation-settings: &quot;FILL&quot; 1;">verified</span>
+<span class="font-label-caps text-label-caps text-primary tracking-widest uppercase">Licensed Government Agency</span>
+</li>
+<li class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary-fixed-dim" style="font-variation-settings: &quot;FILL&quot; 1;">medical_services</span>
+<span class="font-label-caps text-label-caps text-primary tracking-widest uppercase">Comprehensive Medicals</span>
+</li>
+<li class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary-fixed-dim" style="font-variation-settings: &quot;FILL&quot; 1;">school</span>
+<span class="font-label-caps text-label-caps text-primary tracking-widest uppercase">Pre-departure Training</span>
+</li>
+<li class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary-fixed-dim" style="font-variation-settings: &quot;FILL&quot; 1;">support_agent</span>
+<span class="font-label-caps text-label-caps text-primary tracking-widest uppercase">Dedicated Support Staff</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Section -->
+<section class="py-24 bg-tertiary text-on-tertiary">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+<div class="flex flex-col gap-2">
+<span class="font-display-lg text-headline-lg text-secondary-fixed">500+</span>
+<span class="font-label-caps text-label-caps uppercase tracking-widest opacity-60">Workers Placed</span>
+</div>
+<div class="flex flex-col gap-2">
+<span class="font-display-lg text-headline-lg text-secondary-fixed">1</span>
+<span class="font-label-caps text-label-caps uppercase tracking-widest opacity-60">Elite Standards</span>
+</div>
+<div class="flex flex-col gap-2">
+<span class="font-display-lg text-headline-lg text-secondary-fixed">5+</span>
+<span class="font-label-caps text-label-caps uppercase tracking-widest opacity-60">Years Experience</span>
+</div>
+<div class="flex flex-col gap-2">
+<span class="font-display-lg text-headline-lg text-secondary-fixed">100%</span>
+<span class="font-label-caps text-label-caps uppercase tracking-widest opacity-60">Legal Compliance</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Core Values - Bento Grid Style -->
+<section class="py-section-padding bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-20">
+<span class="font-label-caps text-label-caps text-secondary tracking-widest uppercase mb-4 block">Our Foundation</span>
+<h2 class="font-headline-lg text-headline-lg text-primary transition-all duration-700 opacity-100 translate-y-0">The {{CLIENT_NAME_SOLO}} Core Values</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="luxury-card p-12 bg-white flex flex-col items-center text-center transition-all duration-700 opacity-100 translate-y-0">
+<span class="material-symbols-outlined text-5xl text-primary mb-8">visibility</span>
+<h3 class="font-headline-md text-headline-md mb-4">Transparency</h3>
+<p class="font-body-md text-on-surface-variant transition-all duration-700 opacity-100 translate-y-0">Clear processes and consistent communication for both candidates and international employers.</p>
+</div>
+<div class="luxury-card p-12 bg-white flex flex-col items-center text-center transition-all duration-700 opacity-100 translate-y-0">
+<span class="material-symbols-outlined text-5xl text-primary mb-8">gavel</span>
+<h3 class="font-headline-md text-headline-md mb-4">Ethical Practices</h3>
+<p class="font-body-md text-on-surface-variant transition-all duration-700 opacity-100 translate-y-0">We prioritize the safety, rights, and long-term well-being of all our placed workers.</p>
+</div>
+<div class="luxury-card p-12 bg-white flex flex-col items-center text-center transition-all duration-700 opacity-100 translate-y-0">
+<span class="material-symbols-outlined text-5xl text-primary mb-8">trending_up</span>
+<h3 class="font-headline-md text-headline-md mb-4">Success Oriented</h3>
+<p class="font-body-md text-on-surface-variant transition-all duration-700 opacity-100 translate-y-0">Committed to finding the perfect professional match for long-term placement satisfaction.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Grid -->
+<section class="py-section-padding bg-background overflow-hidden" id="services">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid lg:grid-cols-2 gap-20">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-12 transition-all duration-700 opacity-100 translate-y-0">Expertise for Workers</h2>
+<div class="space-y-6">
+<div class="flex gap-8 p-8 border border-outline-variant hover:border-primary transition-all">
+<span class="material-symbols-outlined text-3xl text-secondary" style="font-variation-settings: &quot;FILL&quot; 1;">public</span>
+<div>
+<h4 class="font-label-caps text-label-caps text-primary tracking-widest uppercase mb-2">Overseas Job Placement</h4>
+<p class="text-on-surface-variant transition-all duration-700 opacity-100 translate-y-0">Connecting you with verified, high-quality employers in Saudi Arabia and Kuwait.</p>
+</div>
+</div>
+<div class="flex gap-8 p-8 border border-outline-variant hover:border-primary transition-all">
+<span class="material-symbols-outlined text-3xl text-secondary" style="font-variation-settings: &quot;FILL&quot; 1;">description</span>
+<div>
+<h4 class="font-label-caps text-label-caps text-primary tracking-widest uppercase mb-2">Visa Processing &amp; Documentation</h4>
+<p class="text-on-surface-variant transition-all duration-700 opacity-100 translate-y-0">Precision handling of all paperwork to ensure a smooth, legal international transition.</p>
+</div>
+</div>
+</div>
+</div>
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-12 transition-all duration-700 opacity-100 translate-y-0">Expertise for Employers</h2>
+<div class="space-y-6">
+<div class="flex gap-8 p-8 border border-outline-variant hover:border-primary transition-all">
+<span class="material-symbols-outlined text-3xl text-secondary" style="font-variation-settings: &quot;FILL&quot; 1;">groups</span>
+<div>
+<h4 class="font-label-caps text-label-caps text-primary tracking-widest uppercase mb-2">Pre-Screened Ethiopian Workers</h4>
+<p class="text-on-surface-variant transition-all duration-700 opacity-100 translate-y-0">Rigorously vetted, medically cleared, and fully trained professionals ready for deployment.</p>
+</div>
+</div>
+<div class="flex gap-8 p-8 border border-outline-variant hover:border-primary transition-all">
+<span class="material-symbols-outlined text-3xl text-secondary" style="font-variation-settings: &quot;FILL&quot; 1;">category</span>
+<div>
+<h4 class="font-label-caps text-label-caps text-primary tracking-widest uppercase mb-2">Specialized Recruitment Categories</h4>
+<p class="text-on-surface-variant transition-all duration-700 opacity-100 translate-y-0">Nannies, caregivers, and skilled domestic workers selected for your specific needs.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Success Stories -->
+<section class="py-section-padding bg-primary text-on-primary">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid md:grid-cols-2 gap-20 items-center">
+<div class="relative group overflow-hidden">
+<img alt="Faiza Al-Anizi" class="w-full h-[600px] object-cover grayscale group-hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida/AP1WRLspIEaNaTdScuYeeO6dy1VxVGn95LNY209rxGfVHPys6wG0wRb1RVxnDrakQdTczS3n-hiUv3PHNSM2BnT36dyfh7FbLPlVX9pfwrcVHx-HF3eYNPezFC3nq8dZvKYaFT2F8RhPl2Y_EvkpPAygPpnLuAhwaCp2_O8Fk0f2x7koE8CY2Og224YQFJmcuUtM5H4qIbYnD0rV3C5LptoJ6Ek92W9dFe0uFuCXxICAMl44kAGBZU8MDaM9pg">
+<div class="absolute inset-0 bg-primary/20"></div>
+</div>
+<div>
+<span class="material-symbols-outlined text-7xl text-secondary-fixed opacity-30 mb-8">format_quote</span>
+<h2 class="font-headline-lg text-headline-lg mb-8 italic transition-all duration-700 opacity-100 translate-y-0">"{{CLIENT_NAME_SOLO}} Agency changed my life. They handled all my paperwork and found me a great family to work for in Kuwait."</h2>
+<div class="mt-12">
+<p class="font-label-caps text-label-caps tracking-[0.2em] text-secondary-fixed uppercase transition-all duration-700 opacity-100 translate-y-0">Faiza Al-Anizi</p>
+<p class="font-body-md opacity-60 transition-all duration-700 opacity-100 translate-y-0">Domestic Worker, Kuwait Placement</p>
+</div>
+<div class="flex gap-4 mt-12">
+<div class="w-12 h-1 bg-secondary-fixed"></div>
+<div class="w-12 h-1 bg-white/20"></div>
+<div class="w-12 h-1 bg-white/20"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Placements Gallery -->
+<section class="py-section-padding bg-background">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-20">
+<span class="font-label-caps text-label-caps text-secondary tracking-widest uppercase mb-4 block">Success in Motion</span>
+<h2 class="font-headline-lg text-headline-lg text-primary transition-all duration-700 opacity-100 translate-y-0">Our Recent Placements</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="relative aspect-video overflow-hidden border border-outline-variant">
+<img alt="Placement Group" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLvFhBN1dLB2p_HLr-YlCdKnV-kDLoZCj_2LuIdSWVc642eLs3FyKFilJiQRXHTi3OuHjGZLiX-3T7kZwbW6hUPyVG4bf543nk7ZFWxaOX1qT8_jAYtD63xe8eS9W5B0_4ztc1kBxZviGCDM1sO-bejKeZFHOy7u0N2qtZxwgbYSq0F450nuRxgvLtBlgxoL1ZTp2aZzU8-v0OtsIq8IeWYyLbLe0gFGDeW-So6t5-mM4xq9T2ii5a6DeZM">
+<div class="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/80 to-transparent">
+<p class="font-label-caps text-label-caps text-white tracking-widest transition-all duration-700 opacity-100 translate-y-0">DEPLOYMENT BATCH #204 - SAUDI ARABIA</p>
+</div>
+</div>
+<div class="relative aspect-video overflow-hidden border border-outline-variant">
+<img alt="Training Session" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLsOffRymn_Qg5vs75b-tlOD3uQN4DHQIhufRrfwlQ0pgbLdQUpLE5MgwTNMdkiI1_BYm6gCKjm86ukkC4-miEU7PkpyuH1-RsD77EPDsqY019HHXjZO208--1cgxtQUBoKhmsmA56ZWIR85Yg5krnHN_MZybHGvKws6BCGcLsibTXEZByRVRPR38_o4rh_4OHWhxF46DILFt5k1vvsrjvus77jUH4HviR3UdLabQj3Ggygp0SWY-jUsKQ">
+<div class="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/80 to-transparent">
+<p class="font-label-caps text-label-caps text-white tracking-widest transition-all duration-700 opacity-100 translate-y-0">PROFESSIONAL ORIENTATION CENTER</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Call to Action -->
+<section class="relative py-32 bg-primary overflow-hidden">
+<div class="absolute inset-0 opacity-10">
+<div class="grid grid-cols-12 h-full">
+<div class="col-span-1 border-r border-white"></div>
+<div class="col-span-1 border-r border-white"></div>
+<div class="col-span-1 border-r border-white"></div>
+<div class="col-span-1 border-r border-white"></div>
+<div class="col-span-1 border-r border-white"></div>
+<div class="col-span-1 border-r border-white"></div>
+<div class="col-span-1 border-r border-white"></div>
+<div class="col-span-1 border-r border-white"></div>
+<div class="col-span-1 border-r border-white"></div>
+<div class="col-span-1 border-r border-white"></div>
+<div class="col-span-1 border-r border-white"></div>
+<div class="col-span-1"></div>
+</div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center">
+<h2 class="font-display-lg text-headline-lg text-on-primary mb-8 transition-all duration-700 opacity-100 translate-y-0">Ready to Join Our Success Stories?</h2>
+<p class="font-body-lg text-on-primary opacity-80 mb-12 max-w-2xl mx-auto transition-all duration-700 opacity-100 translate-y-0">Whether you are a professional seeking opportunity or an employer looking for quality staff, our concierge service is ready to assist.</p>
+<a class="inline-block px-12 py-6 bg-secondary-fixed text-primary font-label-caps text-label-caps tracking-widest font-bold hover:scale-105 transition-all" href="#contact">CONSULT WITH US TODAY</a>
+</div>
+</section>
+<!-- Contact & Map -->
+<section class="py-section-padding bg-surface-container-low" id="contact">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid lg:grid-cols-12 gap-16">
+<div class="lg:col-span-5">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-10 transition-all duration-700 opacity-100 translate-y-0">Let's start a conversation.</h2>
+<div class="space-y-10">
+<div class="flex items-start gap-6">
+<span class="material-symbols-outlined text-primary text-3xl">location_on</span>
+<div>
+<h4 class="font-label-caps text-label-caps text-primary tracking-widest uppercase mb-2">Primary Office</h4>
+<p class="text-on-surface-variant leading-relaxed transition-all duration-700 opacity-100 translate-y-0">Golden Gate, Ethiopia Building<br>5th Floor, Office 506<br>Addis Ababa, Ethiopia</p>
+</div>
+</div>
+<div class="flex items-start gap-6">
+<span class="material-symbols-outlined text-primary text-3xl">call</span>
+<div>
+<h4 class="font-label-caps text-label-caps text-primary tracking-widest uppercase mb-2">Direct Lines</h4>
+<p class="text-on-surface-variant transition-all duration-700 opacity-100 translate-y-0">0112759090<br>0902263303</p>
+</div>
+</div>
+<div class="flex items-start gap-6">
+<span class="material-symbols-outlined text-primary text-3xl">mail</span>
+<div>
+<h4 class="font-label-caps text-label-caps text-primary tracking-widest uppercase mb-2">Digital Inquiry</h4>
+<p class="text-on-surface-variant transition-all duration-700 opacity-100 translate-y-0">support@{{CLIENT_NAME_SOLO}}agency.com<br>manager@{{CLIENT_NAME_SOLO}}agency.com</p>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-7">
+<div class="bg-white p-2 border border-outline-variant shadow-xl aspect-square lg:aspect-auto lg:h-full">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" data-alt="A detailed map of Addis Ababa, Ethiopia, highlighting the Golden Gate building in a luxury architectural style with deep burgundy and gold markers." data-location="Addis Ababa" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLsVLOdAW1Mj59kv3gVPODsOQtBmY2fTOTaPT9fo1H6XBWNNYzJMbY3cSLgYriUSMFLwgYuRiQxyvgPmFglnRF4oJ3IdFKcJGESLA83Cx8mx4kXjtu48NZxBclnBwQwNO8hJ0ZgKIA_vTCoOZkJK8TD9Yt5NeJrh7aVZTxYO0GhjeABt1TsVp_r8Hr10RzNf-oz1RW0lbGMMfNbqH0SLJaWM3WKQYyyTiTuZ9c1D42sVY8l2oMYv2HHN6iTGl3Hs9NMFFk6vhmUrw">
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-tertiary text-on-tertiary py-20">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex flex-col md:flex-row justify-between items-center gap-10">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary-fixed text-4xl">architecture</span>
+<span class="font-headline-md text-headline-md tracking-widest uppercase">{{CLIENT_NAME_SOLO}} AGENCY</span>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-label-caps text-label-caps tracking-widest opacity-60 hover:opacity-100 hover:text-secondary-fixed transition-all" href="#">EXPERTISE</a>
+<a class="font-label-caps text-label-caps tracking-widest opacity-60 hover:opacity-100 hover:text-secondary-fixed transition-all" href="#">PARTNERSHIPS</a>
+<a class="font-label-caps text-label-caps tracking-widest opacity-60 hover:opacity-100 hover:text-secondary-fixed transition-all" href="#">LEGACY</a>
+<a class="font-label-caps text-label-caps tracking-widest opacity-60 hover:opacity-100 hover:text-secondary-fixed transition-all" href="#">PRIVACY</a>
+<a class="font-label-caps text-label-caps tracking-widest opacity-60 hover:opacity-100 hover:text-secondary-fixed transition-all" href="#">CONTACT</a>
+</div>
+</div>
+<div class="mt-20 pt-10 border-t border-white/10 text-center">
+<p class="font-body-md text-body-md opacity-40 transition-all duration-700 opacity-100 translate-y-0">© 2026 {{CLIENT_NAME_SOLO}} Agency. Architectural Excellence in Recruitment. All rights reserved.</p>
+</div>
+</div>
+</footer>
+<script>
+        // Simple intersection observer for reveals
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.luxury-card, h2, p').forEach(el => {
+            el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+            observer.observe(el);
+        });
+    </script>
+
+
+</body></html>

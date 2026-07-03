@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Our Services | {{CLIENT_NAME}} Specialty Clinic</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error": "#ffffff",
+                    "inverse-on-surface": "#ebf1ff",
+                    "tertiary-fixed": "#d5e6df",
+                    "surface-bright": "#f9f9ff",
+                    "on-tertiary-fixed": "#101e1a",
+                    "outline": "#6f7973",
+                    "surface": "#f9f9ff",
+                    "on-surface-variant": "#3f4944",
+                    "surface-container-highest": "#dce2f3",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#3b4a44",
+                    "primary-fixed-dim": "#8bd6b6",
+                    "surface-container": "#e7eefe",
+                    "on-background": "#151c27",
+                    "error": "#ba1a1a",
+                    "inverse-primary": "#8bd6b6",
+                    "surface-variant": "#dce2f3",
+                    "tertiary-fixed-dim": "#bacac3",
+                    "inverse-surface": "#2a313d",
+                    "secondary-container": "#64f9bc",
+                    "on-primary-container": "#8bd6b7",
+                    "primary": "#004532",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed": "#002116",
+                    "background": "#f9f9ff",
+                    "outline-variant": "#bec9c2",
+                    "on-secondary-container": "#00714e",
+                    "surface-container-high": "#e2e8f8",
+                    "surface-dim": "#d3daea",
+                    "on-surface": "#151c27",
+                    "tertiary": "#303f3a",
+                    "on-secondary": "#ffffff",
+                    "surface-tint": "#1b6b51",
+                    "primary-fixed": "#a6f2d1",
+                    "secondary-fixed": "#68fcbf",
+                    "primary-container": "#065f46",
+                    "surface-container-low": "#f0f3ff",
+                    "on-secondary-fixed-variant": "#005137",
+                    "secondary-fixed-dim": "#45dfa4",
+                    "secondary": "#006c4b",
+                    "on-tertiary-container": "#bacbc3",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed": "#002114",
+                    "on-primary-fixed-variant": "#00513b",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-container": "#475650"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "base": "4px",
+                    "gutter": "24px",
+                    "margin-desktop": "80px",
+                    "margin-mobile": "16px",
+                    "max-width": "1280px"
+            },
+            "fontFamily": {
+                    "display-lg-mobile": ["Montserrat"],
+                    "display-lg": ["Montserrat"],
+                    "headline-md": ["Montserrat"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-sm": ["Montserrat"]
+            },
+            "fontSize": {
+                    "display-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["30px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
+        }
+        .glass-header {
+            backdrop-filter: blur(8px);
+            background-color: rgba(249, 249, 255, 0.85);
+        }
+
+        /* Animation Styles */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal, .fade-in-up {
+                animation: none !important;
+                transition: none !important;
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 z-50 w-full glass-header border-b border-outline-variant">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto h-20">
+<div class="font-headline-sm text-headline-sm font-bold text-primary">
+            {{CLIENT_NAME}}
+        </div>
+<div class="hidden md:flex items-center gap-8 font-body-md text-body-md">
+<a class="text-on-surface-variant hover:text-primary transition-all duration-200" href="../">Home</a>
+<a class="text-primary border-b-2 border-primary pb-1 font-bold" href="#">Services</a>
+<a class="text-on-surface-variant hover:text-primary transition-all duration-200" href="#">About</a>
+<a class="text-on-surface-variant hover:text-primary transition-all duration-200" href="../team">Team</a>
+<a class="text-on-surface-variant hover:text-primary transition-all duration-200" href="../contact">Contact</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-md text-label-md hover:opacity-90 transition-all">
+            Book Appointment
+        </button>
+</div>
+</nav>
+<main class="pt-32 pb-24 overflow-x-hidden">
+<!-- Hero Section -->
+<header class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop mb-16">
+<div class="max-w-3xl">
+<span class="inline-block px-4 py-1.5 mb-4 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md fade-in-up" style="animation-delay: 0.1s">
+                OUR SPECIALTIES
+            </span>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-6 fade-in-up" style="animation-delay: 0.3s">
+                Comprehensive Dental Excellence in Addis Ababa
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed fade-in-up" style="animation-delay: 0.5s">
+                At {{CLIENT_NAME}}, we blend state-of-the-art technology with personalized care to ensure your smile remains healthy and beautiful. Explore our specialized treatments tailored to every stage of life.
+            </p>
+</div>
+</header>
+<!-- Main Services Bento Grid -->
+<section class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Cosmetic Dentistry (Large Feature) -->
+<div class="md:col-span-8 group bg-surface-container-low border border-outline-variant rounded-xl overflow-hidden service-card transition-all duration-300 hover:border-primary reveal">
+<div class="grid md:grid-cols-2 h-full">
+<div class="p-8 flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-4xl text-primary service-icon transition-transform duration-300 mb-6" data-icon="auto_awesome">auto_awesome</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Cosmetic Dentistry</h3>
+<p class="text-on-surface-variant mb-6">Elevate your confidence with a smile makeover. Our cosmetic specialists use advanced porcelain veneers, professional whitening, and bonding techniques to create naturally stunning results.</p>
+<ul class="space-y-3 mb-8">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary" data-icon="check_circle">check_circle</span> Professional Teeth Whitening</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary" data-icon="check_circle">check_circle</span> Porcelain Veneers &amp; Lumineers</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary" data-icon="check_circle">check_circle</span> Smile Symmetry Analysis</li>
+</ul>
+</div>
+<a class="text-primary font-label-md flex items-center gap-2 group-hover:gap-4 transition-all" href="#">
+                            VIEW TREATMENT DETAILS <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<div class="h-64 md:h-auto overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Close-up of a bright, healthy, and symmetrical human smile after professional cosmetic dental treatment." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCUgo8l8Uk6za_SZD3NL7xmGADeEPIJedmxUnxzicfpQEqU_WIYvtAO-T4Pq8Dz07j8uHaZoVJnZYkaWdL-JCm51-FopxFoz812lsV03D6Q2acOxs6DLn-kub7hSedlUSNuToRKiZZ6ipQn2duwk01-ief70zQxjtXY62acEc8yj0w5BgVKTw4Q3D-hPTznQoKgHS4-a5uB7y1NXnvVYFzH9f-TTjYIzcYYFmBextmioq5hcW4nd6DRUcL1cUU17ebzQF6hU_7HJ9Av')">
+</div>
+</div>
+</div>
+</div>
+<!-- Pediatric Care -->
+<div class="md:col-span-4 group bg-surface-container-low border border-outline-variant rounded-xl p-8 service-card transition-all duration-300 hover:border-primary flex flex-col reveal">
+<span class="material-symbols-outlined text-4xl text-primary service-icon transition-transform duration-300 mb-6" data-icon="child_care">child_care</span>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-4">Pediatric Care</h3>
+<p class="text-on-surface-variant mb-8 flex-grow">A gentle approach for our youngest patients. We focus on education and prevention to build a lifetime of healthy habits in a fun, fear-free environment.</p>
+<div class="w-full h-48 rounded-lg overflow-hidden mb-6">
+<div class="w-full h-full bg-cover bg-center" data-alt="A smiling Ethiopian child comfortably seated in a modern dental chair." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB9RJvf_hgAxxBIwkvoXzajZUnODtGEDUKUx67wCDEKTabwFUPIVVLT5Ft7MYfHJwZNEnHeG1bKew6HJMyWDGy8N3jqp7IZa2p61rIxkvhhelr-sVRDVMmwSPRpqQYfeQmW0bY_QHDeSSaAfctbq6hRsGUu7QAxr0KBsVz3UUeesM-I8coaOt6zB9iiY-AjrzPLVK8nLN0kZvoJgif1pA89rKOok6uqam0jAZmui3Z-uZMdzCFxo9wFrOJxkscA_yQ7C7DuJbH3L3_C')">
+</div>
+</div>
+<a class="text-primary font-label-md flex items-center gap-2 group-hover:gap-4 transition-all" href="#">
+                    LEARN MORE <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<!-- Surgical Procedures -->
+<div class="md:col-span-4 group bg-surface-container-low border border-outline-variant rounded-xl p-8 service-card transition-all duration-300 hover:border-primary flex flex-col reveal">
+<span class="material-symbols-outlined text-4xl text-primary service-icon transition-transform duration-300 mb-6" data-icon="precision_manufacturing">precision_manufacturing</span>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-4">Surgical Procedures</h3>
+<p class="text-on-surface-variant mb-8 flex-grow">From wisdom tooth extractions to advanced dental implants, our surgical suite is equipped with 3D imaging technology for precise and painless outcomes.</p>
+<div class="w-full h-48 rounded-lg overflow-hidden mb-6">
+<div class="w-full h-full bg-cover bg-center" data-alt="Extreme close-up of high-tech dental surgery instruments and a 3D dental scan." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCY7bMsJULINW-oaM9HS2pwxUaKlvQN7GdYig0GEr8U4PhIT24XJRX2sqSMq32HyFLYXDFdh1deDfBoWuiRS95vXr9KQ17zA6BAFKVNa6VIEp4EOMcrEQO7R1AhV7Wee40VC0DbUh27gREAlOT-wxcrKh_6wGaRasfOQ332OmcpiqJB2U9izWw9vn0tGEXhuoZIpMPe4aJ9cZm18ayBeOgOy0LzLYSmgH9MMilPPIxg_vogFZWw_Ckf1ElDnShp6-DGqkZvd-NmZPDE')">
+</div>
+</div>
+<a class="text-primary font-label-md flex items-center gap-2 group-hover:gap-4 transition-all" href="#">
+                    LEARN MORE <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<!-- Emergency Dental (Priority Color) -->
+<div class="md:col-span-8 group bg-primary text-on-primary rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl relative reveal">
+<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: url('https://www.transparenttextures.com/patterns/cubes.png')"></div>
+<div class="relative z-10 p-8 md:p-12 flex flex-col md:flex-row items-center gap-8">
+<div class="flex-1">
+<div class="flex items-center gap-4 mb-6">
+<span class="material-symbols-outlined text-5xl text-secondary-container" data-icon="emergency">emergency</span>
+<span class="px-3 py-1 bg-error-container text-on-error-container font-label-md text-label-md rounded">AVAILABLE 24/7</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4 text-white">Emergency Dental Care</h3>
+<p class="text-on-primary-container mb-8 max-w-lg leading-relaxed text-lg">Sudden toothache, broken crown, or dental trauma? Our emergency team is on standby to provide immediate relief and same-day restorative treatments.</p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-white text-primary px-8 py-3 rounded-full font-label-md font-bold hover:bg-surface-container-low transition-colors">
+                                CALL NOW
+                            </button>
+<button class="border border-white/30 text-white px-8 py-3 rounded-full font-label-md hover:bg-white/10 transition-colors">
+                                WHAT TO DO FIRST
+                            </button>
+</div>
+</div>
+<div class="hidden md:block w-64 h-64 shrink-0 rounded-full border-8 border-white/10 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center" data-alt="Portrait of a professional dental emergency specialist." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCqISjlwmPrGW3GnsOyBrKwS1wRnhDvtphy6PnCA6SbeCqTbYSeVvDtKbr7U0g7AVKEc1uhz9fV4QWke6r0jWW2-pKYuItwDwZR2rvwxbuheDvOeEIpNai2b2cXwJ6SQMVSk3KN3z2mw2YOafbTVXh1bvH4BkITY4SbEymBdsaPNukofqSx6qR1JoIROXkVQ9IQePSOQwyBOIqsK5nv_Y-RGWIwrEnrTsSO4DEP1Ac2r3C8pOZ2OII0Ow4MjyPLgVvQvME-6fYWgOyD')">
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Trust Section -->
+<section class="mt-24 py-16 bg-surface-container-low border-y border-outline-variant reveal">
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+<div>
+<div class="font-display-lg text-primary mb-1">15+</div>
+<div class="text-label-md text-on-surface-variant">YEARS EXPERIENCE</div>
+</div>
+<div>
+<div class="font-display-lg text-primary mb-1">10k+</div>
+<div class="text-label-md text-on-surface-variant">HAPPY PATIENTS</div>
+</div>
+<div>
+<div class="font-display-lg text-primary mb-1">24/7</div>
+<div class="text-label-md text-on-surface-variant">EMERGENCY CARE</div>
+</div>
+<div>
+<div class="font-display-lg text-primary mb-1">99%</div>
+<div class="text-label-md text-on-surface-variant">SUCCESS RATE</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="mt-24 max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop text-center reveal">
+<div class="bg-surface-container border border-outline-variant rounded-2xl p-12 md:p-20 overflow-hidden relative">
+<div class="absolute -right-20 -top-20 w-64 h-64 bg-primary-fixed-dim/20 rounded-full blur-3xl"></div>
+<div class="absolute -left-20 -bottom-20 w-64 h-64 bg-secondary-fixed-dim/20 rounded-full blur-3xl"></div>
+<h2 class="font-display-lg text-display-lg-mobile md:text-headline-md text-primary mb-6 relative z-10">Ready to transform your smile?</h2>
+<p class="text-on-surface-variant mb-10 max-w-2xl mx-auto text-lg relative z-10">Schedule your consultation today and take the first step towards optimal dental health with Addis Ababa's leading specialists.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-4 relative z-10">
+<button class="bg-primary text-on-primary px-10 py-4 rounded-full font-label-md text-label-md hover:scale-105 transition-transform">
+                    BOOK AN APPOINTMENT
+                </button>
+<button class="bg-surface text-primary border border-outline-variant px-10 py-4 rounded-full font-label-md text-label-md hover:bg-surface-container-high transition-colors">
+                    CONTACT CLINIC
+                </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low border-t border-outline-variant py-16">
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter mb-12">
+<div class="md:col-span-1">
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface mb-6">{{CLIENT_NAME}}</div>
+<p class="text-on-surface-variant text-body-md">Redefining dental specialty care in Ethiopia with precision, passion, and advanced technology.</p>
+</div>
+<div>
+<h4 class="font-label-md text-primary mb-6">SERVICES</h4>
+<ul class="space-y-4 text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" href="#">General Dentistry</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Orthodontics</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Implants &amp; Surgery</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Cosmetic Smiles</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-primary mb-6">SUPPORT</h4>
+<ul class="space-y-4 text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Emergency Care</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">FAQs</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-primary mb-6">CONNECT</h4>
+<div class="flex gap-4 mb-6">
+<a class="w-10 h-10 rounded-full bg-outline-variant flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="language">language</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-outline-variant flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="alternate_email">alternate_email</span>
+</a>
+</div>
+<p class="text-on-surface-variant text-sm">Addis Ababa, Ethiopia</p>
+</div>
+</div>
+<div class="pt-8 border-t border-outline-variant text-center text-on-surface-variant text-body-md">
+            © 2024 {{CLIENT_NAME}} Specialty Clinic. All rights reserved. Addis Ababa, Ethiopia.
+        </div>
+</div>
+</footer>
+<script>
+    // Intersection Observer for Reveal Animations
+    const observerOptions = {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target); // Reveal only once
+            }
+        });
+    }, observerOptions);
+
+    // Initialize observers
+    document.addEventListener('DOMContentLoaded', () => {
+        const reveals = document.querySelectorAll('.reveal');
+        reveals.forEach(el => observer.observe(el));
+    });
+
+    // Micro-interaction for smooth link transitions
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const targetId = this.getAttribute('href');
+            if (targetId !== '#') {
+                e.preventDefault();
+                document.querySelector(targetId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Basic scroll shadow for navbar
+    window.addEventListener('scroll', () => {
+        const nav = document.querySelector('nav');
+        if (window.scrollY > 20) {
+            nav.classList.add('shadow-sm');
+        } else {
+            nav.classList.remove('shadow-sm');
+        }
+    });
+</script>
+</body></html>

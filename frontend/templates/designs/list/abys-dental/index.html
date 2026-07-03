@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>{{CLIENT_NAME_SOLO}} Premium Dental Clinic | Modern Dental Care</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700&amp;family=Work+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#d8dadc",
+                    "on-secondary-fixed-variant": "#3a4a49",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed-dim": "#a7c8ff",
+                    "secondary": "#516161",
+                    "secondary-container": "#d4e6e5",
+                    "on-tertiary-fixed-variant": "#005049",
+                    "on-primary": "#ffffff",
+                    "primary-container": "#003366",
+                    "surface-tint": "#3a5f94",
+                    "background": "#f7f9fb",
+                    "on-background": "#191c1e",
+                    "outline-variant": "#c3c6d1",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-container": "#30aca0",
+                    "surface": "#f7f9fb",
+                    "secondary-fixed": "#d4e6e5",
+                    "surface-container-highest": "#e0e3e5",
+                    "primary-fixed": "#d5e3ff",
+                    "on-primary-fixed-variant": "#1f477b",
+                    "on-error-container": "#93000a",
+                    "tertiary": "#00231f",
+                    "on-surface": "#191c1e",
+                    "on-tertiary-fixed": "#00201d",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed": "#0e1e1e",
+                    "on-primary-fixed": "#001b3c",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed": "#84f5e8",
+                    "surface-variant": "#e0e3e5",
+                    "on-primary-container": "#799dd6",
+                    "surface-bright": "#f7f9fb",
+                    "inverse-primary": "#a7c8ff",
+                    "inverse-surface": "#2d3133",
+                    "tertiary-container": "#003a35",
+                    "outline": "#737780",
+                    "on-surface-variant": "#43474f",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed-dim": "#66d9cc",
+                    "surface-container-high": "#e6e8ea",
+                    "error-container": "#ffdad6",
+                    "primary": "#001e40",
+                    "surface-container": "#eceef0",
+                    "surface-container-low": "#f2f4f6",
+                    "secondary-fixed-dim": "#b8cac9",
+                    "on-secondary-container": "#576867",
+                    "inverse-on-surface": "#eff1f3"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "base": "8px",
+                    "margin-mobile": "16px",
+                    "section-gap": "120px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Work Sans"],
+                    "label-caps": ["Work Sans"],
+                    "headline-lg": ["Manrope"],
+                    "body-md": ["Work Sans"],
+                    "headline-lg-mobile": ["Manrope"],
+                    "headline-xl": ["Manrope"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .dental-card-shadow {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .dental-card-shadow:hover {
+            box-shadow: 0px 4px 20px rgba(0, 51, 102, 0.05);
+            transform: translateY(-4px);
+        }
+        .active-interaction:active {
+            opacity: 0.8;
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md">
+<!-- TopNavBar -->
+<header class="w-full top-0 sticky z-50 bg-surface dark:bg-inverse-surface border-b border-outline-variant dark:border-outline">
+<nav class="flex justify-between items-center max-w-container-max mx-auto px-gutter py-4">
+<div class="font-headline-lg text-headline-lg font-bold text-primary dark:text-primary-fixed">
+                {{CLIENT_NAME}}
+            </div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-primary dark:text-primary-fixed-dim font-bold border-b-2 border-primary pb-1 font-body-md text-body-md" href="#">Home</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="services">Services</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="about">About</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Testimonials</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Contact</a>
+</div>
+<a href="booking" class="bg-primary text-on-primary px-6 py-2 rounded-xl font-body-md font-medium hover:opacity-90 active:scale-95 transition-all">
+                Book Appointment
+</a>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[819px] flex items-center bg-surface-container-lowest overflow-hidden">
+<div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 gap-12 items-center py-section-gap">
+<div class="z-10">
+<span class="inline-block px-4 py-1 bg-secondary-container text-on-secondary-container rounded-full font-label-caps text-label-caps mb-6">
+                        EXCELLENCE IN CLINICAL CARE
+                    </span>
+<h1 class="font-headline-xl text-headline-xl text-primary mb-6 leading-tight">
+                        Modern Dental Care <br/> for Your Family
+                    </h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant mb-10 max-w-lg">
+                        Experience world-class dental treatments in Addis Ababa. Our state-of-the-art clinic combines Ethiopian hospitality with surgical precision to give you the smile you deserve.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary text-white px-8 py-4 rounded-xl font-bold hover:brightness-110 active-interaction transition-all">
+                            Our Services
+                        </button>
+<button class="border border-primary text-primary px-8 py-4 rounded-xl font-bold hover:bg-secondary-container active-interaction transition-all">
+                            Meet Our Doctors
+                        </button>
+</div>
+</div>
+<div class="relative h-[600px] w-full rounded-3xl overflow-hidden shadow-2xl">
+<img class="w-full h-full object-cover" data-alt="A professional, friendly light-skinned Ethiopian dentist in a clean white lab coat, smiling warmly at a seated light-skinned Ethiopian patient in a state-of-the-art dental chair. The background shows a high-end, modern clinic with soft blue accents, minimalist furniture, and large windows providing bright natural light. The aesthetic is clinical yet comforting, emphasizing premium healthcare and local professional excellence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlqxFjZj4AKSx9snPSZBLp03G31l7lCUnVObAP3iyH_A-9B4BPQHdfh93-JbbsrifCQKkaq9TT3r2X5DJHgA1ddyftrBf1_M9zR5ZwZFlEk7rn3lAmDEn6hTs2kPznz8lsihsKGiCqGlnh7k5Rlos-E19DobRVQkRtPLheUyEI13_bvdKXwbwSvDcvVLiWWdJPmVIGmy6GosejYhur0oIwm8bhrZpbkzmA3DAX2D1FXx54R1qpxhWaW8IL4oBvfzOlo-FdmqlLOrzL"/>
+<div class="absolute bottom-6 left-6 right-6 p-6 bg-white/90 backdrop-blur-md rounded-2xl flex items-center gap-4">
+<div class="w-12 h-12 bg-secondary-container rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">verified</span>
+</div>
+<div>
+<p class="font-bold text-primary">Certified Specialists</p>
+<p class="text-on-surface-variant text-sm">International Standard Hygiene</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Atmospheric Background Element -->
+<div class="absolute -top-24 -right-24 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+</section>
+<!-- Stats Section -->
+<section class="bg-primary text-white py-20">
+<div class="max-w-container-max mx-auto px-gutter grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+<div>
+<h3 class="text-4xl md:text-5xl font-bold mb-2">15+</h3>
+<p class="text-secondary-fixed-dim uppercase tracking-wider font-label-caps text-label-caps">Years Experience</p>
+</div>
+<div>
+<h3 class="text-4xl md:text-5xl font-bold mb-2">10k+</h3>
+<p class="text-secondary-fixed-dim uppercase tracking-wider font-label-caps text-label-caps">Happy Patients</p>
+</div>
+<div>
+<h3 class="text-4xl md:text-5xl font-bold mb-2">25+</h3>
+<p class="text-secondary-fixed-dim uppercase tracking-wider font-label-caps text-label-caps">Expert Doctors</p>
+</div>
+<div>
+<h3 class="text-4xl md:text-5xl font-bold mb-2">100%</h3>
+<p class="text-secondary-fixed-dim uppercase tracking-wider font-label-caps text-label-caps">Safety Rate</p>
+</div>
+</div>
+</section>
+<!-- Our Services Section -->
+<section class="py-section-gap bg-surface">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Comprehensive Dental Services</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">From routine checkups to complex surgeries, we provide a full spectrum of dental care using the latest technological advancements.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- General Dentistry -->
+<div class="bg-white p-8 rounded-2xl border border-outline-variant/30 dental-card-shadow flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-secondary-container/50 rounded-full flex items-center justify-center text-primary mb-6">
+<span class="material-symbols-outlined text-4xl">dentistry</span>
+</div>
+<h4 class="font-bold text-xl mb-3 text-primary">General Dentistry</h4>
+<p class="text-on-surface-variant text-sm mb-6">Routine cleanings, fillings, and preventative care to keep your smile healthy and vibrant.</p>
+<a class="text-primary font-bold hover:underline flex items-center gap-1" href="#">Learn More <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+<!-- Cosmetic Dentistry -->
+<div class="bg-white p-8 rounded-2xl border border-outline-variant/30 dental-card-shadow flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-secondary-container/50 rounded-full flex items-center justify-center text-primary mb-6">
+<span class="material-symbols-outlined text-4xl">mood</span>
+</div>
+<h4 class="font-bold text-xl mb-3 text-primary">Cosmetic Dentistry</h4>
+<p class="text-on-surface-variant text-sm mb-6">Teeth whitening, veneers, and smile makeovers designed for the ultimate confidence boost.</p>
+<a class="text-primary font-bold hover:underline flex items-center gap-1" href="#">Learn More <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+<!-- Orthodontics -->
+<div class="bg-white p-8 rounded-2xl border border-outline-variant/30 dental-card-shadow flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-secondary-container/50 rounded-full flex items-center justify-center text-primary mb-6">
+<span class="material-symbols-outlined text-4xl">grid_view</span>
+</div>
+<h4 class="font-bold text-xl mb-3 text-primary">Orthodontics</h4>
+<p class="text-on-surface-variant text-sm mb-6">Modern braces and clear aligners to correct alignment and improve your oral functionality.</p>
+<a class="text-primary font-bold hover:underline flex items-center gap-1" href="#">Learn More <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+<!-- Oral Surgery -->
+<div class="bg-white p-8 rounded-2xl border border-outline-variant/30 dental-card-shadow flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-secondary-container/50 rounded-full flex items-center justify-center text-primary mb-6">
+<span class="material-symbols-outlined text-4xl">medical_services</span>
+</div>
+<h4 class="font-bold text-xl mb-3 text-primary">Oral Surgery</h4>
+<p class="text-on-surface-variant text-sm mb-6">Expert surgical care for dental implants, extractions, and restorative jaw procedures.</p>
+<a class="text-primary font-bold hover:underline flex items-center gap-1" href="#">Learn More <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Choose Us / Bento Section -->
+<section class="py-section-gap bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<div class="lg:col-span-5 flex flex-col justify-center">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">Why Patients Choose {{CLIENT_NAME_SOLO}} Premium</h2>
+<p class="text-on-surface-variant mb-8">We combine ethical practice with modern technology to provide a painless and professional experience for all our patients.</p>
+<ul class="space-y-4">
+<li class="flex items-start gap-4">
+<div class="p-1 bg-tertiary-fixed rounded-full text-primary mt-1">
+<span class="material-symbols-outlined text-lg">check</span>
+</div>
+<div>
+<h5 class="font-bold text-primary">Digital X-Rays &amp; Imaging</h5>
+<p class="text-on-surface-variant text-sm">Minimal radiation and precise diagnosis.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<div class="p-1 bg-tertiary-fixed rounded-full text-primary mt-1">
+<span class="material-symbols-outlined text-lg">check</span>
+</div>
+<div>
+<h5 class="font-bold text-primary">Comfort-First Approach</h5>
+<p class="text-on-surface-variant text-sm">Sedation options and a relaxing environment.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<div class="p-1 bg-tertiary-fixed rounded-full text-primary mt-1">
+<span class="material-symbols-outlined text-lg">check</span>
+</div>
+<div>
+<h5 class="font-bold text-primary">Flexible Financing</h5>
+<p class="text-on-surface-variant text-sm">Payment plans tailored to your budget.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="rounded-3xl overflow-hidden h-full group">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A clean, high-tech dental operating room featuring a modern blue dental chair, overhead surgical lights, and advanced computer screens showing 3D dental scans. The room is immaculate, with polished white surfaces and minimalist cabinets, conveying clinical excellence and hygiene. The style is sharp and modern." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCGawdm95kgR0oMLKKQopIZnmczlqm5vB2teY6kYceFae6YrpXJVpRaJ-A0LeMZpG_ix0sMC0YG7pcToejzEY-sRmFbzor0YFxBOxAauDljZX4VvqoKtPZoso9LX5Bk6gZ8Y0qUJO69fMrGPbv0QNBOqvFBFpzW58cn8zWqo3gpd9wHWNTzR6UlAeKsPg4HQ0qi4UTOjOKYpS1lJ9PuDrmOXUfQJMtfachtk-cljJq4FZnRzbF5OgTWMA4zk4Mptj5xzm9BqSg1Sqa"/>
+</div>
+<div class="grid gap-6">
+<div class="bg-secondary-container rounded-3xl p-8 flex flex-col justify-center">
+<h4 class="text-2xl font-bold text-primary mb-2">Emergency Care</h4>
+<p class="text-on-secondary-container">Same-day appointments for urgent dental needs and toothaches.</p>
+</div>
+<div class="rounded-3xl overflow-hidden h-48">
+<img class="w-full h-full object-cover" data-alt="A close-up of a smiling light-skinned Ethiopian woman showing healthy white teeth. She is looking slightly off-camera with a joyous expression. The lighting is soft and warm, emphasizing healthy gums and a perfect smile. The background is a soft-focus clinical setting with calming colors." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJa_qaK3no-wCp5aA68Qxc0wxuVqtOhY7Na4M7jEbn1iHm8m2ANa_ggATJJCs4G9RX8Ka_01lPTdQ75V3jdFnewpnlS7bs7yIe8xgrLfaKHhjDQq0tZDZTTRgOWd_h4ojBGPZpc-r-1uiPYA9En0apFeCIuwGmjf9dbKhbCGJfC52q1O84krVI4sk5H-7dDRHuOKsE6vZbjaa6NuLJvKvoMKs5s0mANdZCKyWz9_m5iNcq9gBMWgSJ28knjLUZ3_NkAxg2_NH423nT"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials Slider Section -->
+<section class="py-section-gap bg-background overflow-hidden">
+<div class="max-w-container-max mx-auto px-gutter relative">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Patient Experiences</h2>
+<p class="text-on-surface-variant">Hear from some of the 10,000+ patients we've helped smile brighter.</p>
+</div>
+<div class="relative max-w-4xl mx-auto">
+<div class="flex transition-transform duration-500 ease-in-out" id="testimonial-slider">
+<!-- Testimonial 1 -->
+<div class="min-w-full px-4">
+<div class="bg-white p-12 rounded-3xl border border-outline-variant shadow-sm text-center">
+<div class="w-24 h-24 mx-auto mb-8 rounded-full overflow-hidden border-4 border-secondary-container">
+<img class="w-full h-full object-cover" data-alt="A portrait of a happy, light-skinned Ethiopian male professional in his 40s, wearing a business casual shirt, smiling warmly at the camera. He exudes confidence and health. The background is a blurred office space with natural lighting, focusing on his genuine, healthy smile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuABRNazyn5UvB3jNZzEnwuZmtkvJRVGD09t5TY8eSZR2b4M7xCb2sQ0E6cHHK0SwcWDkqfkivYdiVmy8gT0XDvPb1B0cpZgLuB3q-mZpMZN6Mfoq4gOo1TMyX_5Nc1z7slFipwNnVEn2QDXtbZfrSknTQ3BHB2pgXXcecvGDx6Xg4XXcNXraDuGcaHW8Ph0F8h3wjHEMX4KX0jKlzCipknsKXYZLByWDrIraY9o8IMAmlcpA3Xx_KSTKWr_Izv9bc_-JdMBgOyhggEp"/>
+</div>
+<div class="flex justify-center gap-1 mb-6 text-tertiary-container">
+<span class="material-symbols-outlined">star</span>
+<span class="material-symbols-outlined">star</span>
+<span class="material-symbols-outlined">star</span>
+<span class="material-symbols-outlined">star</span>
+<span class="material-symbols-outlined">star</span>
+</div>
+<p class="text-xl font-body-lg text-primary italic mb-8">"The level of professionalism at {{CLIENT_NAME}} is unmatched. I was nervous about my oral surgery, but the team made me feel completely at ease. The results are life-changing."</p>
+<h5 class="font-bold text-primary">Abebe Tadesse</h5>
+<p class="text-on-surface-variant text-sm">Business Consultant</p>
+</div>
+</div>
+</div>
+<button class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-6 md:-translate-x-12 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-primary hover:bg-secondary-container transition-all z-10" onclick="slideTestimonial(-1)">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-6 md:translate-x-12 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-primary hover:bg-secondary-container transition-all z-10" onclick="slideTestimonial(1)">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-20">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="bg-primary-container rounded-[2.5rem] p-12 md:p-20 text-center relative overflow-hidden">
+<div class="z-10 relative">
+<h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Ready to transform your smile?</h2>
+<p class="text-on-primary-container text-xl mb-10 max-w-xl mx-auto">Join thousands of happy patients. Book your initial consultation today and experience premium care.</p>
+<button class="bg-white text-primary px-10 py-5 rounded-xl font-bold text-lg active-interaction transition-all shadow-xl hover:bg-secondary-container">
+                            Book an Appointment Now
+                        </button>
+</div>
+<!-- Background graphic -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
+<div class="absolute bottom-0 left-0 w-96 h-96 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl"></div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary dark:bg-tertiary-container text-on-primary dark:text-on-tertiary-container w-full">
+<div class="max-w-container-max mx-auto px-gutter py-section-gap grid grid-cols-1 md:grid-cols-4 gap-base">
+<div class="col-span-1 md:col-span-1">
+<div class="font-headline-lg text-headline-lg font-bold text-white mb-6">{{CLIENT_NAME}}</div>
+<p class="text-surface-variant mb-6 text-sm">Providing premium dental solutions in Ethiopia with integrity, technology, and compassion.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full border border-surface-variant flex items-center justify-center hover:bg-white hover:text-primary transition-all" href="#"><span class="material-symbols-outlined text-sm">face_nod</span></a>
+<a class="w-10 h-10 rounded-full border border-surface-variant flex items-center justify-center hover:bg-white hover:text-primary transition-all" href="#"><span class="material-symbols-outlined text-sm">alternate_email</span></a>
+<a class="w-10 h-10 rounded-full border border-surface-variant flex items-center justify-center hover:bg-white hover:text-primary transition-all" href="#"><span class="material-symbols-outlined text-sm">call</span></a>
+</div>
+</div>
+<div>
+<h5 class="font-bold text-white mb-6 uppercase tracking-widest text-xs">Quick Links</h5>
+<ul class="space-y-4">
+<li><a class="text-surface-variant hover:text-white transition-all font-body-md text-body-md" href="#">Home</a></li>
+<li><a class="text-surface-variant hover:text-white transition-all font-body-md text-body-md" href="#">Services</a></li>
+<li><a class="text-surface-variant hover:text-white transition-all font-body-md text-body-md" href="#">About Us</a></li>
+<li><a class="text-surface-variant hover:text-white transition-all font-body-md text-body-md" href="#">Testimonials</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-white mb-6 uppercase tracking-widest text-xs">Resources</h5>
+<ul class="space-y-4">
+<li><a class="text-surface-variant hover:text-white transition-all font-body-md text-body-md" href="#">Privacy Policy</a></li>
+<li><a class="text-surface-variant hover:text-white transition-all font-body-md text-body-md" href="#">Terms of Service</a></li>
+<li><a class="text-surface-variant hover:text-white transition-all font-body-md text-body-md" href="#">Patient Portal</a></li>
+<li><a class="text-surface-variant hover:text-white transition-all font-body-md text-body-md" href="#">Emergency Care</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-white mb-6 uppercase tracking-widest text-xs">Contact Info</h5>
+<ul class="space-y-4 text-surface-variant text-sm">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-lg">location_on</span> Bole Road, Addis Ababa, Ethiopia</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-lg">phone</span> +251 11 6XX XXXX</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-lg">mail</span> info@{{CLIENT_NAME_SOLO}}dental.com</li>
+</ul>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-gutter py-6 border-t border-white/10 text-center text-xs text-surface-variant">
+            © 2024 {{CLIENT_NAME_SOLO}} Premium Dental Clinic. All Rights Reserved.
+        </div>
+</footer>
+<script>
+        let currentSlide = 0;
+        const testimonials = [
+            {
+                name: "Abebe Tadesse",
+                role: "Business Consultant",
+                text: "The level of professionalism at {{CLIENT_NAME}} is unmatched. I was nervous about my oral surgery, but the team made me feel completely at ease. The results are life-changing.",
+                img: "placeholder",
+                alt: "A portrait of a happy, light-skinned Ethiopian male professional in his 40s, wearing a business casual shirt, smiling warmly at the camera. He exudes confidence and health. The background is a blurred office space with natural lighting, focusing on his genuine, healthy smile."
+            },
+            {
+                name: "Selamawit Bekele",
+                role: "Graphic Designer",
+                text: "I've been coming here for 3 years now. The cosmetic whitening treatment gave me so much confidence. Best dental experience in Addis by far!",
+                img: "placeholder",
+                alt: "A cheerful, light-skinned Ethiopian woman in her 20s with a radiant smile, wearing a modern green silk blouse. She is standing outdoors in a city setting with soft morning sunlight highlighting her glowing skin and perfect teeth."
+            }
+        ];
+
+        function slideTestimonial(direction) {
+            currentSlide = (currentSlide + direction + testimonials.length) % testimonials.length;
+            renderSlider();
+        }
+
+        function renderSlider() {
+            const container = document.getElementById('testimonial-slider');
+            const testimonial = testimonials[currentSlide];
+            
+            container.innerHTML = `
+                <div class="min-w-full px-4 animate-fadeIn">
+                    <div class="bg-white p-12 rounded-3xl border border-outline-variant shadow-sm text-center">
+                        <div class="w-24 h-24 mx-auto mb-8 rounded-full overflow-hidden border-4 border-secondary-container">
+                            <img src="${testimonial.img}" data-alt="${testimonial.alt}" class="w-full h-full object-cover">
+                        </div>
+                        <div class="flex justify-center gap-1 mb-6 text-tertiary-container">
+                            <span class="material-symbols-outlined">star</span>
+                            <span class="material-symbols-outlined">star</span>
+                            <span class="material-symbols-outlined">star</span>
+                            <span class="material-symbols-outlined">star</span>
+                            <span class="material-symbols-outlined">star</span>
+                        </div>
+                        <p class="text-xl font-body-lg text-primary italic mb-8">"${testimonial.text}"</p>
+                        <h5 class="font-bold text-primary">${testimonial.name}</h5>
+                        <p class="text-on-surface-variant text-sm">${testimonial.role}</p>
+                    </div>
+                </div>
+            `;
+            // Note: Since we're re-injecting HTML, in a real environment the image pipeline would re-trigger.
+        }
+
+        // Auto slide
+        setInterval(() => slideTestimonial(1), 5000);
+    </script>
+<style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateX(20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        .animate-fadeIn {
+            animation: fadeIn 0.5s ease forwards;
+        }
+    </style>
+</body></html>

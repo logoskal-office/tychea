@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tychea | Building the digital infrastructure of tomorrow</title>
+<!-- <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script> -->
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body class="bg-white text-black selection:bg-accent selection:text-black">
+    <script>
+        document.body.style.zoom
+    </script>
+<header>
+    {% include 'navbar.html' %}
+</header>
+    
+<main>
+    
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center pt-0 overflow-hidden bg-black">
+    <!-- Background Decoration -->
+    <div class="absolute top-0 right-0 w-full h-full opacity-10 pointer-events-none">
+        <div class="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] rounded-full bg-accent blur-[150px]"></div>
+    </div>
+    <div class=" mx-auto px-6 grid md:grid-cols-12 gap-12 items-center relative z-10">
+        <div class="md:col-span-10 lg:col-span-9 ">
+            <h1 class="text-4xl md:text-7xl font-black text-white leading-[0.95] tracking-tighter mb-10 uppercase" >
+                            Building the <span class="text-accent italic">digital</span> infrastructure of  tomorrow</h1>
+            <p class="text-sm md:text-xl text-white/60 max-w-xl mb-12 font-medium leading-relaxed border-l-2 border-accent pl-8">
+                            High-performance software solutions that empower global enterprises to lead the next era of technological evolution.
+                        </p>
+            <div class="flex flex-col sm:flex-row gap-6">
+            <button class="bg-accent text-black px-10 py-5 font-black uppercase rounded-none text-sm tracking-[0.2em] flex items-center justify-center gap-3 hover:bg-white transition-all btn-accent" >
+                                Launch Project
+                                <span class="material-symbols-outlined" data-icon="arrow_forward" >arrow_forward</span>
+            </button>
+            <button class="border-2 border-white text-white px-10 py-5 font-black uppercase text-sm tracking-[0.2em] hover:bg-white hover:text-black transition-all" >
+                                View Solutions
+                            </button>
+            </div>
+        </div>
+    </div>
+    <!-- Kinetic Bar -->
+    <div class="absolute bottom-0 left-0 w-full h-4 bg-accent"></div>
+</section>
+
+
+<!-- Trusted Partners (Logo Marquee) -->
+<section class="py-12 bg-white border-b border-black">
+<div class="overflow-hidden relative whitespace-nowrap">
+<div class="flex animate-marquee items-center gap-24 py-4">
+<!-- Repeat logos for seamless scroll -->
+<span class="text-black/20 font-black text-2xl uppercase tracking-[0.2em]">Quantum Systems</span>
+<span class="text-black/20 font-black text-2xl uppercase tracking-[0.2em]">Apex Global</span>
+<span class="text-black/20 font-black text-2xl uppercase tracking-[0.2em]">Neural Dynamics</span>
+<span class="text-black/20 font-black text-2xl uppercase tracking-[0.2em]">Vortex Labs</span>
+<span class="text-black/20 font-black text-2xl uppercase tracking-[0.2em]">Titan Cloud</span>
+<span class="text-black/20 font-black text-2xl uppercase tracking-[0.2em]">Helix Corp</span>
+<!-- Second set -->
+<span class="text-black/20 font-black text-2xl uppercase tracking-[0.2em]">Quantum Systems</span>
+<span class="text-black/20 font-black text-2xl uppercase tracking-[0.2em]">Apex Global</span>
+<span class="text-black/20 font-black text-2xl uppercase tracking-[0.2em]">Neural Dynamics</span>
+<span class="text-black/20 font-black text-2xl uppercase tracking-[0.2em]">Vortex Labs</span>
+<span class="text-black/20 font-black text-2xl uppercase tracking-[0.2em]">Titan Cloud</span>
+<span class="text-black/20 font-black text-2xl uppercase tracking-[0.2em]">Helix Corp</span>
+</div>
+</div>
+</section>
+
+
+<!-- Services Section -->
+<section class="py-32 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-24 gap-12">
+        <div class="max-w-2xl">
+        <span class="text-accent font-black uppercase tracking-[0.3em] text-xs mb-6 block" >Our Expertise</span>
+        <h2 class="text-5xl md:text-7xl font-black text-black tracking-tighter uppercase leading-none" >What We Provide</h2>
+        </div>
+            <p class="text-black/50 max-w-sm text-lg font-medium leading-relaxed" >
+                Bespoke architectural engineering for the world's most demanding digital challenges.
+            </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-0 border-t border-l border-black">
+        <!-- Card 1 -->
+        <div class="group p-12 border-r border-b border-black transition-all hover:bg-black hover:text-white flex flex-col justify-between min-h-[450px]">
+        <div>
+        <div class="w-16 h-16 border-2 border-black flex items-center justify-center mb-10 group-hover:border-accent">
+        <span class="material-symbols-outlined text-black group-hover:text-accent text-3xl" data-icon="terminal" >terminal</span>
+        </div>
+        <h3 class="text-3xl font-black mb-6 uppercase tracking-tight" >Software Development</h3>
+        <p class="text-black/60 group-hover:text-white/60 leading-relaxed font-medium" >Scalable backend systems and complex API integrations designed for 99.99% uptime and mission-critical reliability.</p>
+        </div>
+        <div class="mt-12">
+        <a class="inline-flex items-center gap-3 text-black group-hover:text-accent font-black uppercase text-xs tracking-widest" href="#" >
+                                Explore Tech Stack <span class="material-symbols-outlined text-sm" data-icon="trending_flat" >trending_flat</span>
+        </a>
+        </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="group p-12 border-r border-b border-black bg-black text-white transition-all hover:bg-accent hover:text-black flex flex-col justify-between min-h-[450px]">
+        <div>
+        <div class="w-16 h-16 border-2 border-white flex items-center justify-center mb-10 group-hover:border-black">
+        <span class="material-symbols-outlined text-white group-hover:text-black text-3xl" data-icon="architecture" >architecture</span>
+        </div>
+        <h3 class="text-3xl font-black mb-6 uppercase tracking-tight" >Web Design</h3>
+        <p class="text-white/60 group-hover:text-black/60 leading-relaxed font-medium" >Immersive, high-conversion interfaces that blend kinetic motion with surgical UI precision to captivate users.</p>
+        </div>
+        <div class="mt-12">
+        <a class="inline-flex items-center gap-3 text-accent group-hover:text-black font-black uppercase text-xs tracking-widest" href="#" >
+                                View Experience <span class="material-symbols-outlined text-sm" data-icon="trending_flat" >trending_flat</span>
+        </a>
+        </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="group p-12 border-r border-b border-black transition-all hover:bg-black hover:text-white flex flex-col justify-between min-h-[450px]">
+        <div>
+        <div class="w-16 h-16 border-2 border-black flex items-center justify-center mb-10 group-hover:border-accent">
+        <span class="material-symbols-outlined text-black group-hover:text-accent text-3xl" data-icon="mobile_friendly" >mobile_friendly</span>
+        </div>
+        <h3 class="text-3xl font-black mb-6 uppercase tracking-tight" >Mobile Apps</h3>
+        <p class="text-black/60 group-hover:text-white/60 leading-relaxed font-medium" >Native-performance cross-platform applications that deliver fluid experiences across every touchpoint of the user journey.</p>
+        </div>
+        <div class="mt-12">
+        <a class="inline-flex items-center gap-3 text-black group-hover:text-accent font-black uppercase text-xs tracking-widest" href="#" >
+                                Native Solutions <span class="material-symbols-outlined text-sm" data-icon="trending_flat" >trending_flat</span>
+        </a>
+        </div>
+        </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Core Philosophy Section -->
+<section class="py-32 bg-black text-white">
+<div class="max-w-7xl mx-auto px-6">
+<div class="mb-24">
+<span class="text-accent font-black uppercase tracking-[0.3em] text-xs mb-6 block">Our Ethos</span>
+<h2 class="text-5xl md:text-8xl font-black tracking-tighter uppercase leading-none">Core Philosophy</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10">
+<div class="bg-black p-12 hover:bg-accent hover:text-black transition-colors group">
+<p class="text-accent group-hover:text-black font-black text-6xl mb-8">01</p>
+<h4 class="text-3xl font-black uppercase mb-4 tracking-tighter">Performance</h4>
+<p class="text-white/40 group-hover:text-black/60 font-medium">Optimization at the kernel level. We build for speed that defines markets.</p>
+</div>
+<div class="bg-black p-12 hover:bg-accent hover:text-black transition-colors group">
+<p class="text-accent group-hover:text-black font-black text-6xl mb-8">02</p>
+<h4 class="text-3xl font-black uppercase mb-4 tracking-tighter">Scalability</h4>
+<p class="text-white/40 group-hover:text-black/60 font-medium">Infinite horizontal expansion. Our systems grow alongside your ambition.</p>
+</div>
+<div class="bg-black p-12 hover:bg-accent hover:text-black transition-colors group">
+<p class="text-accent group-hover:text-black font-black text-6xl mb-8">03</p>
+<h4 class="text-3xl font-black uppercase mb-4 tracking-tighter">Security</h4>
+<p class="text-white/40 group-hover:text-black/60 font-medium">Zero-trust architecture. Immutable defenses for critical digital assets.</p>
+</div>
+<div class="bg-black p-12 hover:bg-accent hover:text-black transition-colors group">
+<p class="text-accent group-hover:text-black font-black text-6xl mb-8">04</p>
+<h4 class="text-3xl font-black uppercase mb-4 tracking-tighter">Innovation</h4>
+<p class="text-white/40 group-hover:text-black/60 font-medium">Prototyping the impossible. Translating R&amp;D into commercial dominance.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Advantage Section -->
+<section class="py-32 bg-zinc-50 overflow-hidden">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid lg:grid-cols-2 gap-24 items-center">
+<div class="relative">
+<div class="aspect-square bg-black overflow-hidden relative">
+<img alt="Technical Infrastructure" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000 opacity-80" data-alt="Close up of high tech server hardware and glowing lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDY-6C-lVsq5_34J6NSW-BaR0ygQHf9pbpFXd5Q7jKfTIvTr9stsFtmWhh7ftopgcM9w7IyRl5qjvuu7u3jOD8J5OhEZW3NDrvH3bc4voG2vXlncyBeVy8B6M1Zg9GDeVoBngd8eLWPZTMYdMVgz_NvG9wWasHh0dJxRVc0pAbih4UfJWEk6ScLUh9PXvO1D38MkXuiyvAOOe35Z3R2k29UB9g1jEpzcnNtX64AhAZMcqplZy1fPPVyOSMEu3ihSzy_BVrfUiCNeh4" />
+<div class="absolute inset-0 border-[20px] border-white/10"></div>
+</div>
+<div class="absolute -bottom-10 -right-10 bg-accent p-10 shadow-2xl">
+<p class="text-black font-black text-6xl leading-none tracking-tighter" >99.9%</p>
+<p class="text-black font-black text-xs tracking-[0.3em] mt-4 uppercase" >Uptime Reliability</p>
+</div>
+</div>
+<div>
+<h2 class="text-5xl md:text-6xl font-black text-black mb-12 tracking-tighter uppercase" >The Kinetic<br/><span class="text-accent" >Advantage</span></h2>
+<div class="space-y-12">
+<div class="flex gap-8">
+<div class="flex-shrink-0 w-2 bg-black h-16"></div>
+<div>
+<h4 class="text-xl font-black text-black mb-3 uppercase tracking-tight" >Architectural Precision</h4>
+<p class="text-black/50 font-medium leading-relaxed" >We don't just write code; we architect systems designed for longevity and explosive growth.</p>
+</div>
+</div>
+<div class="flex gap-8">
+<div class="flex-shrink-0 w-2 bg-accent h-16"></div>
+<div>
+<h4 class="text-xl font-black text-black mb-3 uppercase tracking-tight" >High-Velocity Deployment</h4>
+<p class="text-black/50 font-medium leading-relaxed" >Our CI/CD pipelines ensure your innovations reach the market ahead of the competition.</p>
+</div>
+</div>
+<div class="flex gap-8">
+<div class="flex-shrink-0 w-2 bg-black h-16"></div>
+<div>
+<h4 class="text-xl font-black text-black mb-3 uppercase tracking-tight" >Security-First Culture</h4>
+<p class="text-black/50 font-medium leading-relaxed" >Enterprise-grade security protocols baked into every line of code from day zero.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Detailed Process Teaser Section -->
+<section class="py-32 bg-white overflow-hidden">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid lg:grid-cols-2 gap-24 items-center">
+<div>
+<span class="text-accent font-black uppercase tracking-[0.3em] text-xs mb-6 block">Our Workflow</span>
+<h2 class="text-5xl md:text-7xl font-black text-black mb-10 tracking-tighter uppercase leading-none">Sprint-Based Engineering</h2>
+<p class="text-xl text-black/60 mb-12 font-medium leading-relaxed">
+                    We've eliminated the lag between ideation and deployment. Our methodology is built on iterative cycles that prioritize rapid feedback and surgical execution.
+                </p>
+<div class="space-y-6">
+<div class="flex items-center gap-6 group">
+<div class="w-12 h-12 flex-shrink-0 border-2 border-black flex items-center justify-center font-black group-hover:bg-black group-hover:text-white transition-all">01</div>
+<span class="text-xl font-black uppercase tracking-tight">Discovery &amp; Scoping</span>
+</div>
+<div class="flex items-center gap-6 group">
+<div class="w-12 h-12 flex-shrink-0 border-2 border-black flex items-center justify-center font-black group-hover:bg-black group-hover:text-white transition-all">02</div>
+<span class="text-xl font-black uppercase tracking-tight">Kinetic Prototyping</span>
+</div>
+<div class="flex items-center gap-6 group">
+<div class="w-12 h-12 flex-shrink-0 border-2 border-black flex items-center justify-center font-black group-hover:bg-black group-hover:text-white transition-all">03</div>
+<span class="text-xl font-black uppercase tracking-tight">Active Sprint Cycle</span>
+</div>
+</div>
+</div>
+<div class="bg-black p-1 border-[10px] border-black">
+<div class="bg-accent h-[400px] flex items-center justify-center p-12">
+<span class="material-symbols-outlined text-[160px] text-black opacity-20" data-icon="update">update</span>
+<div class="absolute text-black text-center">
+<p class="text-8xl font-black tracking-tighter">14</p>
+<p class="text-sm font-black uppercase tracking-[0.3em]">Day Sprints</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Latest Insights Section -->
+<section class="py-32 bg-zinc-50 border-t border-black">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex justify-between items-end mb-16">
+<div>
+<span class="text-accent font-black uppercase tracking-[0.3em] text-xs mb-6 block">Insights</span>
+<h2 class="text-5xl md:text-7xl font-black text-black tracking-tighter uppercase leading-none">Latest Intelligence</h2>
+</div>
+<a class="hidden md:flex items-center gap-3 font-black uppercase text-xs tracking-widest border-b-2 border-black pb-2" href="#">View Archive <span class="material-symbols-outlined text-sm" data-icon="east">east</span></a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-white border border-black p-10 flex flex-col h-full hover:shadow-[10px_10px_0px_0px_rgba(132,204,22,1)] transition-all">
+<span class="text-accent font-black text-[10px] uppercase tracking-widest mb-6">Case Study // Cloud Arch</span>
+<h3 class="text-2xl font-black uppercase mb-8 tracking-tight flex-grow leading-tight">Migrating Legacy Systems to Serverless at Scale</h3>
+<div class="flex justify-between items-center mt-auto">
+<span class="text-black/40 font-black text-[10px] uppercase tracking-widest">Oct 24, 2024</span>
+<span class="material-symbols-outlined text-black" data-icon="arrow_outward">arrow_outward</span>
+</div>
+</div>
+<div class="bg-white border border-black p-10 flex flex-col h-full hover:shadow-[10px_10px_0px_0px_rgba(132,204,22,1)] transition-all">
+<span class="text-accent font-black text-[10px] uppercase tracking-widest mb-6">Technical // UI/UX</span>
+<h3 class="text-2xl font-black uppercase mb-8 tracking-tight flex-grow leading-tight">The Psychology of Kinetic Typography in Modern SaaS</h3>
+<div class="flex justify-between items-center mt-auto">
+<span class="text-black/40 font-black text-[10px] uppercase tracking-widest">Oct 19, 2024</span>
+<span class="material-symbols-outlined text-black" data-icon="arrow_outward">arrow_outward</span>
+</div>
+</div>
+<div class="bg-white border border-black p-10 flex flex-col h-full hover:shadow-[10px_10px_0px_0px_rgba(132,204,22,1)] transition-all">
+<span class="text-accent font-black text-[10px] uppercase tracking-widest mb-6">Analysis // Web3</span>
+<h3 class="text-2xl font-black uppercase mb-8 tracking-tight flex-grow leading-tight">Building Deterministic Infrastructure for Global Finance</h3>
+<div class="flex justify-between items-center mt-auto">
+<span class="text-black/40 font-black text-[10px] uppercase tracking-widest">Oct 12, 2024</span>
+<span class="material-symbols-outlined text-black" data-icon="arrow_outward">arrow_outward</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-32 bg-black relative overflow-hidden">
+<div class="absolute inset-0 flex items-center justify-center opacity-5">
+<h2 class="text-[300px] font-black text-white uppercase select-none" >TYCHEA</h2>
+</div>
+<div class="max-w-7xl mx-auto px-6 text-center relative z-10">
+<h2 class="text-5xl md:text-8xl font-black text-white mb-10 tracking-tighter uppercase leading-none" >Ready to evolve?</h2>
+<p class="text-white/40 text-xl mb-16 max-w-2xl mx-auto font-medium" >
+            Let's discuss how Tychea can propel your business into the digital future.
+        </p>
+<button class="bg-accent text-black px-12 py-6 font-black text-sm uppercase tracking-[0.3em] hover:bg-white transition-all" >
+            Initiate Consultation
+        </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-white border-t border-black w-full py-16 px-6">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
+<div class="text-3xl font-black text-black uppercase tracking-tighter" >Tychea</div>
+<div class="flex flex-wrap justify-center gap-10">
+<a class="text-black/40 hover:text-accent transition-colors font-black uppercase text-[10px] tracking-[0.2em]" href="#" >Privacy Policy</a>
+<a class="text-black/40 hover:text-accent transition-colors font-black uppercase text-[10px] tracking-[0.2em]" href="#" >Terms of Service</a>
+<a class="text-black/40 hover:text-accent transition-colors font-black uppercase text-[10px] tracking-[0.2em]" href="#" >LinkedIn</a>
+<a class="text-black/40 hover:text-accent transition-colors font-black uppercase text-[10px] tracking-[0.2em]" href="#" >GitHub</a>
+</div>
+<div class="text-black/30 text-[10px] font-black uppercase tracking-[0.2em]" >
+            © 2024 Tychea. Systems Engineered.
+        </div>
+</div>
+</footer>
+</body></html>

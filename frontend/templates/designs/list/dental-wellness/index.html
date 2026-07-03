@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EthioDental Wellness | Gentle Dental Care in Addis Ababa</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&amp;family=Source+Serif+4:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#635f40",
+                        "on-error-container": "#93000a",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed": "#bcf0ae",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#d8dad9",
+                        "error": "#ba1a1a",
+                        "inverse-primary": "#a1d494",
+                        "on-primary-fixed-variant": "#23501e",
+                        "on-tertiary-container": "#444024",
+                        "secondary": "#006c52",
+                        "inverse-on-surface": "#eff1ef",
+                        "surface-tint": "#3b6934",
+                        "tertiary-container": "#b2ac88",
+                        "outline-variant": "#c2c9bb",
+                        "on-secondary-fixed-variant": "#00513d",
+                        "background": "#f8faf8",
+                        "surface-container": "#eceeec",
+                        "surface-container-highest": "#e1e3e1",
+                        "tertiary-fixed-dim": "#cec7a2",
+                        "inverse-surface": "#2e3130",
+                        "surface": "#f8faf8",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#8ff6d0",
+                        "outline": "#72796e",
+                        "surface-container-low": "#f2f4f2",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#4b472b",
+                        "secondary-fixed": "#8ff6d0",
+                        "on-surface-variant": "#42493e",
+                        "surface-variant": "#e1e3e1",
+                        "on-secondary-container": "#007257",
+                        "surface-bright": "#f8faf8",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#2d5a27",
+                        "surface-container-high": "#e6e9e7",
+                        "on-surface": "#191c1b",
+                        "tertiary-fixed": "#eae3bc",
+                        "on-secondary-fixed": "#002117",
+                        "primary": "#154212",
+                        "primary-fixed-dim": "#a1d494",
+                        "on-primary-fixed": "#002201",
+                        "on-error": "#ffffff",
+                        "on-primary-container": "#9dd090",
+                        "secondary-fixed-dim": "#73d9b5",
+                        "on-tertiary-fixed": "#1f1c04",
+                        "on-background": "#191c1b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "12px",
+                        "stack-md": "24px",
+                        "base": "8px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "48px",
+                        "stack-lg": "48px",
+                        "gutter": "24px",
+                        "container-max": "1200px"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Manrope"],
+                        "body-md": ["\"Source Serif 4\""],
+                        "body-lg": ["\"Source Serif 4\""],
+                        "headline-lg-mobile": ["Manrope"],
+                        "label-md": ["Manrope"],
+                        "headline-lg": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .leaf-bullet::before {
+            content: 'eco';
+            font-family: 'Material Symbols Outlined';
+            margin-right: 12px;
+            color: #154212;
+            vertical-align: middle;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(178, 172, 136, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md">
+<div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-20">
+<div class="font-headline-lg text-headline-lg font-bold text-primary">EthioDental Wellness</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#services">Services</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#about">About</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#booking">Booking</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#contact">Contact</a>
+</nav>
+<button class="bg-primary-container text-on-primary-container px-6 py-2.5 rounded-full font-label-md text-label-md font-bold hover:opacity-90 transition-all active:scale-95">Book Now</button>
+</div>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/40 to-transparent z-10"></div>
+<div class="w-full h-full bg-cover bg-center transition-transform duration-[10s] hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCjL5CXoq_sqPSweQVC1ac9heMlHu6chIfCmEku41oQSEYiVxOuJmazh52tq-XwbhiFtw19bf83n8XeZj3qSR8v6LDnl_GUiSqo8aVrS54WHaYOdO_MSJMSA2oS3J-DuGMNtqfR-m-SsagfR9J_uIF8uSfRq1a2k3MpUuqOFlFRfJbKFulrpxsyOxfi1QEX2HCBnPxCoau_ML9qDY1KuUVEYSBWREFuZYEqeW-16mF3Qo2GoiNxUT7z8CxuyoG691xndb1mDM2cvnDH')">
+</div>
+</div>
+<div class="relative z-20 px-margin-desktop max-w-container-max mx-auto w-full">
+<div class="max-w-2xl">
+<h1 class="font-headline-xl text-headline-xl text-primary mb-stack-sm animate-fade-in">
+                        Gentle Dental Care for the Heart of Addis Ababa
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-lg leading-relaxed">
+                        Experience world-class dentistry with a personal touch in a calming, green-themed sanctuary. Our practice is dedicated to the health and happiness of the Ethiopian community.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-full font-label-md text-label-md shadow-lg shadow-primary/10 hover:shadow-primary/20 transition-all active:scale-95">
+                            Book Your Visit
+                        </button>
+<button class="border border-tertiary-container text-primary px-8 py-4 rounded-full font-label-md text-label-md hover:bg-surface-container-low transition-all">
+                            View Services
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Welcome Section -->
+<section class="py-stack-lg px-margin-desktop max-w-container-max mx-auto" id="about">
+<div class="grid md:grid-cols-2 gap-gutter items-center">
+<div class="relative rounded-[2rem] overflow-hidden group">
+<img alt="Healthy Ethiopian Smile" class="w-full h-full object-cover aspect-square group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5tqoOI7eCo-mr9DD28-PqjL38SNX2SEqyUyT9hWNXfJ6dTFzYWo-K9-0H6hfuViH7q7lKQX_9ZXCLaIQpG3d8sPUUqgxR13D6hWl-Ix2BPmL54nA_QFvPru_zCSrukYINFDmV3SrSty37yogKJ_Q99JIaoBqaqhJdli4B-rHRwK7XFmyc673POQihtqucVcu8x_vkeZXxFek6w0uzpWdlUVMpEznIFb9JFfq6c9vqqwUgLPBG-si5jN2KwGd3g8YJc-wNAI3gj_V5"/>
+<div class="absolute inset-0 ring-1 ring-inset ring-outline-variant/20 rounded-[2rem]"></div>
+</div>
+<div class="space-y-stack-md">
+<div class="flex items-center gap-2 text-secondary font-label-md uppercase tracking-widest">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">spa</span>
+                        Our Commitment
+                    </div>
+<h2 class="font-headline-lg text-headline-lg text-primary">Healthy Smiles for Women &amp; Children</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant italic">
+                        "At EthioDental Wellness, we believe a smile is more than just dental health—it's a reflection of inner vitality and confidence."
+                    </p>
+<div class="space-y-4">
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            Our clinic is designed as a safe, peaceful environment where women and children can feel at ease. We prioritize gentle, minimally invasive techniques combined with the latest dental technologies to ensure your comfort at every step.
+                        </p>
+<ul class="space-y-3 font-body-md text-on-surface">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                Specialized Pediatric Dental Care
+                            </li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                Compassionate Female-Led Professional Team
+                            </li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                Calming, Green-Inspired Healing Spaces
+                            </li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="py-stack-lg bg-surface-container-low" id="services">
+<div class="px-margin-desktop max-w-container-max mx-auto">
+<div class="text-center max-w-3xl mx-auto mb-stack-lg">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Comprehensive Wellness Services</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        From preventive care to aesthetic restoration, we offer a full spectrum of dental services tailored to the unique needs of our patients.
+                    </p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- General Dentistry -->
+<div class="bg-surface p-8 rounded-[1.5rem] border border-outline-variant/30 hover:border-primary/40 transition-all duration-300 group">
+<div class="w-12 h-12 bg-secondary-container text-on-secondary-container rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">health_and_safety</span>
+</div>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-3">General Dentistry</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                            Regular cleanings, fillings, and preventive diagnostics to keep your natural smile healthy for life.
+                        </p>
+<a class="text-secondary font-label-md flex items-center gap-2 hover:gap-3 transition-all" href="#">
+                            Learn more <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<!-- Pediatric Care -->
+<div class="bg-surface rounded-[1.5rem] border border-outline-variant/30 overflow-hidden hover:border-primary/40 transition-all duration-300 flex flex-col">
+<img alt="Pediatric Dental Visit" class="w-full h-48 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDb0fTdFRlyzybcqrcE8WK4ISLVmOWbosu5HrPFLHyZ82kXAP6iJkDBNSQ1YVEAREPp2mWCTRhuZ8JW4DMBBL-a2_ZcreWtkJhdCHaRJhEzCi-2et-LWumvm9g3_Ucq_nMUNKiQMlFSAeMBhRJwZ9Np7ziviyr7HMxxE4o5hEiGuh4I-Dn2Au7_zjbWB7OMHKOdDCc_fGn3mXbyTHUB5HAmo3Zf_0kFrFtCyepXIUKXgXO6jcpUgOAcfiu6v1wJa8kUKILZX6tpYvnp"/>
+<div class="p-8 flex flex-col flex-grow">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-3">Pediatric Care</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                                Creating positive dental experiences for our youngest patients in a friendly, no-fear environment.
+                            </p>
+<a class="mt-auto text-secondary font-label-md flex items-center gap-2 hover:gap-3 transition-all" href="#">
+                                View Kids' Program <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Cosmetic Enhancements -->
+<div class="bg-surface p-8 rounded-[1.5rem] border border-outline-variant/30 hover:border-primary/40 transition-all duration-300 group">
+<div class="w-12 h-12 bg-primary-fixed text-on-primary-fixed-variant rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">auto_fix_high</span>
+</div>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-3">Cosmetic Enhancements</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                            Whitening, veneers, and alignment solutions designed to enhance your natural beauty.
+                        </p>
+<a class="text-secondary font-label-md flex items-center gap-2 hover:gap-3 transition-all" href="#">
+                            Explore Treatments <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Location & Contact -->
+<section class="py-stack-lg px-margin-desktop max-w-container-max mx-auto" id="contact">
+<div class="bg-primary text-on-primary rounded-[2.5rem] overflow-hidden flex flex-col md:flex-row">
+<div class="md:w-1/2 p-12 lg:p-16 space-y-8">
+<div>
+<h2 class="font-headline-lg text-headline-lg mb-4 text-on-primary-container">Visit Our Sanctuary</h2>
+<p class="font-body-md opacity-90">
+                            Located conveniently in the heart of Addis Ababa, our clinic is a peaceful retreat from the bustling city.
+                        </p>
+</div>
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined mt-1 text-on-primary-container">location_on</span>
+<div>
+<p class="font-label-md text-label-md font-bold mb-1">Address</p>
+<p class="font-body-md opacity-80">Bole Road, Near Kazanchis District<br/>Addis Ababa, Ethiopia</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined mt-1 text-on-primary-container">schedule</span>
+<div>
+<p class="font-label-md text-label-md font-bold mb-1">Hours</p>
+<p class="font-body-md opacity-80">Mon - Fri: 8:00 AM - 6:00 PM<br/>Sat: 9:00 AM - 1:00 PM</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined mt-1 text-on-primary-container">call</span>
+<div>
+<p class="font-label-md text-label-md font-bold mb-1">Contact</p>
+<p class="font-body-md opacity-80">+251 11 123 4567<br/>hello@ethiodentalwellness.com</p>
+</div>
+</div>
+</div>
+</div>
+<div class="md:w-1/2 min-h-[400px] relative overflow-hidden bg-surface-container-highest flex items-center justify-center">
+<img class="absolute inset-0 w-full h-full object-cover opacity-80" data-alt="A clean, minimalist 3D map representation of the Bole and Kazanchis areas of Addis Ababa, rendered in shades of forest green and soft mint. The map highlights key landmarks with subtle glow effects to match the high-end dental clinic branding. The aesthetic is modern, professional, and tranquil, avoiding any human figures to maintain focus on the location." data-location="Addis Ababa" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4GL2dpGJ0AveYmaCp3ao5ARRRbs8CMZuHUL5oGLI479C-k_ulcRkfdfirBM8pHQ3xQRXf6EkBbL0byGYy7nEYzPS1C2LchC97R_91dFfXxHkUZxmEo0KI5qm3EKPh7tzEHcJgaOyUGniLS29Qb8doedXEbP-qZ5n2ckd_-WHUzJcd1k1uzFjIPG3s3vHbtaSCTVKOlrw3X3nrKDN3wvD2yiH720ujWuGhOSQn4WiXzSPxV_MDw-YkiLWd8Nxclt7heWAo2GMNHgnw"/>
+<div class="relative z-10 glass-card p-6 rounded-2xl max-w-xs text-on-surface shadow-xl">
+<p class="font-label-md font-bold text-primary mb-2">Find Us</p>
+<p class="text-sm opacity-80 mb-4">We are located just minutes from the main Bole corridor, offering easy access and secure parking.</p>
+<button class="w-full bg-primary text-white py-3 rounded-xl font-label-md">Get Directions</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container dark:bg-inverse-surface mt-stack-lg">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-margin-desktop py-stack-lg max-w-container-max mx-auto">
+<div class="flex flex-col items-center md:items-start mb-8 md:mb-0">
+<div class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary dark:text-primary-fixed-dim mb-2">EthioDental Wellness</div>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant text-center md:text-left max-w-sm">
+                    © 2024 EthioDental Wellness. Providing gentle care in Addis Ababa.
+                </p>
+</div>
+<div class="flex flex-col md:flex-row gap-8 md:gap-16">
+<div class="flex flex-col gap-3">
+<p class="font-label-md text-primary font-bold uppercase tracking-wider">Legal</p>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Terms of Service</a>
+</div>
+<div class="flex flex-col gap-3">
+<p class="font-label-md text-primary font-bold uppercase tracking-wider">Quick Links</p>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Location</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Contact Us</a>
+</div>
+<div class="flex gap-4 items-center">
+<a class="w-10 h-10 rounded-full bg-surface flex items-center justify-center hover:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined text-primary text-[20px]">share</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-surface flex items-center justify-center hover:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined text-primary text-[20px]">camera_alt</span>
+</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Smooth scroll implementation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body></html>

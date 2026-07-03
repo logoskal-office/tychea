@@ -1,0 +1,13 @@
+<nav class="flex items-center justify-between px-10 py-2 border-b bg-secondary border-gray-200">
+    <a href="{% url 'home-page' %}" class="text-2xl font-bold text-primary tracking-tighter uppercase">
+        Ty<span class="text-accent">chea</span>
+    </a>
+    <div class="hidden md:flex space-x-4 items-center font-medium text-primary text-md">
+        <a href="{% url 'home-page' %}" class="hover:text-accent transition-colors">Home</a>
+        <a href="{% url 'designs-page' %}" class="hover:text-accent transition-colors">Designs</a>
+        <a href="{ url 'portfolio-page' %}" class="hover:text-accent transition-colors">Portfolio</a>
+        <a href="{ url 'about-page' %}" class="hover:text-accent transition-colors">About</a>
+        <a href="{ url 'contact-page' %}" class="hover:text-accent transition-colors">Contact</a>
+        <a href="#" class="ml-2 btn-primary-accent bg-accent hover:bg-black text-primary hover:text-accent px-6 py-2.5 font-bold rounded-full text-sm transition-all">Work With Us</a>
+    </div>
+</nav>

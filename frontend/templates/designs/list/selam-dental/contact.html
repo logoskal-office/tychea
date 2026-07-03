@@ -1,0 +1,451 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Contact &amp; Book Your Visit | {{CLIENT_NAME}} Clinic</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface": "#191c1d",
+                    "error-container": "#ffdad6",
+                    "surface-container-highest": "#e1e3e4",
+                    "primary-fixed": "#cde5ff",
+                    "surface-container-low": "#f3f4f5",
+                    "on-surface-variant": "#404850",
+                    "error": "#ba1a1a",
+                    "secondary-container": "#9cecfb",
+                    "inverse-on-surface": "#f0f1f2",
+                    "primary-fixed-dim": "#94ccff",
+                    "on-primary-container": "#f3f7ff",
+                    "on-tertiary-fixed-variant": "#284c53",
+                    "on-secondary-fixed-variant": "#004f59",
+                    "outline-variant": "#bfc7d1",
+                    "on-secondary-fixed": "#001f24",
+                    "secondary-fixed-dim": "#83d3e1",
+                    "inverse-primary": "#94ccff",
+                    "primary-container": "#0077b6",
+                    "on-tertiary": "#ffffff",
+                    "surface": "#f8f9fa",
+                    "tertiary-fixed": "#c3e9f1",
+                    "surface-bright": "#f8f9fa",
+                    "surface-tint": "#006399",
+                    "surface-container": "#edeeef",
+                    "tertiary-container": "#53777e",
+                    "surface-dim": "#d9dadb",
+                    "primary": "#005d90",
+                    "surface-container-high": "#e7e8e9",
+                    "outline": "#707881",
+                    "on-error-container": "#93000a",
+                    "background": "#f8f9fa",
+                    "on-secondary-container": "#016d7a",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed": "#9feffe",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed-dim": "#a8cdd5",
+                    "on-tertiary-fixed": "#001f24",
+                    "on-tertiary-container": "#e7fbff",
+                    "on-primary-fixed": "#001d32",
+                    "inverse-surface": "#2e3132",
+                    "tertiary": "#3b5e65",
+                    "on-secondary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "secondary": "#006875",
+                    "on-primary-fixed-variant": "#004b74",
+                    "surface-variant": "#e1e3e4",
+                    "on-background": "#191c1d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "section-gap-mobile": "64px",
+                    "card-padding": "32px",
+                    "gutter": "24px",
+                    "container-max-width": "1200px",
+                    "base": "8px",
+                    "section-gap-desktop": "120px"
+            },
+            "fontFamily": {
+                    "headline-sm": ["Montserrat"],
+                    "body-lg": ["Inter"],
+                    "display-lg": ["Montserrat"],
+                    "headline-md": ["Montserrat"],
+                    "body-md": ["Inter"],
+                    "label-md": ["Inter"],
+                    "display-lg-mobile": ["Montserrat"]
+            },
+            "fontSize": {
+                    "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .ambient-shadow { box-shadow: 0px 4px 20px rgba(0, 119, 182, 0.05); }
+        .ambient-shadow-hover:hover { box-shadow: 0px 8px 30px rgba(0, 119, 182, 0.12); }
+        .step-transition { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .fill-icon { font-variation-settings: 'FILL' 1; }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md">
+<!-- TopNavBar -->
+<header class="bg-surface/90 backdrop-blur-md sticky top-0 z-50 shadow-sm h-20 flex items-center">
+<div class="flex justify-between items-center w-full px-gutter max-w-container-max-width mx-auto">
+<a class="font-headline-md text-headline-md font-bold text-primary" href="../">{{CLIENT_NAME}}</a>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="../services">Services</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="../team">Meet the Team</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">About</a>
+<a class="text-primary font-bold border-b-2 border-primary font-label-md text-label-md" href="#">Contact</a>
+</nav>
+<button class="bg-primary-container text-on-primary-container px-6 py-3 rounded-xl font-label-md text-label-md font-bold hover:opacity-90 transition-all active:scale-95 duration-150">
+                Book Appointment
+            </button>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative py-section-gap-desktop bg-surface overflow-hidden">
+<div class="max-w-container-max-width mx-auto px-gutter relative z-10">
+<div class="max-w-2xl">
+<span class="text-primary font-bold tracking-widest font-label-md text-label-md mb-4 block">GET IN TOUCH</span>
+<h1 class="font-display-lg text-display-lg text-primary mb-6">Contact Us &amp; Book Your Visit</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10">We're dedicated to providing world-class dental care in the heart of Addis Ababa. Whether you have a question or are ready to schedule your smile makeover, we're here to help.</p>
+</div>
+</div>
+<!-- Aesthetic Background Element -->
+<div class="absolute top-0 right-0 w-1/3 h-full opacity-10 pointer-events-none">
+
+</div>
+</section>
+<!-- Main Content: Booking & Info Grid -->
+<section class="pb-section-gap-desktop bg-background">
+<div class="max-w-container-max-width mx-auto px-gutter grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Booking Form Column -->
+<div class="lg:col-span-7 bg-surface-container-lowest p-card-padding rounded-xl ambient-shadow border border-[#CAF0F8]">
+<div class="mb-10" id="booking-stepper">
+<div class="flex items-center justify-between relative mb-8">
+<div class="flex-1 h-1 bg-surface-container-highest absolute top-1/2 left-0 -translate-y-1/2 z-0"></div>
+<div class="h-1 bg-primary absolute top-1/2 left-0 -translate-y-1/2 z-0 transition-all duration-500" id="step-progress" style="width: 0%;"></div>
+<div class="relative z-10 flex flex-col items-center">
+<div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold" id="step-1-indicator">1</div>
+<span class="text-xs mt-2 font-semibold">Details</span>
+</div>
+<div class="relative z-10 flex flex-col items-center">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center font-bold" id="step-2-indicator">2</div>
+<span class="text-xs mt-2 font-semibold">Service</span>
+</div>
+<div class="relative z-10 flex flex-col items-center">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center font-bold" id="step-3-indicator">3</div>
+<span class="text-xs mt-2 font-semibold">Time</span>
+</div>
+</div>
+<form id="multi-step-form">
+<!-- Step 1: Personal Info -->
+<div class="step-transition opacity-100 block" id="form-step-1">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-6">Patient Information</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant">Full Name</label>
+<input class="w-full h-12 px-4 rounded-lg bg-surface border-none focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="Enter your full name" type="text">
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant">Phone Number</label>
+<input class="w-full h-12 px-4 rounded-lg bg-surface border-none focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="+251 ..." type="tel">
+</div>
+<div class="md:col-span-2 space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant">Email Address</label>
+<input class="w-full h-12 px-4 rounded-lg bg-surface border-none focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="yourname@example.com" type="email">
+</div>
+</div>
+<div class="mt-10 flex justify-end">
+<button class="bg-primary text-white px-8 py-3 rounded-xl font-bold ambient-shadow-hover transition-all flex items-center gap-2" onclick="goToStep(2)" type="button">
+                                        Next Step
+                                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Step 2: Service Selection -->
+<div class="step-transition opacity-0 hidden" id="form-step-2">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-6">Select Treatment</h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<label class="relative border border-outline-variant rounded-xl p-4 cursor-pointer hover:bg-secondary-container/10 transition-all flex items-center gap-4 group">
+<input class="hidden peer" name="service" type="radio">
+<div class="w-6 h-6 border-2 border-outline-variant rounded-full peer-checked:border-primary peer-checked:bg-primary flex items-center justify-center transition-all">
+<div class="w-2 h-2 bg-white rounded-full opacity-0 peer-checked:opacity-100"></div>
+</div>
+<div>
+<p class="font-bold">General Checkup</p>
+<p class="text-xs text-on-surface-variant">Routine cleaning &amp; examination</p>
+</div>
+</label>
+<label class="relative border border-outline-variant rounded-xl p-4 cursor-pointer hover:bg-secondary-container/10 transition-all flex items-center gap-4 group">
+<input class="hidden peer" name="service" type="radio">
+<div class="w-6 h-6 border-2 border-outline-variant rounded-full peer-checked:border-primary peer-checked:bg-primary flex items-center justify-center transition-all">
+<div class="w-2 h-2 bg-white rounded-full opacity-0 peer-checked:opacity-100"></div>
+</div>
+<div>
+<p class="font-bold">Teeth Whitening</p>
+<p class="text-xs text-on-surface-variant">Cosmetic brightening treatment</p>
+</div>
+</label>
+<label class="relative border border-outline-variant rounded-xl p-4 cursor-pointer hover:bg-secondary-container/10 transition-all flex items-center gap-4 group">
+<input class="hidden peer" name="service" type="radio">
+<div class="w-6 h-6 border-2 border-outline-variant rounded-full peer-checked:border-primary peer-checked:bg-primary flex items-center justify-center transition-all">
+<div class="w-2 h-2 bg-white rounded-full opacity-0 peer-checked:opacity-100"></div>
+</div>
+<div>
+<p class="font-bold">Orthodontics</p>
+<p class="text-xs text-on-surface-variant">Braces &amp; aligner consultation</p>
+</div>
+</label>
+<label class="relative border border-outline-variant rounded-xl p-4 cursor-pointer hover:bg-secondary-container/10 transition-all flex items-center gap-4 group">
+<input class="hidden peer" name="service" type="radio">
+<div class="w-6 h-6 border-2 border-outline-variant rounded-full peer-checked:border-primary peer-checked:bg-primary flex items-center justify-center transition-all">
+<div class="w-2 h-2 bg-white rounded-full opacity-0 peer-checked:opacity-100"></div>
+</div>
+<div>
+<p class="font-bold">Emergency Care</p>
+<p class="text-xs text-on-surface-variant">Urgent dental pain relief</p>
+</div>
+</label>
+</div>
+<div class="mt-10 flex justify-between">
+<button class="bg-surface text-on-surface-variant px-8 py-3 rounded-xl font-bold border border-outline-variant transition-all" onclick="goToStep(1)" type="button">Back</button>
+<button class="bg-primary text-white px-8 py-3 rounded-xl font-bold ambient-shadow-hover transition-all" onclick="goToStep(3)" type="button">Next Step</button>
+</div>
+</div>
+<!-- Step 3: Appointment Time -->
+<div class="step-transition opacity-0 hidden" id="form-step-3">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-6">Choose Preferred Time</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="bg-surface rounded-xl p-4 border border-outline-variant">
+<p class="font-label-md text-label-md mb-4 text-center">Available Dates</p>
+<!-- Simplified Calendar Grid -->
+<div class="grid grid-cols-7 gap-1 text-center">
+<span class="text-[10px] text-on-surface-variant">M</span><span class="text-[10px] text-on-surface-variant">T</span><span class="text-[10px] text-on-surface-variant">W</span><span class="text-[10px] text-on-surface-variant">T</span><span class="text-[10px] text-on-surface-variant">F</span><span class="text-[10px] text-on-surface-variant">S</span><span class="text-[10px] text-on-surface-variant">S</span>
+<div class="p-2 text-xs text-outline-variant">28</div><div class="p-2 text-xs text-outline-variant">29</div><div class="p-2 text-xs text-outline-variant">30</div><div class="p-2 text-xs text-outline-variant">31</div>
+<button class="p-2 text-xs rounded-full hover:bg-secondary-container" type="button">1</button>
+<button class="p-2 text-xs rounded-full hover:bg-secondary-container" type="button">2</button>
+<button class="p-2 text-xs rounded-full bg-primary text-white font-bold" type="button">3</button>
+<button class="p-2 text-xs rounded-full hover:bg-secondary-container" type="button">4</button>
+<button class="p-2 text-xs rounded-full hover:bg-secondary-container" type="button">5</button>
+<button class="p-2 text-xs rounded-full hover:bg-secondary-container" type="button">6</button>
+<button class="p-2 text-xs rounded-full hover:bg-secondary-container" type="button">7</button>
+<button class="p-2 text-xs rounded-full hover:bg-secondary-container" type="button">8</button>
+<button class="p-2 text-xs rounded-full hover:bg-secondary-container" type="button">9</button>
+<button class="p-2 text-xs rounded-full hover:bg-secondary-container" type="button">10</button>
+</div>
+</div>
+<div class="space-y-4">
+<p class="font-label-md text-label-md text-on-surface-variant">Available Slots</p>
+<div class="grid grid-cols-2 gap-2">
+<button class="py-3 px-2 border border-outline-variant rounded-lg text-sm hover:border-primary hover:text-primary transition-all" type="button">09:00 AM</button>
+<button class="py-3 px-2 border border-primary bg-secondary-container/20 text-primary rounded-lg text-sm font-bold" type="button">10:30 AM</button>
+<button class="py-3 px-2 border border-outline-variant rounded-lg text-sm hover:border-primary hover:text-primary transition-all" type="button">01:30 PM</button>
+<button class="py-3 px-2 border border-outline-variant rounded-lg text-sm hover:border-primary hover:text-primary transition-all" type="button">03:00 PM</button>
+</div>
+</div>
+</div>
+<div class="mt-10 flex justify-between">
+<button class="bg-surface text-on-surface-variant px-8 py-3 rounded-xl font-bold border border-outline-variant transition-all" onclick="goToStep(2)" type="button">Back</button>
+<button class="bg-primary-container text-on-primary-container px-12 py-3 rounded-xl font-bold ambient-shadow-hover transition-all" type="submit">Confirm Booking</button>
+</div>
+</div>
+</form>
+</div>
+</div>
+<!-- Contact Info & Map Column -->
+<div class="lg:col-span-5 flex flex-col gap-8">
+<!-- Info Card -->
+<div class="bg-tertiary-container/10 p-card-padding rounded-xl border border-secondary-container/20">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-6">Contact Information</h3>
+<ul class="space-y-6">
+<li class="flex items-start gap-4">
+<div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-primary ambient-shadow flex-shrink-0">
+<span class="material-symbols-outlined fill-icon">location_on</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">Our Clinic</p>
+<p class="text-on-surface-variant text-sm">Bole Road, Beside Friendship Mall, 4th Floor, Addis Ababa, Ethiopia</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-primary ambient-shadow flex-shrink-0">
+<span class="material-symbols-outlined fill-icon">call</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">Call Us</p>
+<p class="text-on-surface-variant text-sm">+251 116 123 456<br>+251 911 789 012</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-primary ambient-shadow flex-shrink-0">
+<span class="material-symbols-outlined fill-icon">mail</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">Email Address</p>
+<p class="text-on-surface-variant text-sm">care@{{CLIENT_NAME_SOLO}}dental.com</p>
+</div>
+</li>
+</ul>
+</div>
+<!-- Map Integration -->
+<div class="flex-grow rounded-xl overflow-hidden ambient-shadow border border-[#CAF0F8] h-64 lg:h-auto min-h-[300px] relative">
+<div class="absolute inset-0 bg-gray-200" data-alt="A clean, minimalist 3D map representation of a professional medical district in Addis Ababa. The visual uses a soft clinical color palette of muted teals and greys with a prominent hygienic blue marker indicating the {{CLIENT_NAME}} Clinic location. The lighting is bright and airy, reflecting a modern, high-tech urban environment with soft ambient shadows." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDLSn_QDsibRPUAp_YpfmPs_ngkzT9JyorYIjE1ERmPMpg1M-5N4vdYbuR09G5_l7sGx5ippaYCgF_u-Ghj8hCqF9h1TbuzfLePVbW_ogb-1P0_X9Hkjqz1t4yM7RRGk7TC8btU94aIRpp3SYksUWsFSL3X0kdiaxtzP8UfY6WBximq6O5pxx3pNiKZx7EO8zoO23YEZNcStTjGZ2FlWAyQRfZjvyV1f0-dJ8_tUy-Y8W3gJxJq5p-pHsoik2OyH8JFLf7ng0N8EFQL')"></div>
+<div class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-md p-4 rounded-lg flex items-center justify-between">
+<span class="text-sm font-bold text-primary">Get Directions</span>
+<span class="material-symbols-outlined text-primary">directions</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQs Section -->
+<section class="py-section-gap-desktop bg-surface-container-low">
+<div class="max-w-container-max-width mx-auto px-gutter">
+<div class="text-center mb-16">
+<h2 class="font-headline-md text-headline-md text-primary mb-4">Frequently Asked Questions</h2>
+<p class="text-on-surface-variant max-w-xl mx-auto">Get answers to common concerns about visits, treatments, and dental health.</p>
+</div>
+<div class="max-w-3xl mx-auto space-y-4">
+<!-- FAQ Item 1 -->
+<div class="bg-white rounded-xl border border-[#CAF0F8] overflow-hidden">
+<button class="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-surface transition-colors" onclick="toggleFaq(1)">
+<span class="font-bold text-on-surface">What should I bring to my first appointment?</span>
+<span class="material-symbols-outlined transition-transform" id="faq-icon-1">expand_more</span>
+</button>
+<div class="hidden px-6 pb-6 text-on-surface-variant text-sm leading-relaxed" id="faq-content-1">
+                            For your first visit, please bring a valid ID, any previous dental records or X-rays if available, and a list of current medications. Arriving 15 minutes early helps us complete your patient profile comfortably.
+                        </div>
+</div>
+<!-- FAQ Item 2 -->
+<div class="bg-white rounded-xl border border-[#CAF0F8] overflow-hidden">
+<button class="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-surface transition-colors" onclick="toggleFaq(2)">
+<span class="font-bold text-on-surface">Do you accept dental insurance?</span>
+<span class="material-symbols-outlined transition-transform" id="faq-icon-2">expand_more</span>
+</button>
+<div class="hidden px-6 pb-6 text-on-surface-variant text-sm leading-relaxed" id="faq-content-2">
+                            Yes, we work with several major Ethiopian and international insurance providers. Please contact our front desk to verify if your specific plan is accepted.
+                        </div>
+</div>
+<!-- FAQ Item 3 -->
+<div class="bg-white rounded-xl border border-[#CAF0F8] overflow-hidden">
+<button class="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-surface transition-colors" onclick="toggleFaq(3)">
+<span class="font-bold text-on-surface">How often should I have a dental cleaning?</span>
+<span class="material-symbols-outlined transition-transform" id="faq-icon-3">expand_more</span>
+</button>
+<div class="hidden px-6 pb-6 text-on-surface-variant text-sm leading-relaxed" id="faq-content-3">
+                            We generally recommend a professional cleaning every six months to prevent plaque buildup and catch potential issues early. Some patients with specific gum health needs may benefit from more frequent visits.
+                        </div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-on-surface border-t border-outline-variant/10">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-base px-gutter py-section-gap-desktop max-w-container-max-width mx-auto">
+<div class="space-y-4">
+<div class="font-headline-sm text-headline-sm font-bold text-primary dark:text-primary-fixed">{{CLIENT_NAME}}</div>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant leading-relaxed">
+                    © 2024 {{CLIENT_NAME}} Clinic. All rights reserved. Providing Ethiopian families with world-class oral care.
+                </p>
+</div>
+<div class="space-y-4">
+<p class="font-label-md text-label-md font-bold text-primary">Treatments</p>
+<ul class="space-y-2">
+<li><a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary transition-colors font-body-md text-body-md" href="#">General Dentistry</a></li>
+<li><a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary transition-colors font-body-md text-body-md" href="#">Orthodontics</a></li>
+<li><a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary transition-colors font-body-md text-body-md" href="#">Cosmetic Dentistry</a></li>
+<li><a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary transition-colors font-body-md text-body-md" href="#">Pediatric Care</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<p class="font-label-md text-label-md font-bold text-primary">Legal</p>
+<ul class="space-y-2">
+<li><a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary transition-colors font-body-md text-body-md" href="#">Privacy Policy</a></li>
+<li><a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary transition-colors font-body-md text-body-md" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<p class="font-label-md text-label-md font-bold text-primary">Socials</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">share</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">public</span>
+</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        function goToStep(step) {
+            const steps = [1, 2, 3];
+            const progress = ((step - 1) / (steps.length - 1)) * 100;
+            
+            document.getElementById('step-progress').style.width = `${progress}%`;
+            
+            steps.forEach(s => {
+                const stepEl = document.getElementById(`form-step-${s}`);
+                const indicatorEl = document.getElementById(`step-${s}-indicator`);
+                
+                if (s === step) {
+                    stepEl.classList.remove('hidden', 'opacity-0');
+                    stepEl.classList.add('block', 'opacity-100');
+                    indicatorEl.classList.add('bg-primary', 'text-white');
+                    indicatorEl.classList.remove('bg-surface-container-highest', 'text-on-surface-variant');
+                } else {
+                    stepEl.classList.add('hidden', 'opacity-0');
+                    stepEl.classList.remove('block', 'opacity-100');
+                    if (s < step) {
+                        indicatorEl.classList.add('bg-primary', 'text-white');
+                    } else {
+                        indicatorEl.classList.remove('bg-primary', 'text-white');
+                        indicatorEl.classList.add('bg-surface-container-highest', 'text-on-surface-variant');
+                    }
+                }
+            });
+        }
+
+        function toggleFaq(id) {
+            const content = document.getElementById(`faq-content-${id}`);
+            const icon = document.getElementById(`faq-icon-${id}`);
+            const isHidden = content.classList.contains('hidden');
+            
+            // Close others (optional)
+            document.querySelectorAll('[id^="faq-content-"]').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('[id^="faq-icon-"]').forEach(el => el.classList.remove('rotate-180'));
+            
+            if (isHidden) {
+                content.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+            }
+        }
+
+        document.getElementById('multi-step-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Appointment request submitted! We will contact you shortly to confirm.');
+        });
+    </script>
+</body></html>
