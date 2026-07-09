@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html class="light scroll-smooth" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Design Templates | TYCHEA</title>
+<meta name="description" content="Browse Tychea's design template archive. Filter by sector, search by name, and explore our premium web design portfolio."/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/static/css/style.css">
+<style>
+    /* Brutalist hover effects */
+    .brutalist-card {
+        transition: all 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .brutalist-card:hover {
+        transform: translate(-6px, -6px);
+        box-shadow: 6px 6px 0px 0px oklch(0.7709 0.215571 132.4509);
+    }
+    .brutalist-btn {
+        transition: all 0.1s ease;
+    }
+    .brutalist-btn:hover {
+        transform: translate(-4px, -4px);
+        box-shadow: 4px 4px 0px 0px oklch(0.7709 0.215571 132.4509);
+    }
+    /* Filter chip active state */
+    .filter-chip {
+        transition: all 0.15s ease;
+    }
+    .filter-chip.active {
+        background-color: oklch(0 0 0);
+        color: oklch(1 0 0);
+    }
+    .filter-chip:hover:not(.active) {
+        background-color: oklch(0 0 0 / 0.05);
+    }
+    /* Fade-in animation for cards */
+    @keyframes fadeSlideUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    .design-card-animate {
+        animation: fadeSlideUp 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        opacity: 0;
+    }
+    /* Rating stars */
+    .star-filled {
+        color: oklch(0.7709 0.215571 132.4509);
+        font-variation-settings: 'FILL' 1;
+    }
+    .star-empty {
+        color: oklch(0 0 0 / 0.15);
+        font-variation-settings: 'FILL' 0;
+    }
+    /* Pagination active */
+    .page-btn.active {
+        background-color: oklch(0 0 0);
+        color: oklch(1 0 0);
+    }
+    /* Search input focus glow */
+    .search-input:focus {
+        outline: none;
+        border-color: oklch(0.7709 0.215571 132.4509);
+        box-shadow: 0 0 0 3px oklch(0.7709 0.215571 132.4509 / 0.15);
+    }
+    /* Sort dropdown */
+    .sort-select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M6 8L1 3h10z' fill='%23000'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 12px center;
+        padding-right: 36px;
+    }
+    /* Pinned badge pulse */
+    @keyframes pinPulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.6; }
+    }
+    .pin-badge {
+        animation: pinPulse 2s ease-in-out infinite;
+    }
+</style>
+</head>
+
+<body class="bg-white text-black selection:bg-accent selection:text-black min-h-screen flex flex-col">
+
+<header>
+    {% include 'navbar.html' %}
+    {% include 'global.html' %}
+</header>
+
+<main class="flex-grow">
+
+<!-- Page Header -->
+<section class="bg-black text-white py-16 md:py-24 relative overflow-hidden">
+    <!-- Background decoration -->
+    <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: radial-gradient(white 1px, transparent 1px); background-size: 24px 24px;"></div>
+    <div class="absolute top-0 right-0 w-[500px] h-[500px] opacity-5 pointer-events-none">
+        <div class="absolute top-[-10%] right-[-5%] w-full h-full rounded-full bg-accent blur-[120px]"></div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
+            <div>
+                <span class="text-accent font-black uppercase tracking-[0.3em] text-xs mb-4 block">Archive // Templates</span>
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter uppercase leading-none mb-4">
+                    Design<br/><span class="text-accent">Templates</span>
+                </h1>
+                <p class="text-white/40 text-lg font-medium max-w-lg mt-4">
+                    Browse our complete archive of web design templates. Filter by sector, search by name, and find the perfect foundation.
+                </p>
+            </div>
+            <div class="flex items-center gap-6 text-white/30 font-black text-xs uppercase tracking-[0.2em]">
+                <div class="text-center">
+                    <p class="text-3xl md:text-5xl font-black text-accent tracking-tighter">{{ total_count }}</p>
+                    <p class="mt-1">Templates</p>
+                </div>
+                <div class="w-px h-12 bg-white/10"></div>
+                <div class="text-center">
+                    <p class="text-3xl md:text-5xl font-black text-white tracking-tighter">{{ sectors|length }}</p>
+                    <p class="mt-1">Sectors</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Search & Filter Controls -->
+<section class="border-b border-black bg-zinc-50 sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-6">
+        <form method="get" action="{% url 'design-list-page' %}" id="filter-form">
+            <!-- Search Row -->
+            <div class="py-5 flex flex-col md:flex-row gap-4 items-stretch md:items-center">
+                <!-- Search Input -->
+                <div class="relative flex-grow">
+                    <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-black/30 text-xl">search</span>
+                    <input 
+                        type="text" 
+                        name="q" 
+                        id="search-input"
+                        value="{{ query }}" 
+                        placeholder="Search templates by name..." 
+                        class="search-input w-full bg-white border-2 border-black pl-12 pr-4 py-3.5 font-semibold text-sm placeholder:text-black/30 placeholder:font-medium tracking-wide uppercase"
+                    />
+                    {% if query %}
+                    <a href="{% url 'design-list-page' %}" class="absolute right-4 top-1/2 -translate-y-1/2 text-black/40 hover:text-black transition-colors">
+                        <span class="material-symbols-outlined text-lg">close</span>
+                    </a>
+                    {% endif %}
+                </div>
+
+                <!-- Sort Dropdown -->
+                <div class="relative flex-shrink-0">
+                    <select name="sort" class="sort-select bg-white border-2 border-black px-4 py-3.5 font-black text-xs uppercase tracking-widest cursor-pointer w-full md:w-auto min-w-[200px]" onchange="document.getElementById('filter-form').submit()">
+                        <option value="-pinned,-created_at" {% if sort == '-pinned,-created_at' %}selected{% endif %}>Default</option>
+                        <option value="name" {% if sort == 'name' %}selected{% endif %}>Name A–Z</option>
+                        <option value="-name" {% if sort == '-name' %}selected{% endif %}>Name Z–A</option>
+                        <option value="-rating" {% if sort == '-rating' %}selected{% endif %}>Highest Rated</option>
+                        <option value="rating" {% if sort == 'rating' %}selected{% endif %}>Lowest Rated</option>
+                        <option value="-created_at" {% if sort == '-created_at' %}selected{% endif %}>Newest First</option>
+                        <option value="created_at" {% if sort == 'created_at' %}selected{% endif %}>Oldest First</option>
+                    </select>
+                </div>
+
+                <!-- Search Button -->
+                <button type="submit" class="brutalist-btn bg-black text-white px-8 py-3.5 font-black text-xs uppercase tracking-[0.2em] flex items-center justify-center gap-2 flex-shrink-0">
+                    <span class="material-symbols-outlined text-sm">filter_list</span>
+                    Apply
+                </button>
+            </div>
+
+            <!-- Sector Filter Chips -->
+            <div class="pb-5 flex flex-wrap gap-2 items-center border-t border-black/10 pt-4">
+                <span class="text-black/40 font-black text-[10px] uppercase tracking-[0.2em] mr-2">Sectors:</span>
+                <a href="{% url 'design-list-page' %}?{% if query %}q={{ query }}&{% endif %}{% if sort %}sort={{ sort }}&{% endif %}{% if min_rating %}rating={{ min_rating }}&{% endif %}" 
+                   class="filter-chip inline-flex items-center gap-1 px-4 py-2 border-2 border-black text-xs font-black uppercase tracking-widest {% if not active_sector %}active{% endif %}">
+                    All
+                </a>
+                {% for sector in sectors %}
+                <a href="{% url 'design-list-page' %}?sector={{ sector.id }}&{% if query %}q={{ query }}&{% endif %}{% if sort %}sort={{ sort }}&{% endif %}{% if min_rating %}rating={{ min_rating }}&{% endif %}" 
+                   class="filter-chip inline-flex items-center gap-1 px-4 py-2 border-2 border-black text-xs font-black uppercase tracking-widest {% if active_sector == sector.id %}active{% endif %}">
+                    {{ sector.name }}
+                    <span class="text-[10px] font-medium opacity-50">({{ sector.design_count }})</span>
+                </a>
+                {% endfor %}
+            </div>
+
+            <!-- Rating Filter -->
+            <div class="pb-4 flex flex-wrap gap-2 items-center border-t border-black/10 pt-3">
+                <span class="text-black/40 font-black text-[10px] uppercase tracking-[0.2em] mr-2">Min Rating:</span>
+                <a href="{% url 'design-list-page' %}?{% if query %}q={{ query }}&{% endif %}{% if active_sector %}sector={{ active_sector }}&{% endif %}{% if sort %}sort={{ sort }}&{% endif %}"
+                   class="filter-chip inline-flex items-center gap-1 px-4 py-2 border-2 border-black text-xs font-black uppercase tracking-widest {% if not min_rating %}active{% endif %}">
+                    Any
+                </a>
+                {% for star in star_range %}
+                <a href="{% url 'design-list-page' %}?rating={{ star }}&{% if query %}q={{ query }}&{% endif %}{% if active_sector %}sector={{ active_sector }}&{% endif %}{% if sort %}sort={{ sort }}&{% endif %}"
+                   class="filter-chip inline-flex items-center gap-1 px-3 py-2 border-2 border-black text-xs font-black uppercase tracking-widest {% if min_rating == star %}active{% endif %}">
+                    {{ star }}★+
+                </a>
+                {% endfor %}
+            </div>
+
+            <!-- Hidden fields to preserve filter state -->
+            {% if active_sector %}
+            <input type="hidden" name="sector" value="{{ active_sector }}">
+            {% endif %}
+            {% if min_rating %}
+            <input type="hidden" name="rating" value="{{ min_rating }}">
+            {% endif %}
+        </form>
+    </div>
+</section>
+
+<!-- Results Summary -->
+<section class="border-b border-black/10 bg-white">
+    <div class="max-w-7xl mx-auto px-6 py-3 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+        <p class="text-black/40 font-black text-[10px] uppercase tracking-[0.2em]">
+            Showing {{ designs.start_index }}–{{ designs.end_index }} of {{ designs.paginator.count }} result{{ designs.paginator.count|pluralize }}
+            {% if query %} for "<span class="text-black">{{ query }}</span>"{% endif %}
+            {% if active_sector_name %} in <span class="text-accent">{{ active_sector_name }}</span>{% endif %}
+        </p>
+        <p class="text-black/30 font-black text-[10px] uppercase tracking-[0.2em]">
+            Page {{ designs.number }} of {{ designs.paginator.num_pages }}
+        </p>
+    </div>
+</section>
+
+<!-- Designs Grid -->
+<section class="bg-white py-12 md:py-16">
+    <div class="max-w-7xl mx-auto px-6">
+        {% if designs %}
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {% for design in designs %}
+            <a target="_blank"  href="{% if design.link %}{{ design.url }}{% else %}{% url 'design-detail-page' design.slug %}{% endif %}"
+               {% if design.link %}target="_blank" rel="noopener"{% endif %}
+               class="brutalist-card bg-white border-2 border-black p-0 relative overflow-hidden group block design-card-animate"
+               style="animation-delay: {{ forloop.counter0 }}00ms;"
+               id="design-card-{{ design.slug }}">
+                
+                <!-- Pinned Badge -->
+                {% if design.pinned %}
+                <div class="pin-badge absolute top-3 left-3 z-10 bg-accent text-black font-black text-[9px] uppercase tracking-[0.2em] px-2.5 py-1 flex items-center gap-1">
+                    <span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">push_pin</span>
+                    Pinned
+                </div>
+                {% endif %}
+
+                <!-- External Link Badge -->
+                {% if design.link %}
+                <div class="absolute top-3 right-3 z-10 bg-black text-white font-black text-[9px] uppercase tracking-[0.2em] px-2.5 py-1 flex items-center gap-1">
+                    <span class="material-symbols-outlined text-xs">open_in_new</span>
+                    Live
+                </div>
+                {% endif %}
+
+                <!-- Thumbnail -->
+                <div class="aspect-[4/3] bg-zinc-100 border-b-2 border-black overflow-hidden relative">
+                    {% if design.thumbnail %}
+                    <img src="{{ design.thumbnail.url }}" 
+                         alt="{{ design.name }}" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                         loading="lazy"/>
+                    {% else %}
+                    <div class="w-full h-full flex items-center justify-center bg-zinc-100 group-hover:bg-zinc-200 transition-colors">
+                        <span class="material-symbols-outlined text-6xl text-black/10 group-hover:text-accent/40 transition-colors duration-300"
+                              style="font-variation-settings: 'FILL' 0; font-weight: 200;">
+                            {% if "dental" in design.slug %}
+                                medical_services
+                            {% elif "agency" in design.slug or "modela" in design.slug %}
+                                camera_front
+                            {% elif "career" in design.slug or "employ" in design.slug %}
+                                work
+                            {% elif "iswear" in design.slug %}
+                                gavel
+                            {% elif "smma" in design.slug %}
+                                campaign
+                            {% else %}
+                                dashboard_customize
+                            {% endif %}
+                        </span>
+                    </div>
+                    {% endif %}
+                    <!-- Hover Overlay -->
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+                        <span class="material-symbols-outlined text-4xl text-white opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-4 group-hover:translate-y-0">
+                            {% if design.link %}open_in_new{% else %}arrow_forward{% endif %}
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Content -->
+                <div class="p-5">
+                    <!-- Sectors -->
+                    <p class="text-accent font-black text-[10px] uppercase tracking-[0.2em] mb-2">
+                        {% for sector in design.sectors.all %}
+                            {{ sector.name }}{% if not forloop.last %} · {% endif %}
+                        {% empty %}
+                            Uncategorized
+                        {% endfor %}
+                    </p>
+
+                    <!-- Name -->
+                    <h3 class="text-lg font-black uppercase tracking-tight leading-tight mb-3 truncate group-hover:text-accent transition-colors" title="{{ design.name }}">
+                        {{ design.name }}
+                    </h3>
+
+                    <!-- Rating & Meta -->
+                    <div class="flex items-center justify-between border-t-2 border-black/10 pt-3">
+                        <div class="flex items-center gap-0.5">
+                            {% for i in star_range %}
+                                {% if i <= design.rating %}
+                                <span class="material-symbols-outlined text-sm star-filled">star</span>
+                                {% else %}
+                                <span class="material-symbols-outlined text-sm star-empty">star</span>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                        <span class="text-black/30 font-black text-[9px] uppercase tracking-[0.15em]">
+                            {% if design.link %}External{% else %}Template{% endif %}
+                        </span>
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+        {% else %}
+        <!-- Empty State -->
+        <div class="text-center py-24 border-2 border-dashed border-black/10">
+            <span class="material-symbols-outlined text-7xl text-black/10 mb-6 block" style="font-variation-settings: 'FILL' 0;">search_off</span>
+            <h3 class="text-2xl font-black uppercase tracking-tight mb-3">No Templates Found</h3>
+            <p class="text-black/40 font-medium max-w-md mx-auto mb-8">
+                No design templates match your current filters. Try adjusting your search criteria or clearing all filters.
+            </p>
+            <a href="{% url 'design-list-page' %}" class="brutalist-btn inline-flex items-center gap-2 bg-black text-white px-8 py-4 font-black text-xs uppercase tracking-[0.2em]">
+                <span class="material-symbols-outlined text-sm">restart_alt</span>
+                Clear All Filters
+            </a>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+<!-- Pagination -->
+{% if designs.paginator.num_pages > 1 %}
+<section class="border-t-2 border-black bg-white pb-16 pt-8">
+    <div class="max-w-7xl mx-auto px-6">
+        <nav class="flex flex-wrap items-center justify-center gap-2" aria-label="Pagination">
+            <!-- Previous -->
+            {% if designs.has_previous %}
+            <a href="?page={{ designs.previous_page_number }}{% if query %}&q={{ query }}{% endif %}{% if active_sector %}&sector={{ active_sector }}{% endif %}{% if sort %}&sort={{ sort }}{% endif %}{% if min_rating %}&rating={{ min_rating }}{% endif %}"
+               class="brutalist-btn flex items-center gap-2 border-2 border-black px-5 py-3 font-black text-xs uppercase tracking-widest hover:bg-black hover:text-white transition-colors"
+               id="pagination-prev">
+                <span class="material-symbols-outlined text-sm">chevron_left</span>
+                Prev
+            </a>
+            {% endif %}
+
+            <!-- Page Numbers -->
+            {% for page_num in page_range %}
+                {% if page_num == "..." %}
+                <span class="px-3 py-3 text-black/30 font-black text-xs">···</span>
+                {% else %}
+                <a href="?page={{ page_num }}{% if query %}&q={{ query }}{% endif %}{% if active_sector %}&sector={{ active_sector }}{% endif %}{% if sort %}&sort={{ sort }}{% endif %}{% if min_rating %}&rating={{ min_rating }}{% endif %}"
+                   class="page-btn w-11 h-11 flex items-center justify-center border-2 border-black font-black text-xs hover:bg-black hover:text-white transition-colors {% if page_num == designs.number %}active{% endif %}"
+                   id="pagination-page-{{ page_num }}">
+                    {{ page_num }}
+                </a>
+                {% endif %}
+            {% endfor %}
+
+            <!-- Next -->
+            {% if designs.has_next %}
+            <a href="?page={{ designs.next_page_number }}{% if query %}&q={{ query }}{% endif %}{% if active_sector %}&sector={{ active_sector }}{% endif %}{% if sort %}&sort={{ sort }}{% endif %}{% if min_rating %}&rating={{ min_rating }}{% endif %}"
+               class="brutalist-btn flex items-center gap-2 border-2 border-black px-5 py-3 font-black text-xs uppercase tracking-widest hover:bg-black hover:text-white transition-colors"
+               id="pagination-next">
+                Next
+                <span class="material-symbols-outlined text-sm">chevron_right</span>
+            </a>
+            {% endif %}
+        </nav>
+    </div>
+</section>
+{% endif %}
+
+</main>
+
+<!-- Footer -->
+<footer class="bg-black border-t border-black w-full py-16 px-6">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
+        <div class="text-3xl font-black text-white uppercase tracking-tighter">Tychea</div>
+        <div class="flex flex-wrap justify-center gap-10">
+            <a class="text-white/30 hover:text-accent transition-colors font-black uppercase text-[10px] tracking-[0.2em]" href="#">Privacy Policy</a>
+            <a class="text-white/30 hover:text-accent transition-colors font-black uppercase text-[10px] tracking-[0.2em]" href="#">Terms of Service</a>
+            <a class="text-white/30 hover:text-accent transition-colors font-black uppercase text-[10px] tracking-[0.2em]" href="#">LinkedIn</a>
+            <a class="text-white/30 hover:text-accent transition-colors font-black uppercase text-[10px] tracking-[0.2em]" href="#">GitHub</a>
+        </div>
+        <div class="text-white/20 text-[10px] font-black uppercase tracking-[0.2em]">
+            © 2024 Tychea. Systems Engineered.
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Keyboard shortcut: focus search with '/'
+    document.addEventListener('keydown', function(e) {
+        if (e.key === '/' && !e.ctrlKey && !e.metaKey && document.activeElement.tagName !== 'INPUT') {
+            e.preventDefault();
+            document.getElementById('search-input').focus();
+        }
+    });
+</script>
+</body>
+</html>

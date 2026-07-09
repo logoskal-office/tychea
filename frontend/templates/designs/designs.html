@@ -135,6 +135,7 @@
 <!-- TopNavBar -->
 
 {% include 'navbar.html' %}
+{% include 'global.html' %}
 
 <main class="flex-grow  no-scrollbar">
 <!-- Hero Section -->
@@ -247,6 +248,11 @@
     }
   });
 </script>
+<div class="h-full w-full flex justify-center items-center mt-8 -mb-8">
+<a class="inline-flex items-center gap-2 bg-primary text-on-primary font-label-caps text-label-caps px-8 py-4 border border-main brutalist-button uppercase tracking-widest" href="{% url 'design-list-page' %}">
+                        VIEW MORE DESIGNS <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
 </section><section class="w-full border-b border-main bg-surface px-grid-margin py-24 max-w-[1440px] mx-auto" id="features">
 <div class="mb-16">
 <h2 class="font-headline-lg text-headline-lg text-primary uppercase border-l-8 border-accent-lime pl-4">System Architecture</h2>
