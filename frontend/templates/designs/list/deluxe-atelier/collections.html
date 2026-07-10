@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Obsidian &amp; Gilt Collection | {{CLIENT_NAME}}</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Work+Sans:wght@300;400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface": "#181210",
+            "on-surface-variant": "#d0c5af",
+            "on-secondary-fixed-variant": "#574335",
+            "on-primary-fixed": "#241a00",
+            "on-tertiary": "#48290a",
+            "inverse-on-surface": "#362f2c",
+            "primary-fixed": "#ffe088",
+            "surface-dim": "#181210",
+            "on-background": "#ede0dc",
+            "on-error": "#690005",
+            "secondary": "#dec1af",
+            "tertiary-fixed": "#ffdcc1",
+            "surface-container": "#251e1c",
+            "on-secondary": "#3f2c20",
+            "inverse-primary": "#735c00",
+            "surface-container-highest": "#3b3331",
+            "on-secondary-container": "#ccb09f",
+            "on-primary-fixed-variant": "#574500",
+            "outline": "#99907c",
+            "surface-container-low": "#201a18",
+            "surface-container-high": "#2f2826",
+            "surface-container-lowest": "#130d0b",
+            "on-primary": "#3c2f00",
+            "surface-tint": "#e9c349",
+            "outline-variant": "#4d4635",
+            "primary-fixed-dim": "#e9c349",
+            "error-container": "#93000a",
+            "background": "#181210",
+            "inverse-surface": "#ede0dc",
+            "primary-container": "#d4af37",
+            "on-error-container": "#ffdad6",
+            "primary": "#f2ca50",
+            "surface-bright": "#3f3835",
+            "surface-variant": "#3b3331",
+            "on-secondary-fixed": "#28180d",
+            "tertiary-container": "#dba980",
+            "on-tertiary-fixed-variant": "#623f1e",
+            "secondary-container": "#574335",
+            "tertiary-fixed-dim": "#f0bc92",
+            "on-surface": "#ede0dc",
+            "on-tertiary-fixed": "#2e1500",
+            "on-primary-container": "#554300",
+            "tertiary": "#f9c499",
+            "secondary-fixed": "#fbddca",
+            "on-tertiary-container": "#603d1d",
+            "secondary-fixed-dim": "#dec1af",
+            "error": "#ffb4ab"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter": "24px",
+            "base": "8px",
+            "container-padding": "64px",
+            "margin-mobile": "20px",
+            "section-gap": "120px"
+          },
+          "fontFamily": {
+            "headline-md": ["Noto Serif"],
+            "headline-lg": ["Noto Serif"],
+            "display-lg": ["Noto Serif"],
+            "body-lg": ["Work Sans"],
+            "body-md": ["Work Sans"],
+            "headline-lg-mobile": ["Noto Serif"],
+            "label-caps": ["Work Sans"]
+          },
+          "fontSize": {
+            "headline-md": ["28px", {"lineHeight": "36px", "fontWeight": "400"}],
+            "headline-lg": ["40px", {"lineHeight": "48px", "fontWeight": "400"}],
+            "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+            "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      background-color: #181210;
+      color: #ede0dc;
+      overflow-x: hidden;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+    }
+    .gilt-border {
+      border: 1px solid #d4af37;
+    }
+    .gilt-text {
+      color: #d4af37;
+    }
+    .gilt-bg {
+      background-color: #d4af37;
+    }
+    .soft-glow {
+      box-shadow: 0 0 40px rgba(212, 175, 55, 0.1);
+    }
+    .divider-line {
+      height: 0.5px;
+      background-color: #8c633f;
+      opacity: 0.4;
+    }
+    .parallax-bg {
+      background-attachment: fixed;
+    }
+  </style>
+</head>
+<body class="font-body-md selection:bg-primary-container selection:text-on-primary-container">
+    <script>
+        const body = document.querySelector('body');
+        body.style.zoom = '0.67';
+        
+    </script>
+<!-- TopNavBar (Shared Component) -->
+<nav class="bg-surface/95 dark:bg-surface/95 backdrop-blur-sm border-b border-outline-variant/40 fixed top-0 left-0 w-full z-50 shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center px-container-padding py-8 max-w- mx-auto">
+<a href="../" class="font-headline-lg text-headline-md text-primary dark:text-primary-fixed-dim tracking-wide uppercase">{{CLIENT_NAME}}</a>
+<div class="hidden md:flex gap-10 items-center font-label-caps text-label-caps tracking-[0.2em] uppercase">
+<a class="font-label-caps text-label-caps text-primary border-b border-primary pb-1 uppercase" href="#">Collections</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-300" href="#">Artisans</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-300" href="#">Showrooms</a>
+<a href="../detail" class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-300" href="#">Product Detail</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="material-symbols-outlined text-primary hover:text-primary-fixed transition-colors duration-300 scale-100 active:scale-95" data-icon="shopping_bag">shopping_bag</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="pt-40 pb-section-gap px-container-padding max-w-[1440px] mx-auto text-center">
+<div class="max-w-4xl mx-auto">
+<span class="font-label-caps text-label-caps gilt-text uppercase tracking-[0.3em] mb-6 block">The Inaugural Edit</span>
+<h1 class="font-display-lg text-display-lg mb-8 leading-tight">The Obsidian &amp; Gilt Collection</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto italic">
+        A symphony of deep textures and luminous metal. Our curators have traveled from the Venetian marble quarries to the ateliers of Milan to bring you these singular, handcrafted masterpieces.
+      </p>
+</div>
+</section>
+<!-- Main Content Layout -->
+<main class="max-w-[1440px] mx-auto px-container-padding grid grid-cols-12 gap-gutter mb-section-gap">
+<!-- Filter Sidebar (Left) -->
+<aside class="col-span-3 hidden md:block">
+<div class="sticky top-32 space-y-12">
+<div>
+<h3 class="font-label-caps text-label-caps gilt-text mb-6 uppercase">Curated Destinations</h3>
+<ul class="space-y-4 font-body-md text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors flex items-center gap-2" href="#">Living Room <span class="text-[10px] opacity-40">/ 12</span></a></li>
+<li><a class="text-primary flex items-center gap-2" href="#">Dining <span class="text-[10px] opacity-40">/ 08</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2" href="#">Bedroom <span class="text-[10px] opacity-40">/ 06</span></a></li>
+<li><a class="hover:text-primary transition-colors flex items-center gap-2" href="#">Atelier Office <span class="text-[10px] opacity-40">/ 04</span></a></li>
+</ul>
+</div>
+<div class="divider-line"></div>
+<div>
+<h3 class="font-label-caps text-label-caps gilt-text mb-6 uppercase">Materiality</h3>
+<ul class="space-y-4 font-body-md text-on-surface-variant">
+<li class="flex items-center gap-3">
+<span class="w-4 h-4 rounded-full bg-[#1A1412] border border-outline-variant"></span>
+<span>Obsidian Leather</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="w-4 h-4 rounded-full bg-[#dec1af] border border-outline-variant"></span>
+<span>Venetian Marble</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="w-4 h-4 rounded-full bg-[#d4af37] border border-outline-variant"></span>
+<span>24K Gilt Finish</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="w-4 h-4 rounded-full bg-[#3D2B1F] border border-outline-variant"></span>
+<span>Flemish Velvet</span>
+</li>
+</ul>
+</div>
+<div>
+<button class="w-full gilt-border py-4 font-label-caps text-label-caps uppercase tracking-widest hover:bg-primary-container hover:text-on-primary-container transition-all">
+            Clear Filters
+          </button>
+</div>
+</div>
+</aside>
+<!-- Product Grid (Main) -->
+<div class="col-span-12 md:col-span-9">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-y-section-gap gap-x-gutter">
+<!-- Product 1: Aurelius Leather Chair -->
+<div class="group relative">
+<div class="aspect-[4/5] bg-surface-container overflow-hidden soft-glow relative transition-transform duration-700 hover:scale-[1.02]">
+<img class="w-full h-full object-cover" data-alt="A close-up side view of the Aurelius Leather Chair, a masterpiece of modern luxury. The chair features deep charcoal Italian leather with a subtle grain texture, hand-stitched with golden thread. Its legs are slender, tapered 24K gold-plated steel. The scene is shot in a dimly lit studio with a single warm spotlight accentuating the leather's sheen and the metallic reflections, embodying an ultra-high-end editorial style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxgMtQw70p3mbDVcL7urai25XpvpgHiaKUerrYF5oC9QOUy1VZTAD7Lfg7Q6yPrbsqyvoirXaBOMIONrrCO-5UhNZPpQJVizfGhfAF4KXRsjUjdzbXaarS9YUnpd-8-6OS57C1bzVOcPaLWWvDjakDe3SLZFt4swpE2am2csbn2LN6nN9lFDiZhNgTDIEJg-G6PQLOTnBb5LEuJtL7ZBuT-AFRoJqthTzFnrv1lJA3K8WT-QI5iY3yakoO0FjR5XdDxm0MrqmisRMh"/>
+<div class="absolute top-6 left-6">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 font-label-caps text-[10px] uppercase tracking-tighter">New Arrival</span>
+</div>
+</div>
+<div class="mt-8 flex justify-between items-end">
+<div>
+<h2 class="font-headline-md text-headline-md mb-2">Aurelius Leather Chair</h2>
+<p class="font-body-md text-on-surface-variant italic">Full-grain Obsidian Leather &amp; Gilt Steel</p>
+</div>
+<div class="text-right">
+<p class="font-headline-md text-primary">$4,850</p>
+<button class="font-label-caps text-[10px] uppercase tracking-[0.2em] border-b border-primary/40 pb-1 mt-2 hover:border-primary transition-all">View Detail</button>
+</div>
+</div>
+</div>
+<!-- Product 2: Venetian Marble Table -->
+<div class="group relative lg:mt-24">
+<div class="aspect-[4/5] bg-surface-container overflow-hidden soft-glow relative transition-transform duration-700 hover:scale-[1.02]">
+<div class="w-full h-full bg-cover bg-center" data-alt="A macro shot of the Venetian Marble Table surface. The marble is a creamy white with thick, dramatic veins of gold and bronze swirling across the surface. The edges of the table are beveled and show a thin leafing of 24K gold. The lighting is soft and ambient, reflecting off the polished stone to create a sense of tactile luxury and permanence. Minimalist composition for a furniture lookbook." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAPlkXf1accaW--RLFL_iLqyoENB-ig4bEhTFLo5k-p2Tnxj5mQKXF-LHUV1dy1CIHiU43_j0WogNBS9fqQj7-oshHP9DGKVyD5oECFEPSio9B2CIGmvWKIcdRVipMHneNwNhH2ny_vSc7_0j-Doa9lnvwdEnHGP1hULj7os3UCu4XVbbHP9cjZFFRpvhCrQB3cc-U3VRyhEsRfLWUUnrXnWKcNxJGK3t8isCaKooiBrgteXIc6lpMeLgrTQLQqVH4YNmG3NjWus_n7')"></div>
+<div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+</div>
+<div class="mt-8 flex justify-between items-end">
+<div>
+<h2 class="font-headline-md text-headline-md mb-2">Venetian Marble Table</h2>
+<p class="font-body-md text-on-surface-variant italic">Italian Calacatta Gold &amp; Bronze Base</p>
+</div>
+<div class="text-right">
+<p class="font-headline-md text-primary">$12,200</p>
+<button class="font-label-caps text-[10px] uppercase tracking-[0.2em] border-b border-primary/40 pb-1 mt-2 hover:border-primary transition-all">View Detail</button>
+</div>
+</div>
+</div>
+<!-- Product 3: Palazzo Suite Bed -->
+<div class="group relative lg:col-span-2">
+<div class="aspect-[16/9] bg-surface-container overflow-hidden soft-glow relative transition-transform duration-700 hover:scale-[1.01]">
+<img class="w-full h-full object-cover" data-alt="A wide shot of the Palazzo Suite Bed in a grand, minimalist bedroom suite with dark charcoal walls. The bed features a massive, tufted headboard in deep obsidian velvet with inset gold leaf panels. The bedding is high-thread-count cream silk. The bed frame is supported by invisible low-profile feet, creating a floating effect. Two minimalist gold floor lamps flank the bed, casting warm, circular shadows on the wall." src="https://lh3.googleusercontent.com/aida-public/AB6AXuANybD-KNuBlmghPCaZgeS18XGo9FE71WoElIkA1IKPozxhZMms6URE2fym5Zt6uIVsHSJZ8IieR-d2wgqrmcAaUvgIUV7YxKMHNSREloY5bxJ94O533RZEExs01xrxwgbjV6fWKDVXLW8rp5ed6ZO1TcXaBYeLmjoWbuDeGOyIEuTexpsli2SmiTh0NA4dwnq52gE1KVHcT5BghTRSzf0vE7llUmwUV4pwgx9hSXIaEb63fODWKFSvyfiL6DhIhtdaPUG7LiKAzS_H"/>
+<div class="absolute bottom-8 left-8">
+<span class="bg-primary px-6 py-2 text-on-primary font-label-caps text-label-caps uppercase tracking-widest">Masterpiece Series</span>
+</div>
+</div>
+<div class="mt-8 flex justify-between items-end">
+<div>
+<h2 class="font-headline-lg text-headline-lg mb-2">Palazzo Suite Bed</h2>
+<p class="font-body-lg text-on-surface-variant italic max-w-xl">A sanctuary of velvet and gold leaf. Hand-carved solid oak frame upholstered in Belgian-weave obsidian velvet.</p>
+</div>
+<div class="text-right">
+<p class="font-headline-lg text-primary">$18,400</p>
+<button class="font-label-caps text-label-caps uppercase tracking-[0.2em] border-b border-primary/40 pb-1 mt-4 hover:border-primary transition-all">Request Private Viewing</button>
+</div>
+</div>
+</div>
+<!-- Product 4: Medici Sideboard -->
+<div class="group relative">
+<div class="aspect-[1/1] bg-surface-container overflow-hidden soft-glow relative transition-transform duration-700 hover:scale-[1.02]">
+<div class="w-full h-full bg-cover bg-center" data-alt="A detailed shot of the Medici Sideboard's front panels. The cabinet doors feature a geometric marquetry pattern of obsidian-stained wood and 24K gold leaf. The handles are custom-forged solid brass in a minimalist vertical bar design. The piece sits on a polished chevron-patterned dark wood floor. The light catches the gold leaf, creating a vibrant contrast against the dark wood." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC8y0B72N0ztbYYEtLoLWtNNqBpr5daMiaRnRaXEJwca4egU_o3CZzld2I7tafzTYZWIknTmubLsusUVb47t0EpkkPjJXv2X-sGValaVYcg9yMaCjkR2pQDNmLIwwhzfAC1GMudQxEilsoVeHF7lWcNnQQFT1eSVJr16_lc0-Q8oFQkfMZgHZa0lJgR9Hjpmfs0f4oIniBPesL2-H225ofwnJCym6tRXH_f3u_Nbk2KLh0BYy5ZmHPKv0K9cRsPKWN-LwINFSRDoGVe')"></div>
+</div>
+<div class="mt-8 flex justify-between items-end">
+<div>
+<h2 class="font-headline-md text-headline-md mb-2">Medici Sideboard</h2>
+<p class="font-body-md text-on-surface-variant italic">Gilt Marquetry &amp; Ebonized Oak</p>
+</div>
+<div class="text-right">
+<p class="font-headline-md text-primary">$9,150</p>
+<button class="font-label-caps text-[10px] uppercase tracking-[0.2em] border-b border-primary/40 pb-1 mt-2 hover:border-primary transition-all">View Detail</button>
+</div>
+</div>
+</div>
+<!-- Product 5: Curator's Console -->
+<div class="group relative lg:mt-[-100px]">
+<div class="aspect-[3/4] bg-surface-container overflow-hidden soft-glow relative transition-transform duration-700 hover:scale-[1.02]">
+<img class="w-full h-full object-cover" data-alt="The Curator's Console, a slender and elegant table with a single slab of obsidian glass resting on a complex, hand-sculpted gold-plated branch-like structure. The glass top is slightly reflective, showing the silhouette of a minimalist sculptural vase. The backdrop is a soft-focus museum-style gray wall. Cinematic lighting highlights the delicate gold structure beneath the glass." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDU_xTH4MwI_fnqCndT95uwBtDpgUZ26DK5UN9ufankj_vmDNOlTKVA11pM6yagJLrLi0xAvlruwxD38g53TnikKbDYv93mBevtl4gS2r2zH2pshN17jVRYhLpDjhiNJsdeOxnetpRkKMHs-zntPhovhxFY9YSXq3TN0_QYPa13tWPA_eCKvz4KwEY0aQJ-q_rZzjUVHowgrYmA3xykuSC-PXcRyJpYGtciIZoQIdOgJVmz5Ht40Jxo1Ht0GmPPMiUsRPGnSKQjYdzg"/>
+</div>
+<div class="mt-8 flex justify-between items-end">
+<div>
+<h2 class="font-headline-md text-headline-md mb-2">Curator's Console</h2>
+<p class="font-body-md text-on-surface-variant italic">Sculpted Gilt Frame &amp; Smoked Glass</p>
+</div>
+<div class="text-right">
+<p class="font-headline-md text-primary">$6,300</p>
+<button class="font-label-caps text-[10px] uppercase tracking-[0.2em] border-b border-primary/40 pb-1 mt-2 hover:border-primary transition-all">View Detail</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Join the Atelier Section -->
+<section class="bg-surface-container py-section-gap">
+<div class="max-w-[1440px] mx-auto px-container-padding grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
+<div>
+<h2 class="font-display-lg text-display-lg mb-6 leading-tight text-primary">Join the Atelier Circle</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12">
+          Experience the privilege of early access. Join our exclusive inner circle to receive notifications of bespoke collections and private atelier events.
+        </p>
+<form class="flex flex-col gap-8 max-w-md">
+<div class="relative">
+<input class="w-full bg-transparent border-0 border-b border-on-secondary-fixed-variant/40 py-4 font-label-caps text-label-caps uppercase tracking-widest focus:ring-0 focus:border-primary transition-colors placeholder:text-on-surface-variant/40" placeholder="YOUR EMAIL ADDRESS" type="email"/>
+</div>
+<button class="gilt-bg text-on-primary py-5 font-label-caps text-label-caps uppercase tracking-[0.3em] hover:opacity-90 transition-opacity" type="submit">
+            Subscribe
+          </button>
+</form>
+</div>
+<div class="hidden md:block">
+<div class="aspect-square bg-surface-container-highest overflow-hidden relative">
+<img class="w-full h-full object-cover grayscale brightness-75 hover:grayscale-0 transition-all duration-1000" data-alt="A lifestyle shot showing a gloved hand carefully applying a thin sheet of gold leaf to a dark wooden furniture component. The scene is intimate and focused on the craftsmanship, with dust particles dancing in a single shaft of light. The overall aesthetic is dark, moody, and celebrates the manual artistry of high-end furniture making." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAe3raW1zqjSiVMVYKdNzTMYXoMUawAAb3MfTnskYOrjbG-6XKtOWIySR3BKCVqim9JhW-DGBIe1nicmKMH0_wCVTUmDScVOVYbkOT5xOs_Hqh3PgTd9wwdPikqXxY-Snk1vLYzXqroJPkzeqoSwni4x8FpdkoH4iRuGyym-JNdxsljXjRF9jwT5PDHeeij7yQWc50DIZ6SnCsX4UYBTqeH34noiTEcEnac_mjV-0UAIyGrifPpi8_rCr0CEtzIOjizRxcbvL_B5fR5"/>
+<div class="absolute inset-0 gilt-border m-8 opacity-40"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer (Shared Component) -->
+<footer class="w-full mt-section-gap border-t border-on-secondary-fixed-variant/40 bg-surface-container-lowest">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-container-padding py-20 max-w-[1440px] mx-auto">
+<div class="space-y-8">
+<div class="font-headline-md text-headline-md text-primary">{{CLIENT_NAME}}</div>
+<p class="text-on-surface-variant font-body-md max-w-xs">Curating masterpieces for the discerning collector. From our atelier to your sanctuary.</p>
+<div class="flex gap-6">
+<a class="text-primary hover:scale-110 transition-transform" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-primary hover:scale-110 transition-transform" href="#"><span class="material-symbols-outlined">camera</span></a>
+<a class="text-primary hover:scale-110 transition-transform" href="#"><span class="material-symbols-outlined">mail</span></a>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div>
+<h4 class="font-label-caps text-label-caps gilt-text mb-8 uppercase">Explore</h4>
+<ul class="space-y-4 font-body-md text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" href="#">Showrooms</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Atelier Circle</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Bespoke</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Journal</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps gilt-text mb-8 uppercase">Legal</h4>
+<ul class="space-y-4 font-body-md text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" href="#">Privacy</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Terms</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Shipping</a></li>
+</ul>
+</div>
+</div>
+<div class="md:text-right space-y-8">
+<p class="font-body-md text-on-surface-variant">Via Montenapoleone, 27<br/>20121 Milano MI, Italy</p>
+<p class="font-body-md text-on-surface-variant">+39 02 123 4567<br/>concierge@{{CLIENT_NAME_SOLO}}furniture.com</p>
+<div class="pt-8">
+<p class="font-body-md text-on-surface-variant opacity-60">© 2024 {{CLIENT_NAME}}. All rights reserved.</p>
+</div>
+</div>
+</div>
+</footer>
+<script>
+    // Micro-interactions and effects
+    document.addEventListener('mousemove', (e) => {
+      const mouseX = e.clientX / window.innerWidth;
+      const mouseY = e.clientY / window.innerHeight;
+      
+      // Subtle movement for glow effects or parallax could be added here
+    });
+
+    // Scroll reveal logic
+    const observerOptions = {
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('opacity-100');
+          entry.target.classList.remove('opacity-0', 'translate-y-10');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.group').forEach(el => {
+      el.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-1000');
+      observer.observe(el);
+    });
+  </script>
+</body></html>

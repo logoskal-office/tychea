@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aurelius Leather Chair | {{CLIENT_NAME}}</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Work+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "tertiary-container": "#dba980",
+                  "on-secondary-fixed": "#28180d",
+                  "surface-tint": "#e9c349",
+                  "background": "#181210",
+                  "tertiary-fixed": "#ffdcc1",
+                  "on-surface-variant": "#d0c5af",
+                  "on-background": "#ede0dc",
+                  "error-container": "#93000a",
+                  "on-primary-fixed-variant": "#574500",
+                  "on-primary-container": "#554300",
+                  "inverse-surface": "#ede0dc",
+                  "secondary-fixed-dim": "#dec1af",
+                  "on-secondary": "#3f2c20",
+                  "surface-dim": "#181210",
+                  "surface-variant": "#3b3331",
+                  "primary": "#f2ca50",
+                  "on-error-container": "#ffdad6",
+                  "on-surface": "#ede0dc",
+                  "surface": "#181210",
+                  "on-tertiary-fixed": "#2e1500",
+                  "on-secondary-fixed-variant": "#574335",
+                  "error": "#ffb4ab",
+                  "on-tertiary-fixed-variant": "#623f1e",
+                  "inverse-on-surface": "#362f2c",
+                  "surface-container-lowest": "#130d0b",
+                  "on-error": "#690005",
+                  "on-primary": "#3c2f00",
+                  "surface-container-highest": "#3b3331",
+                  "primary-container": "#d4af37",
+                  "secondary-container": "#574335",
+                  "tertiary-fixed-dim": "#f0bc92",
+                  "on-primary-fixed": "#241a00",
+                  "secondary": "#dec1af",
+                  "primary-fixed": "#ffe088",
+                  "primary-fixed-dim": "#e9c349",
+                  "on-tertiary": "#48290a",
+                  "outline": "#99907c",
+                  "surface-container-low": "#201a18",
+                  "on-secondary-container": "#ccb09f",
+                  "tertiary": "#f9c499",
+                  "surface-bright": "#3f3835",
+                  "outline-variant": "#4d4635",
+                  "inverse-primary": "#735c00",
+                  "surface-container-high": "#2f2826",
+                  "on-tertiary-container": "#603d1d",
+                  "surface-container": "#251e1c",
+                  "secondary-fixed": "#fbddca"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.25rem",
+                  "lg": "0.5rem",
+                  "xl": "0.75rem",
+                  "full": "9999px"
+          },
+          "spacing": {
+                  "section-gap": "120px",
+                  "margin-mobile": "20px",
+                  "gutter": "24px",
+                  "base": "8px",
+                  "container-padding": "64px"
+          },
+          "fontFamily": {
+                  "label-caps": ["Work Sans"],
+                  "headline-md": ["Noto Serif"],
+                  "headline-lg-mobile": ["Noto Serif"],
+                  "display-lg": ["Noto Serif"],
+                  "body-lg": ["Work Sans"],
+                  "body-md": ["Work Sans"],
+                  "headline-lg": ["Noto Serif"]
+          },
+          "fontSize": {
+                  "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                  "headline-md": ["28px", {"lineHeight": "36px", "fontWeight": "400"}],
+                  "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+                  "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                  "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                  "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                  "headline-lg": ["40px", {"lineHeight": "48px", "fontWeight": "400"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      background-color: #181210;
+      color: #ede0dc;
+      -webkit-font-smoothing: antialiased;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+    }
+    .gilt-border {
+      border: 1px solid #d4af37;
+    }
+    .gold-glow:hover {
+      box-shadow: 0 0 40px rgba(212, 175, 55, 0.1);
+    }
+    .image-overlay-reveal::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(212, 175, 55, 0.05);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .image-overlay-reveal:hover::after {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body class="font-body-md text-body-md overflow-x-hidden">
+        <script>
+        const body = document.querySelector('body');
+        body.style.zoom = '0.67';
+        
+    </script>
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md flex justify-between items-center px-container-padding py-6 left-1/2 -translate-x-1/2">
+<a href="../" class="font-headline-md text-headline-md text-primary uppercase tracking-widest">
+      {{CLIENT_NAME}}
+</a>
+<div class="hidden md:flex gap-8 items-center">
+    <a href="../collections" class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300 uppercase" href="#">Colelctions</a>
+    <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300 uppercase" href="#">Artisans</a>
+    <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300 uppercase" href="#">Showrooms</a>
+    <a class="font-label-caps text-label-caps text-primary border-b border-primary pb-1 uppercase" href="#">Product Detail</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="material-symbols-outlined text-primary hover:scale-105 transition-transform" data-icon="shopping_bag">shopping_bag</button>
+<button class="material-symbols-outlined text-primary hover:scale-105 transition-transform" data-icon="person">person</button>
+</div>
+</nav>
+<main>
+<section class="relative min-h-screen flex flex-col md:flex-row items-center pt-24 overflow-hidden">
+<div class="w-full md:w-1/2 h-[614px] md:h-screen relative overflow-hidden group">
+<img class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105" data-alt="A sculptural, high-end Aurelius Leather Chair upholstered in deep obsidian-colored, full-grain Italian leather. The chair features a sophisticated ergonomic design with hand-stitched details and slim, architectural legs made of brushed dark metal. It is set against a moody, low-lit minimalist interior with soft golden light catching the rich texture of the leather." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGzONXTmMMSEv_QnSZuGDJRxXC9XvAn4FqECb8fFB7bhJRkaBw7gMx-vZxVmrU4qQTKto0qTnT16prT0J_-l8sX8cdJUt1kjTbJyaorZGNFna-OjyESTmO0_2_3AVLmSjo6PRDFvTd5eBk_hCsuW6FlHq3E2pjjqbSmWEOT4uLWp0UOwUpQd5dx01eY8i-tKW580nMvRS_zKVhrQawfahcnuVY70nwdrVgy6hxY3owYl9VILeypkOU-SHD6Eq3pZP6iTux6wzpZ_d-"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent"></div>
+</div>
+<div class="w-full md:w-1/2 px-container-padding py-12 md:py-0 flex flex-col justify-center gap-6">
+<span class="font-label-caps text-label-caps text-primary tracking-[0.3em] uppercase">Obsidian &amp; Gilt Collection</span>
+<h1 class="font-display-lg text-display-lg text-on-background leading-tight">Aurelius Leather Chair</h1>
+<p class="font-headline-md text-headline-md text-secondary-fixed-dim">$4,850</p>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md mt-4">
+          A masterpiece of reductive design, the Aurelius balances imposing structural presence with a soft, curated tactile experience.
+        </p>
+<div class="mt-8 flex flex-col sm:flex-row gap-4">
+<button class="bg-primary-container text-on-primary px-10 py-5 font-label-caps text-label-caps uppercase tracking-widest gold-glow transition-all active:scale-95">
+            Bespoke Inquiry
+          </button>
+<button class="gilt-border text-primary px-10 py-5 font-label-caps text-label-caps uppercase tracking-widest hover:bg-primary/5 transition-all active:scale-95">
+            View Fabric Samples
+          </button>
+</div>
+</div>
+</section>
+<section class="mt-section-gap px-container-padding max-w-[1440px] mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-5 flex flex-col gap-8">
+<h2 class="font-headline-lg text-headline-lg text-on-background">A Symphony of Form</h2>
+<div class="w-20 h-px bg-primary/40"></div>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+            Engineered in our Milanese atelier, the Aurelius Leather Chair represents the pinnacle of Italian craftsmanship. Every hide is hand-selected for its natural grain and deep color consistency, then oil-tanned to achieve a finish that is both incredibly soft and exceptionally durable. 
+          </p>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+            The obsidian leather, sourced from the foothills of the Alps, is paired with a hand-polished gilt frame, creating a striking contrast that defines the Obsidian &amp; Gilt philosophy: raw power meeting delicate elegance.
+          </p>
+</div>
+<div class="md:col-span-6 md:col-start-7 relative">
+<div class="aspect-[4/5] relative overflow-hidden group gilt-border">
+<img class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105" data-alt="Macro detail shot of hand-stitched obsidian leather on the armrest of the Aurelius chair. The stitching is meticulous and subtle, catching a warm golden glow from a nearby light source. The background is a blurred, high-end workshop setting with artisan tools, reinforcing the craftsmanship and luxury heritage of the brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmQDnjdM18eEs5iqzBhaucJATuVaz-K6tsAAunHcm-aHg7OhODQvT4ehkC53dSEpHt5gcI3KYWSRUUIb3gbq9L_BWdiYgPurc6VSOi8dB-KQmeh-ETArk24EjwYheEmUTBRwP-qmUletc5S6qsaW-XX_OtAmZ5aCOECeezpRSz7ALhGMtYe-EqcKNa6UtM2AKaHni5mlTCaUsvdo89d4DMJC3Z-1zu4gONwq4dXepOl2-naEZkjCXSkKPbzcexBGE89TTN9zpJRVrO"/>
+</div>
+</div>
+</div>
+</section>
+<section class="mt-section-gap bg-surface-container-low py-32">
+<div class="px-container-padding max-w-[1440px] mx-auto text-center mb-16">
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-[0.2em] mb-4 block">Curated Textures</span>
+<h2 class="font-headline-lg text-headline-lg text-on-background">Material Mastery</h2>
+</div>
+<div class="px-container-padding max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+<div class="flex flex-col gap-6 group">
+<div class="aspect-square overflow-hidden bg-secondary-container">
+<img class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110" data-alt="A luxurious, heavy-pile charcoal velvet fabric texture shown in extreme close-up. The fabric's fibers create deep shadows and luminous highlights, suggesting a soft, tactile, and high-end upholstery material used for custom furniture orders." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB841COoIvtOqba6DR5_LwoXPq2rrtUkEv9T-CayA4K0AsnJtgAgpDlCI36vFWxupiXcD5qHB362soYE3pwX8HpFytfjDb_6E9CLq-9t8DPxqdDS0o-lHgaYglIkJzr9Fr7zJ_WnK0G200q0SmpE1meitN2ce_wMqGqVfeDOR8LgSeNah7PaVKfO4uyl5bqCC1aemmMzdbVqIrgaVuPlmwoLJ0pYnmkM3RARwixP_6gG2swlaXU8H9GlZ52PnijX3LQdN-KaRIZPMP8"/>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-on-background uppercase mb-2">Heritage Velvet</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Deep pile, light-absorbing finish for an intimate atmosphere.</p>
+</div>
+</div>
+<div class="flex flex-col gap-6 group">
+<div class="aspect-square overflow-hidden bg-secondary-container">
+<img class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110" data-alt="Macro shot of genuine gold leaf applied to a textured surface, showing the delicate cracks, flakes, and rich metallic sheen characteristic of artisanal gilding. The surface reflects a soft, warm light, embodying high-end craftsmanship and opulence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCv36h9Tkmr3apN1jgb7AZ8kk1krL26vkgCA5RB6oVaz6DqHmeHvoxyRbSuD-RMfDldd31p9WEF6ieAqAg569A68tJbw0RD6f8_WeUH0DE2Hgwo2xWID0qKxYVscoeUyTg3O0VN-pQClWHNTSyiBNwBQ37HbXWhEp_g1YgBn7PYgOtaNRCaA5UQeGRsGxImXLmT4Sl-sygZ8gzRV4EKLVq-h5Ipa0nrWIBD4aCSVYAM8wU6uz5rhdMZA-QP0xdy32W6gvV_DzTfZu3B"/>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-on-background uppercase mb-2">24K Gilt Accents</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Hand-applied leafing that ages gracefully with an organic patina.</p>
+</div>
+</div>
+<div class="flex flex-col gap-6 group">
+<div class="aspect-square overflow-hidden bg-secondary-container">
+<img class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110" data-alt="Close-up of polished white Calacatta marble with elegant, soft grey and gold-tinted veining. The surface is perfectly smooth and reflective, showcasing the natural beauty of high-quality stone used in bespoke furniture and luxury architectural detailing." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCp0IdU85PZwoxrW66aIvpalGUOU2lwBuc3Tk5NWxEUA_DgzjbLf15GkrXbPN32GX3-7oPEJYLr3y-Ypgb6alJ-YkJDKM3_Bt7cLg4uQrvFFjun6JW5K6G1ZFOT3kd6mCDwlG5M-rb24k9nTxZB9DmmPL82vyQnzPOonC7qbm4ezh9SRuO21cVME7G2U0pwQFDpFlXzmmx9i2k0mYm12vWcHLQSpsJk9qOlCLWG6RXFMMets3PVKA0Vyxr3zUGI4vHzVxNklgzuAeMm"/>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-on-background uppercase mb-2">Venetian Marble</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Solid stone base options, precision-cut for architectural stability.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="mt-section-gap px-container-padding max-w-[1440px] mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-24 items-start">
+<div class="flex flex-col gap-12">
+<h2 class="font-headline-lg text-headline-lg text-on-background">Technical Excellence</h2>
+<div class="space-y-8">
+<div class="flex justify-between border-b border-outline-variant/30 pb-4">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Dimensions</span>
+<span class="font-body-md text-body-md text-on-background">W: 68cm | D: 72cm | H: 85cm</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/30 pb-4">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Seat Height</span>
+<span class="font-body-md text-body-md text-on-background">44cm</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/30 pb-4">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Weight</span>
+<span class="font-body-md text-body-md text-on-background">32 kg</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/30 pb-4">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Lead Time</span>
+<span class="font-body-md text-body-md text-on-background">12-14 Weeks (Global Shipping)</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/30 pb-4">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Origin</span>
+<span class="font-body-md text-body-md text-on-background">Italy / Custom Atelier</span>
+</div>
+</div>
+</div>
+<div class="p-16 bg-surface-container-highest flex flex-col gap-8">
+<span class="font-label-caps text-label-caps text-primary uppercase">Private Viewings</span>
+<h3 class="font-headline-md text-headline-md text-on-background">The Atelier Service</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Experience the Obsidian &amp; Gilt collection in an environment tailored to your schedule. Our specialists offer curated private viewings in London, Paris, and Milan, where you can explore material swatches and bespoke customization options.
+          </p>
+<button class="gilt-border text-primary px-12 py-5 font-label-caps text-label-caps uppercase tracking-widest hover:bg-primary/10 transition-colors self-start mt-4">
+            Request Private Viewing
+          </button>
+</div>
+</div>
+</section>
+<section class="mt-section-gap px-container-padding max-w-[1440px] mx-auto pb-32">
+<h2 class="font-headline-md text-headline-md text-on-background mb-12">Related Pieces</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-gutter">
+<div class="group flex flex-col gap-4">
+<div class="aspect-[3/4] overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A minimalist low coffee table featuring a thick Venetian Marble top and a slim, dark metal frame. The lighting is editorial and moody, highlighting the elegant grain of the stone and the clean architectural lines of the piece." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcgwYlW8YRDRq1RrmoirH1j7gcuV4vpe0lNaUromIJ89Z8TDmKQImyDzUUdLqZsVaeY9GbBIpdOsqnrHeKiJvxeL6Zi9izua3jkeZvQeEoyaNTzbdngrJoblM2MJb3dSaI4qh8N3yyACUX6rQx9F7tjquTKJ0BYXwdYKsMDj6zwjxazwa6bTHC2YZHyZSZ8TxaHG4ddwwR75cJMV2qlj6F7IeEirTkXrQfNotS1LwCvGM0-muSKKz13f3YsO5-Nwk0iqsHChATkeQG"/>
+</div>
+<p class="font-label-caps text-label-caps text-on-background uppercase tracking-wider">Venetian Marble Table</p>
+<p class="font-body-md text-body-md text-on-surface-variant">$3,200</p>
+</div>
+<div class="group flex flex-col gap-4">
+<div class="aspect-[3/4] overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A floor-to-ceiling slender shelving unit with brushed gold frame and dark walnut wood inserts. It stands in a luxury interior setting, designed for displaying rare books and fine art objects." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4xwvpUlwVh8_AWsUGShox-5IfsU-yXXp1IKgFAMrBpc1uLXmfSWZ4omzOghkmbxm8t89o-JCr3NwOnei6lLSBda6y6LdfHB9--eku2TjcKnKaijxkRJILjpJBBjVefLMZLgCIz2tvbAFRSw7VfNejjkUuYZclDlHMhJxoKTg87jpZ8AJWwab0n_HDokMQBZFcTm9Sw0Gn_oZKOon38_H2YVtC82OvKGZ7f9H6JkM3YdBq537flNIIPDvPocjaooGa11PRtety11V3"/>
+</div>
+<p class="font-label-caps text-label-caps text-on-background uppercase tracking-wider">Gilt Library Rack</p>
+<p class="font-body-md text-body-md text-on-surface-variant">$6,450</p>
+</div>
+<div class="group flex flex-col gap-4">
+<div class="aspect-[3/4] overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A minimalist sculptural lamp featuring a heavy obsidian stone base and a warm, low-intensity LED element that casts a soft, atmospheric glow upwards. The design is modern, sleek, and highly tactile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEkIeb3cb8EshHuY94HXnDOgLN7an9aSvSJnIAQEWnl8NlbwUP6w7nEVqjLtnWHRt-9FgCaHqCvaoVKvEe_v4H6OjViM2RkoLrs4TQTXuKrGF7krJOzCPTI2EeZJOFOMbTVp63FCWpCY0P-91MpNtVO6xwUsP5aFkDLfuF3CIeea6Ie-cyxJMljNuKRq5vRdoKFXVOzZ103yInjh9MhCsjhi-bU3SlsaiEA19DTsdR7mQ4iUv--yNMRYKt6qAVIjKTjpAZ2ZRXow8Z"/>
+</div>
+<p class="font-label-caps text-label-caps text-on-background uppercase tracking-wider">Obsidian Monolith Lamp</p>
+<p class="font-body-md text-body-md text-on-surface-variant">$1,800</p>
+</div>
+<div class="group flex flex-col gap-4">
+<div class="aspect-[3/4] overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A large, hand-knotted silk area rug in deep charcoal and muted bronze tones, featuring a subtle abstract pattern that mimics fluid metal. It is laid out in a spacious, high-end living room." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3Mk-N3LtkV4S7q-n235OowCtIxb8BlP20Rw0CsjSuSRTFhXoyQz7AV3NbBhFDiH8jwDBBzGAEIYkq5xN199sVnI4CmpGXWJWH6hjPupCx5YL3v3lBV24tkzaiqrEA18ax9lJ7AuN8ot0sMX8yU4ZqOQ1JANh4-EdmC7BLR45TdJM62wu8EXQ17LQjdoFMVNQWtQw-lxRRox0dVpKiI61Xe0PzUBvFeY-_RpiCGSIEjPdr6dwlAWfd6BVgGMpJfgSkT8uty6I3EWsf"/>
+</div>
+<p class="font-label-caps text-label-caps text-on-background uppercase tracking-wider">Liquid Bronze Silk Rug</p>
+<p class="font-body-md text-body-md text-on-surface-variant">$8,900</p>
+</div>
+</div>
+</section>
+</main>
+<footer class="w-full mt-section-gap border-t border-on-secondary-fixed-variant/40 bg-surface-container-lowest py-20 px-container-padding">
+<div class="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="flex flex-col gap-6">
+<div class="font-headline-md text-headline-md text-primary">{{CLIENT_NAME}}</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs">
+          Crafting modern heirlooms for the discerning curator. Our collections blend timeless materials with contemporary structural innovation.
+        </p>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="font-label-caps text-label-caps text-on-background uppercase tracking-widest mb-2">Navigation</h5>
+<div class="flex flex-col gap-3">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Showrooms</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Atelier Circle</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Terms</a>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="font-label-caps text-label-caps text-on-background uppercase tracking-widest mb-2">Studio</h5>
+<div class="flex flex-col gap-3 text-on-surface-variant font-body-md text-body-md">
+<p>{{CLIENT_ADDRESS}}</p>
+<p>{{CLIENT_CITY}}</p>
+<p class="mt-4 text-primary">{{CLIENT_EMAIL}}</p>
+</div>
+</div>
+</div>
+<div class="max-w-[1440px] mx-auto mt-16 pt-8 border-t border-on-secondary-fixed-variant/20 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-body-md text-body-md text-on-surface-variant opacity-60">© 2024 {{CLIENT_NAME}}. All rights reserved.</p>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors" data-icon="public">public</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors" data-icon="share">share</span>
+</div>
+</div>
+</footer>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const scrollReveal = () => {
+        const elements = document.querySelectorAll('section');
+        elements.forEach(el => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight * 0.8) {
+            el.classList.add('opacity-100');
+            el.classList.remove('opacity-0');
+            el.style.transform = 'translateY(0)';
+          }
+        });
+      };
+
+      // Initial state
+      const sections = document.querySelectorAll('section');
+      sections.forEach(s => {
+        s.classList.add('transition-all', 'duration-1000', 'opacity-0');
+        s.style.transform = 'translateY(20px)';
+      });
+
+      window.addEventListener('scroll', scrollReveal);
+      scrollReveal(); // Initial check
+    });
+  </script>
+</body></html>

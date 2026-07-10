@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>{{CLIENT_NAME_SOLO}} | Living &amp; Workspace</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#e4e2dd",
+                        "on-secondary": "#ffffff",
+                        "secondary": "#735a3e",
+                        "surface-tint": "#5f5e5e",
+                        "inverse-surface": "#303030",
+                        "secondary-fixed": "#ffddbb",
+                        "surface-container-high": "#eae8e7",
+                        "surface": "#fbf9f8",
+                        "on-error-container": "#93000a",
+                        "surface-container-highest": "#e4e2e2",
+                        "on-background": "#1b1c1c",
+                        "tertiary-container": "#1b1c19",
+                        "surface-container-low": "#f5f3f3",
+                        "on-tertiary-fixed": "#1b1c19",
+                        "surface-container": "#efeded",
+                        "on-secondary-fixed-variant": "#5a4229",
+                        "inverse-on-surface": "#f2f0f0",
+                        "surface-bright": "#fbf9f8",
+                        "secondary-fixed-dim": "#e3c19f",
+                        "surface-variant": "#e4e2e2",
+                        "on-primary-fixed": "#1c1b1b",
+                        "background": "#fbf9f8",
+                        "error-container": "#ffdad6",
+                        "on-surface": "#1b1c1c",
+                        "on-surface-variant": "#444748",
+                        "error": "#ba1a1a",
+                        "secondary-container": "#fdd9b7",
+                        "primary": "#000000",
+                        "outline-variant": "#c4c7c7",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "tertiary": "#000000",
+                        "on-primary-container": "#858383",
+                        "primary-container": "#1c1b1b",
+                        "on-primary": "#ffffff",
+                        "outline": "#747878",
+                        "primary-fixed": "#e5e2e1",
+                        "on-error": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed-dim": "#c8c6c2",
+                        "surface-dim": "#dbd9d9",
+                        "on-primary-fixed-variant": "#474746",
+                        "on-tertiary-fixed-variant": "#474744",
+                        "on-secondary-fixed": "#291803",
+                        "inverse-primary": "#c8c6c5",
+                        "on-tertiary-container": "#848480",
+                        "on-secondary-container": "#785e42"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0rem",
+                        "lg": "0rem",
+                        "xl": "0rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "80px",
+                        "gutter": "32px",
+                        "stack-lg": "120px",
+                        "margin-mobile": "20px",
+                        "stack-md": "64px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "body-md": ["DM Sans"],
+                        "headline-md": ["Playfair Display"],
+                        "button": ["DM Sans"],
+                        "headline-xl": ["Playfair Display"],
+                        "headline-xl-mobile": ["Playfair Display"],
+                        "body-lg": ["DM Sans"],
+                        "label-caps": ["DM Sans"],
+                        "headline-lg": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
+                        "button": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-xl": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-xl-mobile": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "32px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.15em", "fontWeight": "700" }],
+                        "headline-lg": ["48px", { "lineHeight": "56px", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #fbf9f8;
+            color: #1b1c1c;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .product-card-hover:hover .quick-buy {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .product-card-hover:hover .alternate-view {
+            opacity: 1;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md">
+    <script>
+        const body = document.body;
+        body.style.zoom = '0.67';
+    </script>
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md">
+<div class="flex justify-between items-center px-margin-desktop py-6 mx-auto">
+<div class="flex items-center gap-8">
+<img alt="Luxe Form Logo" class="h-10 w-10 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMiUu03dQa7bO4gtVjo5DTBbtrcOkPrPHj9420QD87VInmz_cqM-F8HjmVbUMkWxAl3qRqxyuoidLt9m52VD7NwQOEi8ieHv-KLqQnjxCNU-aperaOpRAlJUG6eqgjBwDBzAmH3x5jDJB_aZcN0nXoloxwHbQ0EE-o5_OpSX_23jEcbDMhMr8VuGAixp6emhFxcPZgB1bEkMUPuBCErjv0qoPfm90m6LDPXBiFpJyJ9ZNeAI1Ifj9thhKfwO5tuqFcszS2-5h-hj2q"/>
+<div class="hidden md:flex items-center gap-10">
+<a class="font-label-caps text-label-caps text-primary border-b border-primary pb-1 cursor-pointer active:opacity-70 transition-colors duration-300" href="#">Living</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300 cursor-pointer active:opacity-70" href="#">Office</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300 cursor-pointer active:opacity-70" href="#">Bedroom</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300 cursor-pointer active:opacity-70" href="#">About</a>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative hidden sm:block">
+<input class="bg-transparent border-b border-outline-variant py-1 pr-8 text-label-caps font-label-caps focus:outline-none focus:border-primary transition-all w-48" placeholder="SEARCH" type="text"/>
+<span class="material-symbols-outlined absolute right-0 top-1/2 -translate-y-1/2 text-[18px]">search</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined cursor-pointer hover:text-secondary transition-all">shopping_cart</span>
+<span class="md:hidden material-symbols-outlined cursor-pointer">menu</span>
+</div>
+</div>
+</div>
+</nav>
+<main class="pt-stack-lg max-w-[1440px] mx-auto px-margin-desktop">
+<!-- Category Header -->
+<header class="mb-stack-md">
+<nav class="mb-6 flex items-center gap-2 font-label-caps text-[10px] tracking-widest text-on-surface-variant">
+<a class="hover:text-primary transition-colors" href="#">HOME</a>
+<span>/</span>
+<span class="text-primary">LIVING &amp; WORKSPACE</span>
+</nav>
+<h1 class="font-headline-xl text-headline-xl mb-4">Living &amp; Workspace</h1>
+<p class="max-w-2xl text-on-surface-variant font-body-lg text-body-lg">
+                Curated essentials for the modern home office and lounge environment. Where structural integrity meets artisanal upholstery.
+            </p>
+</header>
+<!-- Filter Bar -->
+<section class="flex flex-col md:flex-row justify-between items-start md:items-center border-y border-outline-variant py-6 mb-12 gap-6">
+<div class="flex flex-wrap items-center gap-10">
+<div class="group relative cursor-pointer">
+<span class="font-label-caps text-label-caps flex items-center gap-2">MATERIAL <span class="material-symbols-outlined text-[16px]">expand_more</span></span>
+</div>
+<div class="group relative cursor-pointer">
+<span class="font-label-caps text-label-caps flex items-center gap-2">PRICE <span class="material-symbols-outlined text-[16px]">expand_more</span></span>
+</div>
+<div class="group relative cursor-pointer">
+<span class="font-label-caps text-label-caps flex items-center gap-2">COLLECTION <span class="material-symbols-outlined text-[16px]">expand_more</span></span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="font-label-caps text-label-caps text-on-surface-variant">24 PRODUCTS</span>
+<div class="h-4 w-[1px] bg-outline-variant"></div>
+<div class="group relative cursor-pointer">
+<span class="font-label-caps text-label-caps flex items-center gap-2">SORT BY <span class="material-symbols-outlined text-[16px]">expand_more</span></span>
+</div>
+</div>
+</section>
+<!-- Product Grid -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-gutter gap-y-16 mb-stack-lg">
+<!-- Featured: Nidus Desk Chair -->
+<div class="product-card-hover group relative flex flex-col">
+<div class="relative overflow-hidden aspect-[3/4] bg-surface-container-low mb-6">
+<img alt="Nidus Desk Chair" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2KErmhLri17F2dK4R5c4cBbYXVMkDtBm6QHTJucvFnU4rZv-4c3a8NVUiSDIPydCaFJAeLk7PykneVxIfmGT8cgl7OGBlBMCNAyPNbCTkdqaWQWz_YNSgolj636oUinyB5Uc8za64XgSyqwLrsOM1kU_klwwq0lhBDU_WU6y9WK7LQtxGhlROFTEIpKAOgGzFG97PKIjPn6SZ8y0dw6HmD59hvKdWOBF7RkZ-5BDjb6RV3ytO0F0b7Bi52yzinDZx81h8gj14QNGr"/>
+<!-- Quick Buy Overlay -->
+<div class="quick-buy absolute bottom-0 left-0 w-full bg-primary py-4 px-6 opacity-0 translate-y-full transition-all duration-300 flex justify-between items-center cursor-pointer">
+<span class="text-on-primary font-label-caps text-label-caps">QUICK ADD</span>
+<span class="text-on-primary font-label-caps text-label-caps">$1,240</span>
+</div>
+<!-- New Tag -->
+<div class="absolute top-4 left-4 bg-white border border-outline px-3 py-1 font-label-caps text-[10px]">NEW</div>
+</div>
+<div class="text-center">
+<h3 class="font-headline-md text-[20px] mb-1">Nidus Desk Chair</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant">WALNUT / FELT GREY</p>
+<p class="mt-3 font-body-md text-body-md">$1,240</p>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="product-card-hover group relative flex flex-col">
+<div class="relative overflow-hidden aspect-[3/4] bg-surface-container-low mb-6">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A side view of a minimalist solid oak desk with integrated cable management and a sleek, hidden drawer. The lighting is soft and cinematic, casting long, elegant shadows across a polished concrete floor in a bright, high-end architectural studio. The color palette is composed of warm oak tones, neutral grays, and crisp whites." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBVoJZBGbsdv9F0RjJL6SZvhSYuxJDVmW35Oad8iQvhHw6CtJnYvHqoJkH96Amzx7vgIds3bOo-lHqYq7A1XnRW0HGP6MnbJ0mYvkMtppwbnZ-iuJv6mFC3ZKU6P2irIRIJ5I1ZhcqfzeeChHjtP0rYkocTpp81fxJ6vxdJMIxJqNp4tyley2gVoyTm239ouhJHPIj7Dbx6huh3Sbq2KUrJ9MuVzPTzX1jeK6U8gE-1RAhBEjjINqN8V6eIawMjCFswRAgYuUVt6ZkE')"></div>
+<div class="quick-buy absolute bottom-0 left-0 w-full bg-primary py-4 px-6 opacity-0 translate-y-full transition-all duration-300 flex justify-between items-center cursor-pointer">
+<span class="text-on-primary font-label-caps text-label-caps">QUICK ADD</span>
+<span class="text-on-primary font-label-caps text-label-caps">$2,850</span>
+</div>
+</div>
+<div class="text-center">
+<h3 class="font-headline-md text-[20px] mb-1">Linea Work Table</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant">SOLID OAK</p>
+<p class="mt-3 font-body-md text-body-md">$2,850</p>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="product-card-hover group relative flex flex-col">
+<div class="relative overflow-hidden aspect-[3/4] bg-surface-container-low mb-6">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A contemporary floor lamp with a slender matte black stem and a spherical opal glass shade. The lamp stands in a minimalist corner beside a large window during the golden hour, creating a warm, sophisticated ambiance. The surrounding space features clean architectural lines and a neutral, luxurious color palette of cream and charcoal." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBUD75icxHCUeu-Czra22A-nSi7Q8s5ul4hIe8ibIoxBoo2MsovrkhWg-7FQMGhESNn9gD8KKsQPEB1Xj1Zs93txdFmUltnO7NWVNO7RNRE-_wqtjm9eLIQgjFr-Jz8TBLS8GpujcHQupkEjZa6mWd705e11vwJriKj7q8MkjqLMWthF7R6rCcB50C4-4mzN_i96do_U5_T69zCuHvrHOF4l0eoV7E56hyWljZrWjgZc0Tfm-OkdqVLhMMDB1i3eAxqlH95p3_Dqpiz')"></div>
+<div class="quick-buy absolute bottom-0 left-0 w-full bg-primary py-4 px-6 opacity-0 translate-y-full transition-all duration-300 flex justify-between items-center cursor-pointer">
+<span class="text-on-primary font-label-caps text-label-caps">QUICK ADD</span>
+<span class="text-on-primary font-label-caps text-label-caps">$620</span>
+</div>
+</div>
+<div class="text-center">
+<h3 class="font-headline-md text-[20px] mb-1">Orbital Floor Lamp</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant">MATTE BLACK / OPAL</p>
+<p class="mt-3 font-body-md text-body-md">$620</p>
+</div>
+</div>
+<!-- Product 4 -->
+<div class="product-card-hover group relative flex flex-col">
+<div class="relative overflow-hidden aspect-[3/4] bg-surface-container-low mb-6">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A modular shelving unit made of brushed aluminum and dark stained ash wood, showcasing curated art books and a single ceramic vase. The design is strictly geometric and architectural, set against a pristine off-white gallery wall. The aesthetic is ultra-modern and minimalist, emphasizing structural clarity and premium materials." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBeZDMM8Eri7sJguah2oZAfkCP9SYlpMIZpEmt7VkkRcuqxYK2b6K6lA-BzLVjQR6K87zYdAb7WHQJcBQxUJRBwQ-di5duLjtNFzjMvsY6tdXLew3tk6YSdYUf-iOmGSLqKX3fAGlh-GxAV6sap71pStBcQrO4PM8Og6VAooER2A-0XCLY8dLZB1sxKl7jMht_JPo5FwpXSsWfD4_O3yrxRWezKKkeFNQYlHKMZtdC3ufIqU0LVlhqW5qi3DU8JVLoO-2d5ZpQl5NM9')"></div>
+<div class="quick-buy absolute bottom-0 left-0 w-full bg-primary py-4 px-6 opacity-0 translate-y-full transition-all duration-300 flex justify-between items-center cursor-pointer">
+<span class="text-on-primary font-label-caps text-label-caps">QUICK ADD</span>
+<span class="text-on-primary font-label-caps text-label-caps">$4,100</span>
+</div>
+</div>
+<div class="text-center">
+<h3 class="font-headline-md text-[20px] mb-1">Strata Modular Unit</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant">ALUMINUM / ASH</p>
+<p class="mt-3 font-body-md text-body-md">$4,100</p>
+</div>
+</div>
+<!-- Product 5 -->
+<div class="product-card-hover group relative flex flex-col">
+<div class="relative overflow-hidden aspect-[3/4] bg-surface-container-low mb-6">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A plush, oversized lounge chair upholstered in a rich, textured cream bouclé fabric, featuring low profiles and organic curves. It is positioned in a sun-drenched minimalist living room with floor-to-ceiling windows. The mood is serene and luxurious, with a focus on tactile comfort and modern elegance." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCbRQ7Zywy9DPKFawguBRRwDCTOkMjVMgQk2SFvp_AVq-9Ven2Ai45D38mLSZH0-BTAOzmnZS6OWu4uBjV_yGjxaptBM6ftP9i_OG0VqaiDCw_3OhenMUXtKY2zUKBH5r9yX7VgoORYqNV807tHE0hYeGq6yB7QLwc4Oi90P2PO9X4IOivNRBk3NaytqsN8oTtaebTwEwLTeA6b8_tOms-cc3oGS5snoLOzn2St_KOcmJBG4i6TLjnC8NDFxGk6LmDukUVExbscpYUM')"></div>
+<div class="quick-buy absolute bottom-0 left-0 w-full bg-primary py-4 px-6 opacity-0 translate-y-full transition-all duration-300 flex justify-between items-center cursor-pointer">
+<span class="text-on-primary font-label-caps text-label-caps">QUICK ADD</span>
+<span class="text-on-primary font-label-caps text-label-caps">$2,150</span>
+</div>
+</div>
+<div class="text-center">
+<h3 class="font-headline-md text-[20px] mb-1">Cove Lounge Chair</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant">CREAM BOUCLÉ</p>
+<p class="mt-3 font-body-md text-body-md">$2,150</p>
+</div>
+</div>
+<!-- Product 6 -->
+<div class="product-card-hover group relative flex flex-col">
+<div class="relative overflow-hidden aspect-[3/4] bg-surface-container-low mb-6">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A minimalist low-profile coffee table crafted from a single block of dark travertine marble with soft, rounded edges. The table sits on a hand-woven wool rug in a minimalist interior. The lighting is diffused and atmospheric, highlighting the natural veins and textures of the stone against a background of warm, neutral tones." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBAWVSMhUPdIjBSlkeVqWj0t9To7LH2hSEDLUCmysL4EUtB1Dw8Ijkg9sIGOaAaTEuhEngze5wVPCLpvoL1X8NqMuWqJ2CO_ZkIb94fkddGumb2Yj6tB_5hG07Sgq9mFB06scIJNwjokdcwEFjOzC1Kfk2KuR-dB89e6N5U3VHvrHKmHM75WOhhFopUE-4BcAAYdeICdBb4iLtaVQLbPGiUfoiDl_6t3N2WIKWpAvipOK7iT6pSg5w4mgZLpwIhvAI-aN1soG41auMo')"></div>
+<div class="quick-buy absolute bottom-0 left-0 w-full bg-primary py-4 px-6 opacity-0 translate-y-full transition-all duration-300 flex justify-between items-center cursor-pointer">
+<span class="text-on-primary font-label-caps text-label-caps">QUICK ADD</span>
+<span class="text-on-primary font-label-caps text-label-caps">$3,400</span>
+</div>
+</div>
+<div class="text-center">
+<h3 class="font-headline-md text-[20px] mb-1">Monolith Plinth</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant">DARK TRAVERTINE</p>
+<p class="mt-3 font-body-md text-body-md">$3,400</p>
+</div>
+</div>
+<!-- Product 7 -->
+<div class="product-card-hover group relative flex flex-col">
+<div class="relative overflow-hidden aspect-[3/4] bg-surface-container-low mb-6">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A sculptural side table made of brushed brass with a cantilevered top design. The piece is set against a dark charcoal wall, catching the light on its metallic surfaces to create high-contrast highlights and deep shadows. The aesthetic is bold yet understated, evoking a sense of industrial luxury and architectural precision." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDPxin4qYDHDGYOlHHhQ5urjhLtQKSg0CR0EGle-LfX6lctfzJBjz3EOGU_yms3G5FqnWlvvYF_Joyms6DoB3XiXwK5rqLeIP10fEZWa2SLqvTFNMLwMGmf55QQrbIPOBDjYF_ewshz-j9pTZiVKDlCM0HZOsfFYAKt7XMFyy0VADwtLyKeojXa8P6xWh4-gO20qGOd5nEZ13aFTl3uw_VzH4EDIkd9Fp9jyyQBrwZDPybCNXWF5wns6aH-6nDjtBBba3AqN6uuW0gi')"></div>
+<div class="quick-buy absolute bottom-0 left-0 w-full bg-primary py-4 px-6 opacity-0 translate-y-full transition-all duration-300 flex justify-between items-center cursor-pointer">
+<span class="text-on-primary font-label-caps text-label-caps">QUICK ADD</span>
+<span class="text-on-primary font-label-caps text-label-caps">$980</span>
+</div>
+</div>
+<div class="text-center">
+<h3 class="font-headline-md text-[20px] mb-1">Camber Side Table</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant">BRUSHED BRASS</p>
+<p class="mt-3 font-body-md text-body-md">$980</p>
+</div>
+</div>
+<!-- Product 8 -->
+<div class="product-card-hover group relative flex flex-col">
+<div class="relative overflow-hidden aspect-[3/4] bg-surface-container-low mb-6">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A minimalist ergonomic task chair with a breathable mesh back and a slim aluminum frame. The chair is shown from the back, highlighting its precise structural engineering and sleek profile in a modern, light-filled office. The color palette is monochromatic black and silver, reinforcing an architectural and professional aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDeZYow3_D1Q1OJ7Bu1R232wmCJrYh_jaEvnj6oIM7F-zhmx8PGko7mZiru_i8DILLGwZgN7zTWguyWDuenUHQjKmEQDQ-ZoEGO7VCFlz6ceFH2OQSLubMTC9fYtsthnsL8X55_wzNjuoEtA3sWPTwnaS4aklgv2CKh5ntdU1xlV7aOKoHRHCSJWM56sycAvHK8XFnEDdsKh9kB4pICeN1tGcFglQiyJ88Qgz24zlKb9XHROKR6f7LLtnL6Wah_w1GQgOwA5Bppm8Ph')"></div>
+<div class="quick-buy absolute bottom-0 left-0 w-full bg-primary py-4 px-6 opacity-0 translate-y-full transition-all duration-300 flex justify-between items-center cursor-pointer">
+<span class="text-on-primary font-label-caps text-label-caps">QUICK ADD</span>
+<span class="text-on-primary font-label-caps text-label-caps">$890</span>
+</div>
+</div>
+<div class="text-center">
+<h3 class="font-headline-md text-[20px] mb-1">Apex Task Chair</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant">MESH / ALUMINUM</p>
+<p class="mt-3 font-body-md text-body-md">$890</p>
+</div>
+</div>
+</section>
+<!-- Newsletter / Editorial Section -->
+<section class="border-t border-outline-variant py-stack-md flex flex-col items-center text-center">
+<span class="font-label-caps text-label-caps mb-4 tracking-widest text-on-surface-variant">ESTABLISHING PERMANENCE</span>
+<h2 class="font-headline-lg text-headline-lg mb-8 max-w-3xl">Furniture designed not just for rooms, but for generations.</h2>
+<div class="w-full max-w-lg relative group">
+<input class="w-full bg-transparent border-b border-outline py-4 px-2 text-center font-label-caps text-label-caps focus:outline-none focus:border-primary transition-all" placeholder="JOIN THE ATELIER" type="email"/>
+<button class="mt-8 bg-primary text-on-primary px-12 py-4 font-button text-button hover:bg-secondary transition-all active:scale-95">SUBSCRIBE</button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full pt-stack-lg pb-margin-desktop bg-surface-container-low dark:bg-surface-container-highest border-t border-outline-variant">
+<div class="grid grid-cols-12 gap-gutter px-margin-desktop max-w-[1440px] mx-auto">
+<div class="col-span-12 lg:col-span-4 mb-10 lg:mb-0">
+<a href="../" class="font-headline-lg text-headline-lg text-primary tracking-tighter">{{CLIENT_NAME_SOLO}}</a>
+<p class="mt-6 font-body-md text-body-md text-on-surface-variant max-w-xs">
+                    Curating high-end architectural furniture with a focus on sustainability and timeless craftsmanship.
+                </p>
+</div>
+<div class="col-span-6 lg:col-span-2">
+<h4 class="font-label-caps text-label-caps mb-6 text-primary">COLLECTIONS</h4>
+<div class="flex flex-col gap-4">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Living</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Office</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Bedroom</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Lighting</a>
+</div>
+</div>
+<div class="col-span-6 lg:col-span-2">
+<h4 class="font-label-caps text-label-caps mb-6 text-primary">CRAFTSMANSHIP</h4>
+<div class="flex flex-col gap-4">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Sustainability</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Our Process</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Materials</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Care Guide</a>
+</div>
+</div>
+<div class="col-span-6 lg:col-span-2">
+<h4 class="font-label-caps text-label-caps mb-6 text-primary">SUPPORT</h4>
+<div class="flex flex-col gap-4">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Shipping</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Returns</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">FAQ</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Contact</a>
+</div>
+</div>
+<div class="col-span-6 lg:col-span-2">
+<h4 class="font-label-caps text-label-caps mb-6 text-primary">LEGAL</h4>
+<div class="flex flex-col gap-4">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Privacy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Terms</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Cookie Policy</a>
+</div>
+</div>
+<div class="col-span-12 mt-stack-md pt-8 border-t border-outline-variant flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-body-md text-body-md text-on-surface-variant">© 2024 {{CLIENT_NAME}}. Built for Longevity.</p>
+<div class="flex items-center gap-6">
+<a class="font-label-caps text-label-caps hover:text-secondary transition-colors" href="#">INSTAGRAM</a>
+<a class="font-label-caps text-label-caps hover:text-secondary transition-colors" href="#">PINTEREST</a>
+<a class="font-label-caps text-label-caps hover:text-secondary transition-colors" href="#">LINKEDIN</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction for filter bar
+        document.querySelectorAll('.group.relative.cursor-pointer').forEach(filter => {
+            filter.addEventListener('mouseenter', () => {
+                const icon = filter.querySelector('.material-symbols-outlined');
+                if(icon) icon.style.transform = 'rotate(180deg)';
+                icon.style.transition = 'transform 0.3s ease';
+            });
+            filter.addEventListener('mouseleave', () => {
+                const icon = filter.querySelector('.material-symbols-outlined');
+                if(icon) icon.style.transform = 'rotate(0deg)';
+            });
+        });
+
+        // Sticky header behavior
+        let lastScroll = 0;
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll > lastScroll && currentScroll > 100) {
+                nav.style.transform = 'translateY(-100%)';
+                nav.style.transition = 'transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
+            } else {
+                nav.style.transform = 'translateY(0)';
+            }
+            lastScroll = currentScroll;
+        });
+    </script>
+</body></html>

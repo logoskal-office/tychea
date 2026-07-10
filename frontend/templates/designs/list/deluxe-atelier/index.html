@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>{{CLIENT_NAME}} | Italian Craftsmanship | Obsidian &amp; Gilt</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400&amp;family=Work+Sans:wght@200;300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "tertiary-fixed": "#ffdcc1",
+                "surface-container-high": "#2f2826",
+                "on-secondary": "#3f2c20",
+                "on-tertiary-fixed": "#2e1500",
+                "on-primary": "#3c2f00",
+                "on-secondary-fixed": "#28180d",
+                "surface-dim": "#181210",
+                "on-tertiary": "#48290a",
+                "background": "#181210",
+                "secondary-fixed": "#fbddca",
+                "secondary-fixed-dim": "#dec1af",
+                "on-error": "#690005",
+                "on-tertiary-fixed-variant": "#623f1e",
+                "surface-tint": "#e9c349",
+                "tertiary": "#f9c499",
+                "on-secondary-container": "#ccb09f",
+                "on-background": "#ede0dc",
+                "surface-container-highest": "#3b3331",
+                "secondary-container": "#574335",
+                "surface-bright": "#3f3835",
+                "surface": "#181210",
+                "on-tertiary-container": "#603d1d",
+                "error": "#ffb4ab",
+                "outline": "#99907c",
+                "primary-container": "#d4af37",
+                "surface-container": "#251e1c",
+                "on-primary-fixed": "#241a00",
+                "surface-variant": "#3b3331",
+                "error-container": "#93000a",
+                "tertiary-fixed-dim": "#f0bc92",
+                "on-secondary-fixed-variant": "#574335",
+                "on-primary-container": "#554300",
+                "inverse-on-surface": "#362f2c",
+                "surface-container-low": "#201a18",
+                "on-error-container": "#ffdad6",
+                "inverse-surface": "#ede0dc",
+                "on-primary-fixed-variant": "#574500",
+                "surface-container-lowest": "#130d0b",
+                "primary-fixed": "#ffe088",
+                "on-surface-variant": "#d0c5af",
+                "tertiary-container": "#dba980",
+                "inverse-primary": "#735c00",
+                "primary": "#f2ca50",
+                "primary-fixed-dim": "#e9c349",
+                "secondary": "#dec1af",
+                "outline-variant": "#4d4635",
+                "on-surface": "#ede0dc"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "container-padding": "64px",
+                "margin-mobile": "20px",
+                "section-gap": "120px",
+                "gutter": "24px",
+                "base": "8px"
+            },
+            "fontFamily": {
+                "headline-md": ["Noto Serif"],
+                "body-md": ["Work Sans"],
+                "headline-lg": ["Noto Serif"],
+                "display-lg": ["Noto Serif"],
+                "body-lg": ["Work Sans"],
+                "headline-lg-mobile": ["Noto Serif"],
+                "label-caps": ["Work Sans"],
+                "headline": ["Noto Serif"],
+                "body": ["Work Sans"]
+            },
+            "fontSize": {
+                "headline-md": ["28px", {"lineHeight": "36px", "fontWeight": "400"}],
+                "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                "headline-lg": ["40px", {"lineHeight": "48px", "fontWeight": "400"}],
+                "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+                "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .gold-sheen {
+            background: linear-gradient(135deg, #f2ca50 0%, #d4af37 100%);
+        }
+        .gold-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, #d4af37 50%, transparent 100%);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .editorial-shadow {
+            box-shadow: 0 40px 60px -20px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar (Integrated from COMPONENTS_19) -->
+    <script>
+        const body = document.querySelector('body');
+        body.style.zoom = '0.67';
+        
+    </script>
+<nav class="bg-surface/95 dark:bg-surface/95 backdrop-blur-sm border-b border-outline-variant/40 fixed top-0 left-0 w-full z-50 shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center px-container-padding py-8 mx-auto">
+<div class="font-headline-lg text-headline-md text-primary dark:text-primary-fixed-dim tracking-wide uppercase">{{CLIENT_NAME}}</div>
+<div class="hidden md:flex gap-10 items-center font-label-caps text-label-caps tracking-[0.2em] uppercase">
+<a href="collections" class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-300" href="#">Collections</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-300" href="#">Artisans</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-300" href="#">Showrooms</a>
+<a href="detail" class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-300" href="#">Product Detail</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="material-symbols-outlined text-primary hover:text-primary-fixed transition-colors duration-300 scale-100 active:scale-95" data-icon="shopping_bag">shopping_bag</button>
+</div>
+</div>
+</nav>
+<main class="pt-0">
+<!-- Immersive Hero Section: Split Layout Redesigned -->
+<section class="relative min-h-screen flex items-center bg-surface-container-lowest overflow-hidden">
+<div class="grid grid-cols-1 lg:grid-cols-2 w-full h-full min-h-screen">
+<div class="flex flex-col justify-center px-8 lg:px-24 py-32 bg-surface-container-low border-r border-outline-variant/30">
+<div class="max-w-xl">
+<div class="flex items-center gap-4 mb-8">
+<span class="h-px w-12 bg-primary"></span>
+<span class="font-label-caps text-label-caps text-primary tracking-[0.3em] uppercase">L'Eccellenza Italiana</span>
+</div>
+<h1 class="font-headline text-6xl lg:text-[7rem] text-on-surface leading-[0.9] mb-8">The Art <br/>of Living.</h1>
+<div class="gold-divider mb-12 opacity-60"></div>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md mb-12 leading-relaxed italic">
+                        Handcrafted in the heart of Lombardy. Where centuries of heritage meet contemporary luxury to define your personal sanctuary.
+                    </p>
+<div class="flex flex-wrap gap-8 items-center">
+<button class="gold-sheen text-on-primary px-10 py-5 rounded-sm font-label-caps text-label-caps tracking-[0.2em] uppercase shadow-2xl hover:brightness-110 active:scale-95 transition-all duration-500">View Collection</button>
+<button class="flex items-center gap-3 group font-label-caps text-label-caps tracking-[0.2em] uppercase text-primary hover:text-primary-fixed transition-colors">
+<span>Discover Craft</span>
+<span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="relative overflow-hidden group">
+<img alt="Luxury Italian Sofa" class="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-[3000ms] ease-out brightness-75 group-hover:brightness-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7SOslrf9R7eHsI4Dywhy9uxL9uyRE20sHPdDTWY7Caz-BOKsidJ8feY__z7yTElAj_wnSLbEDLKLRHsR3AkqvVz7uPiQa1MdBqmMP8I3IARsTs0s8AHPcHRI7zuPmMjYKql24Nz6dNjAgpQoFbTALkclNhKYl8UpvpJSGRWe7aS8NJA_y8eXhAoxZqdY76YPyUpzG5sgcT5MM8Y5vKy_3d5ZaWM_jleYyrbMlInaG9Jf5k6LO33KXhtJdTuiSro1fkkMzNbXpckpO"/>
+<div class="absolute inset-0 bg-black/20"></div>
+<div class="absolute bottom-12 right-12 bg-surface-container-high/90 backdrop-blur p-8 max-w-xs editorial-shadow border-l-4 border-primary">
+<p class="font-label-caps text-label-caps text-primary mb-3 tracking-[0.2em] uppercase">Master Artisan Note</p>
+<p class="font-body-md text-body-md italic leading-relaxed text-on-surface">"In every piece of Carrara marble or hand-tufted velvet, we preserve the soul of the Italian Renaissance."</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Trending Now: Editor's Choice Carousel -->
+<section class="py-24 px-6 lg:px-24 bg-surface-container-lowest">
+<div class="max-w-[1440px] mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+<div>
+<span class="text-primary font-label-caps text-label-caps tracking-[0.2em] uppercase block mb-2">Curated Selection</span>
+<h2 class="font-headline text-headline-lg text-on-surface">Editor's Choice</h2>
+</div>
+<div class="flex gap-4">
+<button class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center text-primary hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined">chevron_left</span></button>
+<button class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center text-primary hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined">chevron_right</span></button>
+</div>
+</div>
+<div class="flex gap-8 overflow-x-auto hide-scrollbar pb-12">
+<!-- Product Card 1 -->
+<div class="min-w-[320px] lg:min-w-[400px] group cursor-pointer">
+<div class="aspect-[4/5] bg-surface-container-high mb-6 overflow-hidden relative border border-outline-variant/10">
+<img alt="Designer Chair" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 brightness-90 group-hover:brightness-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDX7GbhrOc07e_sm_D11TaHh6QkuLC7BGYovjF6PVaLZyC-xtokuDN-XoTXftDmdr0RfDJ3Z4HXU07kSzzIqHqb_4VS-rpEDGWIOu-yTLhoFmW9Z_ud2kRb8-acqLwjSwDZ2XZcYjDDuJbL5j-arUDx-33BRgmM4ai6Jv_EcJoBnJSIxjrXiLTb_ajV-w2IxOmfe8i4LRjnmUfZAR0lz6T9FCIsTVFKGt2Zsq0WPYQjgPp5xrBSP4hkKxh7obvkK9zEcBjYV01g96Kp"/>
+<div class="absolute top-4 left-4 gold-sheen text-on-primary px-3 py-1 font-label-caps text-[10px] tracking-widest uppercase">Trending</div>
+</div>
+<h3 class="font-headline text-headline-md text-on-surface mb-1">Aurelius Leather Chair</h3>
+<p class="text-on-surface-variant font-body-md italic">Tuscan Tan &amp; Gold Leaf</p>
+</div>
+<!-- Product Card 2 -->
+<div class="min-w-[320px] lg:min-w-[400px] group cursor-pointer">
+<div class="aspect-[4/5] bg-surface-container-high mb-6 overflow-hidden relative border border-outline-variant/10">
+<img alt="Dining Table" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 brightness-90 group-hover:brightness-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpDGmJFAbkEhtyEF_-LfqHfvKf2ZIxVbbZ-fw2nQ7GTHEVTHTse41FJyC5Dgxj13RXCAJKzhoxO_w-tC77JI5sEtj8JkukXurKyw61yEdblf2ESLpZgq4olOiPh4c-oZObwZ7vePbl5MyQq2mkLCy0B4f6iAEraVuSxVpJqY1QbJ5tJ_HwqQwdtyTAbP0xESpyMi44d414NWRHdd9LlP8sHo4Di-_piS8Z4f4VIQV1euJXaY7q7naY9cMDadV_AuIsL0U49Ao3VptE"/>
+<div class="absolute top-4 left-4 gold-sheen text-on-primary px-3 py-1 font-label-caps text-[10px] tracking-widest uppercase">New Arrival</div>
+</div>
+<h3 class="font-headline text-headline-md text-on-surface mb-1">Venetian Marble Table</h3>
+<p class="text-on-surface-variant font-body-md italic">Carrara White &amp; Brass</p>
+</div>
+<!-- Product Card 3 -->
+<div class="min-w-[320px] lg:min-w-[400px] group cursor-pointer">
+<div class="aspect-[4/5] bg-surface-container-high mb-6 overflow-hidden relative border border-outline-variant/10">
+<img alt="Luxe Bed" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 brightness-90 group-hover:brightness-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDf1sDL9igv-_TryFGjbrVYAGyhsPAOW8ph6dFLR9ubKP_noJxtFd8y1Lkgv-pBYE3FwezRvUoVAik7AgSmXTQcVrTi0vYzy4vo849JsgYz2rO_obflcu1mBOHJL3OXuKBJ5MJnB_z2OojWu7VJ211d1X9nrmgaBbiOgDSTZqOHK2HVdQn3AvJ_tBvb3Ktso4jVauD85zPO-iILjvtQRaj8cCaPGkUi9ezHwyPLvcGSz9L53Ra_WIhlmHq1pAzjkmW5bzhpSuhZ5X3"/>
+</div>
+<h3 class="font-headline text-headline-md text-on-surface mb-1">Palazzo Suite Bed</h3>
+<p class="text-on-surface-variant font-body-md italic">Velvet Charcoal</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Signature Materials: Obsidian & Gilt Showcase -->
+<section class="py-32 bg-surface overflow-hidden border-y border-outline-variant/20">
+<div class="max-w-[1440px] mx-auto px-6">
+<div class="text-center mb-24">
+<span class="text-primary font-label-caps text-label-caps tracking-[0.2em] uppercase block mb-4">The Essence</span>
+<h2 class="font-headline text-5xl mb-6 text-on-surface">Signature Materials</h2>
+<div class="gold-divider w-24 mx-auto mb-8"></div>
+<p class="text-on-surface-variant font-body-lg max-w-xl mx-auto italic">The foundation of luxury lies in the touch. We source only the finest raw elements from Italy's most prestigious regions.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+<!-- Material 1: Marble -->
+<div class="text-center group">
+<div class="aspect-square bg-surface-container overflow-hidden mb-8 border border-outline-variant/30 p-2 editorial-shadow max-w-[320px] mx-auto">
+<img alt="Marble Texture" class="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXod30dMQrpAq59HFQIEVNtGosKEG0rPlfGvTMhRHiiBMP--Mrk7cQUBkXkIvQTFqyidiQ8NifbrywfSkNwwyi2rM4j8t-oUX4W7fXhlzI-dXJLI91wb9Z5zcodwqsP6lygP0PbJWCMwDhOUHpJp3MNNKWhr8aiN93gcDHGvqWmkn3ucD8OrNMalEnrK65HwnoKNve46CTAqSLwlYP8zbO3UJ9XWM75fF4_mjpwfgMUu4OBGH94gg2eazkbJdawU_fXx8vPfSyi61A"/>
+</div>
+<h4 class="font-headline text-2xl mb-3 tracking-wide text-primary">Carrara Marble</h4>
+<p class="font-label-caps text-label-caps text-on-surface-variant tracking-widest uppercase">Veined Heritage</p>
+</div>
+<!-- Material 2: Velvet -->
+<div class="text-center group">
+<div class="aspect-square bg-surface-container overflow-hidden mb-8 border border-outline-variant/30 p-2 editorial-shadow max-w-[320px] mx-auto">
+<img alt="Velvet Texture" class="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNP1fj4W3C8VDZpLrnpOy3ayzJspFHwTgi4gIbihEx90Insihh3cRj0eeThzVIMQ6QQYH3GOgbKJvT7u9gm5hADO9oUpKmC1eqy7bJ0MUBgfIRo8yn0ETbZqhAn7vrdudNAydEz7Tu_K2gAxEL3YhovAvbc8uJesMx63Tan5oznCEOdRZVg2RKmDMyUKOM_z6UzW0W9hJTTkn4nSsqMmYbWWbmUsa9v3ubvuWBem-1vTcHZWb3nhvH2HrQS4Qhx23ZHWSZswdoQKUh"/>
+</div>
+<h4 class="font-headline text-2xl mb-3 tracking-wide text-primary">Milanese Velvet</h4>
+<p class="font-label-caps text-label-caps text-on-surface-variant tracking-widest uppercase">Lustrous Depth</p>
+</div>
+<!-- Material 3: Gold Leaf -->
+<div class="text-center group">
+<div class="aspect-square bg-surface-container overflow-hidden mb-8 border border-outline-variant/30 p-2 editorial-shadow max-w-[320px] mx-auto">
+<img alt="Gold Leaf" class="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQ5M-ZUrnI9TJRKNVDONO0fipkfBN2zJutrQTajwHR1fTjP8RNO37wizjacxsfHbquZr5niI0tuqA22ezoR-ZeP-Iu9cy5LXOvX4ruQzFVMBbpZcP5g4Q0MfonqEUSUC_odn5H5iR-Rzp3uDpaOrqHUAd1yd6djOEmEPYN3iLiWY3KQtELUac2iHG2-MNFo5tL--x2LM8fq0r_cj-MfueTfy7cQjhlVRoN4TolRjoQoDT_usym_pKV_y31A083PWJsyufhprO9SgxH"/>
+</div>
+<h4 class="font-headline text-2xl mb-3 tracking-wide text-primary">24K Artisan Gold</h4>
+<p class="font-label-caps text-label-caps text-on-surface-variant tracking-widest uppercase">Timeless Radiance</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Collections: Bento Grid Redesigned -->
+<section class="py-32 px-6 lg:px-24 bg-surface-container-lowest">
+<div class="max-w-[1440px] mx-auto">
+<div class="mb-16 text-center max-w-2xl mx-auto">
+<span class="text-primary font-label-caps text-label-caps tracking-[0.2em] uppercase block mb-2">The Catalog</span>
+<h2 class="font-headline text-headline-lg mb-6 text-on-surface">Signature Collections</h2>
+<p class="text-on-surface-variant font-body-lg italic">Each piece is selected for its architectural integrity and soul.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="md:col-span-2 relative group cursor-pointer overflow-hidden rounded-sm border border-outline-variant/10">
+<div class="aspect-[16/9] bg-surface-container-highest">
+<img alt="Milano Modern" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-75 group-hover:brightness-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZI4W28bPxRRSpz9vE3_bOyMeq2fAIXH_xTcK_FrwsooOfKiwjUE6WL16kbiGgnlsOAiCZ-kZ0thZirguNKmQUs_Y5DQ9Ffq8-EMcti3Jjg6YjbKEVJVQPBnPJBeHDh8o2ltiI1zkHovCjiNqWWp5wDavvCGOqk3Yyk2Klun1ZtAWCWPfE9Hf6UQ73Hqb3j31R6MkIy_uAP0kTqgwccurZV177i89Kt3V_fNavJw6nTP1klqxuObEmWiCuCYiC_2rC7rOMo5ocKny_"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent flex items-end p-10">
+<div>
+<h3 class="font-headline text-3xl text-primary mb-2">Milano Modern</h3>
+<p class="text-on-surface/80 font-body-md italic">Clean lines, timeless comfort.</p>
+</div>
+</div>
+</div>
+<div class="relative group cursor-pointer overflow-hidden rounded-sm border border-outline-variant/10">
+<div class="aspect-[4/5] bg-surface-container-highest">
+<img alt="Tuscany Terrace" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-75 group-hover:brightness-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpDGmJFAbkEhtyEF_-LfqHfvKf2ZIxVbbZ-fw2nQ7GTHEVTHTse41FJyC5Dgxj13RXCAJKzhoxO_w-tC77JI5sEtj8JkukXurKyw61yEdblf2ESLpZgq4olOiPh4c-oZObwZ7vePbl5MyQq2mkLCy0B4f6iAEraVuSxVpJqY1QbJ5tJ_HwqQwdtyTAbP0xESpyMi44d414NWRHdd9LlP8sHo4Di-_piS8Z4f4VIQV1euJXaY7q7naY9cMDadV_AuIsL0U49Ao3VptE"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent flex items-end p-10">
+<div>
+<h3 class="font-headline text-2xl text-primary mb-2">Tuscany Terrace</h3>
+<p class="text-on-surface/80 font-body-md italic">Outdoor elegance.</p>
+</div>
+</div>
+</div>
+<div class="relative group cursor-pointer overflow-hidden rounded-sm border border-outline-variant/10">
+<div class="aspect-[4/5] bg-surface-container-highest">
+<img alt="Venice Sleep" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-75 group-hover:brightness-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDf1sDL9igv-_TryFGjbrVYAGyhsPAOW8ph6dFLR9ubKP_noJxtFd8y1Lkgv-pBYE3FwezRvUoVAik7AgSmXTQcVrTi0vYzy4vo849JsgYz2rO_obflcu1mBOHJL3OXuKBJ5MJnB_z2OojWu7VJ211d1X9nrmgaBbiOgDSTZqOHK2HVdQn3AvJ_tBvb3Ktso4jVauD85zPO-iILjvtQRaj8cCaPGkUi9ezHwyPLvcGSz9L53Ra_WIhlmHq1pAzjkmW5bzhpSuhZ5X3"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent flex items-end p-10">
+<div>
+<h3 class="font-headline text-2xl text-primary mb-2">Venice Sleep</h3>
+<p class="text-on-surface/80 font-body-md italic">The art of repose.</p>
+</div>
+</div>
+</div>
+<div class="md:col-span-2 relative group cursor-pointer overflow-hidden rounded-sm border border-outline-variant/10">
+<div class="aspect-[16/9] bg-surface-container-highest">
+<img alt="Atelier Office" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-75 group-hover:brightness-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrKiOaUuehZLDh4Tp0OBvmec4nWr5aRDP6nlyboAMEhnIFRPLNnC_Bj4ToEfK1YePUbgFpTKQJ93WAd2lKXZeJqiL5k4efom7VdbFMHHPru74qmn1K-4oc3TBccV7QBwIuZ7gLWSvL6dzslans6lhEAALkZcmDjqlxtzNDK4WaImDeOoRq3BDBt6BWI1dPuSmPfBOBAfggbyomCSwmHmxDR8ePMlo0sPDH2evuEnWcErPAFOkFQNQk-nLJlvPAHoFQCo9p4wOZhmlz"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent flex items-end p-10">
+<div>
+<h3 class="font-headline text-3xl text-primary mb-2">Atelier Office</h3>
+<p class="text-on-surface/80 font-body-md italic">Inspiration in every detail.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Our Showrooms Section Redesigned -->
+<section class="py-32 px-6 lg:px-24 bg-surface">
+<div class="max-w-[1440px] mx-auto">
+<div class="flex flex-col lg:flex-row justify-between items-end mb-20 gap-8">
+<div class="max-w-xl">
+<h2 class="font-headline text-5xl mb-6 text-on-surface">Our Showrooms</h2>
+<p class="text-on-surface-variant font-body-lg leading-relaxed italic">Experience the tactile luxury of {{CLIENT_NAME}} in person. Our expert consultants are ready to guide you through our collections at seven prestigious locations.</p>
+</div>
+<div class="flex items-center gap-4 text-primary font-label-caps text-label-caps tracking-[0.2em] uppercase group cursor-pointer">
+<span>Locate an Atelier</span>
+<span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">east</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-outline-variant/30">
+<div class="bg-surface-container-low p-12 hover:bg-surface-container-high transition-colors group">
+<span class="font-label-caps text-[10px] text-primary tracking-[0.2em] uppercase block mb-4">Central</span>
+<h3 class="font-headline text-2xl mb-4 group-hover:text-primary transition-colors text-on-surface">{{CLIENT_NAME_SOLO}} Mall</h3>
+<p class="text-on-surface-variant text-sm mb-6">Our flagship destination featuring the complete seasonal collection.</p>
+<div class="w-full h-48 bg-surface-container overflow-hidden border border-outline-variant/10">
+<img alt="Mall" class="w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9ynDCPucUqTq4AF_YcO6FSF8_TVaozwOi9rEtoS2wVWIGVCEAPxYgze3qFs8UoxcGWvChWSZ9jq65YsteWVGURZGkRq_9ri2lF-hdONhkiqkmUTBtT6YOEFwr1BlxzTUAKvBCUfG0okYd9j-M9kch9Nxe50tbmhOyyvG46dJXUFFhyc46JmSK2tZb7IubTJ0ToVosSXnoF5aN3fEDrQtOrYDvQETH3TODgdv5-QRyC9ppqpqz9raeqT_j7kCStkurJU44h4Ad2mCk"/>
+</div>
+</div>
+<div class="bg-surface-container-low p-12 hover:bg-surface-container-high transition-colors group">
+<span class="font-label-caps text-[10px] text-primary tracking-[0.2em] uppercase block mb-4">West District</span>
+<h3 class="font-headline text-2xl mb-4 group-hover:text-primary transition-colors text-on-surface">Olympia</h3>
+<p class="text-on-surface-variant text-sm mb-6">Bespoke consultations and architectural lighting specialist center.</p>
+<div class="w-full h-48 bg-surface-container overflow-hidden border border-outline-variant/10">
+<img alt="Olympia" class="w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxPy8UYz2eAI4QnzSsc0BkSSKJfyKAJ3mYEgpaWhAPL4U1RTNmeMGR2CWcH2EKptUZTG1ikMxAcp8ZI4EuJQZc40KdC95P5Nbi-W_S8gh44iLBRS5zdXAbx4vfAwI26nFl0J3E5tiMGB9H-BfuwGXC51069W1EKTaPjfbk0au_NEOAMcl8MH4ZsfGyS1rP81mtbtDoE6LZTZ16xSTR0EwKRwuLFG02lPCumDedA-2qwKS7EYH84hREGLots1JaJp2DY1EzAORnwRyd"/>
+</div>
+</div>
+<div class="bg-surface-container-low p-12 hover:bg-surface-container-high transition-colors group">
+<span class="font-label-caps text-[10px] text-primary tracking-[0.2em] uppercase block mb-4">East Hub</span>
+<h3 class="font-headline text-2xl mb-4 group-hover:text-primary transition-colors text-on-surface">CMC</h3>
+<p class="text-on-surface-variant text-sm mb-6">Modern living and urban space solutions for the contemporary home.</p>
+<div class="w-full h-48 bg-surface-container overflow-hidden border border-outline-variant/10">
+<img alt="CMC" class="w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuONdxFUR8P8Wz7sDUe999kEL1UAeRdqWXWKXCxAFR1Ge5npHRJiXe_SNvU8P6CEPgV5ovBvxZelffg6heJ-YhIEIKaHx0vX-aewi-X5fN4V2kZ0vJt7ofrnx5oa_nGbkkv9wX8ECQRVbPeQbtU-sQ-AruMLTPk5uqXPhhELehCUONc8SdCR-pFk1FLEF80t7MndN0Z3AhB3Ux7kq4ROyUwhFlLer2kmyzznktXRQv5UXT2Y2Q19pF6QnR8CC2chAePccmlL6AZb8R"/>
+</div>
+</div>
+<div class="bg-surface-container-low p-12 hover:bg-surface-container-high transition-colors group">
+<span class="font-label-caps text-[10px] text-primary tracking-[0.2em] uppercase block mb-4">Business Core</span>
+<h3 class="font-headline text-2xl mb-4 group-hover:text-primary transition-colors text-on-surface">Jomo</h3>
+<p class="text-on-surface-variant text-sm mb-6">Executive office collections and professional interior planning.</p>
+<div class="w-full h-48 bg-surface-container overflow-hidden border border-outline-variant/10">
+<img alt="Jomo" class="w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSTdYTyPk-D5Mv2w2Znr23XgS1KqKNQ44UPDoB19rLT3YbjGYhzEg8q1xSAhU-DuRiOlBMLmgEFhvkxbdXs7oUsxOfMv67HJuRC4_SG79AWHosY_nTWH-qWOyWGPrDHsmsA9GQ63taRwprRgBENrvlfx2Nu3jnMjprmICJQOIZeS4gbGORl2C7LZMzH-avuAvwlP-R84tGqUlBD3evEdr1Ds6pXQeTs4xGpt18Ao6p_IeqaZUXt2CnHA6qeK9xZTslltuLhawFMXUH"/>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-outline-variant/30 border-t border-outline-variant/30">
+<div class="bg-surface-container-low p-12 hover:bg-surface-container-high transition-colors group">
+<h3 class="font-headline text-2xl mb-4 group-hover:text-primary transition-colors text-on-surface">Minaye</h3>
+<p class="text-on-surface-variant text-sm">Textiles and soft furnishings curated from top European mills.</p>
+</div>
+<div class="bg-surface-container-low p-12 hover:bg-surface-container-high transition-colors group">
+<h3 class="font-headline text-2xl mb-4 group-hover:text-primary transition-colors text-on-surface">Bethel</h3>
+<p class="text-on-surface-variant text-sm">Classic heritage pieces and restored limited edition furniture.</p>
+</div>
+<div class="bg-surface-container-low p-12 hover:bg-surface-container-high transition-colors group">
+<h3 class="font-headline text-2xl mb-4 group-hover:text-primary transition-colors text-on-surface">Hawassa</h3>
+<p class="text-on-surface-variant text-sm">Our lakeside retreat showroom showcasing outdoor and leisure living.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter / CTA -->
+<section class="py-32 bg-surface-container-lowest text-on-surface overflow-hidden relative">
+<div class="max-w-4xl mx-auto text-center px-6 relative z-10">
+<span class="text-primary font-label-caps text-label-caps tracking-[0.4em] uppercase block mb-6">Newsletter</span>
+<h2 class="font-headline text-5xl mb-8">Join the Atelier Circle.</h2>
+<p class="text-on-surface-variant font-body-lg mb-12 max-w-2xl mx-auto italic">Be the first to receive invitations to private gallery showings and new seasonal catalogs.</p>
+<form class="flex flex-col md:flex-row gap-4 max-w-lg mx-auto">
+<input class="bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary text-on-surface w-full py-4 px-0 placeholder:text-outline transition-colors" placeholder="Email Address" type="email"/>
+<button class="gold-sheen text-on-primary px-10 py-4 font-label-caps text-label-caps tracking-[0.2em] uppercase shadow-lg hover:brightness-110 transition-colors shrink-0">Subscribe</button>
+</form>
+</div>
+<!-- Decorative Grain/Texture Background -->
+<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBU7EA4rG6_nZJtenSS2T37CdfS91FRIjlRogH5q91rVCrF14HP6Mpnj7xCNuJSDww9oArEeMnRruZ0Tmx77w8Pr9Kwsk91C59H7NFRFaryei6G0xgUivkec3VH5wepCKOhq2bOlNrPGp2Juc7PfoXNYzENwfgDIj4Afy2urKRF3zpjoHxT4YJSfKf-QKrEfazQM8NBXP7jVn5P13LPqaOo5SrAgDq16_x_lLHIbRcG86RMoWVnTdqXacRUQmiseoLnRybeaB7ysxEu');"></div>
+</section>
+</main>
+<!-- Footer (Integrated from COMPONENTS_19) -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest w-full py-section-gap border-t border-outline-variant/20">
+<div class="max-w-[1440px] mx-auto px-container-padding grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="col-span-1">
+<div class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim mb-6">{{CLIENT_NAME_SOLO}}</div>
+<p class="font-label-caps text-label-caps text-on-surface-variant tracking-[0.15em] leading-loose">
+                © 2024 {{CLIENT_NAME}}. THE DIGITAL CURATOR COLLECTION.
+            </p>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-caps text-label-caps text-primary tracking-[0.15em] mb-2 uppercase">Showrooms</span>
+<a class="text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim underline underline-offset-8 transition-all font-body-md" href="#">London Showroom</a>
+<a class="text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim underline underline-offset-8 transition-all font-body-md" href="#">Milan Atelier</a>
+<a class="text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim underline underline-offset-8 transition-all font-body-md" href="#">New York Gallery</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-caps text-label-caps text-primary tracking-[0.15em] mb-2 uppercase">Network</span>
+<a class="text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim underline underline-offset-8 transition-all font-body-md" href="#">Join the Registry</a>
+<a class="text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim underline underline-offset-8 transition-all font-body-md" href="#">Minaye Heritage</a>
+<a class="text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim underline underline-offset-8 transition-all font-body-md" href="#">Bethel Archives</a>
+</div>
+<div class="flex flex-col gap-6">
+<span class="font-label-caps text-label-caps text-primary tracking-[0.15em] mb-2 uppercase">Follow</span>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary hover:opacity-80 cursor-pointer">social_leaderboard</span>
+<span class="material-symbols-outlined text-primary hover:opacity-80 cursor-pointer">camera</span>
+<span class="material-symbols-outlined text-primary hover:opacity-80 cursor-pointer">mail</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

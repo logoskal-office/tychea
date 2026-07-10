@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>{{CLIENT_NAME_SOLO}} | Apex Executive Desk</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&amp;family=Hanken+Grotesk:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom Scrollbar for a premium look */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #131313; }
+        ::-webkit-scrollbar-thumb { background: #353535; }
+        ::-webkit-scrollbar-thumb:hover { background: #ffb3b1; }
+        
+        .product-image-container:hover img {
+            transform: scale(1.05);
+        }
+        
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+        }
+        .accordion-item.active .accordion-content {
+            max-height: 200px;
+        }
+        .accordion-item.active .icon-rotate {
+            transform: rotate(45deg);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#474746",
+                        "secondary-fixed": "#e5e2e1",
+                        "surface-tint": "#ffb3b1",
+                        "on-surface": "#e4e2e1",
+                        "on-background": "#e4e2e1",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-surface-variant": "#e4bebc",
+                        "outline": "#ab8987",
+                        "surface-container-high": "#2a2a2a",
+                        "primary-fixed": "#ffdad8",
+                        "surface-container-low": "#1b1c1c",
+                        "surface-variant": "#353535",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "secondary": "#c8c6c5",
+                        "on-secondary": "#313030",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-container": "#909191",
+                        "inverse-surface": "#e4e2e1",
+                        "on-error": "#690005",
+                        "on-primary-container": "#5b000e",
+                        "error": "#ffb4ab",
+                        "inverse-on-surface": "#303030",
+                        "tertiary": "#c6c6c7",
+                        "tertiary-fixed": "#e2e2e2",
+                        "error-container": "#93000a",
+                        "on-tertiary-container": "#282a2a",
+                        "outline-variant": "#5b403f",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-tertiary": "#2f3131",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "on-secondary-fixed-variant": "#474746",
+                        "on-primary-fixed": "#410007",
+                        "inverse-primary": "#bb152c",
+                        "primary": "#ffb3b1",
+                        "primary-container": "#ff535b",
+                        "on-primary-fixed-variant": "#92001c",
+                        "on-secondary-container": "#b7b5b4",
+                        "surface-bright": "#393939",
+                        "surface-dim": "#131313",
+                        "primary-fixed-dim": "#ffb3b1",
+                        "surface-container-highest": "#353535",
+                        "background": "#131313",
+                        "surface": "#131313",
+                        "surface-container": "#1f2020",
+                        "on-primary": "#680011",
+                        "on-tertiary-fixed": "#1a1c1c"
+                    },
+                    "spacing": {
+                        "container-max": "1440px",
+                        "gutter": "24px",
+                        "margin-mobile": "20px",
+                        "section-gap": "120px",
+                        "unit": "8px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Syne"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-lg": ["Syne"],
+                        "label-sm": ["Hanken Grotesk"],
+                        "headline-md": ["Syne"],
+                        "label-md": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+    <script>
+        const body = document.querySelector('body');
+        body.style.zoom = '0.8';
+    </script>
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-desktop py-6 bg-surface/90 backdrop-blur-md transition-all duration-200 ease-in-out">
+<div class="font-headline-md text-headline-md font-bold tracking-tighter text-on-surface uppercase">{{CLIENT_NAME_SOLO}}</div>
+<div class="hidden md:flex space-x-12">
+<a href="../" class="font-label-md text-label-md tracking-widest text-on-surface hover:text-primary transition-colors duration-300 transition-all duration-200 ease-in-out">HOME</a>
+<a href="../collections" class="font-label-md text-label-md tracking-widest text-on-surface hover:text-primary transition-colors duration-300 transition-all duration-200 ease-in-out" >CATALOG</a>
+<a class="font-label-md text-label-md tracking-widest text-primary border-b-2 border-primary pb-1 transition-all duration-200 ease-in-out" href="#">DETAIL</a>
+<a class="font-label-md text-label-md tracking-widest text-on-surface hover:text-primary transition-colors duration-300 transition-all duration-200 ease-in-out" href="#">STORY</a>
+</div>
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">shopping_bag</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">person</span>
+</div>
+</nav>
+<main class="pt-32 pb-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter lg:gap-16 items-start">
+<!-- Product Gallery Left -->
+<div class="lg:col-span-7 grid grid-cols-1 gap-4">
+<div class="product-image-container relative overflow-hidden aspect-[4/5] bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-700" data-alt="A premium high-end executive desk in a dark, minimalist architectural home office. The desk features a sculptural black oak top with integrated red accent grooves. Sharp geometric lighting highlights the textured wood grain and the sleek, matte finish. The atmosphere is professional, sophisticated, and editorial, with soft shadows and high-contrast highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxbeARkVa5mCP8THop5s6U2OkIqStb6C7R5duyM_sez7sauGxqjpty5z7tqAo5byg3noGStnhygkF4u4bh4zv8ecrxfQ0sqZ9B4WRjoDyvZJutRdGNW5MQ7m0INHgZayF1JT84dhjdxygal8A8mX1PuMEhf0t9Wnfo6QP6ObILMJ8XDlTsziVw1SXXZitQdFbABEUt1uZI22oh-J1Yhv3lf5IOhG0bKGHbyfbeARDBK5GDWRuacW03IqOgJNPCQVUpP01T3A8PrErP"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="product-image-container relative overflow-hidden aspect-square bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-700" data-alt="Macro detail shot of the Apex Executive Desk corner, showing the seamless joinery and a vibrant red drawer interior. The surface is deep matte black with a sophisticated low-sheen finish. Lighting is dramatic and focused, emphasizing the precision engineering and premium materials used in this minimalist office furniture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjoz62f7frOc5dn3CQt2hnuyZ9x4C80shuRzJM3T34-FOEI9ABwVUUIRbgnySofFnWDP3tcfPlyAsbFHQNBLqlFI7WsZAuDN2a1CPlXYdoP3CM8QGU1nGWTz4IZ_smWxRobxUP0nopGoDu82CSeGgmsb_ftAdMdZvob5ab39VW3qySCx3sjU7SX25Id7jWjRkqe1erMNH-v8084aaESYQJpxV7RMf-p0wrnXjqlWMDTWt-VJNAfO44_GTIRQXaNFri_SXEF5QY2EOr"/>
+</div>
+<div class="product-image-container relative overflow-hidden aspect-square bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-700" data-alt="Atmospheric wide shot of a modern office space featuring the Apex Executive Desk. The desk sits centrally on a dark grey concrete floor, flanked by a minimalist floor lamp and a tall window showing a twilight cityscape. The color palette is dark and moody, punctuated by the desk's subtle red accents and sharp architectural lines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0twJ1BXnh6r7LI4XFO5zaNBmfjbOpCjDKfjzKVJxwtFP4FjDGOXvf2FtNn0mxwzbL1L1Kcwp1IyGmLDvyVpDzjyuClnIXpBnmNpyAEZz3i7Qb9GqGJDqmYluz004GjzAviD9WPflDmv5NzcAB1kIdPeqthNWGw93OZvHDiduqSTeFnONlxpANjIn6gbGNWqpCotSirAC-SN3Pdbd13yFgtvot1PwL-DmL58Pfa3GenuE3ex7qrTH_VG7TL_YtWmgWpawIQsco5GQv"/>
+</div>
+</div>
+</div>
+<!-- Product Details Right -->
+<div class="lg:col-span-5 lg:sticky lg:top-32 space-y-10">
+<div class="space-y-4">
+<span class="font-label-md text-label-md tracking-widest text-primary uppercase">Executive Series</span>
+<h1 class="font-display-lg text-4xl lg:text-display-lg font-extrabold tracking-tighter leading-none text-on-surface">Apex Executive Desk</h1>
+<p class="font-headline-md text-headline-md text-secondary-fixed">$4,850.00</p>
+</div>
+<div class="space-y-6">
+<div>
+<p class="font-label-md text-label-md tracking-wider mb-4 uppercase">Color / Variant</p>
+<div class="flex gap-4">
+<button class="w-12 h-12 rounded-full border-2 border-primary bg-[#E63946] relative transition-transform hover:scale-110" title="Red Accent"></button>
+<button class="w-12 h-12 rounded-full border border-white/10 bg-[#1A1A1A] relative transition-transform hover:scale-110" title="Solid Black"></button>
+<button class="w-12 h-12 rounded-full border border-white/10 bg-[#F5F5F5] relative transition-transform hover:scale-110" title="Arctic White"></button>
+</div>
+</div>
+<button class="w-full bg-[#E63946] text-white font-label-md text-label-md py-6 tracking-[0.2em] uppercase transition-all hover:bg-[#c9323d] active:scale-[0.98]">
+                        Add to Bag
+                    </button>
+</div>
+<!-- Accordions -->
+<div class="border-t border-white/10 pt-4">
+<div class="accordion-item border-b border-white/10 py-6" onclick="toggleAccordion(this)">
+<button class="w-full flex justify-between items-center text-left">
+<span class="font-label-md text-label-md tracking-widest uppercase">Materials</span>
+<span class="material-symbols-outlined icon-rotate transition-transform duration-300">add</span>
+</button>
+<div class="accordion-content">
+<p class="pt-4 text-on-surface-variant font-body-md leading-relaxed">
+                                Sustainably sourced Black Walnut core with a multi-layered matte obsidian finish. Structural frame composed of aircraft-grade brushed aluminum with signature crimson powder-coated hardware.
+                            </p>
+</div>
+</div>
+<div class="accordion-item border-b border-white/10 py-6" onclick="toggleAccordion(this)">
+<button class="w-full flex justify-between items-center text-left">
+<span class="font-label-md text-label-md tracking-widest uppercase">Dimensions</span>
+<span class="material-symbols-outlined icon-rotate transition-transform duration-300">add</span>
+</button>
+<div class="accordion-content">
+<ul class="pt-4 space-y-2 text-on-surface-variant font-body-md">
+<li>Width: 180cm / 70.8"</li>
+<li>Depth: 80cm / 31.5"</li>
+<li>Height: 75cm / 29.5"</li>
+<li>Weight: 64kg</li>
+</ul>
+</div>
+</div>
+<div class="accordion-item border-b border-white/10 py-6" onclick="toggleAccordion(this)">
+<button class="w-full flex justify-between items-center text-left">
+<span class="font-label-md text-label-md tracking-widest uppercase">Shipping</span>
+<span class="material-symbols-outlined icon-rotate transition-transform duration-300">add</span>
+</button>
+<div class="accordion-content">
+<p class="pt-4 text-on-surface-variant font-body-md leading-relaxed">
+                                Complimentary White Glove delivery included. Professional installation by our certified technicians ensures your workspace is ready for immediate use. Lead time: 6-8 weeks.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Complete the Look Section -->
+<section class="mt-section-gap">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div>
+<span class="font-label-md text-label-md tracking-widest text-primary uppercase">Curation</span>
+<h2 class="font-headline-lg text-headline-lg font-bold tracking-tighter mt-2">Complete the Look</h2>
+</div>
+<div class="flex gap-4">
+<button class="w-12 h-12 flex items-center justify-center border border-white/10 hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">west</span>
+</button>
+<button class="w-12 h-12 flex items-center justify-center border border-white/10 hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">east</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Related Product 1 -->
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden aspect-square bg-surface-container mb-6">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A minimalist architectural task chair with a sleek carbon fiber frame and deep red leather upholstery. The chair is positioned against a clean, dark grey background with dramatic top-down lighting. The design is high-performance yet elegant, matching the aesthetic of the Apex Executive Desk with its sharp angles and premium finish." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpifUH2wgIvvQ0-FtIN8m4CNKgLi4yeWsQ3a4WDfpdMgvTBTulzufl9XBo_YQmgdEplxlJpKIwubV3TV9tCgUtT5DWAZ9ag2oVPemNwobnH_q_-YLXz3H93BIdGNJjGcPQ_utwmviBo2ktDaA5u5pz9YDnAvMAHscBd2iRkQxyguKEaanIpQyMso7pi4ELueclEn5D2FjCPrFFZnLJ2kwlUE58XgR1KT0zJmXzc8vtatjaNnfVd0vzDaoyT-YgZXAWeQnZviK3iuqp"/>
+</div>
+<div class="space-y-1">
+<h3 class="font-label-md text-label-md tracking-wider uppercase text-on-surface">Vanguard Task Chair</h3>
+<p class="text-on-surface-variant">$1,250.00</p>
+</div>
+</div>
+<!-- Related Product 2 -->
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden aspect-square bg-surface-container mb-6">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A tall, minimalist floor lamp with a slender matte black stem and a geometric shade that casts a warm, focused glow. The lighting design is sculptural and modern, suited for a high-end office environment. The lamp features a small red cable detail at the base, tying into the brand's sophisticated high-contrast color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgVAomCviwxv3-XDoDHb3iaMQ2BwdRWLKn9tvey-ablrq_k-oGIfynahKHNnDjZmoVZBIqiNONvghs8-Dsdkg4Ia8fTI_AhXATe023zcFKuZ_dL4miFMNhmbEUbgBq0dc_Yxtc7418O8mIqC1Gdo8tNHAuJw8RAQex6YpRWdBYPYg8P4B6_-66drINmqD0yEJszqxCOR4Y3dGx0JCxIY_apT9qdLflUOYXqXIWrnjvm8OhRYYteZtWVJSBns5zq-SiVxqWYkl4Q1ku"/>
+</div>
+<div class="space-y-1">
+<h3 class="font-label-md text-label-md tracking-wider uppercase text-on-surface">Lumina Floor Light</h3>
+<p class="text-on-surface-variant">$890.00</p>
+</div>
+</div>
+<!-- Related Product 3 -->
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden aspect-square bg-surface-container mb-6">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A set of designer desk accessories including a heavy obsidian pen holder, a brushed aluminum tray, and a red leather-bound notebook. The items are arranged artfully on a dark wood surface under soft ambient light, showcasing the quality of materials and the cohesive minimalist design language of the collection." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLIcHDVswTaLTRyFgifUJhXBoCYEgZ85zd9h5jAW5n7sxKIrdNd6UUQKMSuzt-7kRr4KNPkkniwzcR3uPTt9LOSOoDR-s-7WDV2HZT-M1s5HWkyQ-h-1eeqbeHAMqqeq-5G_A4yhgRst7jecwuhN3-gXoF4yP5S9EH_J5ylhMxCGqgv_VQUDR2ysCGhweWc79YoGhDaeE9zs8sUCICfm_7kAImw2fahELWyXojPLZLW2T9zMMcNQ3jsqZ-IFtAhTdpEORecEUAD4fE"/>
+</div>
+<div class="space-y-1">
+<h3 class="font-label-md text-label-md tracking-wider uppercase text-on-surface">Essential Desk Kit</h3>
+<p class="text-on-surface-variant">$420.00</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-gap px-margin-desktop flex flex-col md:flex-row justify-between items-start bg-surface-container-lowest border-t border-white/10">
+<div class="mb-12 md:mb-0">
+<h2 class="font-headline-lg text-headline-lg font-black text-primary mb-6 uppercase">{{CLIENT_NAME_SOLO}}</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs opacity-60">
+                Architectural integrity and uncompromising quality for the modern professional.
+            </p>
+</div>
+<div class="grid grid-cols-2 gap-x-20 gap-y-12">
+<div class="flex flex-col gap-4">
+<span class="font-label-md text-label-md text-primary tracking-widest uppercase mb-2">Legal</span>
+<a class="font-body-md text-on-surface-variant hover:text-white transition-opacity opacity-80 hover:opacity-100 uppercase" href="#">PRIVACY</a>
+<a class="font-body-md text-on-surface-variant hover:text-white transition-opacity opacity-80 hover:opacity-100 uppercase" href="#">TERMS</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-md text-label-md text-primary tracking-widest uppercase mb-2">Services</span>
+<a class="font-body-md text-on-surface-variant hover:text-white transition-opacity opacity-80 hover:opacity-100 uppercase" href="#">SHIPPING</a>
+<a class="font-body-md text-on-surface-variant hover:text-white transition-opacity opacity-80 hover:opacity-100 uppercase" href="#">STORES</a>
+</div>
+</div>
+<div class="mt-12 md:mt-0 pt-12 md:pt-0">
+<p class="text-label-sm font-label-sm text-on-surface-variant opacity-40 uppercase">
+                © 2024 {{CLIENT_NAME}}. ARCHITECTURAL INTEGRITY.
+            </p>
+</div>
+</footer>
+<script>
+        function toggleAccordion(element) {
+            const isActive = element.classList.contains('active');
+            
+            // Close all other accordions
+            document.querySelectorAll('.accordion-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Toggle clicked one
+            if (!isActive) {
+                element.classList.add('active');
+            }
+        }
+
+        // Initialize first accordion
+        document.addEventListener('DOMContentLoaded', () => {
+            const first = document.querySelector('.accordion-item');
+            if (first) first.classList.add('active');
+        });
+
+        // Simple smooth scroll for nav
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+            });
+        });
+    </script>
+</body></html>

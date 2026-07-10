@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nidus Desk Chair | {{CLIENT_NAME_SOLO}}</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#e4e2dd",
+                        "on-secondary": "#ffffff",
+                        "secondary": "#735a3e",
+                        "surface-tint": "#5f5e5e",
+                        "inverse-surface": "#303030",
+                        "secondary-fixed": "#ffddbb",
+                        "surface-container-high": "#eae8e7",
+                        "surface": "#fbf9f8",
+                        "on-error-container": "#93000a",
+                        "surface-container-highest": "#e4e2e2",
+                        "on-background": "#1b1c1c",
+                        "tertiary-container": "#1b1c19",
+                        "surface-container-low": "#f5f3f3",
+                        "on-tertiary-fixed": "#1b1c19",
+                        "surface-container": "#efeded",
+                        "on-secondary-fixed-variant": "#5a4229",
+                        "inverse-on-surface": "#f2f0f0",
+                        "surface-bright": "#fbf9f8",
+                        "secondary-fixed-dim": "#e3c19f",
+                        "surface-variant": "#e4e2e2",
+                        "on-primary-fixed": "#1c1b1b",
+                        "background": "#fbf9f8",
+                        "error-container": "#ffdad6",
+                        "on-surface": "#1b1c1c",
+                        "on-surface-variant": "#444748",
+                        "error": "#ba1a1a",
+                        "secondary-container": "#fdd9b7",
+                        "primary": "#000000",
+                        "outline-variant": "#c4c7c7",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "tertiary": "#000000",
+                        "on-primary-container": "#858383",
+                        "primary-container": "#1c1b1b",
+                        "on-primary": "#ffffff",
+                        "outline": "#747878",
+                        "primary-fixed": "#e5e2e1",
+                        "on-error": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed-dim": "#c8c6c2",
+                        "surface-dim": "#dbd9d9",
+                        "on-primary-fixed-variant": "#474746",
+                        "on-tertiary-fixed-variant": "#474744",
+                        "on-secondary-fixed": "#291803",
+                        "inverse-primary": "#c8c6c5",
+                        "on-tertiary-container": "#848480",
+                        "on-secondary-container": "#785e42"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "80px",
+                        "gutter": "32px",
+                        "stack-lg": "120px",
+                        "margin-mobile": "20px",
+                        "stack-md": "64px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "body-md": ["DM Sans"],
+                        "headline-md": ["Playfair Display"],
+                        "button": ["DM Sans"],
+                        "headline-xl": ["Playfair Display"],
+                        "headline-xl-mobile": ["Playfair Display"],
+                        "body-lg": ["DM Sans"],
+                        "label-caps": ["DM Sans"],
+                        "headline-lg": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
+                        "button": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "headline-xl": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-xl-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "32px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.15em", "fontWeight": "700"}],
+                        "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .transition-soft { transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md selection:bg-secondary-container">
+    <script>
+        const body = document.body;
+        body.style.zoom = '0.67';
+    </script>
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md">
+<div class="flex justify-between items-center px-margin-desktop py-6 max-w-[1440px] mx-auto">
+<div class="flex items-center gap-10">
+<a href="../" class="text-headline-md font-headline-md text-primary tracking-tighter flex items-center gap-3" href="#">
+<img alt="Luxe Form Logo" class="w-8 h-8 rounded-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMiUu03dQa7bO4gtVjo5DTBbtrcOkPrPHj9420QD87VInmz_cqM-F8HjmVbUMkWxAl3qRqxyuoidLt9m52VD7NwQOEi8ieHv-KLqQnjxCNU-aperaOpRAlJUG6eqgjBwDBzAmH3x5jDJB_aZcN0nXoloxwHbQ0EE-o5_OpSX_23jEcbDMhMr8VuGAixp6emhFxcPZgB1bEkMUPuBCErjv0qoPfm90m6LDPXBiFpJyJ9ZNeAI1Ifj9thhKfwO5tuqFcszS2-5h-hj2q"/>
+                    {{CLIENT_NAME_SOLO}}
+                </a>
+<div class="hidden md:flex gap-8">
+<a href="../collections" class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Living</a>
+<a href="../collections" class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Office</a>
+<a class="font-label-caps text-label-caps text-primary border-b border-primary pb-1" href="#">Product Detail</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">About</a>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="material-symbols-outlined text-primary cursor-pointer active:opacity-70">search</button>
+<button class="material-symbols-outlined text-primary cursor-pointer active:opacity-70">shopping_cart</button>
+</div>
+</div>
+</nav>
+<main class="pt-32">
+<div class="max-w-[1440px] mx-auto px-margin-desktop grid grid-cols-12 gap-gutter">
+<!-- Main Gallery -->
+<section class="col-span-12 lg:col-span-8">
+<div class="relative aspect-[4/5] bg-surface-container-low overflow-hidden rounded-lg">
+<img alt="Nidus Desk Chair main view" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2KErmhLri17F2dK4R5c4cBbYXVMkDtBm6QHTJucvFnU4rZv-4c3a8NVUiSDIPydCaFJAeLk7PykneVxIfmGT8cgl7OGBlBMCNAyPNbCTkdqaWQWz_YNSgolj636oUinyB5Uc8za64XgSyqwLrsOM1kU_klwwq0lhBDU_WU6y9WK7LQtxGhlROFTEIpKAOgGzFG97PKIjPn6SZ8y0dw6HmD59hvKdWOBF7RkZ-5BDjb6RV3ytO0F0b7Bi52yzinDZx81h8gj14QNGr"/>
+<div class="absolute bottom-6 right-6 flex gap-3">
+<button class="w-12 h-12 bg-surface/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-sm hover:bg-surface transition-soft">
+<span class="material-symbols-outlined">zoom_in</span>
+</button>
+</div>
+</div>
+<!-- Thumbnail Slider -->
+<div class="mt-gutter flex gap-4 overflow-x-auto hide-scrollbar pb-4">
+<div class="flex-shrink-0 w-24 aspect-square rounded border-2 border-primary overflow-hidden cursor-pointer">
+<img class="w-full h-full object-cover" data-alt="Close-up thumbnail of the Nidus Desk Chair showing the refined light oak shell and premium textured grey fabric padding against a clean, architectural white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2KErmhLri17F2dK4R5c4cBbYXVMkDtBm6QHTJucvFnU4rZv-4c3a8NVUiSDIPydCaFJAeLk7PykneVxIfmGT8cgl7OGBlBMCNAyPNbCTkdqaWQWz_YNSgolj636oUinyB5Uc8za64XgSyqwLrsOM1kU_klwwq0lhBDU_WU6y9WK7LQtxGhlROFTEIpKAOgGzFG97PKIjPn6SZ8y0dw6HmD59hvKdWOBF7RkZ-5BDjb6RV3ytO0F0b7Bi52yzinDZx81h8gj14QNGr"/>
+</div>
+<div class="flex-shrink-0 w-24 aspect-square rounded border border-outline-variant overflow-hidden cursor-pointer hover:border-outline transition-soft">
+<img class="w-full h-full object-cover" data-alt="A side profile shot of the Nidus Desk Chair highlighting the elegant ergonomic curve of the wooden back support and the polished aluminum five-star swivel base. The lighting is soft and directional, emphasizing the luxury furniture craft." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNaaNqURN9hErG7MpAWgFf-KdFTIXYE9vLUEJgkOgeqJU7sYSvF7iU86c6Ochq4gtvmNUeX8_GoCTO4-WTFTwFXefQgVGoinY3R3ziZm-54qjh03PGKQbzuucAc5sIQ6EUzmieI72nlIQVYWU7DanyQfGvxKVaWNxELIx3EipT1lzyby-VSkaCtORbA07hwkuowNak-ZhlcuPRVvAO1QDi4dfbiC28Go13RCzScz6x8aDoL0EhgoxQP48fDy-ARpSYicebwjNuwWnG"/>
+</div>
+<div class="flex-shrink-0 w-24 aspect-square rounded border border-outline-variant overflow-hidden cursor-pointer hover:border-outline transition-soft">
+<img class="w-full h-full object-cover" data-alt="An atmospheric lifestyle image of the Nidus Desk Chair placed in a minimalist home office setting with large floor-to-ceiling windows, soft morning light, and a clean white desk, reflecting a high-end editorial aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuANRJq8CFRruBoDfhfcd-XqkKTJRUS-UNikJ5sJInXSYg8BtQqPidpZEGcHERNpND5HD2QaZ5DG0nYBp3P1LvdtpCRNER9M2NKc72N0lRg2F5BRxSofC93KSHRbFpASs8JFvqqj2hiVhjO9tG8RsBR8wWSaaud0fxueU69FFXXIflMCNz7xuikgFIPXw8MbkqSnDdDDtZltvb62M15nqfYM3avKdtdP_5HW0ftSB8MReFWCb7RW_2ZqgC7KsRHaA5s1s6eMm1GEB5ds"/>
+</div>
+<div class="flex-shrink-0 w-24 aspect-square rounded border border-outline-variant overflow-hidden cursor-pointer hover:border-outline transition-soft">
+<img class="w-full h-full object-cover" data-alt="A detailed macro texture shot of the Nidus Desk Chair's components, focusing on the seamless joint between the warm solid oak and the brushed brass adjustment lever." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8EpqFDIfV_x_XXJcOCOBfG0LkCzxREhOUKxHWdZFlyBZjq0sOZRvcPIXpzxGDf6_myhPZmeqrYyp3wx02DufpYdeVhqPNgV1HvQblDxQEFV6YFxAqcncbeuk7T88Sv-w6G5mFRAQAWWt1HH7ix0k4pbISZxHthw4vVU0zwF1DMg8ezrvzoYs1_i6KP_CZq8rQ__fq8kotqZON87dQhRxEAQTCfY9ylCAvoWmqwDNydaLFta9e3qvFXiBaQq4ZDfow7lSkUUheZtoM"/>
+</div>
+</div>
+</section>
+<!-- Product Info (Sticky Column) -->
+<aside class="col-span-12 lg:col-span-4 lg:sticky lg:top-32 h-fit">
+<div class="space-y-6">
+<nav class="flex items-center gap-2 text-on-surface-variant font-label-caps text-[10px] tracking-widest uppercase">
+<a class="hover:text-primary" href="#">Office</a>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<a class="hover:text-primary" href="#">Seating</a>
+</nav>
+<h1 class="font-headline-lg text-headline-lg tracking-tight">Nidus Desk Chair</h1>
+<div class="flex items-baseline gap-4">
+<span class="font-headline-md text-headline-md text-primary">$1,250</span>
+<span class="font-label-caps text-on-surface-variant line-through">$1,500</span>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                        An architectural masterpiece for the workspace. The Nidus blends the warmth of hand-finished European oak with a precision-engineered aluminum core, upholstered in bespoke Belgian linen.
+                    </p>
+<div class="space-y-4 pt-6 border-t border-outline-variant">
+<div class="flex justify-between items-center">
+<span class="font-label-caps text-label-caps">Finishing</span>
+<span class="font-body-md text-body-md">Natural Oak / Flint Linen</span>
+</div>
+<div class="flex gap-3">
+<button class="w-8 h-8 rounded-full bg-[#E5D3B3] ring-2 ring-primary ring-offset-2"></button>
+<button class="w-8 h-8 rounded-full bg-[#4A4A4A] hover:scale-110 transition-soft"></button>
+<button class="w-8 h-8 rounded-full bg-[#D1C7BD] hover:scale-110 transition-soft"></button>
+</div>
+</div>
+<div class="pt-8 space-y-3">
+<button class="w-full bg-primary text-on-primary font-button text-button py-5 uppercase tracking-widest hover:bg-zinc-800 transition-soft active:scale-[0.98]">
+                            Add to Bag
+                        </button>
+<button class="w-full border border-outline text-primary font-button text-button py-5 uppercase tracking-widest hover:bg-surface-container-low transition-soft">
+                            Save to Wishlist
+                        </button>
+</div>
+<div class="pt-8 flex items-center gap-6 text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">local_shipping</span>
+<span class="font-label-caps text-[10px]">Complimentary Shipping</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">verified</span>
+<span class="font-label-caps text-[10px]">10-Year Warranty</span>
+</div>
+</div>
+</div>
+</aside>
+</div>
+<!-- Ingredients Section -->
+<section class="mt-stack-lg bg-surface-container-low py-stack-lg overflow-hidden">
+<div class="max-w-[1440px] mx-auto px-margin-desktop grid grid-cols-12 gap-gutter items-center">
+<div class="col-span-12 lg:col-span-5 order-2 lg:order-1">
+<h2 class="font-headline-lg text-headline-lg-mobile lg:text-headline-lg mb-8">Noble Materials, Honest Craft</h2>
+<div class="space-y-10">
+<div class="flex gap-6 items-start">
+<div class="w-12 h-12 flex-shrink-0 flex items-center justify-center border border-outline text-primary font-headline-md italic">01</div>
+<div>
+<h3 class="font-label-caps text-label-caps mb-2 uppercase">Hand-Selected Oak</h3>
+<p class="text-on-surface-variant">Sustainably sourced from managed forests in Western Europe, our oak is kiln-dried and hand-oiled to preserve the unique grain profile of every chair.</p>
+</div>
+</div>
+<div class="flex gap-6 items-start">
+<div class="w-12 h-12 flex-shrink-0 flex items-center justify-center border border-outline text-primary font-headline-md italic">02</div>
+<div>
+<h3 class="font-label-caps text-label-caps mb-2 uppercase">Architectural Brass</h3>
+<p class="text-on-surface-variant">Solid brass accents are brushed to a satin finish, designed to develop a beautiful patina over decades of use.</p>
+</div>
+</div>
+<div class="flex gap-6 items-start">
+<div class="w-12 h-12 flex-shrink-0 flex items-center justify-center border border-outline text-primary font-headline-md italic">03</div>
+<div>
+<h3 class="font-label-caps text-label-caps mb-2 uppercase">Heritage Belgian Linen</h3>
+<p class="text-on-surface-variant">Our heavy-weight linen blend offers exceptional breathability and a tactile richness that synthetic alternatives cannot replicate.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-6 lg:offset-1 order-1 lg:order-2 mb-12 lg:mb-0 relative">
+<div class="aspect-square bg-white rounded-lg shadow-2xl overflow-hidden translate-x-4 translate-y-4">
+<img alt="Detailed texture closeup" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8EpqFDIfV_x_XXJcOCOBfG0LkCzxREhOUKxHWdZFlyBZjq0sOZRvcPIXpzxGDf6_myhPZmeqrYyp3wx02DufpYdeVhqPNgV1HvQblDxQEFV6YFxAqcncbeuk7T88Sv-w6G5mFRAQAWWt1HH7ix0k4pbISZxHthw4vVU0zwF1DMg8ezrvzoYs1_i6KP_CZq8rQ__fq8kotqZON87dQhRxEAQTCfY9ylCAvoWmqwDNydaLFta9e3qvFXiBaQq4ZDfow7lSkUUheZtoM"/>
+</div>
+<div class="absolute -z-10 top-0 left-0 w-full h-full border border-outline-variant rounded-lg -translate-x-8 -translate-y-8"></div>
+</div>
+</div>
+</section>
+<!-- Technical Specs -->
+<section class="py-stack-lg max-w-[1440px] mx-auto px-margin-desktop">
+<div class="max-w-3xl mx-auto border-t border-outline-variant">
+<div class="accordion-item border-b border-outline-variant">
+<button class="w-full py-8 flex justify-between items-center group" onclick="toggleAccordion(this)">
+<span class="font-label-caps text-label-caps text-lg tracking-widest uppercase">Dimensions</span>
+<span class="material-symbols-outlined group-hover:rotate-45 transition-transform">add</span>
+</button>
+<div class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out opacity-0">
+<div class="pb-8 grid grid-cols-2 gap-8 text-on-surface-variant">
+<div>
+<p class="font-label-caps text-[10px] uppercase mb-1">Total Height</p>
+<p class="font-body-lg">88 - 98 cm</p>
+</div>
+<div>
+<p class="font-label-caps text-[10px] uppercase mb-1">Seat Depth</p>
+<p class="font-body-lg">46 cm</p>
+</div>
+<div>
+<p class="font-label-caps text-[10px] uppercase mb-1">Total Width</p>
+<p class="font-body-lg">64 cm</p>
+</div>
+<div>
+<p class="font-label-caps text-[10px] uppercase mb-1">Weight</p>
+<p class="font-body-lg">18.5 kg</p>
+</div>
+</div>
+</div>
+</div>
+<div class="accordion-item border-b border-outline-variant">
+<button class="w-full py-8 flex justify-between items-center group" onclick="toggleAccordion(this)">
+<span class="font-label-caps text-label-caps text-lg tracking-widest uppercase">Care Instructions</span>
+<span class="material-symbols-outlined group-hover:rotate-45 transition-transform">add</span>
+</button>
+<div class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out opacity-0">
+<div class="pb-8 text-on-surface-variant space-y-4">
+<p>For the wood: Wipe weekly with a dry lint-free cloth. Every 6 months, apply a thin layer of natural wax to maintain luster.</p>
+<p>For the fabric: Professional cleaning recommended. For small spills, blot immediately with a clean white damp cloth. Do not rub.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Complete the Room -->
+<section class="py-stack-lg border-t border-outline-variant">
+<div class="max-w-[1440px] mx-auto px-margin-desktop">
+<div class="flex justify-between items-end mb-12">
+<h2 class="font-headline-lg text-headline-md lg:text-headline-lg">Complete the Room</h2>
+<a class="font-label-caps text-label-caps border-b border-primary hover:text-secondary transition-colors" href="#">Shop Office Collection</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Related 1 -->
+<div class="group cursor-pointer">
+<div class="aspect-[4/5] bg-surface-container-low overflow-hidden mb-6">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-soft" data-alt="A minimalist solid oak executive desk with integrated cable management and a clean, sculptural silhouette, set against a warm beige background with soft editorial lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiXGGbuRoelU3Q2MlhMxLBwdvMhCzoexNFLrthxDKls6ZP69kO-J9KYGxjhHCbvyGt7Wc3azFg8-wBXzc6W-_dCFjq0BbbYW840Ri3PxiT_OKokfUBV7hLLOgvmJu5G-7z-mXwhnDm9fJuqBrYEr08Bni9uldkGCU79GNSHo7nxl5gUdHOsrSS0OuxHl5Elzt5Ch311Zb0HswTqB1zkfcp82E6dnkyYFbz0dOrTtqmJqeuyqHUhoAr6CkiguO1OaWZbTEL-L8E7je9"/>
+</div>
+<h3 class="font-headline-md text-[20px] mb-2">Monolith Desk</h3>
+<p class="font-body-md text-on-surface-variant mb-4">$3,400</p>
+</div>
+<!-- Related 2 -->
+<div class="group cursor-pointer">
+<div class="aspect-[4/5] bg-surface-container-low overflow-hidden mb-6">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-soft" data-alt="A sleek, architectural floor lamp made of brushed brass with a slim profile and a warm, ambient LED glow, designed to illuminate high-end workspace interiors." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCo4-Cm5blNtX9gtZAhmqDup25GWxXRYZkaFJX_6niirBhLqCzHBuxxSCvhqiW9nazwc_TGQ8S8Put9h6t7VLAZNgiUUNRhL2IAvuI6QiEkL8JbqNRN3_ZRSpt1mmL3cxscMbJIkjBv18owweuYeQQj8esi0LV3SKbCSN7Axf9kN50MA1lbdZT5Zh34TvYq5agEIq60Vuf5gs__Caz_UanuRwmaMDRo6fZ54Lu_ifX32-M8scXosl-qunTpJmM6SWFbsc5ClIHRomwz"/>
+</div>
+<h3 class="font-headline-md text-[20px] mb-2">Arcade Floor Lamp</h3>
+<p class="font-body-md text-on-surface-variant mb-4">$850</p>
+</div>
+<!-- Related 3 -->
+<div class="group cursor-pointer">
+<div class="aspect-[4/5] bg-surface-container-low overflow-hidden mb-6">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-soft" data-alt="A pair of minimalist bookends made from carved Italian travertine marble, featuring geometric shapes and a raw, textured finish suitable for a luxury bookshelf." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwyqUJcA4JSOoE0HKy3XlKdErDLQxzqBoWxHXegXmYjgBsfO_GSRkMQTN4vGNbA-_Upa1wmEW1CQyjMZhA2teM6iXwNIXfHAAmvqPJ8Chh3d3v1YIMKYI1BpoDPr_7ohmpTroh9Qs6o9x8aKIzluSlISu0zEkjVQLLLdvVaYiNDP1Q3s_IKPavSOXgaX0m7_Az-HADPRHJMxyuF-lI0aH5fqFe0vpN504SVgpKgq7JhFfpc2_xaswaoVqlhOtVQvG_Dre1seG0kJJY"/>
+</div>
+<h3 class="font-headline-md text-[20px] mb-2">Travertine Bookends</h3>
+<p class="font-body-md text-on-surface-variant mb-4">$320</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-surface-container-highest w-full pt-stack-lg pb-margin-desktop border-t border-outline-variant">
+<div class="grid grid-cols-12 gap-gutter px-margin-desktop max-w-[1440px] mx-auto">
+<div class="col-span-12 lg:col-span-4 space-y-6">
+<div class="flex items-center gap-4">
+<img alt="Luxe Form Logo" class="w-12 h-12 rounded-lg grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMiUu03dQa7bO4gtVjo5DTBbtrcOkPrPHj9420QD87VInmz_cqM-F8HjmVbUMkWxAl3qRqxyuoidLt9m52VD7NwQOEi8ieHv-KLqQnjxCNU-aperaOpRAlJUG6eqgjBwDBzAmH3x5jDJB_aZcN0nXoloxwHbQ0EE-o5_OpSX_23jEcbDMhMr8VuGAixp6emhFxcPZgB1bEkMUPuBCErjv0qoPfm90m6LDPXBiFpJyJ9ZNeAI1Ifj9thhKfwO5tuqFcszS2-5h-hj2q"/>
+<span class="font-headline-lg text-headline-lg text-primary tracking-tighter">{{CLIENT_NAME_SOLO}}</span>
+</div>
+<p class="text-on-surface-variant max-w-xs">Curating spaces that breathe. Our philosophy centers on the intersection of architectural precision and tactile warmth.</p>
+</div>
+<div class="col-span-6 lg:col-span-2 space-y-4">
+<h4 class="font-label-caps text-label-caps text-primary">Discover</h4>
+<ul class="space-y-2 text-on-surface-variant">
+<li><a class="hover:text-secondary transition-colors" href="#">Sustainability</a></li>
+<li><a class="hover:text-secondary transition-colors font-bold text-primary" href="#">Craftsmanship</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#">The Atelier</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#">Showrooms</a></li>
+</ul>
+</div>
+<div class="col-span-6 lg:col-span-2 space-y-4">
+<h4 class="font-label-caps text-label-caps text-primary">Service</h4>
+<ul class="space-y-2 text-on-surface-variant">
+<li><a class="hover:text-secondary transition-colors" href="#">Shipping</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#">Returns</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#">Care Guide</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#">FAQ</a></li>
+</ul>
+</div>
+<div class="col-span-12 lg:col-span-4 space-y-6">
+<h4 class="font-label-caps text-label-caps text-primary">Journal</h4>
+<div class="flex flex-col gap-4">
+<p class="text-on-surface-variant text-sm">Join our newsletter for early access to collections and architectural insights.</p>
+<div class="flex border-b border-primary py-2">
+<input class="bg-transparent border-none focus:ring-0 w-full placeholder:text-outline placeholder:font-label-caps placeholder:text-[10px] uppercase" placeholder="Email Address" type="email"/>
+<button class="material-symbols-outlined">east</button>
+</div>
+</div>
+</div>
+<div class="col-span-12 pt-16 flex flex-col md:flex-row justify-between items-center gap-8 border-t border-outline-variant mt-16">
+<p class="text-on-surface-variant text-body-md">© 2024 {{CLIENT_NAME}}. Built for Longevity.</p>
+<div class="flex gap-8 text-on-surface-variant">
+<a class="hover:text-primary" href="#">Privacy</a>
+<a class="hover:text-primary" href="#">Terms</a>
+<a class="hover:text-primary" href="#">Accessibility</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        function toggleAccordion(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('.material-symbols-outlined');
+            const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
+
+            // Close all others
+            document.querySelectorAll('.accordion-item div').forEach(div => {
+                div.style.maxHeight = '0px';
+                div.style.opacity = '0';
+            });
+            document.querySelectorAll('.accordion-item span.material-symbols-outlined').forEach(i => {
+                i.style.transform = 'rotate(0deg)';
+            });
+
+            if (!isOpen) {
+                content.style.maxHeight = content.scrollHeight + 'px';
+                content.style.opacity = '1';
+                icon.style.transform = 'rotate(45deg)';
+            } else {
+                content.style.maxHeight = '0px';
+                content.style.opacity = '0';
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // Initialize micro-interactions
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('mouseenter', () => {
+                img.style.filter = 'brightness(0.95)';
+            });
+            img.addEventListener('mouseleave', () => {
+                img.style.filter = 'brightness(1)';
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>{{CLIENT_NAME_SOLO}} | All Furniture</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Hanken+Grotesk:wght@400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&family=Syne:wght@100..900&display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .product-card:hover .quick-view-btn {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #131313;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #474746;
+        }
+        @keyframes fade-in-up {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fade-in-up 0.8s ease-out forwards;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#474746",
+                        "secondary-fixed": "#e5e2e1",
+                        "surface-tint": "#ffb3b1",
+                        "on-surface": "#e4e2e1",
+                        "on-background": "#e4e2e1",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-surface-variant": "#e4bebc",
+                        "outline": "#ab8987",
+                        "surface-container-high": "#2a2a2a",
+                        "primary-fixed": "#ffdad8",
+                        "surface-container-low": "#1b1c1c",
+                        "surface-variant": "#353535",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "secondary": "#c8c6c5",
+                        "on-secondary": "#313030",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-container": "#909191",
+                        "inverse-surface": "#e4e2e1",
+                        "on-error": "#690005",
+                        "on-primary-container": "#5b000e",
+                        "error": "#ffb4ab",
+                        "inverse-on-surface": "#303030",
+                        "tertiary": "#c6c6c7",
+                        "tertiary-fixed": "#e2e2e2",
+                        "error-container": "#93000a",
+                        "on-tertiary-container": "#282a2a",
+                        "outline-variant": "#5b403f",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-tertiary": "#2f3131",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "on-secondary-fixed-variant": "#474746",
+                        "on-primary-fixed": "#410007",
+                        "inverse-primary": "#bb152c",
+                        "primary": "#ffb3b1",
+                        "primary-container": "#ff535b",
+                        "on-primary-fixed-variant": "#92001c",
+                        "on-secondary-container": "#b7b5b4",
+                        "surface-bright": "#393939",
+                        "surface-dim": "#131313",
+                        "primary-fixed-dim": "#ffb3b1",
+                        "surface-container-highest": "#353535",
+                        "background": "#131313",
+                        "surface": "#131313",
+                        "surface-container": "#1f2020",
+                        "on-primary": "#680011",
+                        "on-tertiary-fixed": "#1a1c1c"
+                    },
+                    "spacing": {
+                        "container-max": "1440px",
+                        "gutter": "24px",
+                        "margin-mobile": "20px",
+                        "section-gap": "120px",
+                        "unit": "8px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Syne"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-lg": ["Syne"],
+                        "headline-md": ["Syne"],
+                        "label-md": ["Hanken Grotesk"]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased selection:bg-primary-container selection:text-white">
+<script>
+        const body = document.querySelector('body');
+        body.style.zoom = '0.8';
+    </script>
+    <!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-desktop py-6 bg-surface/90 backdrop-blur-md transition-all duration-200 ease-in-out">
+<div class="font-headline-md text-headline-md font-bold tracking-tighter text-on-surface uppercase">{{CLIENT_NAME_SOLO}}</div>
+<div class="hidden md:flex space-x-12">
+<a href="../" class="font-label-md text-label-md tracking-widest text-on-surface hover:text-primary transition-colors duration-300 transition-all duration-200 ease-in-out">HOME</a>
+<a class="font-label-md text-label-md tracking-widest text-primary border-b-2 border-primary pb-1 transition-all duration-200 ease-in-out" href="#">CATALOG</a>
+<a href="../detail" class="font-label-md text-label-md tracking-widest text-on-surface hover:text-primary transition-colors duration-300 transition-all duration-200 ease-in-out" >DETAIL</a>
+<a class="font-label-md text-label-md tracking-widest text-on-surface hover:text-primary transition-colors duration-300 transition-all duration-200 ease-in-out" href="#">STORY</a>
+</div>
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">shopping_bag</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">person</span>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="pt-32 pb-section-gap px-margin-desktop max-w-container-max mx-auto">
+<!-- Editorial Header -->
+<header class="mb-16 border-l-4 border-primary-container pl-8 py-2 animate-fade-in">
+<h1 class="font-display-lg text-display-lg uppercase leading-none mb-4">All Furniture</h1>
+<p class="max-w-xl text-on-surface-variant font-body-lg text-body-lg">
+                Curated architectural pieces designed for longevity. Our collection bridges the gap between industrial precision and organic comfort.
+            </p>
+</header>
+<div class="flex flex-col lg:flex-row gap-16">
+<!-- Sidebar Filters -->
+<aside class="w-full lg:w-64 flex-shrink-0 space-y-12 animate-fade-in" style="animation-delay: 0.2s">
+<section>
+<h3 class="font-label-md text-label-md tracking-widest uppercase mb-6 text-primary">Category</h3>
+<ul class="space-y-4 font-label-md text-label-md">
+<li class="flex justify-between items-center cursor-pointer group">
+<span class="group-hover:text-primary transition-colors">All Pieces</span>
+<span class="text-on-surface-variant text-xs">(42)</span>
+</li>
+<li class="flex justify-between items-center cursor-pointer group">
+<span class="group-hover:text-primary transition-colors">Sofas & Seating</span>
+<span class="text-on-surface-variant text-xs">(12)</span>
+</li>
+<li class="flex justify-between items-center cursor-pointer group">
+<span class="group-hover:text-primary transition-colors">Office Systems</span>
+<span class="text-on-surface-variant text-xs">(8)</span>
+</li>
+<li class="flex justify-between items-center cursor-pointer group">
+<span class="group-hover:text-primary transition-colors">Storage Units</span>
+<span class="text-on-surface-variant text-xs">(14)</span>
+</li>
+</ul>
+</section>
+<section>
+<h3 class="font-label-md text-label-md tracking-widest uppercase mb-6 text-primary">Price Range</h3>
+<div class="space-y-6">
+<input class="w-full accent-primary-container bg-surface-container-highest h-1 appearance-none cursor-pointer" max="10000" min="500" step="100" type="range"/>
+<div class="flex justify-between font-label-sm text-label-sm uppercase tracking-tighter">
+<span>$500</span>
+<span>$10,000+</span>
+</div>
+</div>
+</section>
+<section>
+<h3 class="font-label-md text-label-md tracking-widest uppercase mb-6 text-primary">Finish</h3>
+<div class="flex flex-wrap gap-3">
+<button class="w-8 h-8 rounded-full bg-stone-800 border border-white/20 ring-offset-2 ring-offset-background hover:ring-2 hover:ring-primary transition-all"></button>
+<button class="w-8 h-8 rounded-full bg-white border border-white/20 ring-offset-2 ring-offset-background hover:ring-2 hover:ring-primary transition-all"></button>
+<button class="w-8 h-8 rounded-full bg-amber-900 border border-white/20 ring-offset-2 ring-offset-background hover:ring-2 hover:ring-primary transition-all"></button>
+<button class="w-8 h-8 rounded-full bg-zinc-400 border border-white/20 ring-offset-2 ring-offset-background hover:ring-2 hover:ring-primary transition-all"></button>
+</div>
+</section>
+</aside>
+<!-- Product Grid -->
+<div class="flex-grow">
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-16">
+<!-- Card 1 -->
+<div class="product-card group cursor-pointer animate-fade-in" style="animation-delay: 0.3s">
+<div class="relative aspect-[3/4] overflow-hidden bg-surface-container-low mb-6">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A high-end, minimalist charcoal gray sectional sofa with sharp architectural lines, positioned in a spacious dark-themed living room. The lighting is dramatic and moody, casting soft shadows. The furniture piece is the central focus against a brutalist concrete wall, embodying a luxury modern aesthetic with deep black and slate tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFmgPSdjLFSVwl2SYApb0Em03GKkk4pFKW7ITHqpCtFFZ78cndixq0zCU06glYNjKwHnlTmAiN4ehxKZADZ2uxRkAWQgEktX9ZPdD9cImmxOP_3ETvQ_sQbG-0xvykMzyQpQTMlDPiyBlALpGafI0JlrHOTwbjwPs1_XtCshLMXOHUWC0zwjVBmY3hIj1TfmbVcld887rwCYV-rrwlstJvdNod63bhXnFfOTHY66PcrGgj2NvWADeAtRafJpoaT_cwmBQkqPnlw6qZ"/>
+<div class="quick-view-btn absolute bottom-0 left-0 w-full opacity-0 translate-y-4 transition-all duration-300">
+<button class="w-full bg-primary-container text-white py-5 font-label-md text-label-md tracking-widest uppercase hover:bg-inverse-primary transition-colors">Quick View</button>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-primary font-label-sm text-label-sm uppercase tracking-widest">Sofas</span>
+<h3 class="font-headline-md text-headline-md font-semibold tracking-tight">AXIS SECTIONAL</h3>
+<span class="text-on-surface-variant font-body-md text-body-md mt-1">$4,250.00</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="product-card group cursor-pointer animate-fade-in" style="animation-delay: 0.4s">
+<div class="relative aspect-[3/4] overflow-hidden bg-surface-container-low mb-6">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="An ergonomic executive office chair with a polished chrome frame and premium black leather upholstery. The chair features a sleek, thin profile and is set against a dark, textured backdrop with a single spotlight highlight. The overall mood is sophisticated, professional, and reflects high-contrast luxury furniture design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQ944_eLhlHZaATW0wcQtZbUaZ53lJkLLd0zLpxCqMmqF2A5VVhBbX2x7LVQS0w1MyPOwmQ3mWigIbzvnF7rxcerrNJ2WD_k03pT_hJq_y_oid_lubNsTllrjlgcoTe2L-ULwjI-ujYe-PwDPCD7ofcxrkr2kCIteNuNXoWDqzkqWQCtgmi2AP2OSM90QSWgW5XvmZQnkRnCbrBpMpZtZNP0cb5iUC9DmdrqXVBmGfQEUqfKkP3FClG_NG4laxrDIrASJOKe_DL_XX"/>
+<div class="quick-view-btn absolute bottom-0 left-0 w-full opacity-0 translate-y-4 transition-all duration-300">
+<button class="w-full bg-primary-container text-white py-5 font-label-md text-label-md tracking-widest uppercase hover:bg-inverse-primary transition-colors">Quick View</button>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-primary font-label-sm text-label-sm uppercase tracking-widest">Office</span>
+<h3 class="font-headline-md text-headline-md font-semibold tracking-tight">KINETIC TASK CHAIR</h3>
+<span class="text-on-surface-variant font-body-md text-body-md mt-1">$1,890.00</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="product-card group cursor-pointer animate-fade-in" style="animation-delay: 0.5s">
+<div class="relative aspect-[3/4] overflow-hidden bg-surface-container-low mb-6">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A minimalist solid oak desk with integrated cable management and a slim, floating tabletop design. The desk is showcased in a bright, modern studio with dark wood floors and a contrasting white wall. The lighting is soft and natural, emphasizing the natural grain of the wood and the clean, geometric structure of the piece." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFEm6gZZWmn5picRNKjjl3V6vECYMP0K8lsYA22I-FJ5yjIEdnuworhrjOYg5yneu8c-a5Bs-3UtOXs7K_cXmEv8mXTi5FG5IHOINpyys_T9Uuozra_s6BU9_H-o3Uzyk3MjRitEYmGVB28TOQNnwhvHjO9MqlB7aetAj7pMsY8ndxENHfVf-HPsbdXiTVtOCw4_DZQNKmxMuItGDk5ik9KNS6rtd6kSTUsX6cPrSDyKb1Aj_esDP8H-DM5vVHnd2ilqkMYZERCKdu"/>
+<div class="quick-view-btn absolute bottom-0 left-0 w-full opacity-0 translate-y-4 transition-all duration-300">
+<button class="w-full bg-primary-container text-white py-5 font-label-md text-label-md tracking-widest uppercase hover:bg-inverse-primary transition-colors">Quick View</button>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-primary font-label-sm text-label-sm uppercase tracking-widest">Office</span>
+<h3 class="font-headline-md text-headline-md font-semibold tracking-tight">MONOLITH DESK</h3>
+<span class="text-on-surface-variant font-body-md text-body-md mt-1">$3,100.00</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="product-card group cursor-pointer animate-fade-in" style="animation-delay: 0.6s">
+<div class="relative aspect-[3/4] overflow-hidden bg-surface-container-low mb-6">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A sculptural lounge chair in a vibrant red fabric, featuring an asymmetrical, fluid shape. It stands as a bold statement piece in an otherwise dark, minimalist room. The lighting is high-key and sharp, highlighting the texture of the fabric and the avant-garde silhouette of the chair. Minimalist architectural vibes with a high-contrast focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVBLyS_vBXMLNGaLSbSCXaBDpu1wbUUO_mZo5fdISnAVrLvgG0yHI6ijqyYpEHse6riDdwMQb84-RoHZkjBOMESSNpn-YnGiN8ibnwnRr49Tg58SU0wkEimBJ8IbEVTIPPVwKXvQ_xuegD7TFvAuzPyf6KyfqBc6HQXzQnpg3Q0vP-_qq7jkAaubr6k7nrP1YYyw-TjW9ZrP4jRu32kkriDXQn0ykjXAc59WN44phyQ0rELC3nZjXMhFCy8Rz4FhueaQIWfPWGt0-K"/>
+<div class="quick-view-btn absolute bottom-0 left-0 w-full opacity-0 translate-y-4 transition-all duration-300">
+<button class="w-full bg-primary-container text-white py-5 font-label-md text-label-md tracking-widest uppercase hover:bg-inverse-primary transition-colors">Quick View</button>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-primary font-label-sm text-label-sm uppercase tracking-widest">Living</span>
+<h3 class="font-headline-md text-headline-md font-semibold tracking-tight">PRISM LOUNGER</h3>
+<span class="text-on-surface-variant font-body-md text-body-md mt-1">$2,400.00</span>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="product-card group cursor-pointer animate-fade-in" style="animation-delay: 0.7s">
+<div class="relative aspect-[3/4] overflow-hidden bg-surface-container-low mb-6">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A low-profile coffee table made from a single block of dark basalt stone with a honed finish. It sits on an oversized plush white rug in a room with deep black walls. The scene is illuminated by subtle ambient lighting that catches the edge of the stone, creating a serene, luxury atmospheric interior design feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2DOmO4RFlP-3V2nZok7rIc9zqOXfNcOUSlpIMjnRZ5pXOBf7f_XhpyYM3lK0EJY_CdKIfYU6Upj8zYNXxCw6rbgGqEW6SPtZCiTkIJRfNHCrd_tR55vI3f1wt7QSWGcORXjAJYZVzvGFsUnU7O_NHCcVNYNOgGlZljDRoJ9x5j8zv2IEOX-gAdBTJGRUw41CG-D7urgi_MQT7MdtavY6_HmAPgXC4MIAfoXDdOh9xuKZInR80sjjux5hJeHYP7qO_spWR-uaHvouL"/>
+<div class="quick-view-btn absolute bottom-0 left-0 w-full opacity-0 translate-y-4 transition-all duration-300">
+<button class="w-full bg-primary-container text-white py-5 font-label-md text-label-md tracking-widest uppercase hover:bg-inverse-primary transition-colors">Quick View</button>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-primary font-label-sm text-label-sm uppercase tracking-widest">Living</span>
+<h3 class="font-headline-md text-headline-md font-semibold tracking-tight">HEXTON PLINTH</h3>
+<span class="text-on-surface-variant font-body-md text-body-md mt-1">$950.00</span>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="product-card group cursor-pointer animate-fade-in" style="animation-delay: 0.8s">
+<div class="relative aspect-[3/4] overflow-hidden bg-surface-container-low mb-6">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A wall-mounted modular shelving system made of matte black steel and dark walnut wood. The arrangement is asymmetrical and architectural, holding a few select art books and a minimalist vase. The background is a clean white plaster wall, creating a stark high-contrast visual that emphasizes modern precision and storage aesthetics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcIEoWLWu168Ui7oZ485scOtK7r_qnsITx-E6UbaPzcDKG9lrhMsttqotUHIrw_B8KVSehPt6Unrw2R4ni0mLGQISJsQh3Zy5CP_-ZqZJnJXwjI7_V4E1r72_A26rT9ptQC8pSYT8suCXi_4L6QWrG8IVBFvW21Qsz3TQcEob6slPFOdUKp4GNGYpyLmFek0pIYluSoN-yb_-ePLolAmPtbDQZi2cgilK9m-thX0kdbyaxuoD2VlDVQ9312AoFCHg4WQdM6ms5i31S"/>
+<div class="quick-view-btn absolute bottom-0 left-0 w-full opacity-0 translate-y-4 transition-all duration-300">
+<button class="w-full bg-primary-container text-white py-5 font-label-md text-label-md tracking-widest uppercase hover:bg-inverse-primary transition-colors">Quick View</button>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-primary font-label-sm text-label-sm uppercase tracking-widest">Storage</span>
+<h3 class="font-headline-md text-headline-md font-semibold tracking-tight">GRID MODULAR UNIT</h3>
+<span class="text-on-surface-variant font-body-md text-body-md mt-1">$2,200.00</span>
+</div>
+</div>
+</div>
+<!-- Load More Section -->
+<div class="mt-section-gap flex flex-col items-center gap-8 animate-fade-in">
+<div class="w-full h-px bg-white/10 relative">
+<div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-background px-6 font-label-sm text-label-sm text-on-surface-variant tracking-widest">6 OF 42 PIECES</div>
+</div>
+<button class="px-16 py-6 border border-white font-label-md text-label-md tracking-widest uppercase hover:bg-white hover:text-background transition-all duration-300">
+                        Load More
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-gap px-margin-desktop flex flex-col md:flex-row justify-between items-start bg-surface-container-lowest border-t border-white/10">
+<div class="mb-12 md:mb-0">
+<div class="font-headline-lg text-headline-lg font-black text-primary mb-6 uppercase">{{CLIENT_NAME_SOLO}}</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm">
+                Architectural integrity in every joint. High-end minimalism for the modern interior.
+            </p>
+</div>
+<div class="grid grid-cols-2 gap-x-16 gap-y-4">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-white transition-opacity opacity-80 hover:opacity-100" href="#">PRIVACY</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-white transition-opacity opacity-80 hover:opacity-100" href="#">TERMS</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-white transition-opacity opacity-80 hover:opacity-100" href="#">SHIPPING</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-white transition-opacity opacity-80 hover:opacity-100" href="#">STORES</a>
+</div>
+<div class="mt-12 md:mt-0 font-body-md text-body-md text-on-surface-variant uppercase tracking-widest text-xs">
+            © 2024 {{CLIENT_NAME}}. ARCHITECTURAL INTEGRITY.
+        </div>
+</footer>
+<!-- Simple Hover Interaction Script -->
+<script>
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.querySelector('img').style.transform = 'scale(1.05)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.querySelector('img').style.transform = 'scale(1)';
+            });
+        });
+
+        // Sticky Nav logic
+        let lastScroll = 0;
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll > 50) {
+                nav.classList.add('py-4', 'bg-surface/95');
+                nav.classList.remove('py-6', 'bg-surface/90');
+            } else {
+                nav.classList.add('py-6', 'bg-surface/90');
+                nav.classList.remove('py-4', 'bg-surface/95');
+            }
+            lastScroll = currentScroll;
+        });
+    </script>
+</body></html>

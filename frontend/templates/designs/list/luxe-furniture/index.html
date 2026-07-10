@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>{{CLIENT_NAME_SOLO}} | Luxe Form - The Art of Living Well</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-fixed": "#e4e2dd",
+                      "on-secondary": "#ffffff",
+                      "secondary": "#735a3e",
+                      "surface-tint": "#5f5e5e",
+                      "inverse-surface": "#303030",
+                      "secondary-fixed": "#ffddbb",
+                      "surface-container-high": "#eae8e7",
+                      "surface": "#fbf9f8",
+                      "on-error-container": "#93000a",
+                      "surface-container-highest": "#e4e2e2",
+                      "on-background": "#1b1c1c",
+                      "tertiary-container": "#1b1c19",
+                      "surface-container-low": "#f5f3f3",
+                      "on-tertiary-fixed": "#1b1c19",
+                      "surface-container": "#efeded",
+                      "on-secondary-fixed-variant": "#5a4229",
+                      "inverse-on-surface": "#f2f0f0",
+                      "surface-bright": "#fbf9f8",
+                      "secondary-fixed-dim": "#e3c19f",
+                      "surface-variant": "#e4e2e2",
+                      "on-primary-fixed": "#1c1b1b",
+                      "background": "#fbf9f8",
+                      "error-container": "#ffdad6",
+                      "on-surface": "#1b1c1c",
+                      "on-surface-variant": "#444748",
+                      "error": "#ba1a1a",
+                      "secondary-container": "#fdd9b7",
+                      "primary": "#000000",
+                      "outline-variant": "#c4c7c7",
+                      "primary-fixed-dim": "#c8c6c5",
+                      "tertiary": "#000000",
+                      "on-primary-container": "#858383",
+                      "primary-container": "#1c1b1b",
+                      "on-primary": "#ffffff",
+                      "outline": "#747878",
+                      "primary-fixed": "#e5e2e1",
+                      "on-error": "#ffffff",
+                      "on-tertiary": "#ffffff",
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary-fixed-dim": "#c8c6c2",
+                      "surface-dim": "#dbd9d9",
+                      "on-primary-fixed-variant": "#474746",
+                      "on-tertiary-fixed-variant": "#474744",
+                      "on-secondary-fixed": "#291803",
+                      "inverse-primary": "#c8c6c5",
+                      "on-tertiary-container": "#848480",
+                      "on-secondary-container": "#785e42"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-desktop": "80px",
+                      "gutter": "32px",
+                      "stack-lg": "120px",
+                      "margin-mobile": "20px",
+                      "stack-md": "64px",
+                      "unit": "8px"
+              },
+              "fontFamily": {
+                      "headline-lg-mobile": ["Playfair Display"],
+                      "body-md": ["DM Sans"],
+                      "headline-md": ["Playfair Display"],
+                      "button": ["DM Sans"],
+                      "headline-xl": ["Playfair Display"],
+                      "headline-xl-mobile": ["Playfair Display"],
+                      "body-lg": ["DM Sans"],
+                      "label-caps": ["DM Sans"],
+                      "headline-lg": ["Playfair Display"]
+              },
+              "fontSize": {
+                      "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
+                      "button": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                      "headline-xl": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-xl-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "32px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                      "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.15em", "fontWeight": "700"}],
+                      "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Subtle architectural shadows */
+        .shadow-architectural {
+            box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-secondary-fixed selection:text-on-secondary-container">
+<!-- TopNavBar Shell -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md">
+<nav class="flex justify-between items-center px-margin-desktop py-6 max-w-[1440px] mx-auto">
+<div class="flex items-center gap-gutter">
+<img alt="Luxe Form Logo" class="h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMiUu03dQa7bO4gtVjo5DTBbtrcOkPrPHj9420QD87VInmz_cqM-F8HjmVbUMkWxAl3qRqxyuoidLt9m52VD7NwQOEi8ieHv-KLqQnjxCNU-aperaOpRAlJUG6eqgjBwDBzAmH3x5jDJB_aZcN0nXoloxwHbQ0EE-o5_OpSX_23jEcbDMhMr8VuGAixp6emhFxcPZgB1bEkMUPuBCErjv0qoPfm90m6LDPXBiFpJyJ9ZNeAI1Ifj9thhKfwO5tuqFcszS2-5h-hj2q"/>
+<a href="../" class="text-headline-md font-headline-md text-primary tracking-tighter hidden md:block">{{CLIENT_NAME_SOLO}}</a>
+</div>
+<div class="hidden md:flex items-center space-x-gutter">
+<a href="collections" class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Living</a>
+<a href="collections" class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Office</a>
+<a href="detail" class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Product Detail</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">About</a>
+</div>
+<div class="flex items-center gap-6">
+<div class="cursor-pointer active:opacity-70">
+<span class="material-symbols-outlined text-primary">shopping_cart</span>
+</div>
+<button class="md:hidden">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative h-screen min-h-[700px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="A cinematic, wide-angle interior shot of a minimalist, sun-drenched living room. A deep charcoal grey sectional sofa sits on a textured natural fiber rug, accompanied by a low-profile stone coffee table. The walls are a soft, plaster-finished cream, catching the golden hour light filtered through sheer curtains. A large-scale abstract painting in neutral tones hangs behind the sofa, creating a serene and editorial atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgzd3pXJrYAEtmLGomHnL6sewqQGkfrob08eceRUicpFE2Dy7fzDisbTFO0mvP9YwGA8Zy2kYuaNxsUvP5ZcrZNmMw3tRcJ0aTt2gxIJ9T5Up5TRIrnKYBJstl9zQg0hXyk_CHZXr3MfSCSdC0iQl8Iq2rdY-x0OdIANtGPj1O143ap0-W05XXn8JKYmV4RpMLT6kYxwV3mxeIUI5pLqHovCXzx1EnqkjwFpYzXB3ECEC8W4EnHCqfVF698eZnSVBGFDMbU_QqRFcZ"/>
+<div class="absolute inset-0 bg-black/5"></div>
+</div>
+<div class="relative z-10 px-margin-desktop max-w-[1440px] mx-auto w-full fade-in-up">
+<div class="max-w-2xl">
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-4 uppercase tracking-[0.3em]">Curation 01</p>
+<h1 class="font-headline-xl text-headline-xl text-primary leading-tight mb-gutter md:text-headline-xl text-headline-xl-mobile">
+                        The Art of <br/> Living Well.
+                    </h1>
+<div class="flex gap-4">
+<button class="bg-primary text-on-primary font-button text-button px-10 py-5 hover:bg-secondary transition-all duration-300">
+                            Explore Collection
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Collection Overview (Bento Grid Style) -->
+<section class="py-stack-lg px-margin-desktop max-w-[1440px] mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter h-auto md:h-[600px]">
+<div class="md:col-span-8 group relative overflow-hidden bg-surface-container-low">
+<div class="absolute inset-0 transition-transform duration-700 group-hover:scale-105" data-alt="A close-up architectural perspective of a minimalist office setup. A sleek dark wood desk is illuminated by a slender designer lamp, with an ergonomic chair featuring cognac leather upholstery. The background is a crisp, off-white wall with subtle shadows, embodying a professional and high-end productive workspace. The lighting is focused and clear, emphasizing clean lines and premium materials." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBJWABsn5LuRB76WLyFFYjAwrBG07bQLv-8FMqKG0_2jcZtJUKesaYHL6SeoYrkNoK7H_WjNzg77lwtYSqa0v13JvTprMNm6u_s48Z77l2tPy3t2R6Of37NDGmXkw1UlwD4feDYPiJg8revBdnVS-dYNAUmvenSiqQgcTeM2qUZNlzy7647ENLcvILSjgJl0rRH1yM1t8Kvod4J-I33IdSbkNioRdDJxWopwS7EDnRNdwKb5qwY5Swo4L4zwnQ6vRziU35YYV3Egdv_')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+<div class="absolute bottom-10 left-10 text-on-primary">
+<h3 class="font-headline-lg text-headline-lg mb-2">Living</h3>
+<p class="font-label-caps text-label-caps">Curated Comfort</p>
+</div>
+</div>
+<div class="md:col-span-4 flex flex-col gap-gutter">
+<div class="h-1/2 group relative overflow-hidden bg-surface-container-low">
+<div class="absolute inset-0 transition-transform duration-700 group-hover:scale-105" data-alt="A peaceful and luxurious bedroom scene with high-quality linen bedding in muted oatmeal tones. A minimal wooden bed frame stands against a warm grey textured wall. Soft morning light streams through an unseen window, highlighting the rich textures of the fabric and the smooth finish of a small brass bedside light. The aesthetic is extremely calm, sophisticated, and focused on rest." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCRr6iqgEv7aD_9XehR4z3qf0j8Pp8iSXzHtjVDfwXFHoCWBpqdRFVjXEpMc7drJVZzA3rimxuHSECOH4wCUPzPOVorWxIMxiNwAHjuPwsqLSn-pAgw_1zo4gmDecyHm_0anh0Y8GjDg9m4RRoxP3AIudVXM-kYJnu0GkPqtRbDcPFdC2P3Z1Ooy_bM-u8q7pEt_4K6JmixaAerm5etLK8MSjjjOgYcMUtyQWx5fJz0C6auHf56KN64bk-di0oYakzAvPt6n_W5DozG')"></div>
+<div class="absolute bottom-8 left-8 text-on-primary">
+<h3 class="font-headline-md text-headline-md">Office</h3>
+</div>
+</div>
+<div class="h-1/2 group relative overflow-hidden bg-surface-container-low">
+<div class="absolute inset-0 transition-transform duration-700 group-hover:scale-105" data-alt="A detailed view of a high-end designer lounge chair in a bedroom setting. The chair features curved wooden arms and a bouclé fabric seat. Beside it sits a small, perfectly round side table holding an open art book. The lighting is soft and ambient, creating a cozy yet elevated atmosphere that emphasizes the craftsmanship of the furniture pieces." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDnXbdvKd16OYdw15XjJKOzqKHAQGvSYBMmx3SUibw_j5UOvegXsTc27hKfIc8ryGH_45TUUeLIy-gX04MtNZs4nclLQUK0YZMEBqg7y6kdc_kG3lDzKFIPiYy4FNVpDz1UfNtBv2XTckb_ps43MH8sanCfAUfofofywnKGqSoVYgpRbIAHV5dVfNPox4wECd44-B0w-0kaI2er5Hmi2zyYbBzIClYM92GlDwIjjZItPHMg4KBz09AWMGeS7r8EddYNj7WYBPVN25I2')"></div>
+<div class="absolute bottom-8 left-8 text-on-primary">
+<h3 class="font-headline-md text-headline-md">Bedroom</h3>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Story Section -->
+<section class="relative py-stack-lg min-h-[600px] flex items-center">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="Macro detail shot of premium craftsmanship. A piece of textured natural linen fabric is draped over a smooth, grain-focused oak wood surface. A sculptural brass element with a brushed metallic finish connects the components. The focus is sharp on the intersection of these three materials, showcasing a commitment to sustainable, high-quality textures and timeless architectural design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8EpqFDIfV_x_XXJcOCOBfG0LkCzxREhOUKxHWdZFlyBZjq0sOZRvcPIXpzxGDf6_myhPZmeqrYyp3wx02DufpYdeVhqPNgV1HvQblDxQEFV6YFxAqcncbeuk7T88Sv-w6G5mFRAQAWWt1HH7ix0k4pbISZxHthw4vVU0zwF1DMg8ezrvzoYs1_i6KP_CZq8rQ__fq8kotqZON87dQhRxEAQTCfY9ylCAvoWmqwDNydaLFta9e3qvFXiBaQq4ZDfow7lSkUUheZtoM"/>
+<div class="absolute inset-0 bg-white/20 backdrop-blur-[2px]"></div>
+</div>
+<div class="relative z-10 px-margin-desktop max-w-[1440px] mx-auto w-full">
+<div class="max-w-xl bg-surface/90 p-12 shadow-architectural border border-outline-variant">
+<p class="font-label-caps text-label-caps text-secondary mb-4">Philosophy</p>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">The Materiality of Form</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
+                        We believe furniture should be a silent anchor in your home. By utilizing raw, sustainable materials like hand-brushed brass, solid European Oak, and organic linen, we create pieces that age with grace and tell a story of longevity.
+                    </p>
+<a class="font-label-caps text-label-caps text-primary border-b border-primary pb-1 inline-flex items-center gap-2 group hover:gap-4 transition-all duration-300" href="#">
+                        Our Craftsmanship <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Product Highlights (Horizontal Scroller) -->
+<section class="py-stack-lg bg-surface-container-lowest overflow-hidden">
+<div class="px-margin-desktop max-w-[1440px] mx-auto flex justify-between items-end mb-gutter">
+<div>
+<h2 class="font-headline-lg text-headline-lg">Selected Works</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Our most requested architectural staples.</p>
+</div>
+<div class="hidden md:flex gap-4">
+<button class="w-12 h-12 border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors duration-300">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-12 h-12 border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors duration-300">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="flex gap-gutter px-margin-desktop overflow-x-auto hide-scrollbar snap-x snap-mandatory">
+<!-- Product Card 1 -->
+<div class="min-w-[320px] md:min-w-[420px] snap-start group cursor-pointer">
+<div class="aspect-[4/5] bg-surface overflow-hidden border border-outline-variant mb-6">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A studio product shot of the Aris Sofa. It is a low-profile, modular sectional sofa upholstered in a heavy-weight charcoal grey wool blend. The sofa features deep seats and clean geometric lines, set against a seamless warm grey background with soft studio lighting that emphasizes its structural form and plush texture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXIBlr2zFMUMHycD_w-WMcUutFe7XUUpNFksKSmV6-Yme_HnhRDTgAXoHjwNINXiIf3wo9N_fCVbtmNSQzzSwa9F8H0l_i_o4bxSy6gTbH6dx4mrIC_TIra5-g1Og0jaNsQHyQLCRVpnqmgdldBY2ySMQNxN2L1Gx7vrfUte2JfnLS9VRA7cbYN_bF95wtANiuCwqzfn2-KXVfe0lJthLsxiFN_b85pHLCZh8H3XQ36Xj_Z-p-FrCeLGpdfaS1fOcZ2mlmE_vpMUb5"/>
+</div>
+<div class="text-center">
+<p class="font-headline-md text-[24px] mb-1">Aris Sofa</p>
+<p class="font-label-caps text-label-caps text-on-surface-variant">$4,200</p>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="min-w-[320px] md:min-w-[420px] snap-start group cursor-pointer">
+<div class="aspect-[4/5] bg-surface overflow-hidden border border-outline-variant mb-6">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A studio shot of the Nidus Desk Chair. A minimalist ergonomic office chair with a sculpted black walnut frame and a seat upholstered in premium cream-colored bouclé fabric. The chair is positioned at an angle on a clean, light-colored floor, highlighted by subtle directional lighting that creates elegant shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjL4DPzvJCh-cL-_H7Duv2BiWfXIMFmmwWCH817fio63dZpETRlUJHKfRM-LJKFG-U8hbZJKePVN6Qtp-_a4ETADpW_T5vKIt-vGa1SxNhimDaSqR00esfW0UmMf-sKcP9Tdd79kL7Kf5_-6YV2Gya9uZjsE7aXEjM8BPTdprKHaZg6gdmQxyFqCHqd_qJ9Gadb6eE3s3YXV1X5P7LtcVcEYlkDvjUUp_aLVm2bNpVcqHLyJjLT3lNTZiiVs2nMzNmS-pHREcbAKP6"/>
+</div>
+<div class="text-center">
+<p class="font-headline-md text-[24px] mb-1">Nidus Desk Chair</p>
+<p class="font-label-caps text-label-caps text-on-surface-variant">$1,850</p>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="min-w-[320px] md:min-w-[420px] snap-start group cursor-pointer">
+<div class="aspect-[4/5] bg-surface overflow-hidden border border-outline-variant mb-6">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A minimalist side table made of solid honed travertine stone. The table features a monolithic cylindrical base and a thin circular top. It is showcased in a brightly lit studio environment, casting a soft shadow that emphasizes its natural stone textures and cream-colored porous surface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoEcgeqDTkg-drYl-m5TAlz94ahlwbbKkDtIoj6NGp4XnlNOpHk6Rh4T2Ad5xR5V7yLxhYwhmFSx1zvVDb0nkmNbS8YtNnY7sQfir1XiGx2SLMfa4ibmTTVhprtJQOmsWmlSHOWJt-mvMk6KTyo3ul047FJavDWNRmLpev5288yRKwvjMFc_Rz1amVWr-W8BHJw8btu7fK8Jo2_8jf2gAcdOEUtEp3dgSwRWoK8xoZok9oioKWdca2hiMeCBSAQ8FqH9AObifycbCl"/>
+</div>
+<div class="text-center">
+<p class="font-headline-md text-[24px] mb-1">Lume Side Table</p>
+<p class="font-label-caps text-label-caps text-on-surface-variant">$950</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Designer Spotlight -->
+<section class="py-stack-lg bg-surface">
+<div class="max-w-[1440px] mx-auto px-margin-desktop grid md:grid-cols-2 gap-stack-md items-center">
+<div class="order-2 md:order-1">
+<span class="material-symbols-outlined text-[48px] text-secondary-container mb-6" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-8 italic">
+                        "Good design is not just what you see, but what you feel when you enter a room. We build for the moments of stillness."
+                    </h2>
+<div>
+<p class="font-label-caps text-label-caps text-primary">Julian Vane</p>
+<p class="font-body-md text-body-md text-on-surface-variant italic">Creative Director, {{CLIENT_NAME}}</p>
+</div>
+</div>
+<div class="order-1 md:order-2">
+<div class="aspect-square grayscale hover:grayscale-0 transition-all duration-700 overflow-hidden shadow-architectural">
+<img class="w-full h-full object-cover" data-alt="A professional portrait of a creative director in a minimalist studio. A man in his late 40s with a thoughtful expression, wearing a simple black cashmere sweater. He is sitting in a well-lit space with architectural sketches and wood samples visible in the blurred background. The style is editorial, high-contrast, and sophisticated." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbdsgL1Lu0_ZlVovDgBoxIJshN-UnKOrwL4-IkxZb4BUOZ62bsbrPX8-uuK4eRbEzrIF_m0b7rClzJtzBFmiprt7ICUIAmDRELYmfJrpTd8EqplzCgynd0hSVwMG0ZNI5Ub9M0GRyEmaFLIvcl2s4Jv2fAlODSz2Yvh9b7S6XQOWul8nBdHcqwozpUkIfOfbrOwPSL6gl1KJPb1IZKXSoI8NOBA4I7Z5CA_S0EbieAmObLiEfq3C8oUXHNVJs6Y5S4j67w0gL6QocC"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Sustainability Section -->
+<section class="py-stack-lg bg-tertiary-fixed border-y border-outline-variant">
+<div class="max-w-[1440px] mx-auto px-margin-desktop text-center">
+<p class="font-label-caps text-label-caps text-secondary mb-4">Sustainability</p>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-stack-md">Built for Longevity</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="p-8 flex flex-col items-center">
+<div class="w-16 h-16 rounded-full bg-white flex items-center justify-center mb-6 shadow-architectural">
+<span class="material-symbols-outlined text-primary text-[32px]">eco</span>
+</div>
+<h4 class="font-label-caps text-label-caps text-primary mb-3">Sustainably Sourced</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">FSC-certified timbers and 100% organic textiles sourced from local artisans.</p>
+</div>
+<div class="p-8 flex flex-col items-center">
+<div class="w-16 h-16 rounded-full bg-white flex items-center justify-center mb-6 shadow-architectural">
+<span class="material-symbols-outlined text-primary text-[32px]">all_inclusive</span>
+</div>
+<h4 class="font-label-caps text-label-caps text-primary mb-3">Zero Waste Circularity</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Our repair and refurbish program ensures your pieces stay in use for generations.</p>
+</div>
+<div class="p-8 flex flex-col items-center">
+<div class="w-16 h-16 rounded-full bg-white flex items-center justify-center mb-6 shadow-architectural">
+<span class="material-symbols-outlined text-primary text-[32px]">handyman</span>
+</div>
+<h4 class="font-label-caps text-label-caps text-primary mb-3">Artisan Crafted</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Each piece is hand-assembled in our atelier, preserving traditional joinery techniques.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="w-full pt-stack-lg pb-margin-desktop border-t border-outline-variant bg-surface-container-low">
+<div class="grid grid-cols-12 gap-gutter px-margin-desktop max-w-[1440px] mx-auto">
+<div class="col-span-12 md:col-span-4 mb-stack-md md:mb-0">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">{{CLIENT_NAME_SOLO}}</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs">
+                    Curating exceptional living spaces through architectural precision and sustainable luxury since 2024.
+                </p>
+</div>
+<div class="col-span-6 md:col-span-2">
+<h4 class="font-label-caps text-label-caps text-primary mb-6">Collection</h4>
+<ul class="space-y-4">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Living Room</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Office</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Bedroom</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Lighting</a></li>
+</ul>
+</div>
+<div class="col-span-6 md:col-span-2">
+<h4 class="font-label-caps text-label-caps text-primary mb-6">Company</h4>
+<ul class="space-y-4">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Sustainability</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Craftsmanship</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Shipping</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Returns</a></li>
+</ul>
+</div>
+<div class="col-span-12 md:col-span-4 mt-stack-md md:mt-0">
+<h4 class="font-label-caps text-label-caps text-primary mb-6">Newsletter</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Join our mailing list for early access to new collections and editorial insights.</p>
+<div class="flex border-b border-primary py-2">
+<input class="bg-transparent border-none focus:ring-0 w-full font-body-md" placeholder="Email Address" type="email"/>
+<button class="font-label-caps text-label-caps uppercase tracking-widest text-primary hover:text-secondary transition-colors">Join</button>
+</div>
+</div>
+<div class="col-span-12 mt-stack-lg flex flex-col md:flex-row justify-between border-t border-outline-variant pt-8">
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 md:mb-0">© 2024 {{CLIENT_NAME}}. Built for Longevity.</p>
+<div class="flex gap-6">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Privacy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Terms</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Instagram</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction for the navigation scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-architectural');
+            } else {
+                header.classList.remove('shadow-architectural');
+            }
+        });
+
+        // Simple horizontal scroll buttons logic
+        const scrollContainer = document.querySelector('.hide-scrollbar');
+        const nextBtn = document.querySelectorAll('button')[1]; // Adjust index based on actual placement
+        const prevBtn = document.querySelectorAll('button')[0];
+
+        if(nextBtn && prevBtn && scrollContainer) {
+            nextBtn.addEventListener('click', () => {
+                scrollContainer.scrollBy({ left: 450, behavior: 'smooth' });
+            });
+            prevBtn.addEventListener('click', () => {
+                scrollContainer.scrollBy({ left: -450, behavior: 'smooth' });
+            });
+        }
+    </script>
+</body></html>
