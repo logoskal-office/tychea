@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>{{CLIENT_NAME}} Travel | Ethiopian Heritage, Global Standards</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-surface": "#2d3133",
+                    "on-secondary-fixed": "#231b00",
+                    "tertiary": "#001c04",
+                    "on-tertiary-fixed": "#002106",
+                    "on-tertiary-fixed-variant": "#005319",
+                    "on-primary-fixed": "#091c34",
+                    "surface-container-highest": "#e0e3e5",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-container": "#00330c",
+                    "secondary-fixed": "#ffe17b",
+                    "on-primary-fixed-variant": "#374762",
+                    "inverse-on-surface": "#eff1f3",
+                    "on-secondary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "surface": "#f7f9fb",
+                    "tertiary-fixed": "#8bfb92",
+                    "on-secondary-fixed-variant": "#554500",
+                    "error": "#ba1a1a",
+                    "primary": "#04162e",
+                    "primary-container": "#1a2b44",
+                    "primary-fixed-dim": "#b6c7e7",
+                    "surface-variant": "#e0e3e5",
+                    "error-container": "#ffdad6",
+                    "on-primary-container": "#8292b0",
+                    "on-error-container": "#93000a",
+                    "inverse-primary": "#b6c7e7",
+                    "primary-fixed": "#d5e3ff",
+                    "surface-bright": "#f7f9fb",
+                    "secondary-container": "#ffd31a",
+                    "outline-variant": "#c5c6ce",
+                    "background": "#f7f9fb",
+                    "tertiary-fixed-dim": "#6fdd79",
+                    "surface-container": "#eceef0",
+                    "surface-dim": "#d8dadc",
+                    "surface-tint": "#4f5f7b",
+                    "on-background": "#191c1e",
+                    "on-secondary-container": "#705b00",
+                    "secondary": "#715c00",
+                    "on-error": "#ffffff",
+                    "outline": "#75777e",
+                    "on-surface": "#191c1e",
+                    "surface-container-high": "#e6e8ea",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-container": "#36a649",
+                    "surface-container-low": "#f2f4f6",
+                    "on-surface-variant": "#44474d",
+                    "secondary-fixed-dim": "#ecc300"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1280px",
+                    "margin-mobile": "20px",
+                    "gutter": "24px",
+                    "margin-desktop": "64px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "label-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "display-lg": ["Playfair Display"],
+                    "headline-md": ["Playfair Display"],
+                    "body-md": ["Inter"],
+                    "headline-lg": ["Playfair Display"],
+                    "button": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "display-lg": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["40px", {"lineHeight": "48px", "fontWeight": "700"}],
+                    "button": ["16px", {"lineHeight": "24px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 300px);
+            gap: 24px;
+        }
+        @media (max-width: 768px) {
+            .bento-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+            }
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .hero-gradient {
+            background: linear-gradient(to right, rgba(4, 22, 46, 0.9), rgba(4, 22, 46, 0.4));
+        }
+
+        /* Animation Styles */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hero Stagger Delays */
+        .hero-stagger-1 { transition-delay: 0.1s; }
+        .hero-stagger-2 { transition-delay: 0.3s; }
+        .hero-stagger-3 { transition-delay: 0.5s; }
+        .hero-stagger-4 { transition-delay: 0.7s; }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal {
+                transition: none !important;
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center h-20 px-margin-desktop max-w--max mx-auto bg-surface/90 backdrop-blur-md border-b border-outline-variant/30 shadow-sm transition-all duration-300">
+<div class="flex items-center gap-2">
+<span class="font-display-lg text-headline-md text-primary">{{CLIENT_NAME}}</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-button text-button text-secondary-container font-bold border-b-2 border-secondary-container transition-colors duration-300" href="#">Home</a>
+<a class="font-button text-button text-on-surface-variant hover:text-secondary-container transition-colors duration-300" href="#">Services</a>
+<a class="font-button text-button text-on-surface-variant hover:text-secondary-container transition-colors duration-300" href="#">Destinations</a>
+<a class="font-button text-button text-on-surface-variant hover:text-secondary-container transition-colors duration-300" href="#">About</a>
+<a class="font-button text-button text-on-surface-variant hover:text-secondary-container transition-colors duration-300" href="#">Contact</a>
+</div>
+<button class="bg-secondary-container text-on-secondary-container px-6 py-2.5 rounded-lg font-button text-button scale-95 active:scale-90 transition-transform shadow-sm">
+        Free Consultation
+    </button>
+</nav>
+<main class="mt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center" data-alt="A sweeping wide-angle shot of the Ethiopian highlands during sunrise, featuring lush green mountains and misty valleys under a soft golden sky." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC0cRkGYwc1IkhF9wVc0wtyQ0eJC9pHwxNns12OfyrZB0IAgiruVC_lU9V3zopcvRSruP1gUW05HSJdrDUfsZyAzDTxnNrszlsgnvN7lYH6K6slzcBaqLHRbxBBpTsmXVlIxHVlN_0D3kTpOq6eq22yjZ2FDXJx2eiCmljWniN2BihnEb5_DPlBPfNCOea6EMoL2MyoctR2_U0Ej36jDHCqEtgrbxx_ZmRWzldPac5PhAtjwatq_C9HuOzg9CorTGP1kMeoNbwMgZU')"></div>
+<div class="absolute inset-0 hero-gradient"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-margin-desktop w-full grid md:grid-cols-2 gap-12 items-center">
+<div class="text-white space-y-6">
+<h1 class="reveal hero-stagger-1 font-display-lg text-display-lg text-white leading-tight">
+                Your Gateway to the World, <span class="text-secondary-container">rooted in Ethiopia.</span>
+</h1>
+<p class="reveal hero-stagger-2 font-body-lg text-body-lg text-surface-variant max-w-lg">
+                Bridging heritage and international standards to deliver premium global travel experiences with the warmth of Ethiopian hospitality.
+            </p>
+<div class="reveal hero-stagger-3 flex flex-wrap gap-4 pt-4">
+<button class="bg-secondary-container text-on-secondary-container px-8 py-4 rounded-lg font-button text-button font-bold hover:brightness-110 transition-all">
+                    Book Free Consultation
+                </button>
+<button class="border-2 border-white/30 text-white backdrop-blur-sm px-8 py-4 rounded-lg font-button text-button font-bold hover:bg-white/10 transition-all">
+                    Explore Destinations
+                </button>
+</div>
+</div>
+<!-- Search Widget -->
+<div class="reveal hero-stagger-4 glass-card p-8 rounded-xl shadow-2xl">
+<div class="flex gap-4 mb-6 border-b border-outline-variant/30 pb-4">
+<button class="text-primary font-bold border-b-2 border-primary pb-2 flex items-center gap-2">
+<span class="material-symbols-outlined">flight</span> Flights
+                </button>
+<button class="text-on-surface-variant hover:text-primary transition-colors pb-2 flex items-center gap-2">
+<span class="material-symbols-outlined">hotel</span> Hotels
+                </button>
+<button class="text-on-surface-variant hover:text-primary transition-colors pb-2 flex items-center gap-2">
+<span class="material-symbols-outlined">public</span> Visa
+                </button>
+</div>
+<form class="space-y-4">
+<div>
+<label class="block text-label-md text-on-surface-variant mb-1">Departure City</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">location_on</span>
+<input class="w-full pl-10 pr-4 py-3 bg-white border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none" placeholder="Addis Ababa (ADD)" type="text"/>
+</div>
+</div>
+<div>
+<label class="block text-label-md text-on-surface-variant mb-1">Destination</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">flight_land</span>
+<input class="w-full pl-10 pr-4 py-3 bg-white border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none" placeholder="Where are you going?" type="text"/>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block text-label-md text-on-surface-variant mb-1">Date</label>
+<input class="w-full px-4 py-3 bg-white border border-outline-variant rounded-lg outline-none" type="date"/>
+</div>
+<div>
+<label class="block text-label-md text-on-surface-variant mb-1">Travelers</label>
+<select class="w-full px-4 py-3 bg-white border border-outline-variant rounded-lg outline-none">
+<option>1 Adult</option>
+<option>2 Adults</option>
+<option>Family</option>
+</select>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary py-4 rounded-lg font-button text-button shadow-lg mt-4 hover:bg-primary-container transition-colors" type="submit">
+                    Search Journeys
+                </button>
+</form>
+</div>
+</div>
+</section>
+<!-- Value Props -->
+<section class="reveal py-24 bg-surface-container">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="text-center max-w-2xl mx-auto mb-16">
+<span class="text-secondary font-label-md tracking-widest uppercase">The {{CLIENT_NAME_SOLO}} Advantage</span>
+<h2 class="font-headline-lg text-headline-lg mt-2 text-primary">Travel with Confidence</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="p-8 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow group">
+<div class="w-12 h-12 bg-primary-container rounded-lg flex items-center justify-center mb-6 group-hover:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined text-white group-hover:text-on-secondary-container">speed</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2 text-primary">Fast &amp; Reliable</h3>
+<p class="text-on-surface-variant">Rapid booking confirmations and real-time support for a seamless journey.</p>
+</div>
+<div class="p-8 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow group">
+<div class="w-12 h-12 bg-primary-container rounded-lg flex items-center justify-center mb-6 group-hover:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined text-white group-hover:text-on-secondary-container">payments</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2 text-primary">Affordable</h3>
+<p class="text-on-surface-variant">Competitive rates without compromising on the quality of your global experience.</p>
+</div>
+<div class="p-8 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow group">
+<div class="w-12 h-12 bg-primary-container rounded-lg flex items-center justify-center mb-6 group-hover:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined text-white group-hover:text-on-secondary-container">verified_user</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2 text-primary">Safe &amp; Secure</h3>
+<p class="text-on-surface-variant">Your safety is our priority, with 24/7 monitoring and trusted partner networks.</p>
+</div>
+<div class="p-8 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow group">
+<div class="w-12 h-12 bg-primary-container rounded-lg flex items-center justify-center mb-6 group-hover:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined text-white group-hover:text-on-secondary-container">hotel_class</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2 text-primary">Authentic</h3>
+<p class="text-on-surface-variant">Curated experiences that connect you deeply with local cultures and traditions.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Destinations - Bento Grid -->
+<section class="reveal py-24">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="flex justify-between items-end mb-12">
+<div>
+<span class="text-secondary font-label-md tracking-widest uppercase">Popular Choices</span>
+<h2 class="font-headline-lg text-headline-lg mt-2 text-primary">Featured Destinations</h2>
+</div>
+<a class="text-primary font-button border-b border-primary hover:text-secondary transition-colors" href="#">View All Destinations</a>
+</div>
+<div class="bento-grid">
+<!-- Paris -->
+<div class="md:col-span-2 relative rounded-2xl overflow-hidden group">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuARRv9tYbPG5ZV_rbupaeU11rB6h5AVuRZynQQW9woLukIaMQM9l9fdhkEyz8ew8ISrUWvb-_5f618LpIRF_JIljZ91fhI0DO1VFnlXY8WEmzSzwdG4jqZjSfjA_RvvGzTu66PkOTBPXGTFL1oFS_PIyFSKLFGrd720UGwGXjSE3kMTe3JBRijj-XCaQSqobcXvOTgzAOzfjMxKMdJRIJPLCUz3U-qIljnHCj6HI8EjIgx8xBwVZxe7njqiZ0r60THwgmlOsp5qiDE')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 text-white">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-label-md mb-2 inline-block">Trending</span>
+<h3 class="font-headline-lg text-headline-lg mb-2">Paris, France</h3>
+<p class="text-surface-variant/90 max-w-sm">The city of light, art, and timeless elegance.</p>
+</div>
+</div>
+<!-- Dubai -->
+<div class="relative rounded-2xl overflow-hidden group">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDUmhgXGv94EYJ67ljnvhbFbj5lSEKSDOQRwvizF_3CBoL6sPs0Z0H61HPswIK5i73ljXTIfY115ut3zs2jEKtd3IeyRlD2CJ_2fU6ner2aLBfFucX6sriN-J_LgZ_PzSoMhT10xsmsUvp6m9cHlD_I-n-Ybmh90rCFPXGFGYA26XRNa6nORr1JLg7EDp5rvjOxCRI-tL5lstvmU47pLlfo6d11CgYWTGhyygXBgZSrLEthlRxeO3jx571SPDJ_qrq6XVwFBHF9gEM')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6 text-white">
+<h3 class="font-headline-md text-headline-md">Dubai, UAE</h3>
+</div>
+</div>
+<!-- New York -->
+<div class="relative rounded-2xl overflow-hidden group">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD_khMm5cj0O_H55iWROT50Tv-vWcnseZPPBvql-LCwZv3kaIEa6c-wmOcDJDWFgHcsyhz1XATQ9EYf0DZ6CJ0_m26JnaWKG5B-fpnzgJo9x0LaCG9ma5xZQWErSBlUxm_akuZAVZKzRXDIAEIL4YAyG58RNiQ2oJphhcRLGIi15OeFdHQhc_Eu0NSle-Y3EfQ1ops2GtqJAVGiZO3G0RJqEEkdBWiK-Cf9SMbma8h3N2UlfbeegEK13AwwQVN_foluedUfZpjrN50')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6 text-white">
+<h3 class="font-headline-md text-headline-md">New York, USA</h3>
+</div>
+</div>
+<!-- Istanbul -->
+<div class="md:col-span-4 relative rounded-2xl overflow-hidden group h-[300px]">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC1guTDKUgWdnlBdAG-dlQnxjavSBlxartSKN7AV2LvBiidsWSFRZWm0WuKC-6Y7TtxKaZssmGbXogNbPe7DSQ7C1fGWgpnGDpnY2se0YyiayV0QShmc7wIJTdN-Gn9-Nx_mdrtVboxe10P573IQQYeVVQEEN5ypOf2VlobVMYthZuZTbDnU9prnCNbJP53xlqA2f8IOC6BA75Gybd3_jgbUeOK9CKiSULCxSn-pQgzxoKt_whm1GFikrnazUD1kj4UwGyn2Mz0cXI')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
+<div class="absolute inset-0 flex items-center justify-center text-center p-8 text-white">
+<div>
+<h3 class="font-headline-lg text-headline-lg mb-4">Istanbul: The Crossroads</h3>
+<p class="text-surface-variant max-w-2xl">Discover where heritage meets the horizon in Turkey's most iconic city.</p>
+<button class="mt-6 bg-white text-primary px-6 py-2 rounded-lg font-button">Explore Packages</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Trust & Expertise Section -->
+<section class="reveal py-24 bg-primary text-white overflow-hidden relative">
+<div class="absolute top-0 right-0 w-1/3 h-full opacity-10 pointer-events-none">
+<div class="w-full h-full" style="background-image: radial-gradient(circle at center, #ffd31a 1px, transparent 1px); background-size: 32px 32px;"></div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-desktop relative z-10">
+<div class="grid md:grid-cols-2 gap-16 items-center">
+<div>
+<span class="text-secondary-container font-label-md tracking-widest uppercase">Certified Excellence</span>
+<h2 class="font-headline-lg text-headline-lg mt-4 mb-6">Expertise You Can Bank On</h2>
+<p class="text-primary-fixed-dim text-body-lg mb-8">
+                    At {{CLIENT_NAME}}, we don't just book trips; we architect journeys. Our specialized teams provide end-to-end support for even the most complex travel requirements.
+                </p>
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<div class="mt-1 w-10 h-10 rounded-full border border-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary-container" style="font-variation-settings: 'FILL' 1;">description</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-white mb-1">Visa Training &amp; Assistance</h4>
+<p class="text-primary-fixed-dim">Comprehensive interview preparation and document verification for US, Schengen, and UK visas.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="mt-1 w-10 h-10 rounded-full border border-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary-container" style="font-variation-settings: 'FILL' 1;">confirmation_number</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-white mb-1">Elite Ticketing Services</h4>
+<p class="text-primary-fixed-dim">Priority access to international airlines and specialized routing for maximum efficiency and savings.</p>
+</div>
+</div>
+</div>
+<div class="mt-12 flex items-center gap-8 opacity-60">
+<div class="h-12 w-24 bg-white/10 rounded flex items-center justify-center font-bold text-xs">IATA CERTIFIED</div>
+<div class="h-12 w-24 bg-white/10 rounded flex items-center justify-center font-bold text-xs">ISO 9001</div>
+<div class="h-12 w-24 bg-white/10 rounded flex items-center justify-center font-bold text-xs">MINISTRY OF TOURISM</div>
+</div>
+</div>
+<div class="relative">
+<div class="rounded-2xl overflow-hidden shadow-2xl rotate-2">
+<div class="w-full aspect-[4/5] bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCNhTO3N4tfLPDAO-qgBtwAR7RCkPjwJyyButA1up9LUsydH9eMoygx7OVzh42VNvy6_TMCtbTlsHnUFCDnoH2bD4W2h-JSJ-ETjVdRwnufZB0hDV8ObEgF4LcrlZSGeGM1KOWEEGLszJtLoJX_JGi2637aqQy0ojmUR9XojN_P99H7HsDzaBo1ZHh4R-kYwbzTq8CPBQ-rTWJfurQggYE02GM31tpgS375RCkkshECN_JNk9QVC7VMcOMsY127fgybBBe-lFVpkrQ')"></div>
+</div>
+<div class="absolute -bottom-8 -left-8 glass-card p-6 rounded-xl border border-white/20 text-primary max-w-xs shadow-xl -rotate-2">
+<div class="flex items-center gap-1 mb-2 text-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="italic mb-2">"Their visa training was a game-changer. I felt completely prepared and confident for my embassy interview."</p>
+<span class="font-bold text-label-md">— Dawit T., Corporate Client</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter / CTA -->
+<section class="reveal py-24 bg-surface">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="bg-secondary-container rounded-3xl p-12 text-center text-on-secondary-container shadow-xl">
+<h2 class="font-headline-lg text-headline-lg mb-4">Stay Informed on Global Travel</h2>
+<p class="text-body-lg max-w-2xl mx-auto mb-8">Receive exclusive travel deals, visa updates, and cultural insights directly in your inbox.</p>
+<form class="flex flex-col md:flex-row gap-4 max-w-xl mx-auto">
+<input class="flex-grow px-6 py-4 rounded-xl border-none text-on-surface focus:ring-2 focus:ring-primary outline-none" placeholder="Your email address" type="email"/>
+<button class="bg-primary text-on-primary px-10 py-4 rounded-xl font-button hover:bg-primary-container transition-colors">Subscribe</button>
+</form>
+<p class="text-xs mt-4 opacity-70">We respect your privacy. Unsubscribe at any time.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-16 px-margin-desktop flex flex-col md:flex-row justify-between gap-gutter max-w-container-max mx-auto bg-primary dark:bg-inverse-surface text-on-primary">
+<div class="space-y-6 md:w-1/3">
+<span class="font-display-lg text-headline-md text-on-primary">{{CLIENT_NAME}}</span>
+<p class="opacity-80 max-w-xs font-body-md text-body-md">Your trusted partner for international travel, visa consultancy, and global exploration.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary-fixed transition-colors" href="#"><span class="material-symbols-outlined text-sm">public</span></a>
+<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary-fixed transition-colors" href="#"><span class="material-symbols-outlined text-sm">alternate_email</span></a>
+<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary-fixed transition-colors" href="#"><span class="material-symbols-outlined text-sm">call</span></a>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-8 md:w-2/3">
+<div class="space-y-4">
+<h5 class="font-bold text-label-md border-b border-white/20 pb-2">Quick Links</h5>
+<ul class="space-y-2 opacity-80 font-body-md text-body-md">
+<li><a class="hover:text-secondary-fixed transition-colors" href="#">Home</a></li>
+<li><a class="hover:text-secondary-fixed transition-colors" href="#">Services</a></li>
+<li><a class="hover:text-secondary-fixed transition-colors" href="#">Destinations</a></li>
+<li><a class="hover:text-secondary-fixed transition-colors" href="#">About Us</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h5 class="font-bold text-label-md border-b border-white/20 pb-2">Information</h5>
+<ul class="space-y-2 opacity-80 font-body-md text-body-md">
+<li><a class="hover:text-secondary-fixed transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-secondary-fixed transition-colors" href="#">Terms of Service</a></li>
+<li><a class="hover:text-secondary-fixed transition-colors" href="#">FAQ</a></li>
+<li><a class="hover:text-secondary-fixed transition-colors" href="#">Careers</a></li>
+</ul>
+</div>
+<div class="space-y-4 col-span-2 md:col-span-1">
+<h5 class="font-bold text-label-md border-b border-white/20 pb-2">Contact</h5>
+<ul class="space-y-2 opacity-80 font-body-md text-body-md">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">pin_drop</span> {{SITE_ADDRESS}}</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">phone_iphone</span> {{SITE_PHONE}}</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">mail</span> {{SITE_EMAIL}}</li>
+</ul>
+</div>
+</div>
+</footer>
+<div class="w-full py-6 px-margin-desktop border-t border-white/10 bg-primary text-center">
+<p class="text-surface-variant opacity-60 font-body-md text-body-md">© 2024 {{CLIENT_NAME}} Travel. Ethiopian Heritage, Global Standards.</p>
+</div>
+<!-- Scripts -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Navbar scroll effect
+        const navbar = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('py-2', 'shadow-md', 'h-16');
+                navbar.classList.remove('h-20');
+            } else {
+                navbar.classList.remove('py-2', 'shadow-md', 'h-16');
+                navbar.classList.add('h-20');
+            }
+        });
+
+        // Intersection Observer for Reveal animations
+        const revealCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        };
+
+        const revealObserver = new IntersectionObserver(revealCallback, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            revealObserver.observe(el);
+        });
+
+        // Destination Cards Mouse Parallax
+        const destinationCards = document.querySelectorAll('.bento-grid > div');
+        window.addEventListener('mousemove', (e) => {
+            const { clientX, clientY } = e;
+            
+            destinationCards.forEach(card => {
+                const rect = card.getBoundingClientRect();
+                const cardCenterX = rect.left + rect.width / 2;
+                const cardCenterY = rect.top + rect.height / 2;
+                
+                const distanceX = (clientX - cardCenterX) * 0.01;
+                const distanceY = (clientY - cardCenterY) * 0.01;
+                
+                const bg = card.querySelector('div:first-child');
+                if (bg) {
+                    bg.style.transform = `scale(1.1) translate(${distanceX}px, ${distanceY}px)`;
+                }
+            });
+        });
+    });
+</script>
+</body></html>

@@ -1,0 +1,351 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>MELAT - Lattafa Collection</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Work+Sans:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#353535",
+                        "inverse-primary": "#a73a00",
+                        "surface-tint": "#ffb599",
+                        "surface-dim": "#131313",
+                        "error": "#ffb4ab",
+                        "surface": "#131313",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "on-surface": "#e2e2e2",
+                        "outline": "#a88a80",
+                        "surface-container-high": "#2a2a2a",
+                        "inverse-on-surface": "#303030",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-tertiary": "#2f3131",
+                        "tertiary-fixed": "#e2e2e2",
+                        "on-primary-fixed": "#370e00",
+                        "inverse-surface": "#e2e2e2",
+                        "on-tertiary-container": "#2c2e2e",
+                        "tertiary": "#c6c6c7",
+                        "surface-container-highest": "#353535",
+                        "outline-variant": "#594139",
+                        "tertiary-container": "#949595",
+                        "secondary": "#ffb4a5",
+                        "on-secondary": "#650900",
+                        "primary-fixed-dim": "#ffb599",
+                        "surface-container": "#1f1f1f",
+                        "surface-container-low": "#1b1b1b",
+                        "surface-bright": "#393939",
+                        "on-error": "#690005",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-lowest": "#0e0e0e",
+                        "primary": "#ffb599",
+                        "primary-fixed": "#ffdbce",
+                        "on-background": "#e2e2e2",
+                        "secondary-fixed-dim": "#ffb4a5",
+                        "background": "#131313",
+                        "on-primary": "#5a1c00",
+                        "on-surface-variant": "#e1bfb4",
+                        "primary-container": "#f6692a",
+                        "on-primary-container": "#551a00",
+                        "secondary-container": "#921401",
+                        "secondary-fixed": "#ffdad3",
+                        "on-secondary-container": "#ff9f8d",
+                        "on-primary-fixed-variant": "#7f2b00",
+                        "error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#8f1100",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "on-secondary-fixed": "#3f0400"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "label": ["Work Sans"]
+                    }
+                },
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #131313;
+            color: #e2e2e2;
+        }
+    </style>
+</head>
+<body class="font-body selection:bg-primary-container selection:text-white">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-neutral-950/70 backdrop-blur-xl shadow-2xl shadow-black/40 flex justify-between items-center px-8 h-20 w-full max-w-none">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-bold tracking-tighter text-[#e2e2e2]" style="">ATELIÉR</span>
+<div class="hidden md:flex gap-6">
+<a class="font-['Plus_Jakarta_Sans'] uppercase tracking-widest text-xs font-medium text-[#e2e2e2]/70 hover:text-[#e2e2e2] transition-colors" href="#" style="">HOME</a>
+<a class="font-['Plus_Jakarta_Sans'] uppercase tracking-widest text-xs font-medium text-[#ffb599] font-bold border-b border-[#f6692a] pb-1" href="#" style="">BRANDS</a>
+<a class="font-['Plus_Jakarta_Sans'] uppercase tracking-widest text-xs font-medium text-[#e2e2e2]/70 hover:text-[#e2e2e2] transition-colors" href="#" style="">USER</a>
+<a class="font-['Plus_Jakarta_Sans'] uppercase tracking-widest text-xs font-medium text-[#e2e2e2]/70 hover:text-[#e2e2e2] transition-colors" href="#" style="">ABOUT US</a>
+<a class="font-['Plus_Jakarta_Sans'] uppercase tracking-widest text-xs font-medium text-[#e2e2e2]/70 hover:text-[#e2e2e2] transition-colors" href="#" style="">CONTACT US</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-neutral-800/50 transition-all duration-300 scale-95 active:scale-90 transition-transform" style="">
+<span class="material-symbols-outlined text-[#ffb599]" style="">search</span>
+</button>
+<button class="p-2 hover:bg-neutral-800/50 transition-all duration-300 scale-95 active:scale-90 transition-transform" style="">
+<span class="material-symbols-outlined text-[#ffb599]" style="">favorite</span>
+</button>
+<button class="p-2 hover:bg-neutral-800/50 transition-all duration-300 scale-95 active:scale-90 transition-transform" style="">
+<span class="material-symbols-outlined text-[#ffb599]" style="">shopping_bag</span>
+</button>
+</div>
+</nav>
+<!-- Hero/Breadcrumb Section -->
+<header class="pt-32 pb-16 px-8 bg-surface-container-low">
+<div class="max-w-7xl mx-auto">
+<div class="flex items-center gap-2 text-xs font-label uppercase tracking-widest text-on-surface-variant mb-4">
+<a class="hover:text-primary" href="#" style="">Home</a>
+<span class="material-symbols-outlined text-[10px]" style="">chevron_right</span>
+<span class="text-primary" style="">Brands</span>
+</div>
+<h1 class="text-4xl md:text-5xl font-headline font-bold text-on-surface tracking-tighter" style="">PRODUCTS UNDER LATTAFA BRAND</h1>
+<div class="mt-4 h-1 w-24 bg-primary-container"></div>
+</div>
+</header>
+<!-- Main Content: Product Grid -->
+<main class="max-w-7xl mx-auto px-8 py-12">
+<!-- Filter/Sort Utility Row (Implicit in High-End UI) -->
+<div class="flex justify-between items-center mb-12 border-b border-outline-variant/20 pb-6">
+<span class="text-on-surface-variant text-sm font-label uppercase tracking-widest" style="">Showing 8 of 24 products</span>
+<div class="flex gap-4">
+<button class="flex items-center gap-2 text-xs font-bold uppercase tracking-widest bg-surface-container-highest px-4 py-2" style="">
+                    Sort By <span class="material-symbols-outlined text-sm" style="">expand_more</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+<!-- Product Card Loop (Replicating Lattafa Unisex Mahir) -->
+<!-- Using an array of 8 instances for the layout demo -->
+<div class="group flex flex-col bg-white overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 rounded-none border border-neutral-100">
+<div class="relative aspect-[3/4] overflow-hidden bg-[#f8f8f8]">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="luxury perfume bottle with gold cap and intricate black design against a minimalist soft lit studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAL0Ea5C4ybJlIltysTE1YPiLxOK6yaLIL8cHVF3pt-sztHIFtb-Hhi5F_P-JmRYlA4A_C3jfwp4glaIlYdojITBufMRlzNZv-gAnux8Phk1ZSEA6GDj0CR_LB0aYhSBv62tvUSz_KtoUs2ExBYUIMTXdHoiZPqP4rL6LpfBsgbMphlSLIvuqjT9J8OwOBEAm56u7kIOOLWBvRc7cDA3uIgCx7bSuzF4VoGodEvMsqozLuNfc3V1mrqopfPI9xe4VHlfBbxRYBflpCc" style="">
+<div class="absolute top-4 left-4 bg-primary text-on-primary text-[10px] font-bold px-2 py-1 uppercase tracking-widest" style="">
+                        New
+                    </div>
+<div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex items-center gap-1 mb-2">
+<span class="material-symbols-outlined text-xs text-yellow-500" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="material-symbols-outlined text-xs text-yellow-500" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="material-symbols-outlined text-xs text-yellow-500" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="material-symbols-outlined text-xs text-yellow-500" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="material-symbols-outlined text-xs text-yellow-500" style="font-variation-settings: &quot;FILL&quot; 0;">star</span>
+<span class="text-[10px] text-neutral-400 font-label ml-2 uppercase" style="">(12)</span>
+</div>
+<h3 class="font-headline text-lg font-bold text-neutral-900 leading-tight mb-2" style="">Lattafa Unisex Mahir</h3>
+<p class="text-neutral-500 text-xs mb-4 line-clamp-2" style="">Exquisite blend of woody and floral notes, designed for timeless elegance.</p>
+<div class="mt-auto flex justify-between items-end">
+<div class="flex flex-col">
+<span class="text-[10px] text-neutral-400 uppercase tracking-widest font-label" style="">Price</span>
+<span class="text-xl font-bold text-neutral-900" style="">ETB 1799</span>
+</div>
+<button class="bg-neutral-900 text-white p-3 hover:bg-primary-container transition-colors duration-300" style="">
+<span class="material-symbols-outlined" style="">shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Repeat Product Card 2 -->
+<div class="group flex flex-col bg-white overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 rounded-none border border-neutral-100">
+<div class="relative aspect-[3/4] overflow-hidden bg-[#f8f8f8]">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Premium perfume glass bottle with silver metallic cap reflecting soft warm light on a polished surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfwNTjbGb4mQs9j03aglVo_kLbwApWjNj1-Un3ok5FIZ_7WhomTarNO290awB336hoUmwpRiMPf61B2wf6kaXsIX9808aGbW8nxh0XZ2A8lFvZr9CJqMfGUy6UHgU7W8hXO_W0X4Bd3rAE-2gAVJdiKNZPBmruLf9NwAAC59u7RJZ_D7qG8aciOziPfXDPPucHZDsbqWjOAA7oGT_73pi90evPAcJON3p8u-qGEUnRHNkjuCFLID7RAGZ4eMerj8Y2s4r3buOh8j_4" style="">
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex items-center gap-1 mb-2">
+<span class="material-symbols-outlined text-xs text-yellow-500" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="material-symbols-outlined text-xs text-yellow-500" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="material-symbols-outlined text-xs text-yellow-500" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="material-symbols-outlined text-xs text-yellow-500" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="material-symbols-outlined text-xs text-yellow-500" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="text-[10px] text-neutral-400 font-label ml-2 uppercase" style="">(8)</span>
+</div>
+<h3 class="font-headline text-lg font-bold text-neutral-900 leading-tight mb-2" style="">Lattafa Unisex Mahir</h3>
+<p class="text-neutral-500 text-xs mb-4 line-clamp-2" style="">A majestic scent capture in a bottle, perfect for sophisticated evenings.</p>
+<div class="mt-auto flex justify-between items-end">
+<div class="flex flex-col">
+<span class="text-[10px] text-neutral-400 uppercase tracking-widest font-label" style="">Price</span>
+<span class="text-xl font-bold text-neutral-900" style="">ETB 1799</span>
+</div>
+<button class="bg-neutral-900 text-white p-3 hover:bg-primary-container transition-colors duration-300" style="">
+<span class="material-symbols-outlined" style="">shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Repeat Product Card 3 -->
+<div class="group flex flex-col bg-white overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 rounded-none border border-neutral-100">
+<div class="relative aspect-[3/4] overflow-hidden bg-[#f8f8f8]">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Elegant glass bottle of amber colored perfume against a dark stone background with soft highlighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiGBFIRWiVQbaCERvYIKovvIyG_RACAEF347ROI8LndrXeZ8w16DZr0XGc_Kp-QOj-s44k4YExwn0H-yvvnFwh1vmkfHvNx04V2RIKw-9lhqIhN8VKkP2LE2wwWdfi-AS-VmGVPsXXUsOrybzOUj7S-DZPc0BOUhan3AEHhTw_fr1fOaDb1gmpBmum2C_VRk3v-O55MxceyB_biVa08iWFVCkFrkR_hApbXuS7otPbbMb3BgcUCz_T2AVsFm3XzcuLdyZTD5rVzDlW" style="">
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex items-center gap-1 mb-2">
+<span class="material-symbols-outlined text-xs text-yellow-500" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="material-symbols-outlined text-xs text-yellow-500" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="material-symbols-outlined text-xs text-yellow-500" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="material-symbols-outlined text-xs text-yellow-500" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="material-symbols-outlined text-xs text-neutral-300" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="text-[10px] text-neutral-400 font-label ml-2 uppercase" style="">(24)</span>
+</div>
+<h3 class="font-headline text-lg font-bold text-neutral-900 leading-tight mb-2" style="">Lattafa Unisex Mahir</h3>
+<p class="text-neutral-500 text-xs mb-4 line-clamp-2" style="">Sultry notes of oud and vanilla that command attention.</p>
+<div class="mt-auto flex justify-between items-end">
+<div class="flex flex-col">
+<span class="text-[10px] text-neutral-400 uppercase tracking-widest font-label" style="">Price</span>
+<span class="text-xl font-bold text-neutral-900" style="">ETB 1799</span>
+</div>
+<button class="bg-neutral-900 text-white p-3 hover:bg-primary-container transition-colors duration-300" style="">
+<span class="material-symbols-outlined" style="">shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Repeat Product Card 4 -->
+<div class="group flex flex-col bg-white overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 rounded-none border border-neutral-100">
+<div class="relative aspect-[3/4] overflow-hidden bg-[#f8f8f8]">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Artistic capture of luxury perfume bottle reflecting in a dark mirror with golden shimmer highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQUxfR8fMqd5M-KksfV__jm4QW5TjxD1YYeTvRuqwSnMKkfyGt4K1e6vM4CNTXXrqDe4aaYSprMt2kStNrYDU3ywq_BL7J6tj_VbkudZgVkzatUjrjNNi6RzWQ7cwcRPV0Au1X-uc9J-JlCouovuLs1_Tn6R4nknamRW9gA-32x5aw04d3lWUPDVh5tvtAgemrCXZDMob5lFv1idhcNLBEYBGj0PNkuikHZsiXWo0zFl4I2SfFLf7-186o3S7IHcIPkVmY_90nC8SN" style="">
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex items-center gap-1 mb-2">
+<span class="material-symbols-outlined text-xs text-yellow-500" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="material-symbols-outlined text-xs text-yellow-500" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="material-symbols-outlined text-xs text-yellow-500" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="material-symbols-outlined text-xs text-yellow-500" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="material-symbols-outlined text-xs text-yellow-500" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="text-[10px] text-neutral-400 font-label ml-2 uppercase" style="">(5)</span>
+</div>
+<h3 class="font-headline text-lg font-bold text-neutral-900 leading-tight mb-2" style="">Lattafa Unisex Mahir</h3>
+<p class="text-neutral-500 text-xs mb-4 line-clamp-2" style="">Defined by grace and the spirit of the modern trailblazer.</p>
+<div class="mt-auto flex justify-between items-end">
+<div class="flex flex-col">
+<span class="text-[10px] text-neutral-400 uppercase tracking-widest font-label" style="">Price</span>
+<span class="text-xl font-bold text-neutral-900" style="">ETB 1799</span>
+</div>
+<button class="bg-neutral-900 text-white p-3 hover:bg-primary-container transition-colors duration-300" style="">
+<span class="material-symbols-outlined" style="">shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Repeated Rows for 8 products total -->
+<div class="group flex flex-col bg-white overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 rounded-none border border-neutral-100">
+<div class="relative aspect-[3/4] overflow-hidden bg-[#f8f8f8]">
+<img class="w-full h-full object-cover" data-alt="fragrance bottle studio shot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC42-DE1avlyfKPVqK-X0GCQ1iJGDQx7rhvmpzJvMJQQaweXainQmRYRazxNEjZhGCc-p1Q1EISbWi1i8L2m89VMy_U8MDKjcG7GeDfAq-XlYIEJSqzIgIasZmnaemrtfrG-FSOFZFzd9U_Zz0bVD5-rpzoOoBEoAj408SErs6plS6HbQNi_HMRGD7lAj-xRmsD3W0Ew9HC6fRNQXjB1B8lF4xiipxpYceFB4f5dp4FQsB6L_aRwroMgTvbgWPj2vuN2SufZVJxX2hI" style="">
+</div>
+<div class="p-6 flex flex-col flex-grow text-neutral-900">
+<h3 class="font-headline text-lg font-bold" style="">Lattafa Unisex Mahir</h3>
+<div class="mt-auto flex justify-between items-end">
+<div class="flex flex-col"><span class="text-xl font-bold" style="">ETB 1799</span></div>
+<button class="bg-neutral-900 text-white p-3 hover:bg-primary-container" style=""><span class="material-symbols-outlined" style="">shopping_cart</span></button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col bg-white overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 rounded-none border border-neutral-100">
+<div class="relative aspect-[3/4] overflow-hidden bg-[#f8f8f8]">
+<img class="w-full h-full object-cover" data-alt="fragrance bottle studio shot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDm3L_qApKMrXtgGz68bw2tjluZCg-Brf2otrIggjRKp8PdGte0NPC75EBAp-WoFLrYY07ljaXAkEXvglzdD5KKpWScJD-TvakPMWaug3yzgRLkBWDxHtKA-eMTZZvL_GMlkPPJDlp2Dr_MMKlgFu5OkVqA9p8_r-eBOTJ5tOEKuGuOVNw0SXB3Y-XXvkZw_IKOixR6jmbwK9-6RaeLCNWT-gs5ejOhUMKYaEidoJLYBLAbTSiU3-KgLeohSKUqCZDzYE-lPaIcfdNl" style="">
+</div>
+<div class="p-6 flex flex-col flex-grow text-neutral-900">
+<h3 class="font-headline text-lg font-bold" style="">Lattafa Unisex Mahir</h3>
+<div class="mt-auto flex justify-between items-end">
+<div class="flex flex-col"><span class="text-xl font-bold" style="">ETB 1799</span></div>
+<button class="bg-neutral-900 text-white p-3 hover:bg-primary-container" style=""><span class="material-symbols-outlined" style="">shopping_cart</span></button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col bg-white overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 rounded-none border border-neutral-100">
+<div class="relative aspect-[3/4] overflow-hidden bg-[#f8f8f8]">
+<img class="w-full h-full object-cover" data-alt="fragrance bottle studio shot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8WAcBQ_FChEOagUcvY1L1vt_qsuvsYlftSjEqOsNGPsTqcgl__gwTUOujZhO7ff45QbksPdDPgPKd9_Z3CkAXr9BQDx85fsFEKefNwEq9zg0Kk_eMsq0zP6ifR5kkmlUfECiobFfgEcqQE1WKVIhX1eiic0JQ35f-eh7QZ9HNwgPwOfwsT9zH6CM_81gz1GZwRiSJU9q7P23SROrW-T8LPD0fISY1LesPkmQstr4VZDTA8RaZkyul0SyzbaO1gDBlFMww5ypIMk7-" style="">
+</div>
+<div class="p-6 flex flex-col flex-grow text-neutral-900">
+<h3 class="font-headline text-lg font-bold" style="">Lattafa Unisex Mahir</h3>
+<div class="mt-auto flex justify-between items-end">
+<div class="flex flex-col"><span class="text-xl font-bold" style="">ETB 1799</span></div>
+<button class="bg-neutral-900 text-white p-3 hover:bg-primary-container" style=""><span class="material-symbols-outlined" style="">shopping_cart</span></button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col bg-white overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 rounded-none border border-neutral-100">
+<div class="relative aspect-[3/4] overflow-hidden bg-[#f8f8f8]">
+<img class="w-full h-full object-cover" data-alt="fragrance bottle studio shot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyWHOtUepSzDWG5JvSgC85LcvGjLDX11PYQY3hIr2H_kqgXw04nBgc6L83dNUBHfOSknN2FR6iNxXMR4XtlRiH-V9DDUazFNuWURbeaEs34ZWPL5N8TcQEQnggSj_UXyjYaO-b7hEFikfDEpx9E4Q-Kwi_JgxlzeR0tlDwrggsG_Mp0eN8F5WuaBuGfINQJnA8o35oZoNZ222DYyaYDxvEmDjqLvpLUOrJOhjVyJsWOy122iqKExGuC_brOd4rXRF6vbgTE2UcgEXd" style="">
+</div>
+<div class="p-6 flex flex-col flex-grow text-neutral-900">
+<h3 class="font-headline text-lg font-bold" style="">Lattafa Unisex Mahir</h3>
+<div class="mt-auto flex justify-between items-end">
+<div class="flex flex-col"><span class="text-xl font-bold" style="">ETB 1799</span></div>
+<button class="bg-neutral-900 text-white p-3 hover:bg-primary-container" style=""><span class="material-symbols-outlined" style="">shopping_cart</span></button>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-20 flex justify-center gap-2">
+<button class="w-10 h-10 flex items-center justify-center border border-primary text-primary font-bold" style="">1</button>
+<button class="w-10 h-10 flex items-center justify-center border border-outline-variant text-on-surface-variant hover:border-primary hover:text-primary transition-colors" style="">2</button>
+<button class="w-10 h-10 flex items-center justify-center border border-outline-variant text-on-surface-variant hover:border-primary hover:text-primary transition-colors" style="">3</button>
+<button class="w-10 h-10 flex items-center justify-center border border-outline-variant text-on-surface-variant hover:border-primary hover:text-primary transition-colors" style="">
+<span class="material-symbols-outlined" style="">chevron_right</span>
+</button>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-neutral-950 border-t border-neutral-900">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-16 w-full">
+<div>
+<div class="text-xl font-bold text-[#e2e2e2] mb-4" style="">ATELIÉR</div>
+<p class="font-['Inter'] text-sm text-[#e1bfb4] leading-relaxed" style="">
+                    Exclusive purveyors of luxury fragrances. Our atélier curates the world's most evocative scents to define your unique identity.
+                </p>
+</div>
+<div>
+<h4 class="font-headline text-[#ffb599] text-xs font-bold uppercase tracking-widest mb-6" style="">Explore</h4>
+<ul class="space-y-4">
+<li class="" style=""><a class="font-['Inter'] text-sm text-[#e1bfb4] hover:text-[#e2e2e2] hover:underline transition-all" href="#" style="">Brands</a></li>
+<li class="" style=""><a class="font-['Inter'] text-sm text-[#e1bfb4] hover:text-[#e2e2e2] hover:underline transition-all" href="#" style="">Best Sellers</a></li>
+<li class="" style=""><a class="font-['Inter'] text-sm text-[#e1bfb4] hover:text-[#e2e2e2] hover:underline transition-all" href="#" style="">New Arrivals</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-headline text-[#ffb599] text-xs font-bold uppercase tracking-widest mb-6" style="">Support</h4>
+<ul class="space-y-4">
+<li class="" style=""><a class="font-['Inter'] text-sm text-[#e1bfb4] hover:text-[#e2e2e2] hover:underline transition-all" href="#" style="">Privacy Policy</a></li>
+<li class="" style=""><a class="font-['Inter'] text-sm text-[#e1bfb4] hover:text-[#e2e2e2] hover:underline transition-all" href="#" style="">Terms of Service</a></li>
+<li class="" style=""><a class="font-['Inter'] text-sm text-[#e1bfb4] hover:text-[#e2e2e2] hover:underline transition-all" href="#" style="">Shipping Info</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-headline text-[#ffb599] text-xs font-bold uppercase tracking-widest mb-6" style="">Newsletter</h4>
+<div class="flex mt-2">
+<input class="bg-surface-container-highest border-none focus:ring-1 focus:ring-primary text-sm w-full" placeholder="Email Address" type="email">
+<button class="bg-primary text-on-primary px-4 font-bold text-xs uppercase tracking-widest" style="">Join</button>
+</div>
+</div>
+</div>
+<div class="px-12 py-8 border-t border-neutral-900/50 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-['Inter'] text-xs text-[#e1bfb4]/50" style="">© 2024&nbsp;Ateliér Perfume. All rights reserved.</p>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-[#e1bfb4] cursor-pointer hover:text-primary transition-colors" style="">public</span>
+<span class="material-symbols-outlined text-[#e1bfb4] cursor-pointer hover:text-primary transition-colors" style="">share</span>
+</div>
+</div>
+</footer>
+</body></html>

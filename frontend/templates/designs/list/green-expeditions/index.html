@@ -1,0 +1,544 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Destinations | Ethio Highlands</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-surface": "#303033",
+                    "surface-dim": "#dcd9dd",
+                    "on-tertiary-fixed": "#131e19",
+                    "tertiary": "#25312b",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed-dim": "#bdcac1",
+                    "surface-variant": "#e4e1e5",
+                    "on-primary-container": "#80bea6",
+                    "outline": "#707974",
+                    "on-primary": "#ffffff",
+                    "on-primary-fixed": "#002117",
+                    "on-background": "#1b1b1e",
+                    "surface-container": "#f0edf1",
+                    "inverse-on-surface": "#f3f0f4",
+                    "surface-container-low": "#f5f3f6",
+                    "surface-bright": "#fbf8fc",
+                    "on-secondary-fixed-variant": "#005236",
+                    "outline-variant": "#bfc9c3",
+                    "on-primary-fixed-variant": "#0b513d",
+                    "on-secondary-fixed": "#002113",
+                    "inverse-primary": "#95d3ba",
+                    "surface-tint": "#2b6954",
+                    "secondary": "#006c49",
+                    "background": "#fbf8fc",
+                    "secondary-container": "#6cf8bb",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-high": "#eae7eb",
+                    "on-tertiary-fixed-variant": "#3e4943",
+                    "on-surface-variant": "#404944",
+                    "on-tertiary-container": "#a8b5ad",
+                    "tertiary-fixed": "#d9e6dd",
+                    "primary-fixed": "#b0f0d6",
+                    "error-container": "#ffdad6",
+                    "on-surface": "#1b1b1e",
+                    "secondary-fixed": "#6ffbbe",
+                    "error": "#ba1a1a",
+                    "secondary-fixed-dim": "#4edea3",
+                    "on-error": "#ffffff",
+                    "primary-fixed-dim": "#95d3ba",
+                    "primary": "#003527",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-container": "#00714d",
+                    "tertiary-container": "#3b4741",
+                    "surface": "#fbf8fc",
+                    "surface-container-highest": "#e4e1e5",
+                    "primary-container": "#064e3b",
+                    "on-tertiary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "xs": "4px",
+                    "sm": "12px",
+                    "container-max": "1280px",
+                    "lg": "48px",
+                    "xl": "80px",
+                    "md": "24px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "display-lg-mobile": ["Source Serif 4"],
+                    "headline-lg": ["Source Serif 4"],
+                    "display-lg": ["Source Serif 4"],
+                    "headline-md": ["Source Serif 4"],
+                    "label-md": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "display-lg-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "display-lg": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hero-gradient {
+            background: linear-gradient(to bottom, rgba(0, 53, 39, 0.4), rgba(0, 53, 39, 0.7));
+        }
+        .destination-card:hover .card-overlay {
+            opacity: 1;
+        }
+        .destination-card:hover img {
+            transform: scale(1.05);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            height: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #003527;
+            border-radius: 10px;
+        }
+        .tibeb-pattern {
+            background-image: radial-gradient(#064e3b 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+            opacity: 0.05;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(6, 78, 59, 0.1);
+        }
+        .transition-soft {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- Top Navigation Bar (from Screen 2) -->
+<nav class="bg-surface dark:bg-surface-container-highest flex justify-between items-center max-w-container-max mx-auto px-gutter py-base w-full docked full-width top-0 sticky z-50 border-b border-primary/10 dark:border-primary-fixed/10">
+<a class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim" href="#">ETHIO HIGHLANDS</a>
+<div class="hidden md:flex items-center gap-lg">
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Tours</a>
+<a class="font-label-md text-label-md text-primary dark:text-primary-fixed font-bold border-b-2 border-primary pb-1" href="#">Home</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">About Us</a>
+</div>
+<button class="bg-primary-container text-on-primary-container px-md py-xs rounded-lg font-label-md text-label-md hover:opacity-90 active:scale-95 duration-150 transition-all">
+        Book Now
+    </button>
+</nav>
+<main>
+<!-- Hero Header (from Screen 2) -->
+<header class="relative h-[409px] min-h-[400px] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center" data-alt="A panoramic, high-altitude view of the Semien Mountains in Ethiopia during a misty sunrise." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCDIXWU44eaSBoF4s4kAoNb4o_w4ExbDGUk7xsjEf1cW4iaia6SNKGODVHElGig7ltDFnM-WcwhT9sHR55j24GLb_KYA0fZK1Sy5sG9eJIiF33XQFC8fKGDIrwRCRtUXb9RaZo0UI7F4hM6RmewhBKECqyEo3_FxDLsAa1Ow836UiBUmQgNCUkbjjHmcAcJdiSQ9Ppc2AIaUL062shx4X9Ouyow8jxtwBhyhI4JqJigvtFWiQhfgrMCvC3Yid7hw6K_AaFLagwUnKPU')"></div>
+<div class="absolute inset-0 hero-gradient"></div>
+</div>
+<div class="relative z-10 text-center px-gutter max-w-4xl">
+<span class="inline-block px-sm py-xs bg-secondary-container/20 text-secondary-fixed rounded-full font-label-md text-label-md mb-md backdrop-blur-sm">DISCOVER ABYSSINIA</span>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-primary mb-base">The Soul of the Horn</h1>
+<p class="font-body-lg text-body-lg text-on-primary/80 max-w-2xl mx-auto">Explore a land where history, culture, and nature converge across monolithic landscapes and ancient kingdoms.</p>
+</div>
+</header>
+<!-- Filter Section (from Screen 2) -->
+<section class="max-w-container-max mx-auto px-gutter tibeb-pattern pt-xl pb-md" style="opacity: 1; background-color: var(--background);">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-md mb-xl">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-xs">Explore by Interest</h2>
+<p class="text-on-surface-variant max-w-md">Filter our curated destinations to find the perfect landscape for your next expedition.</p>
+</div>
+<div class="flex gap-sm overflow-x-auto pb-sm custom-scrollbar">
+<button class="filter-btn active-filter bg-primary-container text-on-primary-container px-md py-xs rounded-full font-label-md text-label-md transition-all whitespace-nowrap" onclick="filterDestinations('all')">All Regions</button>
+<button class="filter-btn bg-tertiary-fixed text-on-tertiary-fixed hover:bg-primary-fixed-dim px-md py-xs rounded-full font-label-md text-label-md transition-all whitespace-nowrap" onclick="filterDestinations('history')">History</button>
+<button class="filter-btn bg-tertiary-fixed text-on-tertiary-fixed hover:bg-primary-fixed-dim px-md py-xs rounded-full font-label-md text-label-md transition-all whitespace-nowrap" onclick="filterDestinations('adventure')">Adventure</button>
+<button class="filter-btn bg-tertiary-fixed text-on-tertiary-fixed hover:bg-primary-fixed-dim px-md py-xs rounded-full font-label-md text-label-md transition-all whitespace-nowrap" onclick="filterDestinations('culture')">Culture</button>
+<button class="filter-btn bg-tertiary-fixed text-on-tertiary-fixed hover:bg-primary-fixed-dim px-md py-xs rounded-full font-label-md text-label-md transition-all whitespace-nowrap" onclick="filterDestinations('wildlife')">Wildlife</button>
+</div>
+</div>
+<!-- Bento Grid of Destinations (from Screen 2) -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter" id="destinations-grid">
+<!-- Card 1: Northern Highlands (History) -->
+<div class="destination-item md:col-span-7 group relative overflow-hidden rounded-xl border border-primary/10 bg-surface-container-lowest rounded-lg transition-all duration-700 opacity-100 translate-y-0" data-category="history">
+<div class="aspect-[16/9] overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700" data-alt="A stunning wide shot of the rock-hewn churches of Lalibela, Ethiopia." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcsXG_KrUKxRuq1rz0cMq38dY8JzOaCBnqOvmZgi9WBos0Kv1jP4z1g8RUFWcBjVleKSoqP3cOMq-fXMTsRGbGo8_K4wpBNoJpLHYhwCcxd6gC2TfQHoiE8__FrSoC5_tn7c6i0GlEQRAb_X2pDoXDucoxpZxEIGS7gdrvRzLs9OEpDmVBSSg0zX8YnIxo3S6p6tdKWvYoGr7utB1ahv6bhWFgvyOLf93nxUC1ucHS6LeNecKGIr5uLDKryNzRGyiza2cI3y_EdBhl">
+</div>
+<div class="p-lg">
+<div class="flex justify-between items-start mb-sm">
+<div>
+<span class="bg-tertiary text-on-tertiary px-sm py-xs rounded-sm text-[10px] uppercase font-bold tracking-widest mb-xs inline-block">HISTORY</span>
+<h3 class="font-headline-md text-headline-md text-primary">Northern Highlands</h3>
+</div>
+<span class="material-symbols-outlined text-primary" data-icon="castle">castle</span>
+</div>
+<p class="text-on-surface-variant mb-md max-w-lg">Home to the rock-hewn churches of Lalibela and the ancient stelae of Axum. A journey through the cradle of African Christianity and royal lineages.</p>
+<a class="inline-flex items-center gap-xs text-secondary font-label-md text-label-md group/link" href="#">
+                        View Tours
+                        <span class="material-symbols-outlined text-sm transition-transform group-hover/link:translate-x-1" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Card 2: Danakil (Adventure) -->
+<div class="destination-item md:col-span-5 group relative overflow-hidden rounded-xl border border-primary/10 bg-surface-container-lowest rounded-lg transition-all duration-700 opacity-100 translate-y-0" data-category="adventure">
+<div class="aspect-[4/5] md:aspect-auto md:h-full flex flex-col">
+<div class="h-1/2 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700" data-alt="The surreal landscape of Dallol in the Danakil Depression, Ethiopia." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZI64JFscKJlzhNDZ48z5Y8bjUTPliXGBHGO8EVZXfQM3DLgx9c47Ch8CcOPQAMBp1EL9qhLeqY6rjHeHCbv6PBsZyCn9sbv3-sj9b8tj2qBtgIbj5-dQt0ngYI3-tSCKC54wDoubi5l2KjKQqragu0La4cQD9uza7z9y5Bb5vFQr-0pxSCWvcLHfTL3iw9LmIqYjqzjdBAsyXm0qc-RjwpapVJN9c2djjPajR1MgBZQmERRSBLqaVlHIknT2iapVJwuErXFNvPHsJ">
+</div>
+<div class="p-lg flex-grow flex flex-col justify-between">
+<div>
+<span class="bg-tertiary text-on-tertiary px-sm py-xs rounded-sm text-[10px] uppercase font-bold tracking-widest mb-xs inline-block">ADVENTURE</span>
+<h3 class="font-headline-md text-headline-md text-primary">Danakil Depression</h3>
+<p class="text-on-surface-variant mt-sm">An otherworldly landscape of bubbling lava lakes, neon-yellow sulfur springs, and vast salt flats at the Earth's lowest point.</p>
+</div>
+<a class="inline-flex items-center gap-xs text-secondary font-label-md text-label-md group/link mt-md" href="#">
+                            View Tours
+                            <span class="material-symbols-outlined text-sm transition-transform group-hover/link:translate-x-1" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Card 3: Omo Valley (Culture) -->
+<div class="destination-item md:col-span-5 group relative overflow-hidden rounded-xl border border-primary/10 bg-surface-container-lowest rounded-lg transition-all duration-700 opacity-100 translate-y-0" data-category="culture">
+<div class="aspect-square md:aspect-auto md:h-full flex flex-col">
+<div class="h-1/2 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700" data-alt="A portrait of a member of the Mursi tribe in the Omo Valley, Ethiopia." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7RLDqhiSgquyy_5Bfr7HdQU70_19-Dt8MG12KpC_fuz8_vi8JtLb9yv6Th6lFsJwj5ea9rMNrtgEpraS_dxWlPxtyXzTOzaYxQRxOV2-fkRa2CSEgfRzRNG-2ufgUxsPGyAAdVjtjDtX5mW0yDxxe0WiWUtTS32CPTZnE7RK9Pwym4KRqsZjghPa5-pU9pgBAsNAdZlKAlHrLw5ElwWsRvetRp4gMYsbOItcbYoRGV6qiKHV9Zlz3A86pZwNxC7EEVjXp0SCrNrm6">
+</div>
+<div class="p-lg flex-grow flex flex-col justify-between">
+<div>
+<span class="bg-tertiary text-on-tertiary px-sm py-xs rounded-sm text-[10px] uppercase font-bold tracking-widest mb-xs inline-block">CULTURE</span>
+<h3 class="font-headline-md text-headline-md text-primary">Omo Valley</h3>
+<p class="text-on-surface-variant mt-sm">Witness the living heritage of ancient tribes. A kaleidoscope of body art, traditional ceremonies, and ancestral wisdom.</p>
+</div>
+<a class="inline-flex items-center gap-xs text-secondary font-label-md text-label-md group/link mt-md" href="#">
+                            View Tours
+                            <span class="material-symbols-outlined text-sm transition-transform group-hover/link:translate-x-1" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Card 4: Bale Mountains (Wildlife) -->
+<div class="destination-item md:col-span-7 group relative overflow-hidden rounded-xl border border-primary/10 bg-surface-container-lowest rounded-lg transition-all duration-700 opacity-100 translate-y-0" data-category="wildlife">
+<div class="aspect-[16/9] overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700" data-alt="An Ethiopian Wolf standing alert on the Sanetti Plateau." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHc1TOsWQCqnaKPppwjtY9i6rMZ941OTSiLW9c9IUtRqxOnTbBUxluJQCsUZt_P3_HL6ootsL486p_BtU5iVL2-9POC9NYZGBwV1UgDpEX6JzZvG9wpyUeuFxlrRlqRj-dsNBQtXv3EC5kWJePKuiNvjssBGUWtW7y6wzp0uDopy9K8stIyBqvTETUoJQ75KIrP1evDfVR7JO_fR5j0h3IcYv7wGmLgcUn8NUn-5802iXwKLXvs-RlN0v48IKoweMI7HdVGtPlWAOu">
+</div>
+<div class="p-lg">
+<div class="flex justify-between items-start mb-sm">
+<div>
+<span class="bg-tertiary text-on-tertiary px-sm py-xs rounded-sm text-[10px] uppercase font-bold tracking-widest mb-xs inline-block">WILDLIFE</span>
+<h3 class="font-headline-md text-headline-md text-primary">Bale Mountains</h3>
+</div>
+<span class="material-symbols-outlined text-primary" data-icon="pets">pets</span>
+</div>
+<p class="text-on-surface-variant mb-md max-w-lg">Explore endemic biodiversity across the Sanetti Plateau. Home to the rare Ethiopian Wolf and the majestic Mountain Nyala.</p>
+<a class="inline-flex items-center gap-xs text-secondary font-label-md text-label-md group/link" href="#">
+                        View Tours
+                        <span class="material-symbols-outlined text-sm transition-transform group-hover/link:translate-x-1" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- The Highlands Standard (from Screen 4) -->
+<section class="bg-surface relative pt-md pb-xl">
+<div class="absolute inset-0 tibeb-pattern pointer-events-none" style="opacity: 0.03;"></div>
+<div class="max-w-container-max mx-auto px-gutter relative z-10">
+<div class="text-center mb-xl">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-base">The Highlands Standard</h2>
+<p class="max-w-xl mx-auto text-on-surface-variant">We don't just guide; we curate profound connections between our guests and the ancient soul of Ethiopia.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+<!-- Expert Guides -->
+<div class="md:col-span-2 glass-card p-lg rounded flex flex-col md:flex-row gap-lg items-center rounded-lg">
+<div class="flex-1">
+<span class="material-symbols-outlined text-secondary text-4xl mb-base">landscape</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-sm">Local Wisdom &amp; Expertise</h3>
+<p class="text-on-surface-variant mb-md">Our guides are descendants of the highland tribes, offering stories and secret paths that no map can provide. We bridge the gap between tourist and guest.</p>
+<a class="text-secondary font-label-md text-label-md flex items-center gap-xs" href="#">MEET OUR TEAM <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+<div class="w-full md:w-1/3 aspect-square rounded overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A portrait of a professional Ethiopian tour guide" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsZrHwGOn_VEDfIkGZMkI4GukXscCwEv7LNg87YR81CS9eHLECi3kQdTsNxRnzcMP6K4xooJRw8XJrrTUUHdBpaBGmzLb2-w9ZVejFPvjFnzsytL01xKNnpU1A-MhJAT6bF-aofill_-kDbtylBLmYKz1nj5o7SSVQ24-U_R3cBx94eHWwNnUxA_QXpOzJG5ADdlLVw6QogU9y1NSmVMlEvt-8HjzXHN6n19RgeAjpGGGdiHxEZK_bJ5XxohzvRzBBFs_pzzqDN03f">
+</div>
+</div>
+<!-- Sustainability -->
+<div class="glass-card p-lg rounded rounded-lg">
+<span class="material-symbols-outlined text-secondary text-4xl mb-base">eco</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-sm">Eco-Conscious</h3>
+<p class="text-on-surface-variant">15% of our revenue directly supports the preservation of the Simien National Park and local educational initiatives.</p>
+</div>
+<!-- Bespoke -->
+<div class="glass-card p-lg rounded rounded-lg">
+<span class="material-symbols-outlined text-secondary text-4xl mb-base">auto_awesome</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-sm">Bespoke Itinerary</h3>
+<p class="text-on-surface-variant">Tailored journeys designed around your pace, preferences, and spirit of adventure.</p>
+</div>
+<!-- Comfort -->
+<div class="md:col-span-2 glass-card p-lg rounded flex flex-col md:flex-row-reverse gap-lg items-center rounded-lg">
+<div class="flex-1 text-right">
+<span class="material-symbols-outlined text-secondary text-4xl mb-base">hotel</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-sm">Luxury in the Wild</h3>
+<p class="text-on-surface-variant mb-md">From boutique eco-lodges perched on cliffs to high-end mobile camps, we ensure comfort never compromises the experience.</p>
+</div>
+<div class="w-full md:w-1/3 aspect-video rounded overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A luxury boutique eco-lodge interior" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWMjWPfnj4Z_lRe_7o_S7ScCZFH9tHFuauVEkF_s1E6IuaF1n5dsPF10IpfR8TrbhhWAid4dHJlXujhQXDPbupl7NWNkR-lqUKGnNgyovLcoPrEmk0lWKBRsMR2bwdPXXjTiIR_iTNI6mSGESWkreqWsssm39IEkFtQHIPrVjGg2XhZkDUS8v8fjqiul1WmL33vRBSLdK2H2rssK1fTHbHqodb9lctrCqlYMHh1TuLu-CN9ai9G-htBYy8gn4QkPe3fIfK3TCDxxPD">
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Destinations / Iconic Expeditions (from Screen 4) -->
+<section class="py-xl bg-tertiary text-on-tertiary opacity-100">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="flex justify-between items-end mb-xl">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-tertiary mb-xs">Iconic Expeditions</h2>
+<p class="text-on-tertiary-container">Venture beyond the ordinary into the heart of the cradle of humanity.</p>
+</div>
+<button class="hidden md:flex items-center gap-xs text-primary-fixed hover:text-secondary-fixed transition-colors font-label-md text-label-md">
+                    VIEW ALL DESTINATIONS <span class="material-symbols-outlined">arrow_outward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+<!-- Lalibela -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[3/4] overflow-hidden rounded mb-md border border-on-tertiary/10 rounded-lg">
+<img class="w-full h-full object-cover transition-soft group-hover:scale-110" data-alt="Church of St. George in Lalibela" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHWgDeLs41bvnEPzj9r2YpqZfPMnrKE8fuBry7aUf4MEXXS-XqGzhw9hM9s-GboAfKUkTHizFUnl6C2E8XRVegavmnHRSk-SMQtyDlUeRhR6nUObY6_GsbX6iJaodtpq-axTxHKZREG4OPTvRbQ2a3O1dtHoCaTl2zzH4mbwJgsrh5Gi-UiXpRx0Mmkgm_xLToMI2gVN3683WUUrIvo0pMDii3MWYv8XI8TjWqZT92RnMw3rekFPa05ZlL7jszibNTmGsjhZl6oy1w">
+<div class="absolute inset-0 bg-gradient-to-t from-tertiary/80 to-transparent opacity-60"></div>
+<div class="absolute bottom-md left-md">
+<span class="bg-secondary-fixed text-on-secondary-fixed text-[10px] px-sm py-xs font-bold uppercase tracking-widest rounded-full">HISTORY</span>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md mb-xs">Lalibela</h3>
+<p class="text-on-tertiary-container font-body-md mb-base">The New Jerusalem. Explore the 11 rock-hewn churches that defy architectural logic.</p>
+<p class="text-primary-fixed font-label-md text-label-md">4 DAYS FROM $1,200</p>
+</div>
+<!-- Danakil -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[3/4] overflow-hidden rounded mb-md border border-on-tertiary/10 rounded-lg">
+<img class="w-full h-full object-cover transition-soft group-hover:scale-110" data-alt="Dallol hydrothermal field" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWFORCdIGKiqtsQ9RVoSX7RQsrE4fDizNWuvNCBkzzU3H9FECfhlx5E6XH4lmKtq-4BsDFBYI-SI-xO938mmlDk-kmSAp4iVU-byHtd3l6pIXIfAuWcc-_M6w6feW1G1SBGA4FkYx80CZL8dPxe4m1UFu35rUkcnJONySyAnr5tVe7OwSAWAzbGkkAXRO_98QmtNGcwZc-a4_sPyvlC2-ie_266MbQGcqtE_Bz7V3LE9M3phjOAVMtlBZfIrs29mL5t0TsTa_vftCc">
+<div class="absolute inset-0 bg-gradient-to-t from-tertiary/80 to-transparent opacity-60"></div>
+<div class="absolute bottom-md left-md">
+<span class="bg-secondary-fixed text-on-secondary-fixed text-[10px] px-sm py-xs font-bold uppercase tracking-widest rounded-full">ADVENTURE</span>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md mb-xs">Danakil Depression</h3>
+<p class="text-on-tertiary-container font-body-md mb-base">A journey to the hottest place on Earth. Neon salt pans and active lava lakes await.</p>
+<p class="text-primary-fixed font-label-md text-label-md">5 DAYS FROM $1,850</p>
+</div>
+<!-- Omo Valley -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[3/4] overflow-hidden rounded mb-md border border-on-tertiary/10 rounded-lg">
+<img class="w-full h-full object-cover transition-soft group-hover:scale-110" data-alt="Mursi tribeswoman portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJdP6K4RG3iJh-m0I--nFZ5-JFrMsmrrydn0TIVGe_0tPzPchW23JGdS8lHVjVUTZfTSMgbVdx5-g7YfJSY-ypJ4jdcg8l6CPTEQehzdT5Ybsj4ph0UsQ5AJO2GpsUtIRKt00G2TjsMo_qekxtjdRMYrs13w6AYGxG1fdhVY9-Z3e7m4NgBzMBfOGmP-QdF8D_BT9-Yguy_Bp5NvRNLqBx2cPoUJd_44mRwkp0RJ_ILECSq5jxiboddyzLnibLjKRrwGdTblrXBLLK">
+<div class="absolute inset-0 bg-gradient-to-t from-tertiary/80 to-transparent opacity-60"></div>
+<div class="absolute bottom-md left-md">
+<span class="bg-secondary-fixed text-on-secondary-fixed text-[10px] px-sm py-xs font-bold uppercase tracking-widest rounded-full">CULTURE</span>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md mb-xs">Omo Valley</h3>
+<p class="text-on-tertiary-container font-body-md mb-base">The cultural mosaic. Encounter the diverse tribes and ancient traditions of the south.</p>
+<p class="text-primary-fixed font-label-md text-label-md">7 DAYS FROM $2,400</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials (from Screen 4) -->
+<section class="py-xl bg-surface relative overflow-hidden">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-xl items-center">
+<div class="md:col-span-4 rounded-lg">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-md">Echoes from the Highlands</h2>
+<p class="text-on-surface-variant mb-lg">Our travelers arrive as strangers and leave as storytellers. Hear about their transformative journeys across Ethiopia.</p>
+<div class="flex gap-base">
+<button class="w-12 h-12 rounded-full border border-primary/20 flex items-center justify-center hover:bg-primary-fixed transition-colors" id="prevTest">
+<span class="material-symbols-outlined">west</span>
+</button>
+<button class="w-12 h-12 rounded-full border border-primary/20 flex items-center justify-center hover:bg-primary-fixed transition-colors" id="nextTest">
+<span class="material-symbols-outlined">east</span>
+</button>
+</div>
+</div>
+<div class="md:col-span-8 rounded-lg">
+<div class="relative">
+<div class="bg-white p-lg rounded shadow-sm border border-primary/5">
+<span class="material-symbols-outlined text-primary/20 text-6xl absolute top-lg right-lg -scale-x-100">format_quote</span>
+<div class="flex items-center gap-md mb-md">
+<div class="w-16 h-16 rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Sophisticated couple portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDE0T_XD3PuQ2_RXle5NtBfUr74yyYr96MdrxWyTmn-EBWDvz0DIm8XZ2BDBDshlzHO3KLT8kTdP-CXUmi7CFB6EdVsc4RObKOXSC5GMJ9nC6n-pwPRuxKLIhA8BSbPjG0oXA8YqVbsXndpbW0R2JkQl7WcDuaPrdOaaSDjv-o_ascB9A46q7wC7aSWz7HBASvgLGoIfSLgb4hVVSkAKImhv6dDbYUEewnAtLhVf6hAIKMyNmpWVRrLIsmSOoIa7H2QwvA1DQCjpsiK">
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-primary">The Henderson Family</h4>
+<p class="text-xs text-on-surface-variant">Traveled April 2024</p>
+</div>
+</div>
+<p class="font-body-lg text-body-lg italic leading-relaxed text-on-surface mb-md">
+                                "We've traveled to over 40 countries, but Ethio Highlands provided an experience that transcends mere 'tourism'. Standing at the edge of the Gheralta mountains at sunset was a spiritual moment. The attention to detail and cultural respect shown by our guide, Ephrem, was world-class."
+                            </p>
+<div class="flex gap-xs text-secondary">
+<span class="material-symbols-outlined" data-weight="fill">star</span>
+<span class="material-symbols-outlined" data-weight="fill">star</span>
+<span class="material-symbols-outlined" data-weight="fill">star</span>
+<span class="material-symbols-outlined" data-weight="fill">star</span>
+<span class="material-symbols-outlined" data-weight="fill">star</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Begin Your Adventure (from Screen 4) -->
+<section class="mb-xl px-gutter">
+<div class="max-w-container-max mx-auto bg-primary-container rounded-xl overflow-hidden relative">
+<div class="absolute inset-0 tibeb-pattern opacity-10"></div>
+<div class="relative z-10 px-lg py-xl flex flex-col md:flex-row justify-between items-center gap-lg">
+<div class="text-center md:text-left">
+<h2 class="font-headline-lg text-headline-lg text-white mb-xs">Begin Your Adventure</h2>
+<p class="text-on-primary-container">Download our 2024 Travel Guide and start planning your escape.</p>
+</div>
+<form class="flex w-full md:w-auto gap-xs">
+<input class="bg-tertiary-container/50 border-none text-white placeholder:text-on-tertiary-container/60 rounded px-md py-sm focus:ring-2 focus:ring-secondary min-w-[280px]" placeholder="Email Address" type="email">
+<button class="bg-secondary-fixed text-on-secondary-fixed px-lg py-sm rounded font-label-md text-label-md hover:bg-secondary-fixed-dim transition-soft">
+                        Join Now
+                    </button>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer (from Screen 4) -->
+<footer class="bg-tertiary dark:bg-tertiary-container text-on-tertiary dark:text-on-tertiary-container">
+<div class="max-w-container-max mx-auto px-gutter py-xl">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-lg mb-xl">
+<div class="md:col-span-1">
+<div class="font-headline-md text-headline-md text-on-tertiary mb-md">ETHIO HIGHLANDS</div>
+<p class="text-on-tertiary-fixed-variant text-body-md leading-relaxed mb-md">
+                    The premier gateway to the ancient lands of Abyssinia. Specialized in luxury cultural and adventure expeditions.
+                </p>
+<div class="flex gap-md">
+<a class="text-on-tertiary hover:text-secondary-fixed transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="text-on-tertiary hover:text-secondary-fixed transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-on-tertiary hover:text-secondary-fixed transition-colors" href="#"><span class="material-symbols-outlined">mail</span></a>
+</div>
+</div>
+<div class="md:col-span-1">
+<h5 class="font-label-md text-label-md text-secondary-fixed mb-md uppercase tracking-wider">Quick Links</h5>
+<ul class="space-y-sm">
+<li class=""><a class="text-on-tertiary-fixed-variant hover:text-secondary-fixed transition-colors" href="#">Tours</a></li>
+<li class=""><a class="text-on-tertiary-fixed-variant hover:text-secondary-fixed transition-colors" href="#">Destinations</a></li>
+<li class=""><a class="text-on-tertiary-fixed-variant hover:text-secondary-fixed transition-colors" href="#">Our Impact</a></li>
+<li class=""><a class="text-on-tertiary-fixed-variant hover:text-secondary-fixed transition-colors" href="#">Contact Us</a></li>
+</ul>
+</div>
+<div class="md:col-span-1">
+<h5 class="font-label-md text-label-md text-secondary-fixed mb-md uppercase tracking-wider">Legal</h5>
+<ul class="space-y-sm">
+<li class=""><a class="text-on-tertiary-fixed-variant hover:text-secondary-fixed transition-colors" href="#">Terms of Service</a></li>
+<li class=""><a class="text-on-tertiary-fixed-variant hover:text-secondary-fixed transition-colors" href="#">Privacy Policy</a></li>
+<li class=""><a class="text-on-tertiary-fixed-variant hover:text-secondary-fixed transition-colors" href="#">Cancellation Policy</a></li>
+</ul>
+</div>
+<div class="md:col-span-1">
+<h5 class="font-label-md text-label-md text-secondary-fixed mb-md uppercase tracking-wider">Addis Ababa HQ</h5>
+<p class="text-on-tertiary-fixed-variant text-body-md">
+                    Bole Road, Sub City 03<br>
+                    Addis Ababa, Ethiopia<br>
+                    +251 11 662 1234
+                </p>
+</div>
+</div>
+<div class="pt-lg border-t border-on-tertiary/10 flex flex-col md:flex-row justify-between items-center gap-md">
+<p class="text-on-tertiary-fixed-variant text-label-md">© 2024 Ethio Highlands. Addis Ababa, Ethiopia.</p>
+<div class="flex items-center gap-sm">
+<span class="text-xs text-on-tertiary-fixed-variant">Payment partners:</span>
+<span class="material-symbols-outlined text-on-tertiary-fixed-variant">payments</span>
+<span class="material-symbols-outlined text-on-tertiary-fixed-variant">account_balance</span>
+</div>
+</div>
+</div>
+</footer>
+<script>
+    function filterDestinations(category) {
+        const items = document.querySelectorAll('.destination-item');
+        const buttons = document.querySelectorAll('.filter-btn');
+        
+        buttons.forEach(btn => {
+            btn.classList.remove('bg-primary-container', 'text-on-primary-container', 'active-filter');
+            btn.classList.add('bg-tertiary-fixed', 'text-on-tertiary-fixed');
+        });
+        
+        event.currentTarget.classList.remove('bg-tertiary-fixed', 'text-on-tertiary-fixed');
+        event.currentTarget.classList.add('bg-primary-container', 'text-on-primary-container', 'active-filter');
+
+        items.forEach(item => {
+            item.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+            if (category === 'all' || item.getAttribute('data-category') === category) {
+                item.style.display = 'block';
+                setTimeout(() => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateY(0)';
+                }, 10);
+            } else {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    item.style.display = 'none';
+                }, 300);
+            }
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.destination-item').forEach(item => {
+            item.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+            observer.observe(item);
+        });
+
+        // Sticky header transition
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-sm');
+                header.style.backgroundColor = 'rgba(251, 248, 252, 0.98)';
+            } else {
+                header.classList.remove('shadow-sm');
+                header.style.backgroundColor = '';
+            }
+        });
+    });
+</script>
+
+
+
+
+</body></html>

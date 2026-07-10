@@ -1,0 +1,272 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Contact MELAT | The Obsidian Atélier</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;family=Inter:wght@300;400;500;600&amp;family=Work+Sans:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-surface": "#e2e2e2",
+                    "secondary-fixed-dim": "#ffb4a5",
+                    "on-secondary-fixed": "#3f0400",
+                    "primary-container": "#f6692a",
+                    "on-secondary-fixed-variant": "#8f1100",
+                    "inverse-primary": "#a73a00",
+                    "on-surface": "#e2e2e2",
+                    "on-secondary-container": "#ff9f8d",
+                    "on-error-container": "#ffdad6",
+                    "surface-container-lowest": "#0e0e0e",
+                    "secondary-container": "#921401",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "primary-fixed-dim": "#ffb599",
+                    "on-tertiary": "#2f3131",
+                    "primary": "#ffb599",
+                    "on-surface-variant": "#e1bfb4",
+                    "surface": "#131313",
+                    "surface-container-high": "#2a2a2a",
+                    "surface-variant": "#353535",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "error-container": "#93000a",
+                    "secondary-fixed": "#ffdad3",
+                    "error": "#ffb4ab",
+                    "on-error": "#690005",
+                    "on-background": "#e2e2e2",
+                    "tertiary-fixed-dim": "#c6c6c7",
+                    "surface-container-highest": "#353535",
+                    "on-primary-container": "#551a00",
+                    "tertiary-container": "#949595",
+                    "on-secondary": "#650900",
+                    "tertiary": "#c6c6c7",
+                    "surface-container": "#1f1f1f",
+                    "tertiary-fixed": "#e2e2e2",
+                    "primary-fixed": "#ffdbce",
+                    "background": "#131313",
+                    "outline": "#a88a80",
+                    "surface-bright": "#393939",
+                    "inverse-on-surface": "#303030",
+                    "on-primary-fixed": "#370e00",
+                    "surface-tint": "#ffb599",
+                    "on-tertiary-container": "#2c2e2e",
+                    "on-primary-fixed-variant": "#7f2b00",
+                    "on-primary": "#5a1c00",
+                    "surface-dim": "#131313",
+                    "surface-container-low": "#1b1b1b",
+                    "secondary": "#ffb4a5",
+                    "outline-variant": "#594139"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Inter"],
+                    "label": ["Work Sans"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .obsidian-glass {
+            background: rgba(19, 19, 19, 0.7);
+            backdrop-filter: blur(20px);
+        }
+        .amber-gradient {
+            background: linear-gradient(135deg, #ffb599 0%, #f6692a 100%);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-neutral-950/70 backdrop-blur-xl flex justify-between items-center px-8 h-20 shadow-2xl shadow-black/40">
+<div class="text-2xl font-bold tracking-tighter text-[#e2e2e2]" style="">ATELIÉR</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-['Plus_Jakarta_Sans'] uppercase tracking-widest text-xs font-medium text-[#e2e2e2]/70 hover:text-[#e2e2e2] transition-colors" href="#" style="">HOME</a>
+<a class="font-['Plus_Jakarta_Sans'] uppercase tracking-widest text-xs font-medium text-[#e2e2e2]/70 hover:text-[#e2e2e2] transition-colors" href="#" style="">BRANDS</a>
+<a class="font-['Plus_Jakarta_Sans'] uppercase tracking-widest text-xs font-medium text-[#e2e2e2]/70 hover:text-[#e2e2e2] transition-colors" href="#" style="">USER</a>
+<a class="font-['Plus_Jakarta_Sans'] uppercase tracking-widest text-xs font-medium text-[#e2e2e2]/70 hover:text-[#e2e2e2] transition-colors" href="#" style="">ABOUT US</a>
+<a class="font-['Plus_Jakarta_Sans'] uppercase tracking-widest text-xs font-medium text-[#ffb599] font-bold border-b border-[#f6692a] pb-1" href="#" style="">CONTACT US</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-[#ffb599] scale-95 active:scale-90 transition-transform" style=""><span class="material-symbols-outlined" style="">search</span></button>
+<button class="text-[#ffb599] scale-95 active:scale-90 transition-transform" style=""><span class="material-symbols-outlined" style="">favorite</span></button>
+<button class="text-[#ffb599] scale-95 active:scale-90 transition-transform" style=""><span class="material-symbols-outlined" style="">shopping_bag</span></button>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section Asymmetric -->
+<section class="relative h-[614px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="luxury perfume bottle on dark marble" class="w-full h-full object-cover opacity-40" data-alt="Close-up of a minimalist luxury glass perfume bottle resting on black cracked marble with warm amber backlighting and subtle smoke effects" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjCyBQeSr-VE1SkYBxKQRmwXpUh3zIg1aKXULxilQQh2jh7HKecwOYaHFbK6pnWzeh2H96Uc7ICeuIi58wni9esIBaIbs3ICEY_jdX6cRBTbnRlmOShP2uWB1igXcmq9wgGzhL_lRaqB7VGe6NTML2chtWaRZPQki_zqQ_oP6PV7-TZhaixwQSu5MsgTvv1vDXEJsJkr7F4ODZ-Xt-gSgMJKnUV-FhzfHzo9q5Xho38nVwblIjrX1Vdg7SknFMp4ZaWyPV6xSOfwVh" style="">
+<div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/80 to-transparent"></div>
+</div>
+<div class="container mx-auto px-8 relative z-10">
+<div class="max-w-2xl">
+<span class="font-label text-primary tracking-[0.3em] uppercase text-xs mb-4 block" style="">Connect with Excellence</span>
+<h1 class="font-headline text-6xl md:text-8xl font-extrabold tracking-tighter leading-tight text-on-surface mb-6" style="">
+                        The <span class="text-primary-container" style="">Atélier</span> Experience.
+                    </h1>
+<p class="text-on-surface-variant text-lg max-w-md leading-relaxed" style="">
+                        Inquiries, olfactory consultations, or private showroom viewings. Our curators are at your service.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Main Content Grid -->
+<section class="container mx-auto px-8 py-24">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+<!-- Contact Form Section (Bento Inspired) -->
+<div class="lg:col-span-7 space-y-12">
+<div class="bg-surface-container-low p-12 relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary-container/10 blur-[80px]"></div>
+<h2 class="font-headline text-3xl font-bold mb-8" style="">Send a Message</h2>
+<form class="space-y-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="relative group">
+<label class="block font-label text-[10px] uppercase tracking-widest text-on-surface-variant mb-2" style="">Full Name</label>
+<input class="w-full bg-surface-container-highest border-none focus:ring-1 focus:ring-primary text-on-surface p-4 text-sm transition-all outline-none" placeholder="Enter your name" type="text">
+</div>
+<div class="relative group">
+<label class="block font-label text-[10px] uppercase tracking-widest text-on-surface-variant mb-2" style="">Email Address</label>
+<input class="w-full bg-surface-container-highest border-none focus:ring-1 focus:ring-primary text-on-surface p-4 text-sm transition-all outline-none" placeholder="email@atélier.com" type="email">
+</div>
+</div>
+<div class="relative group">
+<label class="block font-label text-[10px] uppercase tracking-widest text-on-surface-variant mb-2" style="">Subject</label>
+<select class="w-full bg-surface-container-highest border-none focus:ring-1 focus:ring-primary text-on-surface p-4 text-sm transition-all outline-none appearance-none">
+<option>General Inquiry</option>
+<option>Private Showroom Booking</option>
+<option>Wholesale Partnerships</option>
+<option>Fragrance Consultation</option>
+</select>
+</div>
+<div class="relative group">
+<label class="block font-label text-[10px] uppercase tracking-widest text-on-surface-variant mb-2" style="">Message</label>
+<textarea class="w-full bg-surface-container-highest border-none focus:ring-1 focus:ring-primary text-on-surface p-4 text-sm transition-all outline-none resize-none" placeholder="Describe your request..." rows="5"></textarea>
+</div>
+<button class="amber-gradient text-on-primary-fixed font-headline font-bold py-5 px-12 tracking-widest uppercase text-xs hover:shadow-[0_0_30px_rgba(246,105,42,0.3)] transition-all active:scale-95" style="">
+                                Dispatch Message
+                            </button>
+</form>
+</div>
+</div>
+<!-- Info Cards Section -->
+<div class="lg:col-span-5 space-y-8">
+<!-- Location Card -->
+<div class="bg-surface-container-high p-10 border-l-2 border-primary-container">
+<h3 class="font-headline text-xl font-bold mb-6" style="">Addis Ababa Showroom</h3>
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary-container" style="">location_on</span>
+<div>
+<p class="text-on-surface leading-relaxed" style="">Bole Road, Mega Building, 4th Floor</p>
+<p class="text-on-surface-variant text-sm mt-1" style="">Addis Ababa, Ethiopia</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary-container" style="">schedule</span>
+<div>
+<p class="text-on-surface" style="">Mon — Sat: 10:00 - 19:00</p>
+<p class="text-on-surface-variant text-sm mt-1" style="">Sunday: By Appointment Only</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Direct Contact Card -->
+<div class="bg-surface-container p-10">
+<h3 class="font-headline text-xl font-bold mb-6" style="">Direct Channels</h3>
+<div class="space-y-6">
+<a class="flex items-center gap-4 group" href="mailto:concierge@melat.com" style="">
+<span class="material-symbols-outlined text-primary transition-transform group-hover:scale-110" style="">mail</span>
+<span class="text-on-surface-variant group-hover:text-on-surface transition-colors border-b border-transparent group-hover:border-primary" style="">concierge@atelier.com</span>
+</a>
+<a class="flex items-center gap-4 group" href="tel:+251911000000" style="">
+<span class="material-symbols-outlined text-primary transition-transform group-hover:scale-110" style="">call</span>
+<span class="text-on-surface-variant group-hover:text-on-surface transition-colors" style="">+251 911 223 344</span>
+</a>
+<div class="flex items-center gap-4 group">
+<span class="material-symbols-outlined text-primary" style="">chat</span>
+<span class="text-on-surface-variant" style="">WhatsApp: +251 911 223 344</span>
+</div>
+</div>
+</div>
+<!-- Social Branding -->
+<div class="flex justify-between items-center bg-surface-container-lowest p-8 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all">
+<span class="font-label text-[10px] tracking-widest uppercase" style="">Follow the Scent</span>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-xl cursor-pointer" style="">brand_awareness</span>
+<span class="material-symbols-outlined text-xl cursor-pointer" style="">photo_camera</span>
+<span class="material-symbols-outlined text-xl cursor-pointer" style="">share</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Map Section (Full Width Obsidian) -->
+<section class="w-full h-[500px] relative mt-12">
+<div class="absolute inset-0 bg-neutral-900 overflow-hidden">
+<img alt="dark minimalist map representation" class="w-full h-full object-cover mix-blend-luminosity opacity-40" data-alt="Stylized dark mode satellite map of a metropolitan city grid with glowing amber lines for main streets and luxury markers" data-location="Addis Ababa" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAd6U3dlc9SwkDtI_4rrG4bQymC-7blT0ZnrRtTHvRx5wEYYPenCBUS3SkomxnwE-oLI5oNz2AOn7rDInWSDZvmx7NvihObQgI_NFV8D7ztOxLHxfrhmBMnxUuZamyoZTns51c_nRy4MMKNwmlABLmcx1YmzZs8vMv-nxOKOOnTe8EL6kpF9iupzmEqrb7GnZWS5AY5NLS0X1v0uRTKEuP9cYa96DmQalgaDFiAgUwTvQAteNOv6KDOUM9qe64qxuLJk7GzdFE7u_y7" style="">
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-surface"></div>
+<!-- Floating Map Marker -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+<div class="w-4 h-4 bg-primary-container rounded-full animate-ping absolute"></div>
+<div class="w-4 h-4 bg-primary-container rounded-full relative z-10"></div>
+<div class="bg-surface-container-high px-4 py-2 mt-4 shadow-2xl border border-primary/20">
+<p class="font-headline text-[10px] font-bold tracking-widest text-on-surface" style="">ATELIÉR&nbsp;SHOWROOM</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-neutral-950 w-full border-t border-neutral-900">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-16 w-full">
+<div class="col-span-1 md:col-span-1">
+<div class="text-xl font-bold text-[#e2e2e2] mb-4" style="">ATELIÉR</div>
+<p class="font-['Inter'] text-sm text-[#e1bfb4] leading-relaxed" style="">
+                    Crafting olfactory signatures for the refined soul. An exploration of essence and architecture.
+                </p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-headline text-xs font-bold text-[#f6692a] uppercase tracking-widest mb-2" style="">Collections</h4>
+<a class="font-['Inter'] text-sm text-[#e1bfb4] hover:text-[#e2e2e2] hover:underline transition-all" href="#" style="">Midnight Bloom</a>
+<a class="font-['Inter'] text-sm text-[#e1bfb4] hover:text-[#e2e2e2] hover:underline transition-all" href="#" style="">Desert Ember</a>
+<a class="font-['Inter'] text-sm text-[#e1bfb4] hover:text-[#e2e2e2] hover:underline transition-all" href="#" style="">Obsidian Air</a>
+<a class="font-['Inter'] text-sm text-[#e1bfb4] hover:text-[#e2e2e2] hover:underline transition-all" href="#" style="">Golden Silt</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-headline text-xs font-bold text-[#f6692a] uppercase tracking-widest mb-2" style="">Company</h4>
+<a class="font-['Inter'] text-sm text-[#e1bfb4] hover:text-[#e2e2e2] hover:underline transition-all" href="#" style="">Our Story</a>
+<a class="font-['Inter'] text-sm text-[#e1bfb4] hover:text-[#e2e2e2] hover:underline transition-all" href="#" style="">Atélier Journals</a>
+<a class="font-['Inter'] text-sm text-[#e1bfb4] hover:text-[#e2e2e2] hover:underline transition-all" href="#" style="">Sustainability</a>
+<a class="font-['Inter'] text-sm text-[#e1bfb4] hover:text-[#e2e2e2] hover:underline transition-all" href="#" style="">Careers</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-headline text-xs font-bold text-[#f6692a] uppercase tracking-widest mb-2" style="">Support</h4>
+<a class="font-['Inter'] text-sm text-[#e1bfb4] hover:text-[#e2e2e2] hover:underline transition-all" href="#" style="">Privacy Policy</a>
+<a class="font-['Inter'] text-sm text-[#e1bfb4] hover:text-[#e2e2e2] hover:underline transition-all" href="#" style="">Terms of Service</a>
+<a class="font-['Inter'] text-sm text-[#e1bfb4] hover:text-[#e2e2e2] hover:underline transition-all" href="#" style="">Shipping Info</a>
+<a class="font-['Inter'] text-sm text-[#e1bfb4] hover:text-[#e2e2e2] hover:underline transition-all" href="#" style="">Returns</a>
+</div>
+</div>
+<div class="px-12 py-8 border-t border-neutral-900 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-['Inter'] text-sm text-[#e1bfb4] opacity-80" style="">© 2024&nbsp;Ateliér Perfume. All rights reserved.</p>
+<div class="flex gap-8">
+<span class="font-['Inter'] text-xs text-[#e1bfb4]" style="">English (US)</span>
+<span class="font-['Inter'] text-xs text-[#e1bfb4]" style="">ETB (ብር)</span>
+</div>
+</div>
+</footer>
+</body></html>

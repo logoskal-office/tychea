@@ -1,0 +1,259 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>MELAT - Obsidian Atélier</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;family=Inter:wght@300;400;500&amp;family=Work+Sans:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "surface-variant": "#353535",
+                "inverse-primary": "#a73a00",
+                "surface-tint": "#ffb599",
+                "surface-dim": "#131313",
+                "error": "#ffb4ab",
+                "surface": "#131313",
+                "tertiary-fixed-dim": "#c6c6c7",
+                "on-surface": "#e2e2e2",
+                "outline": "#a88a80",
+                "surface-container-high": "#2a2a2a",
+                "inverse-on-surface": "#303030",
+                "on-tertiary-fixed": "#1a1c1c",
+                "on-tertiary": "#2f3131",
+                "tertiary-fixed": "#e2e2e2",
+                "on-primary-fixed": "#370e00",
+                "inverse-surface": "#e2e2e2",
+                "on-tertiary-container": "#2c2e2e",
+                "tertiary": "#c6c6c7",
+                "surface-container-highest": "#353535",
+                "outline-variant": "#594139",
+                "tertiary-container": "#949595",
+                "secondary": "#ffb4a5",
+                "on-secondary": "#650900",
+                "primary-fixed-dim": "#ffb599",
+                "surface-container": "#1f1f1f",
+                "surface-container-low": "#1b1b1b",
+                "surface-bright": "#393939",
+                "on-error": "#690005",
+                "on-error-container": "#ffdad6",
+                "surface-container-lowest": "#0e0e0e",
+                "primary": "#ffb599",
+                "primary-fixed": "#ffdbce",
+                "on-background": "#e2e2e2",
+                "secondary-fixed-dim": "#ffb4a5",
+                "background": "#131313",
+                "on-primary": "#5a1c00",
+                "on-surface-variant": "#e1bfb4",
+                "primary-container": "#f6692a",
+                "on-primary-container": "#551a00",
+                "secondary-container": "#921401",
+                "secondary-fixed": "#ffdad3",
+                "on-secondary-container": "#ff9f8d",
+                "on-primary-fixed-variant": "#7f2b00",
+                "error-container": "#93000a",
+                "on-secondary-fixed-variant": "#8f1100",
+                "on-tertiary-fixed-variant": "#454747",
+                "on-secondary-fixed": "#3f0400"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+            },
+            "fontFamily": {
+                "headline": ["Plus Jakarta Sans"],
+                "body": ["Inter"],
+                "label": ["Work Sans"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-overlay {
+            background: linear-gradient(to right, rgba(19, 19, 19, 1) 0%, rgba(19, 19, 19, 0.8) 40%, rgba(19, 19, 19, 0) 100%);
+        }
+        .glass-header {
+            background: rgba(19, 19, 19, 0.7);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-white">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 glass-header shadow-2xl shadow-black/40 flex justify-between items-center px-8 h-20 w-full max-w-none">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-bold tracking-tighter text-[#e2e2e2]" style="">ATELIÉR</span>
+<div class="hidden md:flex gap-6 items-center">
+<a class="font-['Plus_Jakarta_Sans'] uppercase tracking-widest text-xs font-bold border-b border-[#f6692a] pb-1 text-[#ffb599]" href="#" style="">HOME</a>
+<a class="font-['Plus_Jakarta_Sans'] uppercase tracking-widest text-xs font-medium text-[#e2e2e2]/70 hover:text-[#e2e2e2] transition-colors" href="#" style="">BRANDS</a>
+<a class="font-['Plus_Jakarta_Sans'] uppercase tracking-widest text-xs font-medium text-[#e2e2e2]/70 hover:text-[#e2e2e2] transition-colors" href="#" style="">USER</a>
+<a class="font-['Plus_Jakarta_Sans'] uppercase tracking-widest text-xs font-medium text-[#e2e2e2]/70 hover:text-[#e2e2e2] transition-colors" href="#" style="">ABOUT US</a>
+<a class="font-['Plus_Jakarta_Sans'] uppercase tracking-widest text-xs font-medium text-[#e2e2e2]/70 hover:text-[#e2e2e2] transition-colors" href="#" style="">CONTACT US</a>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="hover:bg-neutral-800/50 transition-all duration-300 p-2 rounded scale-95 active:scale-90 transition-transform" style="">
+<span class="material-symbols-outlined text-[#ffb599]" style="">search</span>
+</button>
+<button class="hover:bg-neutral-800/50 transition-all duration-300 p-2 rounded scale-95 active:scale-90 transition-transform" style="">
+<span class="material-symbols-outlined text-[#ffb599]" style="">favorite</span>
+</button>
+<button class="hover:bg-neutral-800/50 transition-all duration-300 p-2 rounded scale-95 active:scale-90 transition-transform relative" style="">
+<span class="material-symbols-outlined text-[#ffb599]" style="">shopping_bag</span>
+<span class="absolute -top-1 -right-1 bg-primary-container text-[10px] w-4 h-4 flex items-center justify-center rounded-full text-white font-bold" style="">0</span>
+</button>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section: The Obsidian Atélier -->
+<section class="relative h-[921px] overflow-hidden bg-surface flex items-center">
+<!-- Background Image -->
+<div class="absolute inset-0 w-full h-full z-0">
+<img class="w-full h-full object-cover object-center" data-alt="Premium black glass perfume bottle with gold detailing set against a dark moody studio background with soft dramatic rim lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDM1xCJmGr2c4AI5CzXyGIvGbJujAyfrU6A-U5huDGnSrJeaqjw5qP3i4PjuBFgxjUKe7OIX_fyT-a8oT9lWM3_5kQK_QkhGEzITKmETme1cpgxoNO7bTziX8Gm_7M1xtGwoYAG-Y5xnJkmAFSTqDVzsQVyNvi6xS7BHMP0cE2o6I-37r3LXTBm1NCLExgE7kBB59iM3ZbgnaXOZsC0qwjItcIhVfMLZ22pmABdsn_J7OQ3iIVNdI5T8zLIWp-s6bBU35LxlN8Tga3p" style="">
+<div class="absolute inset-0 editorial-overlay"></div>
+</div>
+<!-- Content Container -->
+<div class="container mx-auto px-8 relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div class="max-w-2xl">
+<span class="font-label text-primary tracking-[0.3em] text-xs font-medium uppercase mb-6 block" style="">Premium Fragrance Collection</span>
+<h1 class="font-headline text-6xl md:text-8xl font-extrabold text-on-surface leading-tight tracking-tighter mb-8" style="">
+                        EXPLORE <br>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-container" style="">LOZAN</span> <br>
+                        COLLECTION
+                    </h1>
+<p class="font-body text-lg text-on-surface-variant max-w-md mb-12 leading-relaxed" style="">
+                        A sensory journey crafted in darkness. Discover the depth of our most exclusive aromatic layers.
+                    </p>
+<div class="flex gap-4">
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary font-headline font-bold uppercase tracking-widest px-10 py-5 rounded-sm hover:opacity-90 transition-all duration-300 shadow-xl shadow-primary-container/20" style="">
+                            Shop Now
+                        </button>
+<button class="border border-outline-variant/30 text-on-surface font-headline font-bold uppercase tracking-widest px-10 py-5 rounded-sm hover:bg-surface-container-highest transition-all duration-300 backdrop-blur-sm" style="">
+                            View Details
+                        </button>
+</div>
+</div>
+</div>
+<!-- Carousel Controls (Static) -->
+<div class="absolute bottom-12 right-12 flex gap-4 z-20">
+<button class="w-12 h-12 flex items-center justify-center border border-outline-variant/20 hover:bg-primary hover:text-on-primary transition-all rounded-sm" style="">
+<span class="material-symbols-outlined" style="">chevron_left</span>
+</button>
+<button class="w-12 h-12 flex items-center justify-center border border-outline-variant/20 hover:bg-primary hover:text-on-primary transition-all rounded-sm" style="">
+<span class="material-symbols-outlined" style="">chevron_right</span>
+</button>
+</div>
+<!-- Indicators -->
+<div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex gap-3 z-20">
+<span class="w-12 h-[2px] bg-primary"></span>
+<span class="w-12 h-[2px] bg-on-surface/20"></span>
+<span class="w-12 h-[2px] bg-on-surface/20"></span>
+</div>
+</section>
+<!-- Product Highlight Bento Grid -->
+<section class="py-24 px-8 bg-surface">
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<!-- Featured Large Card -->
+<div class="md:col-span-2 md:row-span-2 group relative overflow-hidden bg-surface-container-low rounded-sm aspect-square md:aspect-auto h-full min-h-[600px]">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Close up of a luxury perfume bottle on a dark reflective surface with golden light particles floating in the air" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsZ0f3z5FpCN1_vFkG46qJHhIgypKIJY1FqlWDT3rIJgHtDoWffZg7-cTDdPybCjL767Zj__zSJAUSExsWJ9oRua7i_F0Wl8afGVoSDEjR_YsAIv1nUTVtu8k6VCNdfNrXi9xPzzowAJLXCDwByDcEdzobuxTFklKAJ_8VI4w1fn42ciZpiD3ZA5FL6NCFwYKopyysddRtScQAL_n6BkKZVAKjmAO1BnBSfSK6CqUSiNL0H6ibUc4RdOBBmMvqGs8FhiJXI3Cryrux" style="">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-12">
+<h3 class="font-headline text-3xl font-bold mb-2" style="">Signature Series</h3>
+<p class="text-on-surface-variant mb-6 font-body" style="">The ultimate expression of olfactory luxury.</p>
+<a class="text-primary font-headline font-bold uppercase tracking-widest text-sm inline-flex items-center gap-2 group-hover:gap-4 transition-all" href="#" style="">
+                                Discover More <span class="material-symbols-outlined" style="">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Secondary Cards -->
+<div class="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
+<div class="group bg-surface-container-low p-8 rounded-sm hover:bg-surface-bright transition-colors duration-300">
+<img class="w-full aspect-square object-cover mb-6 grayscale group-hover:grayscale-0 transition-all duration-500 rounded-sm" data-alt="Detailed shot of perfume spray nozzle with a fine mist in a dark elegant studio" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7rKK4DjAkdIMl-WDMy-k8BRRUUgHayLWmz676vvYU2lTSA0K0oNXy6-YlG_7u_80t9ZgaVCeP_V_MTR8jLK-uX9DkvT2qguuuQGOdmX5uv7EYRAcqQXC8qxwKcWtwcF7b27m5UwQ8q0Mi_TVA4wMiuJtyAjaCNN6fdVoWtZc7gdcIOXbJfM4D4F6lexwgwoNgiug8UyVV_zhcxgB9KGafFb7futn-T8hf_Y7NYmzPSG2vov-HcUpJtpZjp8bsD6DZCRB-6QkyuFYs" style="">
+<h4 class="font-headline text-xl font-bold mb-1" style="">Noir Intense</h4>
+<p class="text-primary font-bold font-body" style="">$240.00</p>
+</div>
+<div class="group bg-surface-container-low p-8 rounded-sm hover:bg-surface-bright transition-colors duration-300">
+<img class="w-full aspect-square object-cover mb-6 grayscale group-hover:grayscale-0 transition-all duration-500 rounded-sm" data-alt="Luxury perfume bottle among botanical elements like dark wood and dried petals" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzIxsSdVRm3l2fsUTy6b-HTNcZU6RmczutPW48UgV_WhE351SHWeOyNriean7FvqSGf3gfBUrzLqpKTbB9PAIVovN0JWxEZLoVNEY5Vn0WTgyVGDIisWdMBLnhQwzhowPioGjZmfCYKa6GKiMzBZB6pWtMs1O2hy-Pc5z-Cl0JRGyS5jXoIXJhNTN0BDNVTWQ23yNKRvJ1MXw9U5RWlMYUbg90K_EDMfufC9m3GMtEXzNjQ6yndKlkVP2oEH8CMhd99D-uO9sVPlGW" style="">
+<h4 class="font-headline text-xl font-bold mb-1" style="">Oud Wood</h4>
+<p class="text-primary font-bold font-body" style="">$285.00</p>
+</div>
+</div>
+<!-- Wide Card -->
+<div class="md:col-span-2 bg-surface-container-highest p-12 flex items-center gap-8 rounded-sm">
+<div class="flex-1">
+<span class="text-primary-container font-label uppercase tracking-widest text-xs font-bold mb-2 block" style="">Newsletter</span>
+<h3 class="font-headline text-2xl font-bold mb-4 leading-tight" style="">JOIN THE INNER CIRCLE</h3>
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed" style="">Early access to limited releases and private events.</p>
+<div class="flex border-b border-outline-variant pb-2">
+<input class="bg-transparent border-none focus:ring-0 text-sm flex-1 font-body" placeholder="Your Email Address" type="email">
+<button class="text-primary font-bold text-sm uppercase tracking-widest" style="">Subscribe</button>
+</div>
+</div>
+<div class="hidden sm:block w-32 h-32 bg-primary/10 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-5xl" style="">mail</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-neutral-950 w-full border-t border-neutral-900 mt-20">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-16 w-full">
+<div class="flex flex-col">
+<span class="text-xl font-bold text-[#e2e2e2] mb-4" style="">ATELIÉR</span>
+<p class="font-['Inter'] text-sm text-[#e1bfb4] leading-relaxed" style="">
+                    Crafting exquisite aromatic experiences for the modern soul. Join us in the pursuit of olfactory perfection.
+                </p>
+<div class="flex gap-4 mt-8">
+<a class="w-8 h-8 flex items-center justify-center border border-neutral-800 text-[#e1bfb4] hover:text-[#ffb599] transition-colors rounded-sm" href="#" style="">
+<span class="material-symbols-outlined text-lg" style="">public</span>
+</a>
+<a class="w-8 h-8 flex items-center justify-center border border-neutral-800 text-[#e1bfb4] hover:text-[#ffb599] transition-colors rounded-sm" href="#" style="">
+<span class="material-symbols-outlined text-lg" style="">share</span>
+</a>
+<a class="w-8 h-8 flex items-center justify-center border border-neutral-800 text-[#e1bfb4] hover:text-[#ffb599] transition-colors rounded-sm" href="#" style="">
+<span class="material-symbols-outlined text-lg" style="">camera</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-[#f6692a] font-headline font-bold text-sm uppercase tracking-widest mb-6" style="">Collections</h4>
+<ul class="space-y-4">
+<li class="" style=""><a class="font-['Inter'] text-sm text-[#e1bfb4] hover:text-[#e2e2e2] hover:underline transition-all" href="#" style="">Lozan Collection</a></li>
+<li class="" style=""><a class="font-['Inter'] text-sm text-[#e1bfb4] hover:text-[#e2e2e2] hover:underline transition-all" href="#" style="">Midnight Oud</a></li>
+<li class="" style=""><a class="font-['Inter'] text-sm text-[#e1bfb4] hover:text-[#e2e2e2] hover:underline transition-all" href="#" style="">Signature Series</a></li>
+<li class="" style=""><a class="font-['Inter'] text-sm text-[#e1bfb4] hover:text-[#e2e2e2] hover:underline transition-all" href="#" style="">Limited Releases</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-[#f6692a] font-headline font-bold text-sm uppercase tracking-widest mb-6" style="">Customer Care</h4>
+<ul class="space-y-4">
+<li class="" style=""><a class="font-['Inter'] text-sm text-[#e1bfb4] hover:text-[#e2e2e2] hover:underline transition-all" href="#" style="">Privacy Policy</a></li>
+<li class="" style=""><a class="font-['Inter'] text-sm text-[#e1bfb4] hover:text-[#e2e2e2] hover:underline transition-all" href="#" style="">Terms of Service</a></li>
+<li class="" style=""><a class="font-['Inter'] text-sm text-[#e1bfb4] hover:text-[#e2e2e2] hover:underline transition-all" href="#" style="">Shipping Info</a></li>
+<li class="" style=""><a class="font-['Inter'] text-sm text-[#e1bfb4] hover:text-[#e2e2e2] hover:underline transition-all" href="#" style="">Returns</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-[#f6692a] font-headline font-bold text-sm uppercase tracking-widest mb-6" style="">Connect</h4>
+<p class="font-['Inter'] text-sm text-[#e1bfb4] mb-4" style="">Visit our showroom in Addis Ababa.</p>
+<p class="font-['Inter'] text-sm text-[#e1bfb4]" style="">contact@atelier.com</p>
+<p class="font-['Inter'] text-sm text-[#e1bfb4] mt-2" style="">+251 900 000 000</p>
+</div>
+</div>
+<div class="px-12 py-8 border-t border-neutral-900 text-center">
+<span class="font-['Inter'] text-xs text-[#e1bfb4]/50 tracking-widest uppercase" style="">© 2024 ATELIÉR Perfume. All rights reserved.</span>
+</div>
+</footer>
+</body></html>

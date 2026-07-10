@@ -6,7 +6,7 @@ from django.db.models import Q, Count
 
 def designs(request):
     designs = Design.objects.all()
-    paginator = Paginator(designs, 24)
+    paginator = Paginator(designs, 5)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     return render(request, 'designs/designs.html', {'designs': page_obj})
@@ -64,7 +64,7 @@ def designs_list(request):
     total_count = Design.objects.filter(public=True).count()
 
     # --- Pagination ---
-    per_page = 12
+    per_page = 20
     paginator = Paginator(queryset, per_page)
     page_number = request.GET.get('page', 1)
     page_obj = paginator.get_page(page_number)

@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en" style=""><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Collections | {{CLIENT_NAME}}</title>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&amp;family=Montserrat:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface": "#1b1c19",
+                      "surface": "#fbf9f4",
+                      "on-secondary-container": "#73603c",
+                      "surface-dim": "#dbdad5",
+                      "secondary-fixed": "#f9dfb2",
+                      "inverse-primary": "#c8c6c5",
+                      "error-container": "#ffdad6",
+                      "on-error-container": "#93000a",
+                      "primary-container": "#1c1b1b",
+                      "primary": "#1a1a1a",
+                      "on-primary": "#ffffff",
+                      "tertiary": "#000000",
+                      "on-secondary": "#ffffff",
+                      "surface-container": "#f5f3ee",
+                      "surface-container-lowest": "#ffffff",
+                      "on-secondary-fixed": "#261900",
+                      "secondary-container": "#f6dcaf",
+                      "on-primary-fixed-variant": "#474746",
+                      "on-tertiary": "#ffffff",
+                      "surface-bright": "#fbf9f4",
+                      "on-primary-fixed": "#1c1b1b",
+                      "inverse-surface": "#30312e",
+                      "tertiary-container": "#211a12",
+                      "on-secondary-fixed-variant": "#554423",
+                      "primary-fixed": "#e5e2e1",
+                      "surface-container-highest": "#e4e2dd",
+                      "on-tertiary-fixed-variant": "#4e453b",
+                      "surface-container-high": "#eae8e3",
+                      "secondary-fixed-dim": "#dcc398",
+                      "on-tertiary-container": "#8d8276",
+                      "surface-container-low": "#f5f3ee",
+                      "on-primary-container": "#858383",
+                      "on-tertiary-fixed": "#211a12",
+                      "error": "#ba1a1a",
+                      "tertiary-fixed": "#eee0d2",
+                      "surface-tint": "#5f5e5e",
+                      "tertiary-fixed-dim": "#d1c4b7",
+                      "on-error": "#ffffff",
+                      "surface-variant": "#e4e2dd",
+                      "primary-fixed-dim": "#c8c6c5",
+                      "on-background": "#1b1c19",
+                      "on-surface-variant": "#444748",
+                      "outline-variant": "#c4c7c7",
+                      "inverse-on-surface": "#f2f1ec",
+                      "secondary": "#6e5c38",
+                      "background": "#fbf9f4",
+                      "outline": "#747878"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "32px",
+                      "container-max": "1440px",
+                      "margin-mobile": "24px",
+                      "section-gap": "64px",
+                      "margin-desktop": "64px",
+                      "unit": "8px"
+              },
+              "fontFamily": {
+                      "display-lg-mobile": ["Bodoni Moda"],
+                      "headline-lg": ["Bodoni Moda"],
+                      "display-lg": ["Bodoni Moda"],
+                      "body-md": ["Montserrat"],
+                      "body-lg": ["Montserrat"],
+                      "headline-md": ["Bodoni Moda"],
+                      "label-md": ["Montserrat"]
+              },
+              "fontSize": {
+                      "display-lg-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                      "headline-lg": ["40px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                      "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "body-lg": ["18px", {"lineHeight": "1.8", "letterSpacing": "0.01em", "fontWeight": "300"}],
+                      "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "400"}],
+                      "label-md": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.15em", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(15px);
+            transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal-on-scroll.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .hover-lift {
+            transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .hover-lift:hover {
+            transform: translateY(-4px);
+        }
+        select {
+            background-image: none !important;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- Compact TopNavBar -->
+<nav class="w-full top-0 sticky z-50 bg-surface/90 backdrop-blur-md transition-all duration-300 border-b border-outline-variant/30">
+<div class="flex justify-between items-center w-full px-margin-desktop py-3 max-w-container-max mx-auto">
+<a href="../" class="font-display-lg text-xl tracking-tighter text-primary" href="#">
+            {{CLIENT_NAME}}
+        </a>
+<div class="hidden md:flex space-x-8">
+<a class="font-label-md text-[11px] transition-colors duration-300 hover:text-secondary text-primary border-b border-secondary pb-0.5" href="#">Collections</a>
+<a class="font-label-md text-[11px] transition-colors duration-300 hover:text-secondary text-on-surface-variant" href="#">Bespoke</a>
+<a class="font-label-md text-[11px] transition-colors duration-300 hover:text-secondary text-on-surface-variant" href="#">Atelier</a>
+<a class="font-label-md text-[11px] transition-colors duration-300 hover:text-secondary text-on-surface-variant" href="#">Heritage</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-[20px] text-primary hover:text-secondary transition-colors">search</button>
+<button class="material-symbols-outlined text-[20px] text-primary hover:text-secondary transition-colors">shopping_bag</button>
+</div>
+</div>
+</nav>
+<main>
+<!-- Compact Hero Header -->
+<header class="bg-surface-container/30 py-8 px-margin-desktop border-b border-outline-variant/20">
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="max-w-2xl">
+<span class="font-label-md text-[10px] text-secondary uppercase tracking-[0.4em] block mb-2">Archive 01 / Curated Edition</span>
+<h1 class="font-display-lg text-4xl text-primary mb-3">The Collections</h1>
+<p class="font-body-md text-sm text-on-surface-variant italic leading-snug">
+                    A dialogue between raw material and refined intent. Architectural rigidity meets organic warmth.
+                </p>
+</div>
+<div class="flex gap-8 border-l border-outline-variant/30 pl-8 h-fit">
+<div class="text-left">
+<p class="text-[10px] font-label-md text-secondary tracking-widest uppercase mb-1">New Arrivals</p>
+<p class="text-xl font-headline-md">12 Pieces</p>
+</div>
+<div class="text-left">
+<p class="text-[10px] font-label-md text-secondary tracking-widest uppercase mb-1">Limited Stock</p>
+<p class="text-xl font-headline-md">04 Editions</p>
+</div>
+</div>
+</div>
+</header>
+<!-- Compact Filter Bar -->
+<section class="sticky top-[53px] z-40 bg-surface/95 backdrop-blur-md border-b border-outline-variant/20">
+<div class="max-w-container-max mx-auto px-margin-desktop py-2 flex flex-wrap items-center justify-between">
+<div class="flex items-center gap-x-8">
+<div class="flex items-center gap-4 py-1">
+<span class="font-label-md text-[9px] text-secondary tracking-widest block">CATEGORY:</span>
+<div class="flex gap-3">
+<button class="font-body-md text-[11px] text-primary font-bold border-b border-primary">All</button>
+<button class="font-body-md text-[11px] text-on-surface-variant hover:text-primary">Dining</button>
+<button class="font-body-md text-[11px] text-on-surface-variant hover:text-primary">Living</button>
+<button class="font-body-md text-[11px] text-on-surface-variant hover:text-primary">Objects</button>
+</div>
+</div>
+<div class="h-4 w-px bg-outline-variant/30 hidden md:block"></div>
+<div class="hidden md:flex items-center gap-4 py-1">
+<span class="font-label-md text-[9px] text-secondary tracking-widest block">MATERIAL:</span>
+<div class="flex gap-3">
+<button class="font-body-md text-[11px] text-on-surface-variant hover:text-primary">Walnut</button>
+<button class="font-body-md text-[11px] text-on-surface-variant hover:text-primary">Oak</button>
+<button class="font-body-md text-[11px] text-on-surface-variant hover:text-primary">Brass</button>
+</div>
+</div>
+</div>
+<div class="flex items-center">
+<span class="font-label-md text-[9px] text-secondary tracking-widest">SORT:</span>
+<select class="ml-1 bg-transparent border-none font-body-md text-[11px] text-primary focus:ring-0 cursor-pointer py-0 pr-6">
+<option>Curated</option>
+<option>Newest</option>
+<option>Price: Low-High</option>
+</select>
+</div>
+</div>
+</section>
+<!-- Content-Dense Feature Row & Grid -->
+<section class="max-w-container-max mx-auto px-margin-desktop py-8">
+<!-- Trending Now Row -->
+<div class="mb-10 border border-outline-variant/30 bg-surface-container-low/20">
+<div class="flex flex-col lg:flex-row">
+<div class="lg:w-1/4 p-6 border-b lg:border-b-0 lg:border-r border-outline-variant/30 flex flex-col justify-center">
+<span class="font-label-md text-[10px] text-secondary tracking-[0.3em] uppercase mb-2">Editor's Pick</span>
+<h2 class="font-headline-md text-2xl mb-3">Trending Now</h2>
+<p class="font-body-md text-xs text-on-surface-variant mb-4 leading-relaxed">The seasonal shift towards heavier textures and raw metals.</p>
+<a class="text-[10px] font-label-md text-primary underline underline-offset-4 tracking-widest hover:text-secondary transition-colors" href="#">VIEW ALL FEATURED</a>
+</div>
+<div class="lg:w-3/4 p-4 grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="flex gap-3 items-center group cursor-pointer">
+<div class="w-16 h-16 bg-surface-container overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6x63YZWoHpA53gk1QxN8NBN6avl3iUih32LGVkRIN9rJ7qFeXcjKmplJlL337Kw9BTbZQh_6UBfzhooRExLC4TKFtWFC6f68z1pKvH7ZYPDrOU-ioX3y7XuPukiCC78SyCPlQZ6d7todQydEws9Vb_1feGW5wBqZgFBbzpzYlBc86p_06mnVmPHgV5V0y_2ysZhkdKH4l6KWUVfJVnJDkvUoq31Lcw9TN-l-zUFcDtos8ORDIZgGMJeVWAbSWtglIIygf4an400Nf"/>
+</div>
+<div>
+<p class="text-[10px] font-bold text-primary group-hover:text-secondary transition-colors truncate w-24">Aurum Table</p>
+<p class="text-[9px] text-on-surface-variant italic">Limited Batch</p>
+</div>
+</div>
+<div class="flex gap-3 items-center group cursor-pointer">
+<div class="w-16 h-16 bg-surface-container overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5H1JkKc7KvX7ccO19foyTP9lG9p9IpR5dVfaTIWk0ZodbdA1iImKFxrPW5lTlCMHKVjxehKfTUKkZCPLlD31mEx_0aX5LuYQ3jozlspLh-iXUdTH3HA2rhGkEah6WhsBk5sju2AYBO-zTZrAy_jT5GTQ2DBM949nT_1ZBu4thqd01I_8nXgIUPhx5A_trpAz0mvLQVOILGhRAzN2avXoKokHauvezNpL6Ezyug_DahKYXYeyXCwrwkFCvISg0EB2iKg6HfumEIcPB"/>
+</div>
+<div>
+<p class="text-[10px] font-bold text-primary group-hover:text-secondary transition-colors truncate w-24">Solis Chair</p>
+<p class="text-[9px] text-on-surface-variant italic">New Colorway</p>
+</div>
+</div>
+<div class="flex gap-3 items-center group cursor-pointer">
+<div class="w-16 h-16 bg-surface-container overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9xIDuo3eTALGaXAoZsMooxI4hZ1hD7UX4zGVEAo8cRr9U2FAl7Iapf5WoEsYErZJ6F4cQRQ2jGu9FngDPPEnhJqGbWXpfmTavpuBoVivUbW0iurp6kXTVbC_Ef4tw44IkswvG1Gu29i_G6wS40kETOfAjJuGnAcZGzxVv5ZV_v6K3KhXbwNtqIb5MWSdxTRZSnUtawqcj_KAlHDrQA_IcQjM1u_ovUWgKY1MRZR2i-apCpD1HzgYlpaIl3ZaOvnrXsQFqms-wdMgR"/>
+</div>
+<div>
+<p class="text-[10px] font-bold text-primary group-hover:text-secondary transition-colors truncate w-24">Anthem Oak</p>
+<p class="text-[9px] text-on-surface-variant italic">Fumed Finish</p>
+</div>
+</div>
+<div class="flex gap-3 items-center group cursor-pointer">
+<div class="w-16 h-16 bg-surface-container overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDR4sQCkXA0RfpgvOzyVoPelBUS0IOjrRLm932DwhRCy527EzkNGkG_CcXMt1sgK2N1U86k0HZxWVlB8XjLbOxLHhlVBkjPt3qCjkNQzFnKOzfB3DopkJzMDeaWsB2DJqGEgg5HeZ5GRZzxT3SCjwTWZIYFblP0ozWlZMF5wAC7e-cjYI1fztBCsBtfnuIheON8XSQwPozUVtoLZTbcfvygv9VeudX4KsAOXtO8QHhZA7QDau9jglA7zYqTzCFlEc4X7xllgiMvaD-"/>
+</div>
+<div>
+<p class="text-[10px] font-bold text-primary group-hover:text-secondary transition-colors truncate w-24">Luna Brass</p>
+<p class="text-[9px] text-on-surface-variant italic">Hand-Polished</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 4-Column Product Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-5 gap-y-10"><div class="reveal-on-scroll group active">
+<div class="aspect-[4/5] overflow-hidden bg-surface-container mb-3 relative border border-outline-variant/10">
+<img alt="The Seraphim Suite" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AP1WRLv2dWMFdKqhq__oSMSWT67gi894jGElGTU8PcH7oYWpnW57VAHo97xPSzwofSJVW9Td7Vwqrkigwq_RA87bEcjuAe7nZrjOenguUYuppAWE4cCJ6mkcioa9aQ_LVYc0Oo3V1OqE7h42T22qoCSMF2ZRb3b3aeTKSJgQnX2BEGk4HrkLVSKuCimk6RwSK-BEnll5CwUQEVFnZhucJu_acb4kPymwlB5feCpaWpzK22JNtKfYwFDB1cOLEzib"/>
+<button class="absolute bottom-3 right-3 material-symbols-outlined text-lg bg-surface/90 p-1.5 rounded-full text-primary opacity-0 group-hover:opacity-100 transition-opacity">add</button>
+</div>
+<div>
+<h3 class="font-headline-md text-lg text-primary leading-tight mb-1 group-hover:text-secondary transition-colors">The Seraphim Suite</h3>
+<div class="flex items-center gap-2 mb-1.5">
+<span class="text-[9px] font-label-md text-secondary tracking-widest uppercase">Solid Oak</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="text-[9px] font-label-md text-secondary tracking-widest uppercase">Cream Linen</span>
+</div>
+<p class="font-label-md text-[11px] text-primary font-bold tracking-widest">$18,500</p>
+</div>
+</div>
+<!-- Product 1 -->
+<div class="reveal-on-scroll group active">
+<div class="aspect-[4/5] overflow-hidden bg-surface-container mb-3 relative border border-outline-variant/10">
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6x63YZWoHpA53gk1QxN8NBN6avl3iUih32LGVkRIN9rJ7qFeXcjKmplJlL337Kw9BTbZQh_6UBfzhooRExLC4TKFtWFC6f68z1pKvH7ZYPDrOU-ioX3y7XuPukiCC78SyCPlQZ6d7todQydEws9Vb_1feGW5wBqZgFBbzpzYlBc86p_06mnVmPHgV5V0y_2ysZhkdKH4l6KWUVfJVnJDkvUoq31Lcw9TN-l-zUFcDtos8ORDIZgGMJeVWAbSWtglIIygf4an400Nf"/>
+<button class="absolute bottom-3 right-3 material-symbols-outlined text-lg bg-surface/90 p-1.5 rounded-full text-primary opacity-0 group-hover:opacity-100 transition-opacity">add</button>
+</div>
+<div>
+<h3 class="font-headline-md text-lg text-primary leading-tight mb-1 group-hover:text-secondary transition-colors">The Aurum Table</h3>
+<div class="flex items-center gap-2 mb-1.5">
+<span class="text-[9px] font-label-md text-secondary tracking-widest uppercase">Solid Walnut</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="text-[9px] font-label-md text-secondary tracking-widest uppercase">Gold Inlay</span>
+</div>
+<p class="font-label-md text-[11px] text-primary font-bold tracking-widest">$12,400</p>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="reveal-on-scroll group active">
+<div class="aspect-[4/5] overflow-hidden bg-surface-container mb-3 relative border border-outline-variant/10">
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5H1JkKc7KvX7ccO19foyTP9lG9p9IpR5dVfaTIWk0ZodbdA1iImKFxrPW5lTlCMHKVjxehKfTUKkZCPLlD31mEx_0aX5LuYQ3jozlspLh-iXUdTH3HA2rhGkEah6WhsBk5sju2AYBO-zTZrAy_jT5GTQ2DBM949nT_1ZBu4thqd01I_8nXgIUPhx5A_trpAz0mvLQVOILGhRAzN2avXoKokHauvezNpL6Ezyug_DahKYXYeyXCwrwkFCvISg0EB2iKg6HfumEIcPB"/>
+<button class="absolute bottom-3 right-3 material-symbols-outlined text-lg bg-surface/90 p-1.5 rounded-full text-primary opacity-0 group-hover:opacity-100 transition-opacity">add</button>
+</div>
+<div>
+<h3 class="font-headline-md text-lg text-primary leading-tight mb-1 group-hover:text-secondary transition-colors">Solis Lounge Chair</h3>
+<div class="flex items-center gap-2 mb-1.5">
+<span class="text-[9px] font-label-md text-secondary tracking-widest uppercase">Emerald Velvet</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="text-[9px] font-label-md text-secondary tracking-widest uppercase">Curved Form</span>
+</div>
+<p class="font-label-md text-[11px] text-primary font-bold tracking-widest">$4,800</p>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="reveal-on-scroll group active">
+<div class="aspect-[4/5] overflow-hidden bg-surface-container mb-3 relative border border-outline-variant/10">
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9xIDuo3eTALGaXAoZsMooxI4hZ1hD7UX4zGVEAo8cRr9U2FAl7Iapf5WoEsYErZJ6F4cQRQ2jGu9FngDPPEnhJqGbWXpfmTavpuBoVivUbW0iurp6kXTVbC_Ef4tw44IkswvG1Gu29i_G6wS40kETOfAjJuGnAcZGzxVv5ZV_v6K3KhXbwNtqIb5MWSdxTRZSnUtawqcj_KAlHDrQA_IcQjM1u_ovUWgKY1MRZR2i-apCpD1HzgYlpaIl3ZaOvnrXsQFqms-wdMgR"/>
+<button class="absolute bottom-3 right-3 material-symbols-outlined text-lg bg-surface/90 p-1.5 rounded-full text-primary opacity-0 group-hover:opacity-100 transition-opacity">add</button>
+</div>
+<div>
+<h3 class="font-headline-md text-lg text-primary leading-tight mb-1 group-hover:text-secondary transition-colors">Anthem Sideboard</h3>
+<div class="flex items-center gap-2 mb-1.5">
+<span class="text-[9px] font-label-md text-secondary tracking-widest uppercase">Fumed Oak</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="text-[9px] font-label-md text-secondary tracking-widest uppercase">Brushed Brass</span>
+</div>
+<p class="font-label-md text-[11px] text-primary font-bold tracking-widest">$8,200</p>
+</div>
+</div>
+<!-- Product 4 -->
+<div class="reveal-on-scroll group active">
+<div class="aspect-[4/5] overflow-hidden bg-surface-container mb-3 relative border border-outline-variant/10">
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDR4sQCkXA0RfpgvOzyVoPelBUS0IOjrRLm932DwhRCy527EzkNGkG_CcXMt1sgK2N1U86k0HZxWVlB8XjLbOxLHhlVBkjPt3qCjkNQzFnKOzfB3DopkJzMDeaWsB2DJqGEgg5HeZ5GRZzxT3SCjwTWZIYFblP0ozWlZMF5wAC7e-cjYI1fztBCsBtfnuIheON8XSQwPozUVtoLZTbcfvygv9VeudX4KsAOXtO8QHhZA7QDau9jglA7zYqTzCFlEc4X7xllgiMvaD-"/>
+<button class="absolute bottom-3 right-3 material-symbols-outlined text-lg bg-surface/90 p-1.5 rounded-full text-primary opacity-0 group-hover:opacity-100 transition-opacity">add</button>
+</div>
+<div>
+<h3 class="font-headline-md text-lg text-primary leading-tight mb-1 group-hover:text-secondary transition-colors">Luna Pendant</h3>
+<div class="flex items-center gap-2 mb-1.5">
+<span class="text-[9px] font-label-md text-secondary tracking-widest uppercase">Hand-Blown Glass</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="text-[9px] font-label-md text-secondary tracking-widest uppercase">Rigid Brass</span>
+</div>
+<p class="font-label-md text-[11px] text-primary font-bold tracking-widest">$3,100</p>
+</div>
+</div><div class="reveal-on-scroll group active col-span-3">
+<div class="h-[21rem] overflow-hidden bg-surface-container mb-3 relative border border-outline-variant/10">
+<img alt="The Modus Sofa" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyKryVhJbL2k2jo63V0YoURVusz4p2_aiiWbEHnUQvoXt6MGd3mTTV8g1BN8IEB0yB0NcfmVGPT0VEilf6j0F1Pk5qMIMb7OJoz2lM6iOMrRcYX3MEkvYCL5c1z85M30J6eGYrp_Kwm6f-OugC2UwgNYAy4BuXM2HZExZNXlISA5PCC1d1xLgKoBWe0XS8aoPk069rqIqi2_n9XFRSIf7OTBJqNt__zrIjY9tdnJRblVozt1g9uG8gjMzoggLlQH330U1qPwyFfL58"/>
+<button class="absolute bottom-3 right-3 material-symbols-outlined text-lg bg-surface/90 p-1.5 rounded-full text-primary opacity-0 group-hover:opacity-100 transition-opacity">add</button>
+</div>
+<div>
+<h3 class="font-headline-md text-lg text-primary leading-tight mb-1 group-hover:text-secondary transition-colors">The Modus Sofa</h3>
+<div class="flex items-center gap-2 mb-1.5">
+<span class="text-[9px] font-label-md text-secondary tracking-widest uppercase">Textured Bouclé</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="text-[9px] font-label-md text-secondary tracking-widest uppercase">Smoked Oak</span>
+</div>
+<p class="font-label-md text-[11px] text-primary font-bold tracking-widest">$12,800</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Artisan Narrative (Editorial Modules) -->
+<section class="border-t border-outline-variant/20 bg-surface-container-low/10">
+<div class="max-w-container-max mx-auto px-margin-desktop py-12">
+<div class="flex justify-between items-end mb-8 border-b border-outline-variant/30 pb-4">
+<div>
+<span class="font-label-md text-[10px] text-secondary tracking-[0.4em] block mb-1 uppercase">Process &amp; Origin</span>
+<h2 class="font-display-lg text-3xl text-primary">Artisan Narrative</h2>
+</div>
+<a class="text-[10px] font-label-md text-on-surface-variant hover:text-primary tracking-widest transition-colors" href="#">STORY ARCHIVE →</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Story 1 -->
+<div class="reveal-on-scroll active">
+<div class="aspect-video overflow-hidden mb-4 border border-outline-variant/10">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida/AP1WRLsN2rTf5f5tYkLPt9venbrZEUJkW6zRaESvN4uoXfVG6cZj77EZQ4vutfxoGoTz_ojUnLKDlmWG52aLXEvVt5j3oavDzeR-jw0G8h2MGslHDfrPOXyaFrUZdznu47DRdfT8z2IsoZD0rhVtUFkwGFj44CqfMOQP3p6xpIb8Varn0YVUwATCfntUa0kcfl-1rM6WsHuxD6KhV-W1Y0kZ4tnEbGgM-1cN9VEOqCz06PKDN26m4udCvq_Bu_g"/>
+</div>
+<h4 class="font-headline-md text-lg mb-2">The Walnut Groves</h4>
+<p class="text-xs text-on-surface-variant leading-relaxed mb-3">Sourced exclusively from sustainable heritage estates in the Dordogne Valley, where each tree is aged for sixty years.</p>
+<span class="text-[9px] font-label-md text-secondary tracking-widest">MATERIAL ORIGIN</span>
+</div>
+<!-- Story 2 -->
+<div class="reveal-on-scroll active">
+<div class="aspect-video overflow-hidden mb-4 border border-outline-variant/10">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDR4sQCkXA0RfpgvOzyVoPelBUS0IOjrRLm932DwhRCy527EzkNGkG_CcXMt1sgK2N1U86k0HZxWVlB8XjLbOxLHhlVBkjPt3qCjkNQzFnKOzfB3DopkJzMDeaWsB2DJqGEgg5HeZ5GRZzxT3SCjwTWZIYFblP0ozWlZMF5wAC7e-cjYI1fztBCsBtfnuIheON8XSQwPozUVtoLZTbcfvygv9VeudX4KsAOXtO8QHhZA7QDau9jglA7zYqTzCFlEc4X7xllgiMvaD-"/>
+</div>
+<h4 class="font-headline-md text-lg mb-2">Gold Inlay Process</h4>
+<p class="text-xs text-on-surface-variant leading-relaxed mb-3">A 14th-century technique revived. Molten brass is hand-channeled into precision-carved walnut fissures for a seamless finish.</p>
+<span class="text-[9px] font-label-md text-secondary tracking-widest">TECHNIQUE SPOTLIGHT</span>
+</div>
+<!-- Story 3 -->
+<div class="reveal-on-scroll active">
+<div class="aspect-video overflow-hidden mb-4 border border-outline-variant/10">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLxuVbRZiJnVMldGltFGzPBbYue-EbQix2_CB0GxIfD84X0vzLU54GUZ_nI5clOmh_Rkprni_Rfq9B8hyEX29krCwil7RPGR1VaWTgSftmLHERO0KHFrMu_EcIPRP1e9YgM2H82IKP-4o7G-oU-h9YWvWPeJ3vMeiBryZfJjD1hMnw2RmjWGX64xWhHpuGkBROMx7Wl45K0Ig8OMslVo6ojtvKnlOToWBEh2cN7yT1myKe5bfZ7fZxj4OYG4DZS1YmJfEl7HJO0BMY"/>
+</div>
+<h4 class="font-headline-md text-lg mb-2">Master Woodworker</h4>
+<p class="text-xs text-on-surface-variant leading-relaxed mb-3">Meet Julian Vane, the hands behind the Aurum collection. Every joint is hand-cut and friction-fitted without the use of hardware.</p>
+<span class="text-[9px] font-label-md text-secondary tracking-widest">CRAFTSMAN PROFILE</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Design Journal / News Feed -->
+<section class="border-y border-outline-variant/30">
+<div class="max-w-container-max mx-auto px-margin-desktop py-12">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<div class="lg:col-span-3">
+<span class="font-label-md text-[10px] text-secondary tracking-[0.4em] block mb-2 uppercase">From the Atelier</span>
+<h3 class="font-display-lg text-2xl mb-6">Design Journal</h3>
+<p class="text-xs text-on-surface-variant leading-relaxed">Monthly dispatches on materiality, architectural history, and the evolution of the {{CLIENT_NAME_SOLO}} aesthetic.</p>
+</div>
+<div class="lg:col-span-9 space-y-4">
+<article class="flex justify-between items-center border-b border-outline-variant/20 pb-4 group cursor-pointer">
+<div class="flex gap-6 items-center">
+<span class="font-label-md text-[10px] text-outline">01.12.24</span>
+<h5 class="font-body-md text-sm font-semibold group-hover:text-secondary transition-colors">The Longevity of Brass in Domestic Spaces</h5>
+</div>
+<span class="material-symbols-outlined text-sm text-outline group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</article>
+<article class="flex justify-between items-center border-b border-outline-variant/20 pb-4 group cursor-pointer">
+<div class="flex gap-6 items-center">
+<span class="font-label-md text-[10px] text-outline">11.15.24</span>
+<h5 class="font-body-md text-sm font-semibold group-hover:text-secondary transition-colors">Minimalism as a Form of Permanence</h5>
+</div>
+<span class="material-symbols-outlined text-sm text-outline group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</article>
+<article class="flex justify-between items-center border-b border-outline-variant/20 pb-4 group cursor-pointer">
+<div class="flex gap-6 items-center">
+<span class="font-label-md text-[10px] text-outline">10.28.24</span>
+<h5 class="font-body-md text-sm font-semibold group-hover:text-secondary transition-colors">Curating the Modern Dining Room Interface</h5>
+</div>
+<span class="material-symbols-outlined text-sm text-outline group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</article>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Compact Footer -->
+<footer class="bg-surface-container-high/40 border-t border-outline-variant/20">
+<div class="max-w-container-max mx-auto px-margin-desktop py-8">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+<div class="flex flex-col items-start">
+<span class="font-display-lg text-lg text-primary mb-1">{{CLIENT_NAME}}</span>
+<p class="font-body-md text-[10px] text-on-surface-variant tracking-wider uppercase">Elevated Materiality</p>
+</div>
+<div class="flex flex-col items-start md:items-end gap-3">
+<div class="flex flex-wrap gap-x-5 gap-y-1">
+<a class="font-label-md text-[9px] text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="#">Privacy</a>
+<a class="font-label-md text-[9px] text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="#">Terms</a>
+<a class="font-label-md text-[9px] text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="#">Shipping</a>
+<a class="font-label-md text-[9px] text-on-surface-variant hover:text-primary transition-colors uppercase tracking-widest" href="#">Contact</a>
+</div>
+<div class="font-label-md text-[9px] text-outline uppercase tracking-[0.2em]">
+                    © 2024 {{CLIENT_NAME}}
+                </div>
+</div>
+</div>
+</div>
+</footer>
+<script>
+    // Scroll reveal observer
+    const observerOptions = { threshold: 0.1 };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, observerOptions);
+    document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+
+    // Nav effect
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 30) {
+            nav.classList.add('shadow-sm', 'bg-surface');
+            nav.querySelector('.max-w-container-max').classList.remove('py-3');
+            nav.querySelector('.max-w-container-max').classList.add('py-2');
+        } else {
+            nav.classList.remove('shadow-sm');
+            nav.querySelector('.max-w-container-max').classList.add('py-3');
+            nav.querySelector('.max-w-container-max').classList.remove('py-2');
+        }
+    });
+</script>
+</body></html>
