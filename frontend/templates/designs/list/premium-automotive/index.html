@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>{{CLIENT_NAME}} | Addis Ababa Luxury Cars</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface": "#f8f9ff",
+                    "surface-tint": "#565e74",
+                    "primary-container": "#131b2e",
+                    "surface-container-highest": "#d3e4fe",
+                    "tertiary-container": "#40000c",
+                    "secondary-fixed": "#ffe088",
+                    "on-primary": "#ffffff",
+                    "background": "#f8f9ff",
+                    "surface-dim": "#cbdbf5",
+                    "on-secondary-fixed": "#241a00",
+                    "on-secondary-container": "#745c00",
+                    "on-primary-container": "#7c839b",
+                    "on-secondary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "primary-fixed": "#dae2fd",
+                    "surface-container": "#e5eeff",
+                    "inverse-primary": "#bec6e0",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed-dim": "#ffb3b6",
+                    "surface-container-low": "#eff4ff",
+                    "tertiary": "#000000",
+                    "on-tertiary-fixed-variant": "#920028",
+                    "surface-variant": "#d3e4fe",
+                    "surface-container-high": "#dce9ff",
+                    "on-tertiary-fixed": "#40000c",
+                    "on-surface-variant": "#45464d",
+                    "on-error-container": "#93000a",
+                    "on-tertiary": "#ffffff",
+                    "outline-variant": "#c6c6cd",
+                    "primary": "#000000",
+                    "on-tertiary-container": "#f83256",
+                    "on-secondary-fixed-variant": "#574500",
+                    "secondary-container": "#fed65b",
+                    "primary-fixed-dim": "#bec6e0",
+                    "outline": "#76777d",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed-dim": "#e9c349",
+                    "on-surface": "#0b1c30",
+                    "tertiary-fixed": "#ffdada",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed": "#131b2e",
+                    "inverse-on-surface": "#eaf1ff",
+                    "on-background": "#0b1c30",
+                    "on-primary-fixed-variant": "#3f465c",
+                    "surface-bright": "#f8f9ff",
+                    "secondary": "#735c00",
+                    "inverse-surface": "#213145"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "gutter": "24px",
+                    "margin-desktop": "48px",
+                    "stack-sm": "8px",
+                    "container-max": "1280px",
+                    "stack-md": "16px",
+                    "stack-lg": "32px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "price-display": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "display-lg-mobile": ["Inter"],
+                    "body-md": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "label-caps": ["JetBrains Mono"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "price-display": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "headline-md": ["30px", {"lineHeight": "38px", "fontWeight": "600"}],
+                    "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+        .text-shadow-hero {
+            text-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col antialiased">
+<!-- TopNavBar -->
+<nav class="bg-surface/90 backdrop-blur-md dark:bg-surface-dim/90 font-body-md text-body-md docked full-width top-0 sticky z-50 border-b border-outline-variant/30 shadow-sm transition-all duration-300">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex justify-between items-center h-20">
+<!-- Brand -->
+<a class="font-headline-sm text-headline-sm font-bold text-primary dark:text-on-primary-fixed tracking-tight" href="#">
+                {{CLIENT_NAME}}
+            </a>
+<!-- Desktop Nav -->
+<div class="hidden md:flex items-center gap-8">
+<a class="text-primary dark:text-on-primary-fixed font-bold border-b-2 border-primary pb-1 cursor-pointer active:opacity-80" href="#">Home</a>
+<a href="inventory" class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-200 cursor-pointer active:opacity-80" href="#">Inventory</a>
+<a href="detail" class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-200 cursor-pointer active:opacity-80" href="#">Detail</a>
+<a href="" class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-200 cursor-pointer active:opacity-80" href="#">About Us</a>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-4">
+<button class="hidden md:flex items-center justify-center p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="bg-primary-container text-on-primary rounded-lg px-6 py-2.5 font-body-md hover:bg-opacity-90 transition-opacity">
+                    Contact
+                </button>
+<button class="md:hidden p-2 text-on-surface-variant">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- SideNavBar (Mobile) -->
+<div class="fixed left-0 top-0 h-full w-64 hidden lg:hidden bg-surface dark:bg-surface-dim border-r border-outline-variant shadow-lg z-40 transform -translate-x-full transition-transform" id="mobile-nav">
+<div class="flex flex-col h-full py-6">
+<div class="px-6 mb-8">
+<h2 class="font-headline-sm text-headline-sm font-bold text-primary">{{CLIENT_NAME_SOLO}}</h2>
+<p class="text-on-surface-variant text-sm mt-1">Addis Ababa Luxury</p>
+</div>
+<nav class="flex flex-col gap-2 flex-grow">
+<a class="bg-secondary-container text-on-secondary-container rounded-xl mx-2 px-4 py-3 flex items-center gap-3 scale-98 active" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-caps text-label-caps">Home</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-high transition-all mx-2 px-4 py-3 flex items-center gap-3 rounded-xl" href="#">
+<span class="material-symbols-outlined">directions_car</span>
+<span class="font-label-caps text-label-caps">Inventory</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-high transition-all mx-2 px-4 py-3 flex items-center gap-3 rounded-xl" href="#">
+<span class="material-symbols-outlined">sell</span>
+<span class="font-label-caps text-label-caps">Sell Car</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-high transition-all mx-2 px-4 py-3 flex items-center gap-3 rounded-xl" href="#">
+<span class="material-symbols-outlined">info</span>
+<span class="font-label-caps text-label-caps">About</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-high transition-all mx-2 px-4 py-3 flex items-center gap-3 rounded-xl" href="#">
+<span class="material-symbols-outlined">chat</span>
+<span class="font-label-caps text-label-caps">Contact</span>
+</a>
+</nav>
+<div class="px-4 mt-auto">
+<button class="w-full bg-[#25D366] text-white rounded-xl py-3 flex items-center justify-center gap-2 font-label-caps text-label-caps hover:bg-opacity-90 transition-opacity">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat</span>
+                    WhatsApp Support
+                </button>
+</div>
+</div>
+</div>
+<!-- Main Canvas -->
+<main class="flex-grow flex flex-col">
+<!-- Hero Section -->
+<section class="relative w-full h-[819px] min-h-[600px] flex items-center justify-center overflow-hidden bg-primary">
+<!-- Background Image -->
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-60" data-alt="A pristine, dark gray Toyota Land Cruiser parked in a high-end, minimalist showroom in Addis Ababa. The lighting is cinematic and dramatic, casting sharp, elegant reflections on the vehicle's glossy paint. The environment features subtle architectural lines and a sleek, polished concrete floor, emphasizing a premium, authoritative aesthetic. Warm golden hour light subtly filters in from a distant glass facade." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBszHT-DA1FB6zn9vAX8_2JCghE1lZLd0OY8Q2zHBFsQYdMrF2ncFmFw089bGKHRbkpwAgLnVqnYoTDs5uS7PME9Sc84Ar5ydkWIJJvXUBLL8WnydHWtqlSXLTXKfy2P50usgFYWuviVACxG4WR85k3Z2nNTapdpqBw-xMX3qN7EJldW-8nXqDjsLKL7uUR1Yd_Q8hblzqFh1-CZ2zWRRfmzvEacxrnUMT2OomHXVGk_mKLAVBCHPnm1NA9V7UECNJxXiJp4m1UPg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+</div>
+<div class="relative z-10 w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex flex-col items-center text-center">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-6 text-shadow-hero">
+                    Elevate Your Drive in Addis Ababa
+                </h1>
+<p class="font-body-lg text-body-lg text-white/90 max-w-2xl mb-12">
+                    Discover our curated selection of premium, certified vehicles. Uncompromising quality and transparent pricing for Ethiopia's discerning drivers.
+                </p>
+<!-- Search Bar Glass Panel -->
+<div class="w-full max-w-3xl glass-panel p-4 rounded-2xl shadow-xl border border-white/20">
+<div class="flex flex-col md:flex-row gap-3">
+<div class="flex-grow relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-surface-tint">search</span>
+<input class="w-full bg-white/90 border border-outline-variant rounded-xl py-4 pl-12 pr-4 font-body-md text-on-surface focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 transition-all outline-none placeholder:text-surface-tint" placeholder="Search by Brand, Model, or Year..." type="text"/>
+</div>
+<button class="bg-primary-container text-white px-8 py-4 rounded-xl font-headline-sm text-body-md hover:bg-opacity-90 transition-all whitespace-nowrap shadow-md">
+                            Find Vehicle
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Trust Signals -->
+<section class="py-stack-lg bg-surface-container-low border-b border-outline-variant/30">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left divide-y md:divide-y-0 md:divide-x divide-outline-variant/30">
+<div class="flex flex-col md:flex-row items-center gap-4 py-4 md:py-0 md:pr-8">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center text-primary-container shadow-sm">
+<span class="material-symbols-outlined text-3xl">verified</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-body-lg text-on-surface mb-1">Certified Inspections</h3>
+<p class="font-body-md text-on-surface-variant text-sm">Rigorous 150-point check on all inventory.</p>
+</div>
+</div>
+<div class="flex flex-col md:flex-row items-center gap-4 py-4 md:py-0 md:px-8">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center text-primary-container shadow-sm">
+<span class="material-symbols-outlined text-3xl">workspace_premium</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-body-lg text-on-surface mb-1">Addis Ababa's Most Trusted</h3>
+<p class="font-body-md text-on-surface-variant text-sm">Over a decade of automotive excellence.</p>
+</div>
+</div>
+<div class="flex flex-col md:flex-row items-center gap-4 py-4 md:py-0 md:pl-8">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center text-primary-container shadow-sm">
+<span class="material-symbols-outlined text-3xl">currency_exchange</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-body-lg text-on-surface mb-1">Transparent Pricing</h3>
+<p class="font-body-md text-on-surface-variant text-sm">Clear ETB pricing with no hidden fees.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Inventory Bento Grid -->
+<section class="py-margin-desktop bg-background">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex justify-between items-end mb-gutter">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-2">Featured Inventory</h2>
+<p class="font-body-md text-on-surface-variant">Exceptional vehicles currently in our showroom.</p>
+</div>
+<a class="hidden md:flex items-center gap-2 font-headline-sm text-body-md text-primary hover:text-on-surface-variant transition-colors" href="#">
+                        View All <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Hero Card (Spans 8 cols) -->
+<div class="lg:col-span-8 group cursor-pointer">
+<div class="bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_rgba(15,23,42,0.05)] hover:shadow-[0_8px_30px_rgba(15,23,42,0.1)] transition-shadow duration-300 h-full flex flex-col relative">
+<div class="absolute top-4 left-4 z-10">
+<span class="bg-primary-container text-white px-3 py-1.5 rounded font-label-caps text-label-caps shadow-sm">New Arrival</span>
+</div>
+<div class="h-64 md:h-96 w-full overflow-hidden relative bg-surface-container">
+<img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" data-alt="A sleek, white 2023 Toyota Land Cruiser VXR driving through the modern streets of Addis Ababa. The lighting is bright and clear, highlighting the vehicle's bold grille and luxurious lines. The background features contemporary architecture, emphasizing a premium, urban automotive lifestyle." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDb-o2XjLggKDY7OtdJpj4uhoGEDskxJlubIi2Tt1QOB-xbGYFcVX7k8zsCT49i_vuHkzfjFp8mEgnZTGgNZb3h-zkB4mkKtFBmwic6WXHP9RzoFfKX30KzVW19_NLB03xJ1LcVvkpcPDljEbSeFy8YU86gm8efGxy7D7srIwPwveORYjO7VOPWL0pSjfQk3zhbq3yso9_jKfvnUNbYlMtVUHod2kQjDTbseyVDMwUqiCs2UySGlXty4TOjw9TeAF2uC9i2m-feLA"/>
+</div>
+<div class="p-6 flex flex-col flex-grow bg-white relative z-10 -mt-6 rounded-t-3xl border-t border-outline-variant/10">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">2023 Toyota Land Cruiser VXR</h3>
+<p class="font-body-md text-on-surface-variant">3.5L Twin-Turbo V6</p>
+</div>
+<div class="text-right">
+<span class="font-price-display text-price-display text-primary block">15,800,000 ETB</span>
+<span class="font-body-md text-sm text-on-surface-variant">Includes Duty</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 mt-auto pt-6 border-t border-outline-variant/20">
+<span class="bg-surface-container px-3 py-1 rounded font-label-caps text-label-caps text-on-surface">2023</span>
+<span class="bg-surface-container px-3 py-1 rounded font-label-caps text-label-caps text-on-surface">Automatic</span>
+<span class="bg-surface-container px-3 py-1 rounded font-label-caps text-label-caps text-on-surface">Petrol</span>
+<span class="bg-surface-container px-3 py-1 rounded font-label-caps text-label-caps text-on-surface">0 km</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Secondary Cards (Span 4 cols) -->
+<div class="lg:col-span-4 flex flex-col gap-gutter">
+<!-- Card 2 -->
+<div class="bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_rgba(15,23,42,0.05)] hover:shadow-[0_8px_30px_rgba(15,23,42,0.1)] transition-shadow duration-300 flex flex-col h-full">
+<div class="h-48 w-full overflow-hidden relative bg-surface-container">
+<img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" data-alt="A sophisticated dark blue Hyundai Tucson parked in a bright, modern showroom setting. Soft overhead lighting highlights the car's geometric side panels and distinctive front lights. The setting is impeccably clean, creating a high-end, trustworthy retail atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuANVZAxpic_hyhRrlFYVHrrMsqhD11og5oodTdqXJCDsvuLMN9xydoHdhfooT-Yuv3oS0ZkNtV6V4M3Fn8mjGgCLM7oat4MfQrGnP6AOiL4zN38VjVo3K1Y0jZ4Ol-nOp5rPbJGT91m2kKpwTvsGYOLnK9bpRhNBEp2YRvj44GGj6E6zwUuTXVIv1smBf3FfGUET5-w2Y6D7odzct6YyDh44HTRgP7wAzuuUA3UTdRO4WYvJAww-lwJHgcJspS_fcNXeESs0NgiBw"/>
+</div>
+<div class="p-5 flex flex-col flex-grow bg-white">
+<h3 class="font-headline-sm text-body-lg font-bold text-on-surface mb-1">2024 Hyundai Tucson Limited</h3>
+<div class="flex justify-between items-end mt-auto pt-4">
+<div class="flex gap-2">
+<span class="bg-surface-container px-2 py-1 rounded font-label-caps text-[10px] text-on-surface">2024</span>
+<span class="bg-surface-container px-2 py-1 rounded font-label-caps text-[10px] text-on-surface">Auto</span>
+</div>
+<span class="font-price-display text-body-lg font-bold text-primary">6,200,000 ETB</span>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_rgba(15,23,42,0.05)] hover:shadow-[0_8px_30px_rgba(15,23,42,0.1)] transition-shadow duration-300 flex flex-col h-full relative">
+<div class="absolute top-3 left-3 z-10">
+<span class="bg-secondary-container text-on-secondary-container px-2 py-1 rounded font-label-caps text-[10px] shadow-sm">Special Offer</span>
+</div>
+<div class="h-48 w-full overflow-hidden relative bg-surface-container">
+<img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" data-alt="A pristine silver Mercedes-Benz C-Class parked outdoors near a luxurious Addis Ababa hotel entrance. The image is bathed in soft, diffused daylight, highlighting the elegant curves of the luxury sedan against a backdrop of sophisticated urban architecture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTrOD14j3MPQIIiIoRPCu58lqcMbCOEx_pl5Lg9QJDec2G68F2stT2pGWXSpasAHOrQ5kN5XMT-FixvA_9Bo3tCjeOk1M_KNnFqK2G15Ba2hFkXmZQacF5UB4DFEZ0NZP4cOoMp_gXopRkz1NZyI1oIiOoYaCJmBwC_tSSwWJiAuALNnAAsw7_50jQmKggkj_N-tmS57qQnPC5kUTk0DWrE4za4drKSxv_Kad9tuNYm4FaqJn05kqs7kMx7xfoUVrlncSB0tL2Lw"/>
+</div>
+<div class="p-5 flex flex-col flex-grow bg-white">
+<h3 class="font-headline-sm text-body-lg font-bold text-on-surface mb-1">2022 Mercedes-Benz C200</h3>
+<div class="flex justify-between items-end mt-auto pt-4">
+<div class="flex gap-2">
+<span class="bg-surface-container px-2 py-1 rounded font-label-caps text-[10px] text-on-surface">2022</span>
+<span class="bg-surface-container px-2 py-1 rounded font-label-caps text-[10px] text-on-surface">24k km</span>
+</div>
+<span class="font-price-display text-body-lg font-bold text-primary">8,500,000 ETB</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-8 text-center md:hidden">
+<a class="inline-flex items-center justify-center bg-surface-container text-on-surface px-6 py-3 rounded-lg font-headline-sm text-body-md w-full border border-outline-variant/30" href="#">
+                        View All Inventory
+                    </a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary-container dark:bg-black full-width font-body-md text-body-md text-on-primary-container dark:text-surface-variant flat no shadows mt-auto border-t border-outline-variant/20">
+<div class="max-w-container-max mx-auto px-margin-desktop py-stack-lg flex flex-col md:flex-row justify-between items-start gap-gutter">
+<div class="flex flex-col gap-4 max-w-sm">
+<span class="font-headline-sm text-headline-sm text-on-primary dark:text-on-primary-fixed block">{{CLIENT_NAME}}</span>
+<p class="text-sm opacity-80">Addis Ababa's premier destination for luxury and certified pre-owned vehicles. Unmatched quality, transparent service.</p>
+<div class="mt-2 text-xs opacity-60">
+                    © 2024 {{CLIENT_NAME}}. All rights reserved. Addis Ababa, Ethiopia.
+                </div>
+</div>
+<div class="flex flex-col md:flex-row gap-8 md:gap-16 w-full md:w-auto">
+<div class="flex flex-col gap-3">
+<span class="text-on-primary font-bold mb-1">Quick Links</span>
+<a class="text-on-primary-container/80 hover:text-on-primary transition-colors hover:text-secondary-fixed" href="#">Browse Inventory</a>
+<a class="text-on-primary-container/80 hover:text-on-primary transition-colors hover:text-secondary-fixed" href="#">Sell Your Vehicle</a>
+</div>
+<div class="flex flex-col gap-3">
+<span class="text-on-primary font-bold mb-1">Legal &amp; Support</span>
+<a class="text-on-primary-container/80 hover:text-on-primary transition-colors hover:text-secondary-fixed" href="#">Contact Support</a>
+<a class="text-on-primary-container/80 hover:text-on-primary transition-colors hover:text-secondary-fixed" href="#">Privacy Policy</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- Persistent Contact FAB (Mobile) -->
+<div class="md:hidden fixed bottom-6 right-6 z-50 flex flex-col gap-3 items-end">
+<button aria-label="WhatsApp Contact" class="w-14 h-14 bg-[#25D366] text-white rounded-full shadow-lg flex items-center justify-center hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">chat</span>
+</button>
+</div>
+</body></html>

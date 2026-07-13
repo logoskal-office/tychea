@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>{{CLIENT_NAME}} - Vehicle Details</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#f8f9ff",
+                        "surface-tint": "#565e74",
+                        "primary-container": "#131b2e",
+                        "surface-container-highest": "#d3e4fe",
+                        "tertiary-container": "#40000c",
+                        "secondary-fixed": "#ffe088",
+                        "on-primary": "#ffffff",
+                        "background": "#f8f9ff",
+                        "surface-dim": "#cbdbf5",
+                        "on-secondary-fixed": "#241a00",
+                        "on-secondary-container": "#745c00",
+                        "on-primary-container": "#7c839b",
+                        "on-secondary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "primary-fixed": "#dae2fd",
+                        "surface-container": "#e5eeff",
+                        "inverse-primary": "#bec6e0",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb3b6",
+                        "surface-container-low": "#eff4ff",
+                        "tertiary": "#000000",
+                        "on-tertiary-fixed-variant": "#920028",
+                        "surface-variant": "#d3e4fe",
+                        "surface-container-high": "#dce9ff",
+                        "on-tertiary-fixed": "#40000c",
+                        "on-surface-variant": "#45464d",
+                        "on-error-container": "#93000a",
+                        "on-tertiary": "#ffffff",
+                        "outline-variant": "#c6c6cd",
+                        "primary": "#000000",
+                        "on-tertiary-container": "#f83256",
+                        "on-secondary-fixed-variant": "#574500",
+                        "secondary-container": "#fed65b",
+                        "primary-fixed-dim": "#bec6e0",
+                        "outline": "#76777d",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#e9c349",
+                        "on-surface": "#0b1c30",
+                        "tertiary-fixed": "#ffdada",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#131b2e",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-background": "#0b1c30",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "surface-bright": "#f8f9ff",
+                        "secondary": "#735c00",
+                        "inverse-surface": "#213145"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "margin-desktop": "48px",
+                        "stack-sm": "8px",
+                        "container-max": "1280px",
+                        "stack-md": "16px",
+                        "stack-lg": "32px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "price-display": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "display-lg-mobile": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "label-caps": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "price-display": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "headline-md": ["30px", { "lineHeight": "38px", "fontWeight": "600" }],
+                        "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background antialiased min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="bg-surface/90 backdrop-blur-md dark:bg-surface-dim/90 docked full-width top-0 sticky z-50 border-b border-outline-variant/30 shadow-sm">
+<div class="max-w-container-max mx-auto px-margin-desktop flex justify-between items-center h-20">
+<div class="font-headline-sm text-headline-sm font-bold text-primary dark:text-on-primary-fixed tracking-tight cursor-pointer">
+                {{CLIENT_NAME}}
+            </div>
+<div class="hidden md:flex gap-gutter items-center">
+    <a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-200 hover:text-primary dark:hover:text-on-primary-fixed cursor-pointer active:opacity-80 font-body-md text-body-md" href="../">Home</a>
+    <a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-200 hover:text-primary dark:hover:text-on-primary-fixed cursor-pointer active:opacity-80 font-body-md text-body-md" href="../inventory">Inventory</a>
+<a class="text-primary dark:text-on-primary-fixed font-bold border-b-2 border-primary transition-colors duration-200 hover:text-primary dark:hover:text-on-primary-fixed cursor-pointer active:opacity-80 font-body-md text-body-md" href="#">Detail</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-200 hover:text-primary dark:hover:text-on-primary-fixed cursor-pointer active:opacity-80 font-body-md text-body-md" href="#">About Us</a>
+</div>
+<div class="flex items-center gap-stack-md">
+<span class="material-symbols-outlined text-primary hidden md:block cursor-pointer">search</span>
+<button class="bg-primary text-on-primary px-6 py-2 rounded font-body-md text-body-md font-bold hover:bg-surface-tint transition-colors">
+                    Contact
+                </button>
+</div>
+</div>
+</nav>
+<!-- SideNavBar (Mobile) -->
+<aside class="bg-surface dark:bg-surface-dim fixed left-0 top-0 h-full w-64 hidden lg:hidden border-r border-outline-variant shadow-lg z-50 transform -translate-x-full transition-transform duration-300" id="mobile-menu">
+<div class="flex flex-col h-full py-6">
+<div class="px-6 mb-8 flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">directions_car</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm font-bold text-primary">{{CLIENT_NAME_SOLO}}</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant">Addis Ababa Luxury</div>
+</div>
+</div>
+<nav class="flex-1 flex flex-col gap-2 px-2">
+<a class="text-on-surface-variant hover:bg-surface-container-high mx-2 py-3 px-4 rounded-xl flex items-center gap-4 transition-all scale-98 active" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-caps text-label-caps">Home</span>
+</a>
+<a class="bg-secondary-container text-on-secondary-container rounded-xl mx-2 py-3 px-4 flex items-center gap-4 transition-all scale-98 active" href="#">
+<span class="material-symbols-outlined">directions_car</span>
+<span class="font-label-caps text-label-caps">Inventory</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-high mx-2 py-3 px-4 rounded-xl flex items-center gap-4 transition-all scale-98 active" href="#">
+<span class="material-symbols-outlined">sell</span>
+<span class="font-label-caps text-label-caps">Sell Car</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-high mx-2 py-3 px-4 rounded-xl flex items-center gap-4 transition-all scale-98 active" href="#">
+<span class="material-symbols-outlined">info</span>
+<span class="font-label-caps text-label-caps">About</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-high mx-2 py-3 px-4 rounded-xl flex items-center gap-4 transition-all scale-98 active" href="#">
+<span class="material-symbols-outlined">chat</span>
+<span class="font-label-caps text-label-caps">Contact</span>
+</a>
+</nav>
+<div class="px-6 mt-auto">
+<button class="w-full bg-[#25D366] text-white py-3 rounded-lg font-body-md text-body-md font-bold flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">chat</span>
+                    WhatsApp Support
+                </button>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 max-w-container-max mx-auto w-full px-margin-mobile md:px-margin-desktop py-stack-lg flex flex-col lg:flex-row gap-gutter">
+<!-- Left Column: Details -->
+<div class="flex-1 flex flex-col gap-stack-lg">
+<!-- Breadcrumbs & Title -->
+<div>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-caps text-label-caps mb-4">
+<a class="hover:text-primary" href="#">Inventory</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<a class="hover:text-primary" href="#">Premium SUV</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary font-bold">2024 Land Cruiser 300</span>
+</div>
+<div class="flex flex-col md:flex-row md:justify-between md:items-end gap-4">
+<div>
+<div class="inline-flex items-center gap-2 bg-primary text-on-primary px-3 py-1 rounded-full font-label-caps text-label-caps mb-2">
+                            New Arrival
+                        </div>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary">2024 Land Cruiser 300 VX-R</h1>
+</div>
+</div>
+</div>
+<!-- Hero Gallery (Bento Style) -->
+<div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-4 h-[400px] md:h-[600px]">
+<div class="md:col-span-3 md:row-span-2 rounded-xl overflow-hidden shadow-sm relative group cursor-pointer">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A pristine white 2024 Toyota Land Cruiser 300 parked in a modern, well-lit luxury showroom. The lighting is soft and high-key, highlighting the vehicle's bold grille and sleek lines. The surrounding environment is minimalist with polished concrete floors and subtle architectural details in a premium corporate style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuABSalPcL4MEA5SYcde3Pd4SCC-8upW6DpjEHmvnyGbsh6XttIJa4xpXiHZst5dlG2QH3OXxRTT5j0u_cVA9YVy6y-dJNGBeoVx_nU0mBRc1tJNhB3KkRjTJG7Ex8gQUXooMCDb9yIY5TflozMNwH8JVoLFVxCkppbwd4TGvv9PYdJ7XpTQdPz0_P5pgwF7vJrxOMBIdJN2hMmsz8grc8Y0Objy6dDeWhafDA3bGhAi7IHbUVIMD0yVUH-Rr-Nn5PAAq8kfjbqrig"/>
+</div>
+<div class="hidden md:block rounded-xl overflow-hidden shadow-sm relative group cursor-pointer">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Close up shot of the interior dashboard of a 2024 luxury SUV. Rich leather upholstery in a deep tan color, large central infotainment screen, and premium wood accents. The lighting is bright and inviting, emphasizing the high-quality materials and modern technology typical of an executive vehicle." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCTIcStYINpLVRSA11giNf_-Tgr1WpeGxakOrw6yGCR5cOKdlIHhnUWflE8kQAfEaDI7zcGKLbL4aFc8GiWWDTNwjxE6eDoDntEIhrY1a60ThNiPnVV10fl6jt29YyfjDtiC6Hr6z2ZK2JLzVxmccR2ZZafXbcgWDaFPGSQHi_l0gyIb3y2CjELK6nKKzuWt5fJLgrmY0mXrM7En9MYtuUKrv9HvYS7F6onyPm7ZWLmcs5R-UCuMP38RXW2ppn2ZPusOI14_Q2ag"/>
+</div>
+<div class="hidden md:block rounded-xl overflow-hidden shadow-sm relative group cursor-pointer">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Close up shot of the prominent front alloy wheel of a 2024 luxury SUV. The intricate multi-spoke design shines under bright showroom lights. The brake caliper is faintly visible behind the spokes. The background is slightly blurred to focus on the premium metallic finish of the wheel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuFXuGZu9dxxJNc-HPr0ujDp2X8b63DW0tl5A2u-NsYuZMbyBSD1VfxzI8MltiwHeraA5GVzXkdjAYJjhx_2Czad7_kqdxYWJp3eO4gwe2jRWXh_-F2Xuw3jzkAU3RD0-H6mEX28-etyVTsFGxhpAIHVSq_RG-38j3l1M-iSrhZWZBrLg_oL3emqg3eDFfoqLvHIP1JnP9V_uyVA1ZpfDcUgWGEeJon_fTcIrousa9Vl9Bi2jq0AFf1d3AXe4z1NicqWzv75VKJw"/>
+<div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="text-white font-body-md font-bold">+12 Photos</span>
+</div>
+</div>
+</div>
+<!-- Key Specs -->
+<section class="bg-surface-container-lowest p-6 md:p-8 rounded-xl shadow-sm border border-outline-variant/20">
+<h2 class="font-headline-md text-headline-md text-primary mb-6">Key Specifications</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+<div class="flex flex-col gap-2">
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">settings</span>
+</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant uppercase">Engine</div>
+<div class="font-body-md text-body-md font-bold text-primary">3.3L Twin-Turbo V6 Diesel</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">speed</span>
+</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant uppercase">Horsepower</div>
+<div class="font-body-md text-body-md font-bold text-primary">302 hp</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">swap_calls</span>
+</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant uppercase">Transmission</div>
+<div class="font-body-md text-body-md font-bold text-primary">10-Speed Automatic</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">local_gas_station</span>
+</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant uppercase">Fuel Type</div>
+<div class="font-body-md text-body-md font-bold text-primary">Diesel</div>
+</div>
+</div>
+</section>
+<!-- Description -->
+<section class="bg-surface-container-lowest p-6 md:p-8 rounded-xl shadow-sm border border-outline-variant/20">
+<h2 class="font-headline-md text-headline-md text-primary mb-6">Vehicle Description</h2>
+<div class="font-body-lg text-body-lg text-on-surface-variant flex flex-col gap-4">
+<p>
+                        Experience the pinnacle of luxury and capability with the all-new 2024 Land Cruiser 300 VX-R. Fully redesigned from the ground up, this premium SUV combines legendary off-road prowess with unparalleled on-road refinement, making it the perfect executive vehicle for Addis Ababa's demanding conditions.
+                    </p>
+<p>
+                        This specific unit is finished in an immaculate Pearl White exterior over a sumptuous Tan leather interior. It features the highly sought-after 3.3L Twin-Turbo V6 Diesel engine, delivering exceptional torque for effortless towing and highway cruising, paired with an advanced 10-speed automatic transmission.
+                    </p>
+<p>
+                        Premium features include a 12.3-inch infotainment system, JBL premium audio, rear-seat entertainment, a center console cooler box, and a comprehensive suite of advanced safety technologies. Meticulously maintained and available for immediate delivery.
+                    </p>
+</div>
+</section>
+</div>
+<!-- Right Column: Sticky Sidebar -->
+<div class="w-full lg:w-[400px]">
+<div class="sticky top-24 flex flex-col gap-6">
+<!-- Pricing & Actions Card -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/20">
+<div class="font-label-caps text-label-caps text-on-surface-variant mb-1 uppercase">Selling Price</div>
+<div class="font-price-display text-price-display text-primary mb-6">
+                        ETB 24,500,000 <span class="font-body-md text-body-md text-on-surface-variant font-normal">incl. VAT</span>
+</div>
+<div class="flex flex-col gap-3">
+<button class="w-full bg-[#25D366] hover:bg-[#20bd5a] text-white py-3 rounded font-body-md text-body-md font-bold flex items-center justify-center gap-2 transition-colors">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"></path></svg>
+                            Message on WhatsApp
+                        </button>
+<button class="w-full bg-[#0088cc] hover:bg-[#0077b3] text-white py-3 rounded font-body-md text-body-md font-bold flex items-center justify-center gap-2 transition-colors">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M12 24c6.627 0 12-5.373 12-12S18.627 0 12 0 0 5.373 0 12s5.373 12 12 12zm5.894-16.48l-10.83 4.18c-.96.39-1.002.978-.17 1.233l2.774.866 6.425-4.047c.303-.186.58-.087.35.12l-5.203 4.694-.216 3.208c.316 0 .454-.145.63-.317l1.515-1.47 3.15 2.327c.58.32 1.002.155 1.147-.544l2.077-9.782c.218-.887-.33-1.282-1.02-.998z"></path></svg>
+                            Contact on Telegram
+                        </button>
+</div>
+</div>
+<!-- Inquiry Form -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/20">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-4">Request a Callback</h3>
+<form class="flex flex-col gap-4">
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-1 uppercase" for="name">Full Name</label>
+<input class="w-full border border-outline-variant/50 rounded-lg px-4 py-2 font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" id="name" placeholder="Abebe Bikila" type="text"/>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-1 uppercase" for="phone">Phone Number</label>
+<input class="w-full border border-outline-variant/50 rounded-lg px-4 py-2 font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" id="phone" placeholder="+251 91 123 4567" type="tel"/>
+</div>
+<button class="w-full bg-primary text-on-primary py-3 rounded font-body-md text-body-md font-bold mt-2 hover:bg-surface-tint transition-colors" type="submit">
+                            Submit Request
+                        </button>
+</form>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-primary-container dark:bg-black mt-auto full-width">
+<div class="max-w-container-max mx-auto px-margin-desktop py-stack-lg flex flex-col md:flex-row justify-between items-start gap-gutter">
+<div class="flex flex-col gap-4">
+<div class="font-headline-sm text-headline-sm text-on-primary dark:text-on-primary-fixed">{{CLIENT_NAME}}</div>
+<div class="text-on-primary-container dark:text-surface-variant font-body-md text-body-md max-w-sm">
+                    © 2024 {{CLIENT_NAME}}. All rights reserved. Addis Ababa, Ethiopia.
+                </div>
+</div>
+<div class="flex flex-col md:flex-row gap-gutter md:gap-12">
+<div class="flex flex-col gap-2">
+<a class="text-on-primary underline font-body-md text-body-md hover:text-secondary-fixed transition-colors" href="#">Detail</a>
+</div>
+<a class="text-on-primary-container/80 hover:text-on-primary font-body-md text-body-md hover:text-secondary-fixed transition-colors" href="#">Privacy Policy</a>
+<div class="flex flex-col gap-2">
+    <a class="text-on-primary-container/80 hover:text-on-primary font-body-md text-body-md hover:text-secondary-fixed transition-colors" href="#">Sell </a>
+<a class="text-on-primary-container/80 hover:text-on-primary font-body-md text-body-md hover:text-secondary-fixed transition-colors" href="#">Contact Support</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

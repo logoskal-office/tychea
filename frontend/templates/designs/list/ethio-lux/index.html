@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>{{CLIENT_NAME}} IMPORTS | Addis Ababa</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400..900;1,400..900&amp;family=Geist:wght@100..900&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            background-color: #121414;
+            color: #e2e2e2;
+            -webkit-font-smoothing: antialiased;
+        }
+        .glass-overlay {
+            background: rgba(18, 20, 20, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .gold-border-gradient {
+            border: 1px solid transparent;
+            background: linear-gradient(#1a1c1c, #1a1c1c) padding-box,
+                        linear-gradient(to bottom right, #f2ca50, #4d4635) border-box;
+        }
+        .text-glow-cyan {
+            text-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+        }
+        @keyframes fade-in-up {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-up {
+            animation: fade-in-up 1s ease-out forwards;
+        }
+    </style>
+<!-- Theme Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error": "#ffb4ab",
+                    "secondary-container": "#474746",
+                    "on-surface": "#e2e2e2",
+                    "inverse-surface": "#e2e2e2",
+                    "on-background": "#e2e2e2",
+                    "on-primary-fixed-variant": "#574500",
+                    "surface": "#121414",
+                    "surface-container-highest": "#333535",
+                    "on-secondary": "#313030",
+                    "background": "#121414",
+                    "surface-tint": "#e9c349",
+                    "on-tertiary-fixed-variant": "#41474e",
+                    "on-secondary-container": "#b7b5b4",
+                    "on-secondary-fixed-variant": "#474746",
+                    "tertiary-fixed-dim": "#c1c7cf",
+                    "on-error-container": "#ffdad6",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "tertiary-fixed": "#dde3eb",
+                    "surface-container": "#1e2020",
+                    "outline-variant": "#4d4635",
+                    "on-primary": "#3c2f00",
+                    "surface-container-lowest": "#0c0f0f",
+                    "surface-dim": "#121414",
+                    "error-container": "#93000a",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "on-tertiary-fixed": "#161c22",
+                    "secondary": "#c8c6c5",
+                    "surface-bright": "#37393a",
+                    "on-error": "#690005",
+                    "surface-container-high": "#282a2b",
+                    "primary-fixed-dim": "#e9c349",
+                    "inverse-primary": "#735c00",
+                    "on-tertiary-container": "#40464c",
+                    "on-primary-fixed": "#241a00",
+                    "on-surface-variant": "#d0c5af",
+                    "surface-container-low": "#1a1c1c",
+                    "primary-fixed": "#ffe088",
+                    "primary": "#f2ca50",
+                    "tertiary-container": "#adb3bb",
+                    "inverse-on-surface": "#2f3131",
+                    "primary-container": "#d4af37",
+                    "surface-variant": "#333535",
+                    "on-tertiary": "#2b3137",
+                    "outline": "#99907c",
+                    "on-primary-container": "#554300",
+                    "secondary-fixed": "#e5e2e1",
+                    "tertiary": "#c9cfd6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-mobile": "20px",
+                    "section-gap": "120px",
+                    "gutter": "24px",
+                    "margin-desktop": "80px",
+                    "container-max": "1440px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Bodoni Moda"],
+                    "technical-data": ["Geist"],
+                    "display-lg-mobile": ["Bodoni Moda"],
+                    "label-caps": ["Geist"],
+                    "body-sm": ["Hanken Grotesk"],
+                    "body-lg": ["Hanken Grotesk"],
+                    "display-lg": ["Bodoni Moda"]
+            },
+            "fontSize": {
+                    "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                    "technical-data": ["13px", { "lineHeight": "18px", "fontWeight": "500" }],
+                    "display-lg-mobile": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                    "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                    "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                    "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                    "display-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface">
+    <script>
+        const body = document.body;
+        body.style.zoom = "0.7"
+    </script>
+<!-- TopAppBar -->
+<header class="bg-surface/90 backdrop-blur-xl dark:bg-surface/90 fixed top-0 w-full z-50 border-b border-outline-variant/30">
+<div class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop  mx-auto">
+<a class="text-headline-md font-headline-md tracking-widest text-primary dark:text-primary uppercase" href="/">{{CLIENT_NAME}}</a>
+<div class="hidden md:flex gap-8 items-center">
+<nav class="flex gap-8">
+<a  class="text-label-caps font-label-caps text-primary dark:text-primary font-semibold" href="#">HOME</a>
+<a href="inventory" class="text-label-caps font-label-caps text-on-surface dark:text-on-surface hover:text-primary transition-colors" href="#">INVENTORY</a>
+<a href="detail" class="text-label-caps font-label-caps text-on-surface dark:text-on-surface hover:text-primary transition-colors" href="#">DETAIL</a>
+</nav>
+<button aria-label="Search" class="text-primary dark:text-primary hover:opacity-80 transition-opacity duration-300 scale-95 active:transition-transform duration-150">
+<span class="material-symbols-outlined">search</span>
+</button>
+</div>
+<div class="md:hidden">
+<button aria-label="Search" class="text-primary dark:text-primary">
+<span class="material-symbols-outlined">search</span>
+</button>
+</div>
+</div>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative h-[795px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-1000 hover:scale-105" data-alt="A majestic side profile of a metallic obsidian Mercedes-Benz S-Class parked in a high-contrast, minimalist urban environment in Addis Ababa at dusk. The warm golden city lights reflect off the car's pristine polished surface. The atmosphere is quiet, prestigious, and luxurious, with deep shadows and sharp highlights defining the vehicle's elegant curves. The composition is wide and cinematic, emphasizing the car's length and presence against a slate grey architectural background." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBzuN9OavEFEOT2XdCkLkV5EOgTCh7GqBc5l5npLDl-pDFkRH-VRLeGZOGpnq3ZQ7tRG2eURMiLyDJHWnRLuOQe2SQe003tXQqMvEUUCHKESWjl1hPxCFd6TtqqUPrOyDGogL1XX49YjCNOGHeAS0jQAJoA9orh3fPh5nr9FVn_BDpYiY--eSzSYTbR2kAtUSCn4xaKJy-zBbp1g1tRHoUtpjtsXE5mFecqx8APL7JZ0icttdKMrSpeRnLEgChTOxiWpQmYrj4jQ30')"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/40 to-transparent"></div>
+</div>
+<div class="relative z-10 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
+<div class="max-w-3xl animate-fade-up">
+<p class="text-label-caps font-label-caps text-primary tracking-[0.2em] mb-4">ESTABLISHED IN ADDIS ABABA</p>
+<h1 class="text-display-lg-mobile md:text-display-lg font-display-lg mb-8 leading-tight">REDESIGNING <br/> LUXURY IN ETHIOPIA</h1>
+<div class="flex flex-wrap gap-4">
+<button class="px-8 py-4 bg-primary text-on-primary font-label-caps hover:bg-primary/90 transition-all">EXPLORE FLEET</button>
+<button class="px-8 py-4 border border-outline text-on-surface font-label-caps hover:bg-surface-container-high transition-all">BOOK CONSULTATION</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats / Quality Markers -->
+<section class="bg-surface-container-lowest py-20 border-b border-outline-variant/10">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto grid grid-cols-2 md:grid-cols-4 gap-gutter">
+<div class="text-center">
+<p class="text-headline-md font-headline-md text-primary">150+</p>
+<p class="text-label-caps font-label-caps text-on-surface-variant">CURATED VEHICLES</p>
+</div>
+<div class="text-center">
+<p class="text-headline-md font-headline-md text-primary">24H</p>
+<p class="text-label-caps font-label-caps text-on-surface-variant">VIP CONCIERGE</p>
+</div>
+<div class="text-center">
+<p class="text-headline-md font-headline-md text-primary">100%</p>
+<p class="text-label-caps font-label-caps text-on-surface-variant">IMPORT COMPLIANCE</p>
+</div>
+<div class="text-center">
+<p class="text-headline-md font-headline-md text-primary">5★</p>
+<p class="text-label-caps font-label-caps text-on-surface-variant">SERVICE RATING</p>
+</div>
+</div>
+</section>
+<!-- EV Spotlight Section -->
+<section class="py-section-gap bg-background overflow-hidden">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row items-end justify-between mb-16 gap-8">
+<div class="max-w-2xl">
+<span class="text-label-caps font-label-caps text-[#00F0FF] mb-4 block tracking-[0.2em]">SUSTAINABLE PERFORMANCE</span>
+<h2 class="text-headline-md md:text-display-lg font-display-lg">THE FUTURE IS ELECTRIC</h2>
+</div>
+<a class="text-label-caps font-label-caps border-b border-primary text-primary pb-1 hover:opacity-70 transition-opacity" href="#">VIEW ALL ELECTRIC</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- EV Card 1 -->
+<div class="group relative aspect-[4/5] overflow-hidden bg-surface-container rounded-none border border-outline-variant/20">
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent z-10 opacity-60 group-hover:opacity-80 transition-opacity"></div>
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A futuristic studio shot of a Technical Cyan Audi e-tron GT against a deep obsidian black background. The car is illuminated by sharp neon light strips that highlight its aerodynamic profile and intricate wheel design. The mood is high-tech, electric, and premium, using a color palette of dark slates and vibrant cyan glows. Professional automotive photography with high contrast and sharp focus on the front LED headlights." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCbfpIKdmAYN7k-7aCda1Pe3mNR0Ew-MUelEm8XRXB44mqm8dc99YoZsikjjNio_G5c328y7UCCzSU0kF2jRcFOZizK3sv56DwKtkkhY6X-lei1XOd3Cz_MkCTZamrNaWNffBcXIv8LYRPHID_ORhrHP-P8EctGcYe_RXpgn8kavUCkX7dem7NxMylxo5_JRlgW0rA9KOMlutA-rGNsMJkLpCr9yX48S7FMO1dU4mi6XneaiwOcYYtYx_w-juOYZ7REIy8MTQnzQgM')"></div>
+<div class="absolute bottom-12 left-12 z-20">
+<h3 class="text-headline-md font-headline-md mb-2">AUDI E-TRON GT</h3>
+<div class="flex gap-6 mb-6">
+<div>
+<p class="text-technical-data font-technical-data text-[#00F0FF] text-glow-cyan">488 KM</p>
+<p class="text-label-caps font-label-caps text-on-surface-variant text-[10px]">RANGE</p>
+</div>
+<div>
+<p class="text-technical-data font-technical-data text-[#00F0FF] text-glow-cyan">3.3S</p>
+<p class="text-label-caps font-label-caps text-on-surface-variant text-[10px]">0-100 KM/H</p>
+</div>
+</div>
+<button class="px-6 py-3 border border-white/20 text-on-surface font-label-caps text-[11px] hover:bg-white hover:text-black transition-colors">RESERVE NOW</button>
+</div>
+</div>
+<!-- EV Card 2 -->
+<div class="group relative aspect-[4/5] overflow-hidden bg-surface-container rounded-none border border-outline-variant/20 mt-12 md:mt-24">
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent z-10 opacity-60 group-hover:opacity-80 transition-opacity"></div>
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A pristine white Tesla Model S Plaid sitting inside a hyper-modern, glass-walled showroom in Addis Ababa. The floor is a polished black marble reflecting the car's minimalist silhouette. Soft overhead geometric lights create a clean, futuristic ambiance. The aesthetic is extremely minimalist, focusing on pure forms and technical precision. High-key lighting with cool grey and white tones predominating." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDrp3ZWPgQySIWiyhMmLxYVlyUrAzgp5wsbJdpewU4w3PPlydW6xNpW9IRpiRyNabFaqbKNWrKWn4Xh-vVj-5RYv5fAX8JqnLMTwn-Lop0iTVHVI3WChzZy1SXyCJZhtJ97Uzkha2CkP48i_1Sf44N51Myt1PeKei6fFjUbusdv8diPwaAkcjFYn3K8PCOFWR5I_9ZM1uDqcpPwbSH4Jynk89Hbl5wU4hAvbiHyMbKZrcUUdM21rUVY_NwhpSjcvjz5ESpDsWdAisg')"></div>
+<div class="absolute bottom-12 left-12 z-20">
+<h3 class="text-headline-md font-headline-md mb-2">TESLA MODEL S</h3>
+<div class="flex gap-6 mb-6">
+<div>
+<p class="text-technical-data font-technical-data text-[#00F0FF] text-glow-cyan">637 KM</p>
+<p class="text-label-caps font-label-caps text-on-surface-variant text-[10px]">RANGE</p>
+</div>
+<div>
+<p class="text-technical-data font-technical-data text-[#00F0FF] text-glow-cyan">2.1S</p>
+<p class="text-label-caps font-label-caps text-on-surface-variant text-[10px]">0-100 KM/H</p>
+</div>
+</div>
+<button class="px-6 py-3 border border-white/20 text-on-surface font-label-caps text-[11px] hover:bg-white hover:text-black transition-colors">EXPLORE TECH</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Arrivals Bento Grid -->
+<section class="py-section-gap bg-surface-container-lowest">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="mb-16 text-center">
+<h2 class="text-headline-md font-headline-md mb-4">FEATURED ARRIVALS</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-xl mx-auto">Hand-picked luxury vehicles recently imported and available for immediate delivery in Addis Ababa.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Item 1: Wide -->
+<div class="md:col-span-2 group relative h-[500px] bg-surface overflow-hidden border border-outline-variant/10">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" data-alt="Close-up detailed shot of the front grille and headlight of a Range Rover Autobiography in Champagne Gold. The lighting is soft and luxurious, capturing the texture of the metal and the precision of the LED elements. The background is a blurred high-end estate in the hills of Addis Ababa. Dark, rich tones with elegant gold highlights. 8k resolution automotive detail photography." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDANpp8ptESjHPTMwRUOou7XOnq1PfDIZJOjTbkfNFYw6YzSkGlhojR3LXgmphb2zWidFpRUshD11q7p-A-tkTXp24D3FliN90UTo2zTq-AMuMjOV6oEC2VuYiFoyCAXmH3HLZD87h60oCEVUog6U60Fw6lHEjC7cOZCnxMziLAg82yC6eeyKczcuiIzlOpTgCHkuGzGpKzoxgkedbIhCn99hZy4srEIlAbB9SlVoe2x2HHanjih99WXc_zG1vOEgyru32vObHtqMM')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-8 left-8">
+<span class="px-3 py-1 bg-primary text-on-primary text-label-caps text-[10px] mb-4 inline-block">JUST ARRIVED</span>
+<h4 class="text-headline-md font-headline-md text-white">RANGE ROVER AUTOBIOGRAPHY</h4>
+<p class="text-technical-data font-technical-data text-primary mt-2">REQUEST PRICE</p>
+</div>
+</div>
+<!-- Item 2: Tall -->
+<div class="group relative h-[500px] bg-surface overflow-hidden border border-outline-variant/10">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" data-alt="A portrait shot of a sleek BMW 7 Series in Carbon Black, parked on a clean, modern driveway at night. The vehicle is backlit, creating a strong rim light that outlines its sophisticated profile. The mood is mysterious and prestigious. High contrast black-tie aesthetic with deep obsidian tones and sharp metallic reflections." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBrVQiIft0u8BxzUKd-zZuxlhRYnE5uN-PWtNo5J2xhaJ1nf7UOtdwupSeClVyR6N24U2b8TPZFs4rlKBgKh_b8ZX0UG9gbrJvsktyuwBjmXgrNcvKP4sDOhidU9ndJj3NNBYeT4GQ4ij51CUfe-2P_yVvySZmJXHULliYm7g9SWklhmi-c4rRYXxk4TEwizyC2MwhAKGbsqLqlRxOMShPqPrjnPKTHorhd3eekPt-gL_CiNuFs8ha7QqruTig8kyGoPlOfWUdXpdI')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-8 left-8">
+<h4 class="text-headline-md font-headline-md text-white">BMW 7 SERIES</h4>
+<p class="text-technical-data font-technical-data text-primary mt-2">ETB 18,500,000</p>
+</div>
+</div>
+<!-- Item 3: Secondary -->
+<div class="md:col-span-3 group relative h-[400px] bg-surface overflow-hidden border border-outline-variant/10">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" data-alt="An action-style still of a Porsche Cayenne Turbo GT in Arctic Grey, positioned dynamically on a mountain road with the Addis Ababa skyline visible in the far distance through a light haze. The lighting is golden hour, casting long shadows and warm glows on the car's bodywork. Powerful, athletic, and high-performance visual style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA76ztzQit-afKM6o3dB4ddHtCQBKQUYPGgvA2TBnY0pJ_bPHz9UWaEe0Jn512raC0ejjiZyVQaDzSOswrBLI4ZiV65Y-IFZlU-i7ABhycl1fZEd8Q5nliyRu3ndkVTVcCJ1UIHEhK3nmiUq-GzBgRDoEUoMQsm6SGZ7bbvKxX2dhEwYnLqyN0KY3aThw_T9X6qJ-m6OnGgT8PxjcQ6CWrDCO0VJRdyf3ZaUegq6VqCDPDKJWgZzVquhRlCQwLHimpQoSFhFR8yMXo')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-8 left-8">
+<h4 class="text-headline-md font-headline-md text-white">PORSCHE CAYENNE TURBO</h4>
+<p class="text-technical-data font-technical-data text-primary mt-2">ETB 22,000,000</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Booking CTA -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop">
+<div class="max-w-4xl mx-auto gold-border-gradient p-12 md:p-24 text-center bg-surface-container-low">
+<h2 class="text-headline-md font-headline-md mb-6">PRIVATE SHOWROOM VIEWING</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant mb-10">Experience our fleet in person at our exclusive showroom in Bole, Addis Ababa. Our consultants are ready to assist with your bespoke import requirements.</p>
+<div class="flex flex-col md:flex-row justify-center gap-6">
+<button class="px-10 py-5 bg-primary text-on-primary font-label-caps text-sm tracking-widest hover:brightness-110 transition-all">SCHEDULE VISIT</button>
+<button class="px-10 py-5 border border-outline text-on-surface font-label-caps text-sm tracking-widest hover:bg-surface-container-high transition-all">WHATSAPP US</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest w-full py-section-gap border-t border-outline-variant/20">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col gap-6">
+<span class="text-headline-md font-headline-md text-primary">{{CLIENT_NAME}}</span>
+<p class="text-body-sm font-body-sm text-on-surface-variant">The premier destination for luxury vehicle imports in the Horn of Africa. Excellence in engineering, delivered to your door.</p>
+<div class="flex gap-4">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="text-label-caps font-label-caps text-on-surface">OUR SERVICES</h5>
+<nav class="flex flex-col gap-2">
+<a class="text-body-sm font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Luxury Fleet</a>
+<a class="text-body-sm font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">EV Center</a>
+<a class="text-body-sm font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Custom Import</a>
+<a class="text-body-sm font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Trade-In</a>
+</nav>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="text-label-caps font-label-caps text-on-surface">LOCATIONS</h5>
+<nav class="flex flex-col gap-2">
+<p class="text-body-sm font-body-sm text-on-surface-variant">Bole Road, Addis Ababa</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Dubai Hub (Logistics)</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">London (Sourcing)</p>
+</nav>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="text-label-caps font-label-caps text-on-surface">LEGAL</h5>
+<nav class="flex flex-col gap-2">
+<a class="text-body-sm font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-body-sm font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="text-body-sm font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Contact Us</a>
+</nav>
+</div>
+</div>
+<div class="mt-20 pt-8 border-t border-outline-variant/10 text-center">
+<p class="text-label-caps font-label-caps text-on-surface-variant/60">© 2024 {{CLIENT_NAME}} IMPORTS. ADDIS ABABA, ETHIOPIA.</p>
+</div>
+</footer>
+<script>
+        // Micro-interaction for header scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('py-2');
+                header.classList.remove('h-20');
+            } else {
+                header.classList.remove('py-2');
+                header.classList.add('h-20');
+            }
+        });
+
+        // Hover effect for vehicle cards
+        document.querySelectorAll('.group').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.querySelector('.bg-cover').style.transform = 'scale(1.08)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.querySelector('.bg-cover').style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body></html>

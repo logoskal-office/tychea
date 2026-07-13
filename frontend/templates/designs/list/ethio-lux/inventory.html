@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Our Collection | {{CLIENT_NAME}} IMPORTS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400..900;1,400..900&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Theme Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "error": "#ffb4ab",
+                "secondary-container": "#474746",
+                "on-surface": "#e2e2e2",
+                "inverse-surface": "#e2e2e2",
+                "on-background": "#e2e2e2",
+                "on-primary-fixed-variant": "#574500",
+                "surface": "#121414",
+                "surface-container-highest": "#333535",
+                "on-secondary": "#313030",
+                "background": "#121414",
+                "surface-tint": "#e9c349",
+                "on-tertiary-fixed-variant": "#41474e",
+                "on-secondary-container": "#b7b5b4",
+                "on-secondary-fixed-variant": "#474746",
+                "tertiary-fixed-dim": "#c1c7cf",
+                "on-error-container": "#ffdad6",
+                "secondary-fixed-dim": "#c8c6c5",
+                "tertiary-fixed": "#dde3eb",
+                "surface-container": "#1e2020",
+                "outline-variant": "#4d4635",
+                "on-primary": "#3c2f00",
+                "surface-container-lowest": "#0c0f0f",
+                "surface-dim": "#121414",
+                "error-container": "#93000a",
+                "on-secondary-fixed": "#1c1b1b",
+                "on-tertiary-fixed": "#161c22",
+                "secondary": "#c8c6c5",
+                "surface-bright": "#37393a",
+                "on-error": "#690005",
+                "surface-container-high": "#282a2b",
+                "primary-fixed-dim": "#e9c349",
+                "inverse-primary": "#735c00",
+                "on-tertiary-container": "#40464c",
+                "on-primary-fixed": "#241a00",
+                "on-surface-variant": "#d0c5af",
+                "surface-container-low": "#1a1c1c",
+                "primary-fixed": "#ffe088",
+                "primary": "#f2ca50",
+                "tertiary-container": "#adb3bb",
+                "inverse-on-surface": "#2f3131",
+                "primary-container": "#d4af37",
+                "surface-variant": "#333535",
+                "on-tertiary": "#2b3137",
+                "outline": "#99907c",
+                "on-primary-container": "#554300",
+                "secondary-fixed": "#e5e2e1",
+                "tertiary": "#c9cfd6"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+            },
+            "spacing": {
+                "margin-mobile": "20px",
+                "section-gap": "120px",
+                "gutter": "24px",
+                "margin-desktop": "80px",
+                "container-max": "1440px",
+                "unit": "8px"
+            },
+            "fontFamily": {
+                "headline-md": ["Bodoni Moda"],
+                "technical-data": ["Geist"],
+                "display-lg-mobile": ["Bodoni Moda"],
+                "label-caps": ["Geist"],
+                "body-sm": ["Hanken Grotesk"],
+                "body-lg": ["Hanken Grotesk"],
+                "display-lg": ["Bodoni Moda"]
+            },
+            "fontSize": {
+                "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                "technical-data": ["13px", {"lineHeight": "18px", "fontWeight": "500"}],
+                "display-lg-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .glass-nav {
+            background: rgba(18, 20, 20, 0.9);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .text-glow {
+            text-shadow: 0 0 10px rgba(242, 202, 80, 0.4);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body-lg overflow-x-hidden selection:bg-primary selection:text-on-primary">
+    <script>
+        const body = document.body;
+        body.style.zoom = "0.7"
+    </script>
+<!-- TopAppBar -->
+<header class="bg-surface/90 backdrop-blur-xl dark:bg-surface/90 fixed top-0 w-full z-50 border-b border-outline-variant/30">
+<div class="flex justify-between items-center h-20 px-margin-mobile md:px-margin- -w-container-max mx-auto">
+<a class="text-headline-md font-headline-md tracking-widest text-primary dark:text-primary uppercase" href="/">{{CLIENT_NAME}}</a>
+<div class="hidden md:flex gap-8 items-center">
+<nav class="flex gap-8">
+    <a href="../" class="text-label-caps font-label-caps text-on-surface dark:text-on-surface hover:text-primary transition-colors" href="#">HOME</a>
+<a href="#" class="text-label-caps font-label-caps text-primary dark:text-primary font-semibold" href="#">INVENTORY</a>
+<a href="../detail" class="text-label-caps font-label-caps text-on-surface dark:text-on-surface hover:text-primary transition-colors" href="#">DETAIL</a>
+</nav>
+<button aria-label="Search" class="text-primary dark:text-primary hover:opacity-80 transition-opacity duration-300 scale-95 active:transition-transform duration-150">
+<span class="material-symbols-outlined">search</span>
+</button>
+</div>
+<div class="md:hidden">
+<button aria-label="Search" class="text-primary dark:text-primary">
+<span class="material-symbols-outlined">search</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Navigation Drawer (Hidden by default, triggered by menu) -->
+<aside class="fixed inset-y-0 left-0 z-[60] flex flex-col p-8 h-full w-80 bg-surface dark:bg-surface bg-surface-container-low border-r border-outline-variant/20 shadow-2xl -translate-x-full transition-transform duration-300" id="drawer">
+<div class="flex justify-between items-center mb-12">
+<span class="text-primary font-headline-md">{{CLIENT_NAME}}</span>
+<button onclick="document.getElementById('drawer').classList.add('-translate-x-full')">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="space-y-6">
+<a class="flex items-center gap-4 text-primary border-l-2 border-primary pl-4 scale-98" href="#">
+<span class="material-symbols-outlined">directions_car</span>
+<span class="text-label-caps font-label-caps">Inventory</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all pl-4 py-2" href="#">
+<span class="material-symbols-outlined">bolt</span>
+<span class="text-label-caps font-label-caps">Electric Vehicles</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all pl-4 py-2" href="#">
+<span class="material-symbols-outlined">storefront</span>
+<span class="text-label-caps font-label-caps">Our Showroom</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all pl-4 py-2" href="#">
+<span class="material-symbols-outlined">request_quote</span>
+<span class="text-label-caps font-label-caps">Request Quote</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all pl-4 py-2" href="#">
+<span class="material-symbols-outlined">location_on</span>
+<span class="text-label-caps font-label-caps">Contact</span>
+</a>
+</div>
+</aside>
+<main class="pt-32 pb-section-gap">
+<!-- Page Header -->
+<header class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-16">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
+<div>
+<span class="text-label-caps font-label-caps text-primary tracking-[0.2em] block mb-4">EXCLUSIVE SELECTION</span>
+<h1 class="text-display-lg-mobile md:text-display-lg font-display-lg text-on-surface uppercase leading-none">OUR COLLECTION</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-technical-data font-technical-data text-on-surface-variant">24 VEHICLES AVAILABLE</span>
+<div class="h-[1px] w-12 bg-outline-variant"></div>
+</div>
+</div>
+</header>
+<!-- Filters -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-12">
+<div class="flex items-center gap-4 overflow-x-auto no-scrollbar pb-4 -mx-margin-mobile px-margin-mobile md:mx-0 md:px-0">
+<button class="px-8 py-3 bg-primary text-on-primary text-label-caps font-label-caps whitespace-nowrap transition-all hover:opacity-90">ALL MODELS</button>
+<button class="px-8 py-3 border border-outline-variant text-on-surface-variant text-label-caps font-label-caps whitespace-nowrap hover:border-primary hover:text-primary transition-all">LUXURY SEDANS</button>
+<button class="px-8 py-3 border border-outline-variant text-on-surface-variant text-label-caps font-label-caps whitespace-nowrap hover:border-primary hover:text-primary transition-all">ELECTRIC (EV)</button>
+<button class="px-8 py-3 border border-outline-variant text-on-surface-variant text-label-caps font-label-caps whitespace-nowrap hover:border-primary hover:text-primary transition-all">SUVS</button>
+<button class="px-8 py-3 border border-outline-variant text-on-surface-variant text-label-caps font-label-caps whitespace-nowrap hover:border-primary hover:text-primary transition-all">SPORTS CARS</button>
+</div>
+</section>
+<!-- Product Grid -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Card 1: Porsche Taycan -->
+<div class="group relative bg-surface-container overflow-hidden transition-all duration-500 hover:translate-y-[-8px]">
+<div class="aspect-[4/5] relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A side-profile shot of a 2024 Porsche Taycan in Frozen Blue Metallic, parked in a minimalist, dimly lit underground garage in Addis Ababa. The lighting is focused on the car's sleek curves, with subtle champagne gold reflections on the polished concrete floor. The atmosphere is high-tech and sophisticated, matching a modern luxury aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuARzqejBk7fUDLyGNDjwp8RdNvaUiF_ocyAxnUfYiSHXb3HRSr7hNljbv14ya4I5BEySEK-jBM9hXLQpU1q-2eJE8FoPzm7w4ac8GjOpxhLaWPN0oKKKWIXCAM-fH0W89HfK9Spvsq2FDo2sPJ6JPkM2rqw2fS62GSaGZyEy8F7VzRUVlEw97WCYjrQlVjBTtuoeJIdqePV2XzXkBF0zqBzR-UC7jlAtnMxI5iLTZV6xK5zCGF9NQ7aaawc77edclaqVhywNim0Dqw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<!-- Badge -->
+<div class="absolute top-6 left-6 flex flex-col gap-2">
+<span class="bg-primary/90 text-on-primary px-3 py-1 text-label-caps font-label-caps">NEW ARRIVAL</span>
+<span class="bg-[#00F0FF]/20 text-[#00F0FF] px-3 py-1 text-label-caps font-label-caps border border-[#00F0FF]/30 backdrop-blur-md">EV PERFORMANCE</span>
+</div>
+<div class="absolute bottom-8 left-8 right-8">
+<p class="text-technical-data font-technical-data text-primary mb-1">2024</p>
+<h3 class="text-headline-md font-headline-md text-white mb-4">PORSCHE TAYCAN</h3>
+<div class="flex justify-between items-end">
+<div class="space-y-1">
+<p class="text-label-caps font-label-caps text-on-surface-variant uppercase">Starting At</p>
+<p class="text-headline-md font-headline-md text-white">$145,000</p>
+</div>
+<span class="material-symbols-outlined text-white text-3xl group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Specs Overlay (Shown on Hover) -->
+<div class="p-8 border-t border-outline-variant/30">
+<div class="grid grid-cols-2 gap-4">
+<div>
+<p class="text-label-caps font-label-caps text-on-surface-variant uppercase">Range</p>
+<p class="text-body-lg font-body-lg text-on-surface">450 KM</p>
+</div>
+<div>
+<p class="text-label-caps font-label-caps text-on-surface-variant uppercase">0-100 KM/H</p>
+<p class="text-body-lg font-body-lg text-on-surface">2.8s</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2: Range Rover -->
+<div class="group relative bg-surface-container overflow-hidden transition-all duration-500 hover:translate-y-[-8px]">
+<div class="aspect-[4/5] relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A majestic 2023 Range Rover Autobiography in Belgravia Green, positioned against a background of Addis Ababa's modern skyline during sunset. The low-angle sunlight highlights the vehicle's clean lines and premium finish. The mood is authoritative and prestigious, with a deep obsidian-black and gold color palette dominating the scene." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0N_oS9ZdEERvUiWCaczn9RuPc3RxR89M9USkwMLARG28vMkGh-n8oizV1Tjk6-UT5nZVBHfLrhq9hwx6w_NIeQrUgtXO3dOXp93bsvuidlN-i5KTwysN5iOzm2z5n_t7OrGo-gV5JUflE7_0GFz_S2rmJWN_KzF_ZeTvz9qriJKl818UhFIoRsGMvm8VjTY-B8iyiaQPCHC5493udoyhURYQH10xEUmMVFPRC9Tt1BU-f_TPvVblBMcSOalQGrThyIS0MLGpnW3U"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute top-6 left-6">
+<span class="bg-surface/80 backdrop-blur-md text-on-surface px-3 py-1 text-label-caps font-label-caps border border-outline-variant">AVAILABLE NOW</span>
+</div>
+<div class="absolute bottom-8 left-8 right-8">
+<p class="text-technical-data font-technical-data text-primary mb-1">2023</p>
+<h3 class="text-headline-md font-headline-md text-white mb-4">AUTOBIOGRAPHY</h3>
+<div class="flex justify-between items-end">
+<div class="space-y-1">
+<p class="text-label-caps font-label-caps text-on-surface-variant uppercase">Starting At</p>
+<p class="text-headline-md font-headline-md text-white">28M ETB</p>
+</div>
+<span class="material-symbols-outlined text-white text-3xl group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</div>
+</div>
+</div>
+<div class="p-8 border-t border-outline-variant/30">
+<div class="grid grid-cols-2 gap-4">
+<div>
+<p class="text-label-caps font-label-caps text-on-surface-variant uppercase">Engine</p>
+<p class="text-body-lg font-body-lg text-on-surface">V8 Twin Turbo</p>
+</div>
+<div>
+<p class="text-label-caps font-label-caps text-on-surface-variant uppercase">Interior</p>
+<p class="text-body-lg font-body-lg text-on-surface">Ebony Semi-Aniline</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 3: Mercedes G-Wagon -->
+<div class="group relative bg-surface-container overflow-hidden transition-all duration-500 hover:translate-y-[-8px]">
+<div class="aspect-[4/5] relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A rugged yet ultra-luxurious 2024 Mercedes-Benz G-Wagon G63 in matte Obsidian Black, parked in front of a brutalist architectural building. The harsh contrast of shadows and sharp edges emphasizes the vehicle's boxy, iconic design. The lighting is dramatic, using cool tones with warm champagne accents for a sophisticated, high-end commercial feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgoKSvQLXAbq4bHCEdlbUNq-lDRT8iFRHoVC66Z0mK4TXkl5cHhIfKGKopzCfIlghUQeC77CPkZSvP2GFtlxrBve4PR6x_jZ0VpL_s_YjUQoWU8injbXPpZJZv1iXAq_-JXes85_M8AO1K9cyiKW9FEaMmG9w9_wjbTlfISwML9yPx1Bc0omY9B8nx0bkcGdDrWPfo0quQa0WP3y2BKP3MALw8pI_uKf5K88xVvc4tALMv3QuFm9C5LF8W_Ls3GabAVUHQ0zhtwpU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute top-6 left-6">
+<span class="bg-primary text-on-primary px-3 py-1 text-label-caps font-label-caps">SPECIAL ORDER</span>
+</div>
+<div class="absolute bottom-8 left-8 right-8">
+<p class="text-technical-data font-technical-data text-primary mb-1">2024</p>
+<h3 class="text-headline-md font-headline-md text-white mb-4">MERCEDES G-WAGON</h3>
+<div class="flex justify-between items-end">
+<div class="space-y-1">
+<p class="text-label-caps font-label-caps text-on-surface-variant uppercase">Starting At</p>
+<p class="text-headline-md font-headline-md text-white">$195,000</p>
+</div>
+<span class="material-symbols-outlined text-white text-3xl group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</div>
+</div>
+</div>
+<div class="p-8 border-t border-outline-variant/30">
+<div class="grid grid-cols-2 gap-4">
+<div>
+<p class="text-label-caps font-label-caps text-on-surface-variant uppercase">Transmission</p>
+<p class="text-body-lg font-body-lg text-on-surface">9G-TRONIC</p>
+</div>
+<div>
+<p class="text-label-caps font-label-caps text-on-surface-variant uppercase">Feature</p>
+<p class="text-body-lg font-body-lg text-on-surface">AMG Night Pack</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter / CTA -->
+<section class="mt-section-gap max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="relative py-24 px-8 md:px-24 bg-surface-container-high overflow-hidden border border-outline-variant/30">
+<!-- Decorative element -->
+<div class="absolute top-0 right-0 w-1/2 h-full opacity-10">
+
+</div>
+<div class="relative z-10 max-w-2xl">
+<h2 class="text-display-lg-mobile md:text-headline-md font-headline-md text-on-surface mb-6 uppercase">CAN'T FIND YOUR DREAM DRIVE?</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant mb-12">Our concierge service specializes in sourcing the world's most exclusive vehicles directly to Ethiopia. Let us handle the logistics of luxury.</p>
+<button class="px-12 py-4 bg-primary text-on-primary text-label-caps font-label-caps hover:bg-primary-container transition-all scale-100 active:scale-95">REQUEST CUSTOM IMPORT</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest py-section-gap border-t border-outline-variant/20">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Brand -->
+<div class="space-y-6">
+<span class="text-headline-md font-headline-md text-primary">{{CLIENT_NAME}}</span>
+<p class="text-body-sm font-body-sm text-on-surface-variant max-w-xs">The premier destination for luxury automotive imports in Addis Ababa. Experience the pinnacle of engineering and prestige.</p>
+</div>
+<!-- Navigation Links -->
+<div class="flex flex-col gap-4">
+<span class="text-label-caps font-label-caps text-on-surface mb-2">QUICK LINKS</span>
+<a class="text-body-sm font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Luxury Fleet</a>
+<a class="text-body-sm font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">EV Center</a>
+<a class="text-body-sm font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-body-sm font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Contact Us</a>
+</div>
+<!-- Contact -->
+<div class="flex flex-col gap-4">
+<span class="text-label-caps font-label-caps text-on-surface mb-2">SHOWROOM</span>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Bole Road, Near Friendship Mall<br/>Addis Ababa, Ethiopia</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">+251 911 000 000</p>
+</div>
+<!-- Copyright -->
+<div class="flex flex-col justify-between md:items-end">
+<div class="flex gap-4 mb-8">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">face_nod</span></a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+</div>
+<p class="text-label-caps font-label-caps text-on-surface-variant text-right">© 2024 {{CLIENT_NAME}} IMPORTS. ADDIS ABABA, ETHIOPIA.</p>
+</div>
+</div>
+</footer>
+<!-- FAB (Suppressed for this listing page per UX rules, but logic remains if needed) -->
+<div class="fixed bottom-8 right-8 z-40 hidden md:flex items-center justify-center w-16 h-16 bg-primary text-on-primary rounded-full shadow-[0_40px_40px_-12px_rgba(0,0,0,0.5)] cursor-pointer hover:scale-110 active:scale-95 transition-all" id="fab">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+</div>
+<script>
+        // Simple Interaction Logic
+        const menuBtn = document.querySelector('button[aria-label="Menu"]');
+        const drawer = document.getElementById('drawer');
+        
+        menuBtn.addEventListener('click', () => {
+            drawer.classList.remove('-translate-x-full');
+        });
+
+        // Close drawer when clicking outside
+        window.addEventListener('click', (e) => {
+            if (!drawer.contains(e.target) && !menuBtn.contains(e.target)) {
+                drawer.classList.add('-translate-x-full');
+            }
+        });
+
+        // Hover animations for cards
+        const cards = document.querySelectorAll('.group');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                // Potential JS based animations can go here
+            });
+        });
+    </script>
+</body></html>
