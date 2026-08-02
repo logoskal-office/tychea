@@ -38,7 +38,8 @@ class Sector(models.Model):
 class Linker(models.Model):
     name = models.CharField(max_length=200)
     full_name = models.CharField(max_length=200, null=True, blank=True)
-    slug = models.SlugField(max_length=40, unique=True, null=True, blank=True)
+    email = models.EmailField(max_length=200, null=True, blank=True)
+    slug = models.SlugField(max_length=40, null=True, blank=True)
     uid = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
 
     class Meta:

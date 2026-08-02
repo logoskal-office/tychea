@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Family Dental Specialty Clinic — Addis Ababa</title>
+<title>{{linker.full_name}}</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
@@ -67,7 +67,7 @@
         <circle cx="20" cy="15.5" r="2.6" fill="#0F3D3E"/>
       </svg>
       <span class="font-display text-lg leading-tight">
-        <span class="block font-semibold text-teal-700">Family Dental</span>
+        <span class="block font-semibold text-teal-700">{{linker.name}}</span>
         <span class="block text-[11px] tracking-[.2em] text-gold-600 font-mono">SPECIALTY CLINIC</span>
       </span>
     </a>
@@ -95,7 +95,7 @@
 <section class="relative overflow-hidden grain">
   <div class="max-w-7xl mx-auto px-6 pt-16 pb-24 md:pt-24 md:pb-32 grid md:grid-cols-2 gap-14 items-center">
     <div>
-      <p class="eyebrow font-mono text-xs text-gold-600 mb-5">FAMILY DENTAL SPECIALTY CLINIC · ADDIS ABABA</p>
+      <p class="eyebrow font-mono text-xs text-gold-600 mb-5 uppercase">{{linker.full_name}}· ADDIS ABABA</p>
       <h1 class="font-display font-semibold text-5xl sm:text-6xl leading-[1.05] text-teal-900">
         Addis Ababa's smiles, <span class="italic text-gold-600">cared for</span> like family.
       </h1>
@@ -168,7 +168,7 @@
     <p class="eyebrow font-mono text-xs text-gold-600 mb-4">THE PRACTICE</p>
     <h2 class="font-display font-semibold text-4xl text-teal-900 leading-tight">A family clinic, built by a family of specialists.</h2>
     <p class="mt-6 text-teal-700/90 leading-relaxed">
-      Family Dental Specialty Clinic opened its doors in Bole in 2011 with a simple idea: Addis Ababa families shouldn't have to cross the city between a pediatric dentist, an orthodontist, and a surgeon. Today, twelve specialists share one building, one patient record, and one standard of care — so your whole household can be seen under a single roof, in Amharic, English, or Afaan Oromo.
+      {{linker.full_name}} opened its doors in Bole in 2011 with a simple idea: Addis Ababa families shouldn't have to cross the city between a pediatric dentist, an orthodontist, and a surgeon. Today, twelve specialists share one building, one patient record, and one standard of care — so your whole household can be seen under a single roof, in Amharic, English, or Afaan Oromo.
     </p>
     <p class="mt-4 text-teal-700/90 leading-relaxed">
       We still believe the best dentistry feels unhurried. Every visit starts with a conversation, not a drill.
@@ -293,7 +293,7 @@
   <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
     <div class="rounded-2xl overflow-hidden border border-teal-100 hover:shadow-lg transition">
       <div class="aspect-[1/1] bg-mint flex items-center justify-center">
-        <img class="h-full w-full object-cover" src="/media/designs/linkers/family/selamawit.jpg" alt="">
+        <img class="h-full w-full object-cover" src="/media/designs/linkers/family-dent/selamawit.jpg" alt="">
       </div>
       <div class="p-6">
         <h3 class="font-display text-xl font-semibold text-teal-900">Dr. Selamawit Bekele</h3>
@@ -303,7 +303,7 @@
     </div>
     <div class="rounded-2xl overflow-hidden border border-teal-100 hover:shadow-lg transition">
         <div class="aspect-[1/1] bg-mint flex items-center justify-center">
-          <img class="h-full w-full object-cover" src="/media/designs/linkers/family/mikias.jpg" alt="">
+          <img class="h-full w-full object-cover" src="/media/designs/linkers/family-dent/mikias.jpg" alt="">
         </div>
       <div class="p-6">
         <h3 class="font-display text-xl font-semibold text-teal-900">Dr. Mikiyas Kebede</h3>
@@ -313,7 +313,7 @@
     </div>
     <div class="rounded-2xl overflow-hidden border border-teal-100 hover:shadow-lg transition">
       <div class="aspect-[1/1] bg-mint flex items-center justify-center">
-        <img class="h-full w-full object-cover" src="/media/designs/linkers/family/abel.jpg" alt="">
+        <img class="h-full w-full object-cover" src="/media/designs/linkers/family-dent/abel.jpg" alt="">
       </div>
       <div class="p-6">
         <h3 class="font-display text-xl font-semibold text-teal-900">Dr. Abel Desta</h3>
@@ -468,7 +468,7 @@
     <div>
       <div class="flex items-center gap-3 mb-4">
         <svg width="28" height="28" viewBox="0 0 40 40"><path d="M6 24 C6 12, 34 12, 34 24" fill="none" stroke="#C6A15B" stroke-width="2.5" stroke-linecap="round"/><circle cx="20" cy="15.5" r="2.6" fill="#F7F3EC"/></svg>
-        <span class="font-display text-paper font-semibold">Family Dental</span>
+        <span class="font-display text-paper font-semibold">{{linker.name}}</span>
       </div>
       <p class="text-sm leading-relaxed">Specialty dental care for every generation, in the heart of Addis Ababa.</p>
     </div>
@@ -492,13 +492,13 @@
       <h4 class="text-paper font-medium mb-4 text-sm tracking-wide">Contact</h4>
       <ul class="space-y-3 text-sm font-mono">
         <li>+251 91 100 0000</li>
-        <li>hello@familydentaladdis.com</li>
+        <li>{{linker.email}}</li>
       </ul>
     </div>
   </div>
   <div class="border-t border-paper/10">
     <div class="max-w-7xl mx-auto px-6 py-6 text-xs flex flex-col sm:flex-row justify-between gap-2">
-      <span>© 2026 Family Dental Specialty Clinic, Addis Ababa.</span>
+      <span>© 2026 {{linker.name}}, Addis Ababa.</span>
       <span>Designed with care for our patients.</span>
     </div>
   </div>
