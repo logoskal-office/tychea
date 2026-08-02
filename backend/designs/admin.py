@@ -1,3 +1,4 @@
+from designs.models import Linker
 from django.contrib.admin.views import autocomplete
 from django.contrib import admin
 from .models import Design, Sector
@@ -20,6 +21,11 @@ class DesignAdmin(admin.ModelAdmin):
 
     display_sectors.short_description = 'Sectors'
 
+class LinkerAdmin(admin.ModelAdmin):
+    list_display = ('name', 'full_name', 'slug', 'uid')
+    search_fields = ('name', 'full_name', 'slug', 'uid')
+
 # Register your models here.
 admin.site.register(Design, DesignAdmin)
 admin.site.register(Sector, SectorAdmin)
+admin.site.register(Linker, LinkerAdmin)

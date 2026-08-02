@@ -1,3 +1,4 @@
+import uuid
 from django.db import models
 from django.core.exceptions import ValidationError
 from django.core.validators import MinValueValidator, MaxValueValidator
@@ -33,3 +34,16 @@ class Sector(models.Model):
 
     def __str__(self):
         return self.name
+
+class Linker(models.Model):
+    name = models.CharField(max_length=200)
+    full_name = models.CharField(max_length=200, null=True, blank=True)
+    slug = models.SlugField(max_length=40, unique=True, null=True, blank=True)
+    uid = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
+
+    class Meta:
+        verbose_name = 'Linker'
+        verbose_name_plural = 'Linkers'
+
+    def __str__(self):
+        return f"{self.name}"

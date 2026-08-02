@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book an Appointment — Family Dental Specialty Clinic</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: { extend: {
+      colors: {
+        ink:'#0B2320',
+        teal:{ DEFAULT:'#0F3D3E',50:'#EAF1F0',100:'#D2E2E0',400:'#2E6C68',600:'#14524F',700:'#0F3D3E',900:'#081F1F' },
+        gold:{ DEFAULT:'#C6A15B',50:'#FBF6EC',100:'#F3E6C6',400:'#D3B57A',600:'#B08B3F' },
+        paper:'#F7F3EC', mint:'#E7EFEB',
+      },
+      fontFamily: { display:['Fraunces','serif'], sans:['Inter','sans-serif'], mono:['"IBM Plex Mono"','monospace'] },
+    }}
+  }
+</script>
+<style>
+  html{scroll-behavior:smooth} body{background:#F7F3EC}
+  .eyebrow{letter-spacing:.18em}
+  ::selection{background:#C6A15B;color:#0B2320}
+
+  .step-dot { width:10px; height:10px; border-radius:9999px; background:#D2E2E0; }
+  .step-dot.active { background:#C6A15B; }
+  .step-dot.done { background:#0F3D3E; }
+  .step-line { flex:1; height:1px; background:#D2E2E0; }
+
+  .form-step { display:none; }
+  .form-step.active { display:block; }
+
+  .opt-card { cursor:pointer; transition:all .15s ease; }
+  .opt-card input { position:absolute; opacity:0; pointer-events:none; }
+  .opt-card input:checked + .opt-inner { border-color:#0F3D3E; background:#0F3D3E; color:#F7F3EC; }
+  .opt-card input:checked + .opt-inner .opt-sub { color:#D2E2E0; }
+
+  .slot input { position:absolute; opacity:0; pointer-events:none; }
+  .slot input:checked + .slot-inner { background:#0F3D3E; color:#F7F3EC; border-color:#0F3D3E; }
+  .slot input:disabled + .slot-inner { opacity:.35; cursor:not-allowed; }
+
+  input:focus-visible, textarea:focus-visible, select:focus-visible, button:focus-visible {
+    outline:2px solid #C6A15B; outline-offset:2px;
+  }
+</style>
+</head>
+<body class="font-sans text-ink antialiased">
+
+<div class="bg-teal-900 text-paper text-xs sm:text-sm font-mono tracking-wide">
+  <div class="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between">
+    <span>Now welcoming new patients — Bole &amp; CMC branches</span>
+    <a href="tel:+251911000000" class="hidden sm:inline hover:text-gold transition">+251 91 100 0000</a>
+  </div>
+</div>
+
+<header class="sticky top-0 z-40 bg-paper/90 backdrop-blur border-b border-teal-100">
+  <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="/sites/{{ linker.uid }}/" class="flex items-center gap-3">
+      <svg width="34" height="34" viewBox="0 0 40 40" class="shrink-0">
+        <path d="M6 24 C6 12, 34 12, 34 24" fill="none" stroke="#C6A15B" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="20" cy="15.5" r="2.6" fill="#0F3D3E"/>
+      </svg>
+      <span class="font-display text-lg leading-tight">
+        <span class="block font-semibold text-teal-700">Family Dental</span>
+        <span class="block text-[11px] tracking-[.2em] text-gold-600 font-mono">SPECIALTY CLINIC</span>
+      </span>
+    </a>
+    <div class="hidden md:flex items-center gap-9 font-medium text-sm text-teal-700">
+      <a href="/sites/{{ linker.uid }}/" class="hover:text-gold-600 transition">Home</a>
+      <a href="/sites/{{ linker.uid }}/services.html/" class="hover:text-gold-600 transition">Services &amp; Treatments</a>
+      <a href="/sites/{{ linker.uid }}/doctors.html/" class="hover:text-gold-600 transition">Doctors &amp; Specialists</a>
+      <a href="/sites/{{ linker.uid }}/gallery.html/" class="hover:text-gold-600 transition">Testimonials &amp; Gallery</a>
+    </div>
+    <a href="/sites/{{ linker.uid }}/booking.html/" class="hidden md:inline-block bg-teal-700 text-paper text-sm font-medium px-5 py-2.5 rounded-full hover:bg-gold-600 transition">Book a Visit</a>
+    <button id="menuBtn" class="md:hidden" aria-label="Open menu">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0F3D3E" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
+    </button>
+  </nav>
+  <div id="mobileMenu" class="hidden md:hidden px-6 pb-6 flex flex-col gap-4 font-medium text-teal-700 bg-paper border-t border-teal-100">
+    <a href="/sites/{{ linker.uid }}/" class="pt-4">Home</a>
+    <a href="/sites/{{ linker.uid }}/services.html/">Services &amp; Treatments</a>
+    <a href="/sites/{{ linker.uid }}/doctors.html/">Doctors &amp; Specialists</a>
+    <a href="/sites/{{ linker.uid }}/gallery.html/">Testimonials &amp; Gallery</a>
+    <a href="/sites/{{ linker.uid }}/booking.html/" class="bg-teal-700 text-paper text-center px-5 py-2.5 rounded-full">Book a Visit</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="max-w-7xl mx-auto px-6 pt-16 pb-10">
+  <p class="eyebrow font-mono text-xs text-gold-600 mb-4">BOOK AN APPOINTMENT</p>
+  <h1 class="font-display font-semibold text-5xl text-teal-900 max-w-2xl leading-tight">Let's find your first open chair.</h1>
+  <p class="mt-6 text-teal-700/80 max-w-xl leading-relaxed">Four short steps — pick a specialty, a branch and time, tell us who's coming, and you're booked. A staff member will call to confirm within one business day.</p>
+</section>
+
+<section class="max-w-4xl mx-auto px-6 pb-28">
+
+  <!-- Step indicator -->
+  <div class="flex items-center gap-3 mb-12" id="stepIndicator">
+    <div class="flex items-center gap-2"><span class="step-dot active" data-dot="1"></span><span class="text-xs font-mono text-teal-700" data-label="1">Specialty</span></div>
+    <div class="step-line"></div>
+    <div class="flex items-center gap-2"><span class="step-dot" data-dot="2"></span><span class="text-xs font-mono text-teal-700/50" data-label="2">Date &amp; Time</span></div>
+    <div class="step-line"></div>
+    <div class="flex items-center gap-2"><span class="step-dot" data-dot="3"></span><span class="text-xs font-mono text-teal-700/50" data-label="3">Your Details</span></div>
+    <div class="step-line"></div>
+    <div class="flex items-center gap-2"><span class="step-dot" data-dot="4"></span><span class="text-xs font-mono text-teal-700/50" data-label="4">Confirm</span></div>
+  </div>
+
+  <form id="bookingForm" class="bg-paper border border-teal-100 rounded-3xl p-8 sm:p-10">
+
+    <!-- STEP 1: Specialty & Branch -->
+    <div class="form-step active" data-step="1">
+      <h2 class="font-display text-2xl font-semibold text-teal-900 mb-1">What brings you in?</h2>
+      <p class="text-sm text-teal-700/70 mb-6">Not sure? Choose General Consultation and we'll match you with a specialist.</p>
+
+      <div class="grid sm:grid-cols-2 gap-3 mb-8">
+        <label class="opt-card">
+          <input type="radio" name="service" value="General &amp; Family Dentistry" checked>
+          <div class="opt-inner border border-teal-200 rounded-xl px-5 py-4">
+            <p class="font-medium">General &amp; Family Dentistry</p>
+            <p class="opt-sub text-xs text-teal-700/60 mt-1">Checkups, cleanings, fillings</p>
+          </div>
+        </label>
+        <label class="opt-card">
+          <input type="radio" name="service" value="Orthodontics">
+          <div class="opt-inner border border-teal-200 rounded-xl px-5 py-4">
+            <p class="font-medium">Orthodontics</p>
+            <p class="opt-sub text-xs text-teal-700/60 mt-1">Braces &amp; clear aligners</p>
+          </div>
+        </label>
+        <label class="opt-card">
+          <input type="radio" name="service" value="Pediatric Dentistry">
+          <div class="opt-inner border border-teal-200 rounded-xl px-5 py-4">
+            <p class="font-medium">Pediatric Dentistry</p>
+            <p class="opt-sub text-xs text-teal-700/60 mt-1">For patients under 16</p>
+          </div>
+        </label>
+        <label class="opt-card">
+          <input type="radio" name="service" value="Oral &amp; Maxillofacial Surgery">
+          <div class="opt-inner border border-teal-200 rounded-xl px-5 py-4">
+            <p class="font-medium">Oral &amp; Maxillofacial Surgery</p>
+            <p class="opt-sub text-xs text-teal-700/60 mt-1">Extractions, jaw surgery</p>
+          </div>
+        </label>
+        <label class="opt-card">
+          <input type="radio" name="service" value="Cosmetic &amp; Aesthetic Dentistry">
+          <div class="opt-inner border border-teal-200 rounded-xl px-5 py-4">
+            <p class="font-medium">Cosmetic &amp; Aesthetic</p>
+            <p class="opt-sub text-xs text-teal-700/60 mt-1">Veneers, whitening, makeovers</p>
+          </div>
+        </label>
+        <label class="opt-card">
+          <input type="radio" name="service" value="Periodontics">
+          <div class="opt-inner border border-teal-200 rounded-xl px-5 py-4">
+            <p class="font-medium">Periodontics</p>
+            <p class="opt-sub text-xs text-teal-700/60 mt-1">Gum health &amp; treatment</p>
+          </div>
+        </label>
+        <label class="opt-card">
+          <input type="radio" name="service" value="Endodontics">
+          <div class="opt-inner border border-teal-200 rounded-xl px-5 py-4">
+            <p class="font-medium">Endodontics</p>
+            <p class="opt-sub text-xs text-teal-700/60 mt-1">Root canal therapy</p>
+          </div>
+        </label>
+        <label class="opt-card">
+          <input type="radio" name="service" value="Dental Implants">
+          <div class="opt-inner border border-teal-200 rounded-xl px-5 py-4">
+            <p class="font-medium">Dental Implants</p>
+            <p class="opt-sub text-xs text-teal-700/60 mt-1">Single tooth to full-arch</p>
+          </div>
+        </label>
+      </div>
+
+      <h3 class="font-display text-lg font-semibold text-teal-900 mb-3">Which branch works best?</h3>
+      <div class="grid sm:grid-cols-2 gap-3">
+        <label class="opt-card">
+          <input type="radio" name="branch" value="Bole Branch" checked>
+          <div class="opt-inner border border-teal-200 rounded-xl px-5 py-4">
+            <p class="font-medium">Bole Branch</p>
+            <p class="opt-sub text-xs text-teal-700/60 mt-1">Bole Road, near Friendship Building</p>
+          </div>
+        </label>
+        <label class="opt-card">
+          <input type="radio" name="branch" value="CMC Branch">
+          <div class="opt-inner border border-teal-200 rounded-xl px-5 py-4">
+            <p class="font-medium">CMC Branch</p>
+            <p class="opt-sub text-xs text-teal-700/60 mt-1">CMC Road, opposite Sunshine Real Estate</p>
+          </div>
+        </label>
+      </div>
+    </div>
+
+    <!-- STEP 2: Date & Time -->
+    <div class="form-step" data-step="2">
+      <h2 class="font-display text-2xl font-semibold text-teal-900 mb-1">Pick a date &amp; time.</h2>
+      <p class="text-sm text-teal-700/70 mb-6">Times shown are for the branch selected in Step 1.</p>
+
+      <label class="block text-sm font-medium text-teal-900 mb-2" for="apptDate">Preferred date</label>
+      <input type="date" id="apptDate" name="date" required
+        class="w-full border border-teal-200 rounded-xl px-4 py-3 mb-8 bg-paper text-teal-900 focus:border-gold-600">
+
+      <label class="block text-sm font-medium text-teal-900 mb-3">Preferred time</label>
+      <div class="grid grid-cols-3 sm:grid-cols-4 gap-3" id="timeSlots">
+        <label class="slot"><input type="radio" name="time" value="8:30 AM" checked><div class="slot-inner text-center text-sm border border-teal-200 rounded-lg py-2.5">8:30 AM</div></label>
+        <label class="slot"><input type="radio" name="time" value="9:15 AM"><div class="slot-inner text-center text-sm border border-teal-200 rounded-lg py-2.5">9:15 AM</div></label>
+        <label class="slot"><input type="radio" name="time" value="10:00 AM"><div class="slot-inner text-center text-sm border border-teal-200 rounded-lg py-2.5">10:00 AM</div></label>
+        <label class="slot"><input type="radio" name="time" value="10:45 AM" disabled><div class="slot-inner text-center text-sm border border-teal-200 rounded-lg py-2.5">10:45 AM</div></label>
+        <label class="slot"><input type="radio" name="time" value="11:30 AM"><div class="slot-inner text-center text-sm border border-teal-200 rounded-lg py-2.5">11:30 AM</div></label>
+        <label class="slot"><input type="radio" name="time" value="1:00 PM"><div class="slot-inner text-center text-sm border border-teal-200 rounded-lg py-2.5">1:00 PM</div></label>
+        <label class="slot"><input type="radio" name="time" value="2:00 PM" disabled><div class="slot-inner text-center text-sm border border-teal-200 rounded-lg py-2.5">2:00 PM</div></label>
+        <label class="slot"><input type="radio" name="time" value="3:00 PM"><div class="slot-inner text-center text-sm border border-teal-200 rounded-lg py-2.5">3:00 PM</div></label>
+        <label class="slot"><input type="radio" name="time" value="4:00 PM"><div class="slot-inner text-center text-sm border border-teal-200 rounded-lg py-2.5">4:00 PM</div></label>
+        <label class="slot"><input type="radio" name="time" value="5:00 PM"><div class="slot-inner text-center text-sm border border-teal-200 rounded-lg py-2.5">5:00 PM</div></label>
+      </div>
+      <p class="text-xs text-teal-700/50 mt-4 font-mono">Grayed-out times are already booked.</p>
+    </div>
+
+    <!-- STEP 3: Patient details -->
+    <div class="form-step" data-step="3">
+      <h2 class="font-display text-2xl font-semibold text-teal-900 mb-1">Who are we seeing?</h2>
+      <p class="text-sm text-teal-700/70 mb-6">We'll use these details to confirm your visit by phone.</p>
+
+      <div class="grid sm:grid-cols-2 gap-5">
+        <div>
+          <label class="block text-sm font-medium text-teal-900 mb-2" for="fullName">Full name</label>
+          <input type="text" id="fullName" name="fullName" required placeholder="e.g. Selamawit Bekele"
+            class="w-full border border-teal-200 rounded-xl px-4 py-3 bg-paper focus:border-gold-600">
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-teal-900 mb-2" for="phone">Phone number</label>
+          <input type="tel" id="phone" name="phone" required placeholder="+251 9__ ___ ___"
+            class="w-full border border-teal-200 rounded-xl px-4 py-3 bg-paper focus:border-gold-600">
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-teal-900 mb-2" for="email">Email <span class="text-teal-700/50 font-normal">(optional)</span></label>
+          <input type="email" id="email" name="email" placeholder="you@example.com"
+            class="w-full border border-teal-200 rounded-xl px-4 py-3 bg-paper focus:border-gold-600">
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-teal-900 mb-2" for="patientType">Booking for</label>
+          <select id="patientType" name="patientType" class="w-full border border-teal-200 rounded-xl px-4 py-3 bg-paper focus:border-gold-600">
+            <option>Myself</option>
+            <option>My child</option>
+            <option>A family member</option>
+          </select>
+        </div>
+      </div>
+      <div class="mt-5">
+        <label class="block text-sm font-medium text-teal-900 mb-2" for="notes">Anything we should know? <span class="text-teal-700/50 font-normal">(optional)</span></label>
+        <textarea id="notes" name="notes" rows="3" placeholder="Symptoms, past treatment, preferred language, etc."
+          class="w-full border border-teal-200 rounded-xl px-4 py-3 bg-paper focus:border-gold-600"></textarea>
+      </div>
+    </div>
+
+    <!-- STEP 4: Review & confirm -->
+    <div class="form-step" data-step="4">
+      <h2 class="font-display text-2xl font-semibold text-teal-900 mb-1">Review your appointment.</h2>
+      <p class="text-sm text-teal-700/70 mb-6">Double-check the details below, then confirm your request.</p>
+
+      <dl class="divide-y divide-teal-100 border border-teal-100 rounded-2xl overflow-hidden" id="reviewList">
+        <div class="flex justify-between px-6 py-4 bg-mint/40"><dt class="text-teal-700/70 text-sm">Specialty</dt><dd class="font-medium text-teal-900" id="rvService">—</dd></div>
+        <div class="flex justify-between px-6 py-4"><dt class="text-teal-700/70 text-sm">Branch</dt><dd class="font-medium text-teal-900" id="rvBranch">—</dd></div>
+        <div class="flex justify-between px-6 py-4 bg-mint/40"><dt class="text-teal-700/70 text-sm">Date</dt><dd class="font-medium text-teal-900" id="rvDate">—</dd></div>
+        <div class="flex justify-between px-6 py-4"><dt class="text-teal-700/70 text-sm">Time</dt><dd class="font-medium text-teal-900" id="rvTime">—</dd></div>
+        <div class="flex justify-between px-6 py-4 bg-mint/40"><dt class="text-teal-700/70 text-sm">Patient</dt><dd class="font-medium text-teal-900" id="rvName">—</dd></div>
+        <div class="flex justify-between px-6 py-4"><dt class="text-teal-700/70 text-sm">Phone</dt><dd class="font-medium text-teal-900" id="rvPhone">—</dd></div>
+      </dl>
+      <p class="text-xs text-teal-700/50 mt-4 font-mono">This confirms a request only — our front desk will call to finalize your slot.</p>
+    </div>
+
+    <!-- Nav buttons -->
+    <div class="flex items-center justify-between mt-10 pt-6 border-t border-teal-100">
+      <button type="button" id="backBtn" class="px-6 py-3 rounded-full font-medium text-teal-700 border border-teal-200 hover:border-gold-600 hover:text-gold-600 transition invisible">Back</button>
+      <button type="button" id="nextBtn" class="px-7 py-3 rounded-full font-medium bg-teal-700 text-paper hover:bg-gold-600 transition">Continue</button>
+      <button type="submit" id="submitBtn" class="hidden px-7 py-3 rounded-full font-medium bg-gold-600 text-teal-900 hover:bg-gold-100 transition">Confirm Appointment</button>
+    </div>
+  </form>
+
+  <!-- SUCCESS STATE -->
+  <div id="successPanel" class="hidden bg-teal-900 text-paper rounded-3xl p-10 sm:p-14 text-center">
+    <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#C6A15B" stroke-width="1.6" class="mx-auto mb-6"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>
+    <h2 class="font-display text-3xl font-semibold mb-3">Request received, <span id="successName">friend</span>.</h2>
+    <p class="text-paper/70 max-w-md mx-auto mb-8">We've noted your request for <span id="successSummary" class="text-gold-100">—</span>. A staff member will call <span id="successPhone" class="text-gold-100">—</span> within one business day to confirm your exact time.</p>
+    <div class="flex flex-wrap gap-4 justify-center">
+      <a href="index.html" class="bg-gold-600 text-teal-900 px-7 py-3 rounded-full font-medium hover:bg-gold-100 transition">Back to Home</a>
+      <a href="tel:+251911000000" class="border border-paper/30 px-7 py-3 rounded-full font-medium hover:border-gold-100 hover:text-gold-100 transition">Call the Clinic Instead</a>
+    </div>
+  </div>
+
+</section>
+
+<!-- ALT CONTACT -->
+<section class="bg-mint/50 py-16">
+  <div class="max-w-7xl mx-auto px-6 grid sm:grid-cols-3 gap-8 text-center">
+    <div>
+      <p class="font-display text-xl font-semibold text-teal-900 mb-2">Prefer to call?</p>
+      <p class="text-teal-700/70 text-sm mb-3">Our front desk books appointments over the phone too.</p>
+      <a href="tel:+251911000000" class="font-mono text-teal-700 hover:text-gold-600 transition">+251 91 100 0000</a>
+    </div>
+    <div>
+      <p class="font-display text-xl font-semibold text-teal-900 mb-2">Emergency?</p>
+      <p class="text-teal-700/70 text-sm mb-3">Same-day emergency slots are held daily at both branches.</p>
+      <a href="tel:+251912000000" class="font-mono text-teal-700 hover:text-gold-600 transition">+251 91 200 0000</a>
+    </div>
+    <div>
+      <p class="font-display text-xl font-semibold text-teal-900 mb-2">Write to us</p>
+      <p class="text-teal-700/70 text-sm mb-3">For non-urgent questions, email anytime.</p>
+      <a href="mailto:hello@familydentaladdis.com" class="font-mono text-teal-700 hover:text-gold-600 transition">hello@familydentaladdis.com</a>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-ink text-paper/70">
+  <div class="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-4 gap-10">
+    <div>
+      <div class="flex items-center gap-3 mb-4">
+        <svg width="28" height="28" viewBox="0 0 40 40"><path d="M6 24 C6 12, 34 12, 34 24" fill="none" stroke="#C6A15B" stroke-width="2.5" stroke-linecap="round"/><circle cx="20" cy="15.5" r="2.6" fill="#F7F3EC"/></svg>
+        <span class="font-display text-paper font-semibold">Family Dental</span>
+      </div>
+      <p class="text-sm leading-relaxed">Specialty dental care for every generation, in the heart of Addis Ababa.</p>
+    </div>
+    <div>
+      <h4 class="text-paper font-medium mb-4 text-sm tracking-wide">Explore</h4>
+      <ul class="space-y-3 text-sm">
+        <li><a href="services.html" class="hover:text-gold-100 transition">Services &amp; Treatments</a></li>
+        <li><a href="doctors.html" class="hover:text-gold-100 transition">Doctors &amp; Specialists</a></li>
+        <li><a href="gallery.html" class="hover:text-gold-100 transition">Testimonials &amp; Gallery</a></li>
+        <li><a href="booking.html" class="hover:text-gold-100 transition">Book an Appointment</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-paper font-medium mb-4 text-sm tracking-wide">Branches</h4>
+      <ul class="space-y-3 text-sm">
+        <li>Bole Road, Addis Ababa</li>
+        <li>CMC Road, Addis Ababa</li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-paper font-medium mb-4 text-sm tracking-wide">Contact</h4>
+      <ul class="space-y-3 text-sm font-mono">
+        <li>+251 91 100 0000</li>
+        <li>hello@familydentaladdis.com</li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-paper/10">
+    <div class="max-w-7xl mx-auto px-6 py-6 text-xs flex flex-col sm:flex-row justify-between gap-2">
+      <span>© 2026 Family Dental Specialty Clinic, Addis Ababa.</span>
+      <span>Designed with care for our patients.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('menuBtn').addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.toggle('hidden');
+  });
+
+  // Set min date to today
+  const dateInput = document.getElementById('apptDate');
+  const today = new Date();
+  dateInput.min = today.toISOString().split('T')[0];
+  const defaultDate = new Date(today.getTime() + 2*24*60*60*1000);
+  dateInput.value = defaultDate.toISOString().split('T')[0];
+
+  let currentStep = 1;
+  const totalSteps = 4;
+  const form = document.getElementById('bookingForm');
+  const steps = document.querySelectorAll('.form-step');
+  const dots = document.querySelectorAll('.step-dot');
+  const labels = document.querySelectorAll('[data-label]');
+  const backBtn = document.getElementById('backBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const submitBtn = document.getElementById('submitBtn');
+
+  function renderStep() {
+    steps.forEach(s => s.classList.toggle('active', Number(s.dataset.step) === currentStep));
+    dots.forEach(d => {
+      const n = Number(d.dataset.dot);
+      d.classList.remove('active','done');
+      if (n < currentStep) d.classList.add('done');
+      else if (n === currentStep) d.classList.add('active');
+    });
+    labels.forEach(l => {
+      const n = Number(l.dataset.label);
+      l.classList.toggle('text-teal-700', n <= currentStep);
+      l.classList.toggle('text-teal-700/50', n > currentStep);
+    });
+    backBtn.classList.toggle('invisible', currentStep === 1);
+    nextBtn.classList.toggle('hidden', currentStep === totalSteps);
+    submitBtn.classList.toggle('hidden', currentStep !== totalSteps);
+    if (currentStep === totalSteps) fillReview();
+    window.scrollTo({ top: form.offsetTop - 120, behavior: 'smooth' });
+  }
+
+  function validateStep(step) {
+    if (step === 3) {
+      const name = document.getElementById('fullName');
+      const phone = document.getElementById('phone');
+      if (!name.value.trim()) { name.focus(); return false; }
+      if (!phone.value.trim()) { phone.focus(); return false; }
+    }
+    return true;
+  }
+
+  function fillReview() {
+    const service = form.querySelector('input[name="service"]:checked')?.value || '—';
+    const branch = form.querySelector('input[name="branch"]:checked')?.value || '—';
+    const date = dateInput.value ? new Date(dateInput.value + 'T00:00:00').toLocaleDateString('en-US', { weekday:'long', month:'long', day:'numeric', year:'numeric' }) : '—';
+    const time = form.querySelector('input[name="time"]:checked')?.value || '—';
+    const name = document.getElementById('fullName').value || '—';
+    const phone = document.getElementById('phone').value || '—';
+
+    document.getElementById('rvService').textContent = service;
+    document.getElementById('rvBranch').textContent = branch;
+    document.getElementById('rvDate').textContent = date;
+    document.getElementById('rvTime').textContent = time;
+    document.getElementById('rvName').textContent = name;
+    document.getElementById('rvPhone').textContent = phone;
+  }
+
+  nextBtn.addEventListener('click', () => {
+    if (!validateStep(currentStep)) return;
+    if (currentStep < totalSteps) { currentStep++; renderStep(); }
+  });
+  backBtn.addEventListener('click', () => {
+    if (currentStep > 1) { currentStep--; renderStep(); }
+  });
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const service = form.querySelector('input[name="service"]:checked')?.value || 'a consultation';
+    const date = dateInput.value ? new Date(dateInput.value + 'T00:00:00').toLocaleDateString('en-US', { month:'long', day:'numeric' }) : '';
+    const time = form.querySelector('input[name="time"]:checked')?.value || '';
+    const name = document.getElementById('fullName').value || 'there';
+    const phone = document.getElementById('phone').value || 'your number';
+
+    document.getElementById('successName').textContent = name.split(' ')[0];
+    document.getElementById('successSummary').textContent = `${service} on ${date} at ${time}`;
+    document.getElementById('successPhone').textContent = phone;
+
+    form.classList.add('hidden');
+    document.getElementById('stepIndicator').classList.add('hidden');
+    document.getElementById('successPanel').classList.remove('hidden');
+    window.scrollTo({ top: document.getElementById('successPanel').offsetTop - 120, behavior: 'smooth' });
+  });
+
+  renderStep();
+</script>
+</body>
+</html>

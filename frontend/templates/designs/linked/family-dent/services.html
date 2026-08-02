@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services & Treatments — Family Dental Specialty Clinic</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: { extend: {
+      colors: {
+        ink:'#0B2320',
+        teal:{ DEFAULT:'#0F3D3E',50:'#EAF1F0',100:'#D2E2E0',400:'#2E6C68',600:'#14524F',700:'#0F3D3E',900:'#081F1F' },
+        gold:{ DEFAULT:'#C6A15B',50:'#FBF6EC',100:'#F3E6C6',400:'#D3B57A',600:'#B08B3F' },
+        paper:'#F7F3EC', mint:'#E7EFEB',
+      },
+      fontFamily: { display:['Fraunces','serif'], sans:['Inter','sans-serif'], mono:['"IBM Plex Mono"','monospace'] },
+    }}
+  }
+</script>
+<style>
+  html{scroll-behavior:smooth} body{background:#F7F3EC}
+  .eyebrow{letter-spacing:.18em}
+  ::selection{background:#C6A15B;color:#0B2320}
+  .service-anchor{scroll-margin-top:100px}
+</style>
+</head>
+<body class="font-sans text-ink antialiased">
+
+<div class="bg-teal-900 text-paper text-xs sm:text-sm font-mono tracking-wide">
+  <div class="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between">
+    <span>Now welcoming new patients — Bole &amp; CMC branches</span>
+    <a href="tel:+251911000000" class="hidden sm:inline hover:text-gold transition">+251 91 100 0000</a>
+  </div>
+</div>
+
+<header class="sticky top-0 z-40 bg-paper/90 backdrop-blur border-b border-teal-100">
+  <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="{{ linker.uid }}/" class="flex items-center gap-3">
+      <svg width="34" height="34" viewBox="0 0 40 40" class="shrink-0">
+        <path d="M6 24 C6 12, 34 12, 34 24" fill="none" stroke="#C6A15B" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="20" cy="15.5" r="2.6" fill="#0F3D3E"/>
+      </svg>
+      <span class="font-display text-lg leading-tight">
+        <span class="block font-semibold text-teal-700">Family Dental</span>
+        <span class="block text-[11px] tracking-[.2em] text-gold-600 font-mono">SPECIALTY CLINIC</span>
+      </span>
+    </a>
+    <div class="hidden md:flex items-center gap-9 font-medium text-sm text-teal-700">
+      <a href="/sites/{{ linker.uid }}/" class="hover:text-gold-600 transition">Home</a>
+      <a href="/sites/{{ linker.uid }}/services.html/" class="text-gold-600">Services &amp; Treatments</a>
+      <a href="/sites/{{ linker.uid }}/doctors.html/" class="hover:text-gold-600 transition">Doctors &amp; Specialists</a>
+      <a href="/sites/{{ linker.uid }}/gallery.html/" class="hover:text-gold-600 transition">Testimonials &amp; Gallery</a>
+    </div>
+    <a href="/sites/{{ linker.uid }}/booking.html/" class="hidden md:inline-block bg-teal-700 text-paper text-sm font-medium px-5 py-2.5 rounded-full hover:bg-gold-600 transition">Book a Visit</a>
+    <button id="menuBtn" class="md:hidden" aria-label="Open menu">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0F3D3E" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
+    </button>
+  </nav>
+  <div id="mobileMenu" class="hidden md:hidden px-6 pb-6 flex flex-col gap-4 font-medium text-teal-700 bg-paper border-t border-teal-100">
+    <a href="index.html" class="pt-4">Home</a>
+    <a href="/sites/{{ linker.uid }}/services.html/">Services &amp; Treatments</a>
+    <a href="/sites/{{ linker.uid }}/doctors.html/">Doctors &amp; Specialists</a>
+    <a href="/sites/{{ linker.uid }}/gallery.html/">Testimonials &amp; Gallery</a>
+    <a href="/sites/{{ linker.uid }}/booking.html/" class="bg-teal-700 text-paper text-center px-5 py-2.5 rounded-full">Book a Visit</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="max-w-7xl mx-auto px-6 pt-16 pb-14">
+  <p class="eyebrow font-mono text-xs text-gold-600 mb-4">SERVICES &amp; TREATMENTS</p>
+  <h1 class="font-display font-semibold text-5xl text-teal-900 max-w-2xl leading-tight">Every specialty your smile could need, under one roof.</h1>
+  <p class="mt-6 text-teal-700/80 max-w-xl leading-relaxed">From a six-month cleaning to a full smile reconstruction — our specialists coordinate your care so nothing falls through the cracks.</p>
+</section>
+
+<!-- JUMP NAV -->
+<div class="border-y border-teal-100 bg-mint/40 sticky top-[73px] z-30">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex gap-6 overflow-x-auto text-sm font-medium text-teal-700 font-mono">
+    <a href="#general" class="hover:text-gold-600 whitespace-nowrap">General</a>
+    <a href="#ortho" class="hover:text-gold-600 whitespace-nowrap">Orthodontics</a>
+    <a href="#pediatric" class="hover:text-gold-600 whitespace-nowrap">Pediatric</a>
+    <a href="#surgery" class="hover:text-gold-600 whitespace-nowrap">Oral Surgery</a>
+    <a href="#cosmetic" class="hover:text-gold-600 whitespace-nowrap">Cosmetic</a>
+    <a href="#perio" class="hover:text-gold-600 whitespace-nowrap">Periodontics</a>
+    <a href="#endo" class="hover:text-gold-600 whitespace-nowrap">Endodontics</a>
+    <a href="#implants" class="hover:text-gold-600 whitespace-nowrap">Implants</a>
+  </div>
+</div>
+
+<!-- SERVICE SECTIONS -->
+<div class="max-w-7xl mx-auto px-6 divide-y divide-teal-100">
+
+  <section id="general" class="service-anchor py-16 grid md:grid-cols-[1fr,1.4fr] gap-12">
+    <div>
+      <p class="font-mono text-xs text-gold-600 mb-3">01 — GENERAL &amp; FAMILY DENTISTRY</p>
+      <h2 class="font-display font-semibold text-3xl text-teal-900">The foundation of a healthy smile.</h2>
+    </div>
+    <div>
+      <p class="text-teal-700/80 leading-relaxed mb-6">Routine care for every member of the household — cleanings, exams, and fillings delivered with a gentle, unhurried touch.</p>
+      <ul class="grid sm:grid-cols-2 gap-3 text-sm text-teal-700/90">
+        <li class="flex gap-2"><span class="text-gold-600">—</span>Routine cleanings &amp; exams</li>
+        <li class="flex gap-2"><span class="text-gold-600">—</span>Tooth-colored fillings</li>
+        <li class="flex gap-2"><span class="text-gold-600">—</span>Digital X-ray diagnostics</li>
+        <li class="flex gap-2"><span class="text-gold-600">—</span>Fluoride &amp; sealant treatments</li>
+        <li class="flex gap-2"><span class="text-gold-600">—</span>Nightguards for teeth grinding</li>
+        <li class="flex gap-2"><span class="text-gold-600">—</span>Emergency same-day visits</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="ortho" class="service-anchor py-16 grid md:grid-cols-[1fr,1.4fr] gap-12">
+    <div>
+      <p class="font-mono text-xs text-gold-600 mb-3">02 — ORTHODONTICS</p>
+      <h2 class="font-display font-semibold text-3xl text-teal-900">Straighter teeth, at any age.</h2>
+    </div>
+    <div>
+      <p class="text-teal-700/80 leading-relaxed mb-6">Whether it's a first set of braces or an adult correcting a lifelong bite issue, our orthodontic team plans every case around your lifestyle.</p>
+      <ul class="grid sm:grid-cols-2 gap-3 text-sm text-teal-700/90">
+        <li class="flex gap-2"><span class="text-gold-600">—</span>Traditional metal braces</li>
+        <li class="flex gap-2"><span class="text-gold-600">—</span>Ceramic (tooth-colored) braces</li>
+        <li class="flex gap-2"><span class="text-gold-600">—</span>Clear aligner therapy</li>
+        <li class="flex gap-2"><span class="text-gold-600">—</span>Early interceptive treatment for kids</li>
+        <li class="flex gap-2"><span class="text-gold-600">—</span>Retainers &amp; long-term bite maintenance</li>
+        <li class="flex gap-2"><span class="text-gold-600">—</span>Jaw alignment consultation</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="pediatric" class="service-anchor py-16 grid md:grid-cols-[1fr,1.4fr] gap-12">
+    <div>
+      <p class="font-mono text-xs text-gold-600 mb-3">03 — PEDIATRIC DENTISTRY</p>
+      <h2 class="font-display font-semibold text-3xl text-teal-900">Building good habits from the very first tooth.</h2>
+    </div>
+    <div>
+      <p class="text-teal-700/80 leading-relaxed mb-6">Our children's wing is designed to feel nothing like a clinic — playful, patient, and paced entirely around your child's comfort.</p>
+      <ul class="grid sm:grid-cols-2 gap-3 text-sm text-teal-700/90">
+        <li class="flex gap-2"><span class="text-gold-600">—</span>First-visit &amp; toddler checkups</li>
+        <li class="flex gap-2"><span class="text-gold-600">—</span>Cavity prevention &amp; sealants</li>
+        <li class="flex gap-2"><span class="text-gold-600">—</span>Gentle cavity treatment</li>
+        <li class="flex gap-2"><span class="text-gold-600">—</span>Space maintainers</li>
+        <li class="flex gap-2"><span class="text-gold-600">—</span>Habit counseling (thumb-sucking, etc.)</li>
+        <li class="flex gap-2"><span class="text-gold-600">—</span>Sports mouthguards</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="surgery" class="service-anchor py-16 grid md:grid-cols-[1fr,1.4fr] gap-12">
+    <div>
+      <p class="font-mono text-xs text-gold-600 mb-3">04 — ORAL &amp; MAXILLOFACIAL SURGERY</p>
+      <h2 class="font-display font-semibold text-3xl text-teal-900">Advanced surgical care, close to home.</h2>
+    </div>
+    <div>
+      <p class="text-teal-700/80 leading-relaxed mb-6">From wisdom teeth to jaw reconstruction, our surgical suite is equipped for procedures many Addis patients previously traveled abroad for.</p>
+      <ul class="grid sm:grid-cols-2 gap-3 text-sm text-teal-700/90">
+        <li class="flex gap-2"><span class="text-gold-600">—</span>Wisdom tooth extraction</li>
+        <li class="flex gap-2"><span class="text-gold-600">—</span>Complex &amp; surgical extractions</li>
+        <li class="flex gap-2"><span class="text-gold-600">—</span>Bone grafting</li>
+        <li class="flex gap-2"><span class="text-gold-600">—</span>Corrective jaw surgery</li>
+        <li class="flex gap-2"><span class="text-gold-600">—</span>Biopsy &amp; pathology referral</li>
+        <li class="flex gap-2"><span class="text-gold-600">—</span>Sedation dentistry options</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="cosmetic" class="service-anchor py-16 grid md:grid-cols-[1fr,1.4fr] gap-12">
+    <div>
+      <p class="font-mono text-xs text-gold-600 mb-3">05 — COSMETIC &amp; AESTHETIC DENTISTRY</p>
+      <h2 class="font-display font-semibold text-3xl text-teal-900">Confidence, designed carefully.</h2>
+    </div>
+    <div>
+      <p class="text-teal-700/80 leading-relaxed mb-6">Every smile makeover starts with a digital preview, so you know exactly what to expect before any work begins.</p>
+      <ul class="grid sm:grid-cols-2 gap-3 text-sm text-teal-700/90">
+        <li class="flex gap-2"><span class="text-gold-600">—</span>Porcelain veneers</li>
+        <li class="flex gap-2"><span class="text-gold-600">—</span>Professional teeth whitening</li>
+        <li class="flex gap-2"><span class="text-gold-600">—</span>Bonding &amp; contouring</li>
+        <li class="flex gap-2"><span class="text-gold-600">—</span>Full smile makeovers</li>
+        <li class="flex gap-2"><span class="text-gold-600">—</span>Gum contouring</li>
+        <li class="flex gap-2"><span class="text-gold-600">—</span>Digital smile preview</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="perio" class="service-anchor py-16 grid md:grid-cols-[1fr,1.4fr] gap-12">
+    <div>
+      <p class="font-mono text-xs text-gold-600 mb-3">06 — PERIODONTICS</p>
+      <h2 class="font-display font-semibold text-3xl text-teal-900">Healthy gums, the foundation beneath every smile.</h2>
+    </div>
+    <div>
+      <p class="text-teal-700/80 leading-relaxed mb-6">Gum disease is treatable at every stage — our periodontists focus on stopping it early and keeping it from coming back.</p>
+      <ul class="grid sm:grid-cols-2 gap-3 text-sm text-teal-700/90">
+        <li class="flex gap-2"><span class="text-gold-600">—</span>Deep cleaning (scaling &amp; root planing)</li>
+        <li class="flex gap-2"><span class="text-gold-600">—</span>Gum disease treatment</li>
+        <li class="flex gap-2"><span class="text-gold-600">—</span>Gum grafting</li>
+        <li class="flex gap-2"><span class="text-gold-600">—</span>Crown lengthening</li>
+        <li class="flex gap-2"><span class="text-gold-600">—</span>Ongoing periodontal maintenance</li>
+        <li class="flex gap-2"><span class="text-gold-600">—</span>Pre-implant gum evaluation</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="endo" class="service-anchor py-16 grid md:grid-cols-[1fr,1.4fr] gap-12">
+    <div>
+      <p class="font-mono text-xs text-gold-600 mb-3">07 — ENDODONTICS</p>
+      <h2 class="font-display font-semibold text-3xl text-teal-900">Saving natural teeth, comfortably.</h2>
+    </div>
+    <div>
+      <p class="text-teal-700/80 leading-relaxed mb-6">Modern root canal therapy is faster and gentler than most patients expect — our endodontists specialize in exactly this.</p>
+      <ul class="grid sm:grid-cols-2 gap-3 text-sm text-teal-700/90">
+        <li class="flex gap-2"><span class="text-gold-600">—</span>Root canal therapy</li>
+        <li class="flex gap-2"><span class="text-gold-600">—</span>Retreatment of prior root canals</li>
+        <li class="flex gap-2"><span class="text-gold-600">—</span>Cracked tooth diagnosis</li>
+        <li class="flex gap-2"><span class="text-gold-600">—</span>Pulp therapy for children</li>
+        <li class="flex gap-2"><span class="text-gold-600">—</span>Post &amp; core restoration</li>
+        <li class="flex gap-2"><span class="text-gold-600">—</span>Emergency pain relief</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="implants" class="service-anchor py-16 grid md:grid-cols-[1fr,1.4fr] gap-12">
+    <div>
+      <p class="font-mono text-xs text-gold-600 mb-3">08 — DENTAL IMPLANTS</p>
+      <h2 class="font-display font-semibold text-3xl text-teal-900">A permanent answer to missing teeth.</h2>
+    </div>
+    <div>
+      <p class="text-teal-700/80 leading-relaxed mb-6">From a single tooth to a full-arch restoration, our implant team plans every case with 3D imaging for precision placement.</p>
+      <ul class="grid sm:grid-cols-2 gap-3 text-sm text-teal-700/90">
+        <li class="flex gap-2"><span class="text-gold-600">—</span>Single-tooth implants</li>
+        <li class="flex gap-2"><span class="text-gold-600">—</span>Implant-supported bridges</li>
+        <li class="flex gap-2"><span class="text-gold-600">—</span>Full-arch restoration</li>
+        <li class="flex gap-2"><span class="text-gold-600">—</span>Implant-supported dentures</li>
+        <li class="flex gap-2"><span class="text-gold-600">—</span>3D-guided placement</li>
+        <li class="flex gap-2"><span class="text-gold-600">—</span>Bone density evaluation</li>
+      </ul>
+    </div>
+  </section>
+
+</div>
+
+<!-- CTA -->
+<section class="bg-teal-900 text-paper mt-10">
+  <div class="max-w-4xl mx-auto px-6 py-20 text-center">
+    <h2 class="font-display font-semibold text-4xl mb-6">Not sure which specialist you need?</h2>
+    <p class="text-paper/70 max-w-lg mx-auto mb-8">Book a general consultation — we'll match you with the right specialist on your first visit, at no extra cost.</p>
+    <a href="booking.html" class="inline-block bg-gold-600 text-teal-900 px-8 py-3.5 rounded-full font-medium hover:bg-gold-100 transition">Book a Consultation</a>
+  </div>
+</section>
+
+<footer class="bg-ink text-paper/70">
+  <div class="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-4 gap-10">
+    <div>
+      <div class="flex items-center gap-3 mb-4">
+        <svg width="28" height="28" viewBox="0 0 40 40"><path d="M6 24 C6 12, 34 12, 34 24" fill="none" stroke="#C6A15B" stroke-width="2.5" stroke-linecap="round"/><circle cx="20" cy="15.5" r="2.6" fill="#F7F3EC"/></svg>
+        <span class="font-display text-paper font-semibold">Family Dental</span>
+      </div>
+      <p class="text-sm leading-relaxed">Specialty dental care for every generation, in the heart of Addis Ababa.</p>
+    </div>
+    <div>
+      <h4 class="text-paper font-medium mb-4 text-sm tracking-wide">Explore</h4>
+      <ul class="space-y-3 text-sm">
+        <li><a href="services.html" class="hover:text-gold-100 transition">Services &amp; Treatments</a></li>
+        <li><a href="doctors.html" class="hover:text-gold-100 transition">Doctors &amp; Specialists</a></li>
+        <li><a href="gallery.html" class="hover:text-gold-100 transition">Testimonials &amp; Gallery</a></li>
+        <li><a href="booking.html" class="hover:text-gold-100 transition">Book an Appointment</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-paper font-medium mb-4 text-sm tracking-wide">Branches</h4>
+      <ul class="space-y-3 text-sm">
+        <li>Bole Road, Addis Ababa</li>
+        <li>CMC Road, Addis Ababa</li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-paper font-medium mb-4 text-sm tracking-wide">Contact</h4>
+      <ul class="space-y-3 text-sm font-mono">
+        <li>+251 91 100 0000</li>
+        <li>hello@familydentaladdis.com</li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-paper/10">
+    <div class="max-w-7xl mx-auto px-6 py-6 text-xs flex flex-col sm:flex-row justify-between gap-2">
+      <span>© 2026 Family Dental Specialty Clinic, Addis Ababa.</span>
+      <span>Designed with care for our patients.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('menuBtn').addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.toggle('hidden');
+  });
+</script>
+</body>
+</html>

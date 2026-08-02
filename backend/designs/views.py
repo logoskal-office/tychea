@@ -1,3 +1,4 @@
+from designs.models import Linker
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Design, Sector
 from django.core.paginator import Paginator
@@ -135,3 +136,11 @@ def design_detail_subpage(request, slug, page):
     if design.link:
         return redirect(design.url)
     return render(request, f'designs/list/{slug}/{page}.html')
+
+def linker_view(request, uid):
+    linker = get_object_or_404(Linker, uid=uid)
+    return render(request, f'designs/linked/{linker.slug}/index.html', {'linker': linker})
+
+def linker_view_subpage(request, uid, page):
+    linker = get_object_or_404(Linker, uid=uid)
+    return render(request, f'designs/linked/{linker.slug}/{page}', {'linker': linker})
