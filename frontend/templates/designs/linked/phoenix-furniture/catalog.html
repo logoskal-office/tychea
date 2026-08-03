@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catalog — Phoenix Furniture</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink:'#1B1815', inksoft:'#2A241D', parchment:'#EEE7D8',
+          ember:'#B8420F', emberdark:'#8F3309', brass:'#A9873F',
+          teal:'#1E4842', tealdeep:'#132F2B', bone:'#FAF7F0',
+        },
+        fontFamily: {
+          display: ['Fraunces','serif'], body: ['Inter','sans-serif'], mono: ['"IBM Plex Mono"','monospace'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  body{ background:#EEE7D8; }
+  .weave{ height:16px; background: repeating-linear-gradient(45deg,#A9873F 0 2px,transparent 2px 9px), repeating-linear-gradient(-45deg,#A9873F 0 2px,transparent 2px 9px); opacity:.55; }
+  .weave-dark{ height:16px; background: repeating-linear-gradient(45deg,#B8420F 0 2px,transparent 2px 9px), repeating-linear-gradient(-45deg,#B8420F 0 2px,transparent 2px 9px); opacity:.35; }
+  .wood-panel{ background: radial-gradient(120% 140% at 15% 10%, rgba(184,66,15,.35), transparent 55%), radial-gradient(120% 140% at 90% 90%, rgba(169,135,63,.35), transparent 55%), linear-gradient(160deg,#2A241D 0%,#1B1815 60%,#241d15 100%); }
+  .cane-texture{ background-image: repeating-linear-gradient(60deg, rgba(250,247,240,.06) 0px, rgba(250,247,240,.06) 1px, transparent 1px, transparent 10px), repeating-linear-gradient(-60deg, rgba(250,247,240,.06) 0px, rgba(250,247,240,.06) 1px, transparent 1px, transparent 10px); }
+  .chip.active{ background:#B8420F; color:#FAF7F0; border-color:#B8420F; }
+  ::selection{ background:#B8420F; color:#FAF7F0; }
+  input[type=range]{ accent-color:#B8420F; }
+  .card{ display:block; }
+  .card.hidden-card{ display:none; }
+</style>
+</head>
+<body class="font-body text-ink antialiased">
+
+<div class="bg-ink text-bone text-center text-xs sm:text-sm py-2 px-4 font-mono tracking-wide">
+  Free delivery across Addis Ababa on orders over ETB 25,000 &nbsp;•&nbsp; Showroom open daily in Bole
+</div>
+
+<header class="sticky top-0 z-50 bg-parchment/90 backdrop-blur border-b border-ink/10">
+  <nav class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+    <a href="../" class="flex items-center gap-2">
+      <svg width="34" height="34" viewBox="0 0 34 34" fill="none"><path d="M17 3.5C13.5 9 9 12.5 9 19a8 8 0 0016 0c0-4.2-2.1-6.7-4.4-8.6.7 3.4-.9 5.8-2.9 5.8-2.4 0-3.1-2.5-1.9-6.4 1-3.4-.9-5.4-2.8-6.3z" fill="none" stroke="#B8420F" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      <div class="leading-none">
+        <div class="font-display font-semibold text-xl tracking-tight">PHOENIX</div>
+        <div class="font-mono text-[10px] tracking-[0.25em] text-brass">FURNITURE · ADDIS ABABA</div>
+      </div>
+    </a>
+    <div class="hidden md:flex items-center gap-8 font-medium text-sm">
+      <a href="../" class="hover:text-ember transition-colors">Home</a>
+      <a href="../catalog.html" class="text-ember">Catalog</a>
+      <a href="../about.html" class="hover:text-ember transition-colors">About</a>
+      <a href="../contact.html" class="hover:text-ember transition-colors">Inquiries &amp; Support</a>
+    </div>
+    <a href="../contact.html" class="hidden md:inline-block bg-ink text-bone text-sm font-medium px-5 py-2.5 rounded-full hover:bg-ember transition-colors">Book a Visit</a>
+  </nav>
+</header>
+
+<!-- Page header -->
+<section class="max-w-7xl mx-auto px-6 pt-14 pb-8">
+  <p class="font-mono text-xs tracking-[0.3em] text-ember uppercase mb-3">Full Catalog</p>
+  <h1 class="font-display text-4xl sm:text-5xl font-medium tracking-tight max-w-2xl">Every piece we build, in one place</h1>
+  <p class="text-ink/70 mt-4 max-w-xl">18 pieces across six rooms of the house. Filter by category, material or price, or search directly for a piece you have in mind.</p>
+</section>
+
+<div class="weave max-w-7xl mx-auto rounded-full my-2"></div>
+
+<!-- Search bar -->
+<section class="max-w-7xl mx-auto px-6 py-6">
+  <div class="relative">
+    <svg class="absolute left-5 top-1/2 -translate-y-1/2 text-ink/40" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" stroke-width="2"/><path d="M21 21l-4.35-4.35" stroke-width="2" stroke-linecap="round"/></svg>
+    <input id="searchInput" type="text" placeholder="Search “dining table”, “oak”, “Meskel”…"
+      class="w-full bg-white border border-ink/15 rounded-full pl-14 pr-6 py-4 text-sm outline-none focus:border-ember transition-colors" />
+  </div>
+</section>
+
+<!-- Filters + Grid -->
+<section class="max-w-7xl mx-auto px-6 pb-24 grid lg:grid-cols-[260px_1fr] gap-10">
+
+  <!-- Sidebar filters -->
+  <aside class="space-y-8">
+    <div>
+      <h3 class="font-display text-lg mb-4">Room</h3>
+      <div class="flex flex-wrap gap-2" id="categoryChips">
+        <button class="chip active border border-ink/20 rounded-full px-4 py-1.5 text-sm font-medium" data-filter="category" data-value="all">All</button>
+        <button class="chip border border-ink/20 rounded-full px-4 py-1.5 text-sm font-medium" data-filter="category" data-value="living">Living Room</button>
+        <button class="chip border border-ink/20 rounded-full px-4 py-1.5 text-sm font-medium" data-filter="category" data-value="dining">Dining</button>
+        <button class="chip border border-ink/20 rounded-full px-4 py-1.5 text-sm font-medium" data-filter="category" data-value="bedroom">Bedroom</button>
+        <button class="chip border border-ink/20 rounded-full px-4 py-1.5 text-sm font-medium" data-filter="category" data-value="office">Office</button>
+        <button class="chip border border-ink/20 rounded-full px-4 py-1.5 text-sm font-medium" data-filter="category" data-value="outdoor">Outdoor</button>
+        <button class="chip border border-ink/20 rounded-full px-4 py-1.5 text-sm font-medium" data-filter="category" data-value="storage">Storage</button>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="font-display text-lg mb-4">Material</h3>
+      <div class="space-y-2 text-sm" id="materialFilters">
+        <label class="flex items-center gap-2"><input type="checkbox" class="materialCheck" value="zigba" checked> Zigba Wood</label>
+        <label class="flex items-center gap-2"><input type="checkbox" class="materialCheck" value="wanza" checked> Wanza Hardwood</label>
+        <label class="flex items-center gap-2"><input type="checkbox" class="materialCheck" value="cane" checked> Hand-Woven Cane</label>
+        <label class="flex items-center gap-2"><input type="checkbox" class="materialCheck" value="leather" checked> Leather</label>
+        <label class="flex items-center gap-2"><input type="checkbox" class="materialCheck" value="brass" checked> Brass</label>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="font-display text-lg mb-4">Max price <span class="font-mono text-ember" id="priceLabel">ETB 90,000</span></h3>
+      <input id="priceRange" type="range" min="8000" max="90000" step="1000" value="90000" class="w-full">
+    </div>
+
+    <div>
+      <h3 class="font-display text-lg mb-4">Availability</h3>
+      <div class="space-y-2 text-sm">
+        <label class="flex items-center gap-2"><input type="checkbox" class="availCheck" value="In Stock" checked> In Stock</label>
+        <label class="flex items-center gap-2"><input type="checkbox" class="availCheck" value="Made to Order" checked> Made to Order</label>
+      </div>
+    </div>
+
+    <button id="resetFilters" class="text-sm underline underline-offset-4 decoration-brass hover:text-ember">Reset all filters</button>
+  </aside>
+
+  <!-- Grid -->
+  <div>
+    <div class="flex items-center justify-between mb-6">
+      <p class="text-sm text-ink/60" id="resultCount">18 pieces</p>
+      <select id="sortSelect" class="border border-ink/20 rounded-full px-4 py-2 text-sm bg-white outline-none">
+        <option value="featured">Sort: Featured</option>
+        <option value="low">Price: Low to High</option>
+        <option value="high">Price: High to Low</option>
+        <option value="az">Name: A–Z</option>
+      </select>
+    </div>
+
+    <div id="productGrid" class="grid sm:grid-cols-2 xl:grid-cols-3 gap-8">
+      <!-- Cards generated with data attributes for filtering -->
+    </div>
+
+    <p id="noResults" class="hidden text-center text-ink/50 py-20 font-display italic text-xl">No pieces match those filters yet — try widening your search.</p>
+  </div>
+</section>
+
+<footer class="bg-ink text-bone">
+  <div class="weave-dark"></div>
+  <div class="max-w-7xl mx-auto px-6 py-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+    <div>
+      <div class="font-display font-semibold text-xl mb-2">PHOENIX</div>
+      <p class="text-sm text-bone/60 max-w-xs">Handcrafted furniture from Addis Ababa — Ethiopian hardwood, brass and hand-woven cane.</p>
+    </div>
+    <div>
+      <p class="font-mono text-xs tracking-widest text-brass mb-4">EXPLORE</p>
+      <ul class="space-y-2 text-sm text-bone/70">
+        <li><a href="../" class="hover:text-bone">Home</a></li>
+        <li><a href="../catalog.html" class="hover:text-bone">Catalog</a></li>
+        <li><a href="../about.html" class="hover:text-bone">About Us</a></li>
+        <li><a href="../contact.html" class="hover:text-bone">Inquiries &amp; Support</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="font-mono text-xs tracking-widest text-brass mb-4">COLLECTIONS</p>
+      <ul class="space-y-2 text-sm text-bone/70">
+        <li>Meskel — Living Room</li>
+        <li>Sheger — Dining</li>
+        <li>Entoto — Outdoor</li>
+        <li>Merkato — Storage</li>
+      </ul>
+    </div>
+    <div>
+      <p class="font-mono text-xs tracking-widest text-brass mb-4">VISIT</p>
+      <ul class="space-y-2 text-sm text-bone/70 font-mono">
+        <li>Bole Road, Addis Ababa</li>
+        <li>+251 91 234 5678</li>
+        <li>hello@phoenixfurniture.et</li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-bone/10 py-6 text-center text-xs text-bone/50 font-mono">© 2026 Phoenix Furniture · Addis Ababa, Ethiopia</div>
+</footer>
+
+<script>
+const products = [
+  {name:"Entoto Lounge Chair", cat:"living", collection:"ENTOTO", materials:["zigba","cane"], price:18500, avail:"In Stock", image:"https://colamylab.com/cdn/shop/files/COLAMY_NUVRA_Modern_Minimalist_Style_Lounge_Chair1-3.jpg?v=1770279018"},
+  {name:"Meskel 3-Seat Sofa", cat:"living", collection:"MESKEL", materials:["wanza","leather"], price:58000, avail:"In Stock", image:"https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=800&q=80"},
+  {name:"Meskel Armchair", cat:"living", collection:"MESKEL", materials:["wanza","leather","brass"], price:27500, avail:"In Stock", image:"https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?auto=format&fit=crop&w=800&q=80"},
+  {name:"Entoto Bookshelf", cat:"living", collection:"ENTOTO", materials:["wanza"], price:26500, avail:"Made to Order", image:"https://images.unsplash.com/photo-1594620302200-9a7b2244a15d?auto=format&fit=crop&w=800&q=80"},
+  {name:"Sheger Dining Table", cat:"dining", collection:"SHEGER", materials:["wanza","brass"], price:42000, avail:"In Stock", image:"https://images.unsplash.com/photo-1577140917170-285929fb55b7?auto=format&fit=crop&w=800&q=80"},
+  {name:"Sheger Dining Chair (Set of 2)", cat:"dining", collection:"SHEGER", materials:["zigba","cane"], price:14200, avail:"In Stock", image:"https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=800&q=80"},
+  {name:"Sheger Bench", cat:"dining", collection:"SHEGER", materials:["wanza"], price:19800, avail:"Made to Order", image:"https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=800&q=80"},
+  {name:"Kaffa Coffee Table", cat:"living", collection:"KAFFA", materials:["zigba","brass"], price:9800, avail:"In Stock", image:"https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=800&q=80"},
+  {name:"Kaffa Stool (Pair)", cat:"living", collection:"KAFFA", materials:["zigba","cane"], price:8200, avail:"In Stock", image:"https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=800&q=80"},
+  {name:"Merkato Storage Cabinet", cat:"storage", collection:"MERKATO", materials:["wanza","brass"], price:31000, avail:"In Stock", image:"https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=800&q=80"},
+  {name:"Merkato Sideboard", cat:"storage", collection:"MERKATO", materials:["wanza","brass"], price:39500, avail:"Made to Order", image:"https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80"},
+  {name:"Merkato Bedside Table", cat:"bedroom", collection:"MERKATO", materials:["zigba","brass"], price:11400, avail:"In Stock", image:"https://images.unsplash.com/photo-1532372320572-cda25653a26d?auto=format&fit=crop&w=800&q=80"},
+  {name:"Meskel Bed Frame — Queen", cat:"bedroom", collection:"MESKEL", materials:["wanza"], price:48000, avail:"Made to Order", image:"https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80"},
+  {name:"Meskel Wardrobe", cat:"bedroom", collection:"MESKEL", materials:["wanza","brass"], price:53000, avail:"Made to Order", image:"https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=800&q=80"},
+  {name:"Sheger Office Desk", cat:"office", collection:"SHEGER", materials:["wanza","brass"], price:33500, avail:"In Stock", image:"https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=800&q=80"},
+  {name:"Entoto Task Chair", cat:"office", collection:"ENTOTO", materials:["zigba","leather"], price:21000, avail:"In Stock", image:"https://images.unsplash.com/photo-1580481072645-022f9a6dbf27?auto=format&fit=crop&w=800&q=80"},
+  {name:"Entoto Outdoor Bench", cat:"outdoor", collection:"ENTOTO", materials:["wanza"], price:24500, avail:"In Stock", image:"https://images.unsplash.com/photo-1601556109347-7f41635a0b9e?auto=format&fit=crop&w=800&q=80"},
+  {name:"Entoto Outdoor Lounge Set", cat:"outdoor", collection:"ENTOTO", materials:["wanza","cane"], price:89000, avail:"Made to Order", image:"https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80"},
+];
+
+const grid = document.getElementById('productGrid');
+const materialLabels = {zigba:"Zigba Wood", wanza:"Wanza Hardwood", cane:"Hand-Woven Cane", leather:"Leather", brass:"Brass"};
+
+function fmt(n){ return "ETB " + n.toLocaleString(); }
+
+function render(list){
+  grid.innerHTML = "";
+  document.getElementById('noResults').classList.toggle('hidden', list.length !== 0);
+  document.getElementById('resultCount').textContent = list.length + (list.length === 1 ? " piece" : " pieces");
+  list.forEach(p => {
+    const a = document.createElement('a');
+    a.href = "../product.html";
+    a.className = "group card";
+    a.innerHTML = `
+      <div class="wood-panel cane-texture rounded-2xl aspect-square relative overflow-hidden mb-4 shadow-sm">
+        <span class="absolute top-4 left-4 bg-bone text-ink text-[11px] font-mono px-2.5 py-1 rounded-full z-10 shadow-sm">${p.avail}</span>
+        <img src="${p.image}" alt="${p.name}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+      </div>
+      <p class="font-mono text-[11px] tracking-widest text-brass">${p.collection} COLLECTION</p>
+      <h3 class="font-display text-xl mt-1 group-hover:text-ember transition-colors">${p.name}</h3>
+      <p class="text-sm text-ink/60 mt-1">${fmt(Math.round(p.price*0.85))} – ${fmt(Math.round(p.price*1.15))}</p>
+    `;
+    grid.appendChild(a);
+  });
+}
+
+function applyFilters(){
+  const cat = document.querySelector('.chip.active').dataset.value;
+  const maxPrice = parseInt(document.getElementById('priceRange').value, 10);
+  const query = document.getElementById('searchInput').value.trim().toLowerCase();
+  const checkedMaterials = Array.from(document.querySelectorAll('.materialCheck:checked')).map(c => c.value);
+  const checkedAvail = Array.from(document.querySelectorAll('.availCheck:checked')).map(c => c.value);
+  const sort = document.getElementById('sortSelect').value;
+
+  let list = products.filter(p => {
+    if (cat !== 'all' && p.cat !== cat) return false;
+    if (p.price > maxPrice) return false;
+    if (!p.materials.some(m => checkedMaterials.includes(m))) return false;
+    if (!checkedAvail.includes(p.avail)) return false;
+    if (query && !(p.name.toLowerCase().includes(query) || p.collection.toLowerCase().includes(query) || p.materials.some(m => materialLabels[m].toLowerCase().includes(query)))) return false;
+    return true;
+  });
+
+  if (sort === 'low') list.sort((a,b) => a.price - b.price);
+  else if (sort === 'high') list.sort((a,b) => b.price - a.price);
+  else if (sort === 'az') list.sort((a,b) => a.name.localeCompare(b.name));
+
+  render(list);
+}
+
+document.getElementById('categoryChips').addEventListener('click', e => {
+  const btn = e.target.closest('.chip');
+  if (!btn) return;
+  document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+  btn.classList.add('active');
+  applyFilters();
+});
+
+document.getElementById('priceRange').addEventListener('input', e => {
+  document.getElementById('priceLabel').textContent = fmt(parseInt(e.target.value,10));
+  applyFilters();
+});
+document.getElementById('searchInput').addEventListener('input', applyFilters);
+document.getElementById('sortSelect').addEventListener('change', applyFilters);
+document.querySelectorAll('.materialCheck, .availCheck').forEach(el => el.addEventListener('change', applyFilters));
+document.getElementById('resetFilters').addEventListener('click', () => {
+  document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+  document.querySelector('.chip[data-value="all"]').classList.add('active');
+  document.getElementById('priceRange').value = 90000;
+  document.getElementById('priceLabel').textContent = fmt(90000);
+  document.getElementById('searchInput').value = '';
+  document.querySelectorAll('.materialCheck, .availCheck').forEach(el => el.checked = true);
+  document.getElementById('sortSelect').value = 'featured';
+  applyFilters();
+});
+
+render(products);
+</script>
+</body>
+</html>

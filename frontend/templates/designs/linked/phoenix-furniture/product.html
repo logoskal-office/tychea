@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Entoto Lounge Chair — Phoenix Furniture</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink:'#1B1815', inksoft:'#2A241D', parchment:'#EEE7D8',
+          ember:'#B8420F', emberdark:'#8F3309', brass:'#A9873F',
+          teal:'#1E4842', tealdeep:'#132F2B', bone:'#FAF7F0',
+        },
+        fontFamily: {
+          display: ['Fraunces','serif'], body: ['Inter','sans-serif'], mono: ['"IBM Plex Mono"','monospace'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  body{ background:#EEE7D8; }
+  .weave{ height:16px; background: repeating-linear-gradient(45deg,#A9873F 0 2px,transparent 2px 9px), repeating-linear-gradient(-45deg,#A9873F 0 2px,transparent 2px 9px); opacity:.55; }
+  .weave-dark{ height:16px; background: repeating-linear-gradient(45deg,#B8420F 0 2px,transparent 2px 9px), repeating-linear-gradient(-45deg,#B8420F 0 2px,transparent 2px 9px); opacity:.35; }
+  .wood-panel{ background: radial-gradient(120% 140% at 15% 10%, rgba(184,66,15,.35), transparent 55%), radial-gradient(120% 140% at 90% 90%, rgba(169,135,63,.35), transparent 55%), linear-gradient(160deg,#2A241D 0%,#1B1815 60%,#241d15 100%); }
+  .cane-texture{ background-image: repeating-linear-gradient(60deg, rgba(250,247,240,.06) 0px, rgba(250,247,240,.06) 1px, transparent 1px, transparent 10px), repeating-linear-gradient(-60deg, rgba(250,247,240,.06) 0px, rgba(250,247,240,.06) 1px, transparent 1px, transparent 10px); }
+  ::selection{ background:#B8420F; color:#FAF7F0; }
+  .thumb.active{ outline:2px solid #B8420F; outline-offset:2px; }
+  .color-dot.active{ outline:2px solid #1B1815; outline-offset:2px; }
+  .tab-btn.active{ color:#B8420F; border-color:#B8420F; }
+  .tab-panel{ display:none; }
+  .tab-panel.active{ display:block; }
+</style>
+</head>
+<body class="font-body text-ink antialiased">
+
+<div class="bg-ink text-bone text-center text-xs sm:text-sm py-2 px-4 font-mono tracking-wide">
+  Free delivery across Addis Ababa on orders over ETB 25,000 &nbsp;•&nbsp; Showroom open daily in Bole
+</div>
+
+<header class="sticky top-0 z-50 bg-parchment/90 backdrop-blur border-b border-ink/10">
+  <nav class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+    <a href="../" class="flex items-center gap-2">
+      <svg width="34" height="34" viewBox="0 0 34 34" fill="none"><path d="M17 3.5C13.5 9 9 12.5 9 19a8 8 0 0016 0c0-4.2-2.1-6.7-4.4-8.6.7 3.4-.9 5.8-2.9 5.8-2.4 0-3.1-2.5-1.9-6.4 1-3.4-.9-5.4-2.8-6.3z" fill="none" stroke="#B8420F" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      <div class="leading-none">
+        <div class="font-display font-semibold text-xl tracking-tight">PHOENIX</div>
+        <div class="font-mono text-[10px] tracking-[0.25em] text-brass">FURNITURE · ADDIS ABABA</div>
+      </div>
+    </a>
+    <div class="hidden md:flex items-center gap-8 font-medium text-sm">
+      <a href="../" class="hover:text-ember transition-colors">Home</a>
+      <a href="../catalog.html" class="text-ember">Catalog</a>
+      <a href="../about.html" class="hover:text-ember transition-colors">About</a>
+      <a href="../contact.html" class="hover:text-ember transition-colors">Inquiries &amp; Support</a>
+    </div>
+    <a href="../contact.html" class="hidden md:inline-block bg-ink text-bone text-sm font-medium px-5 py-2.5 rounded-full hover:bg-ember transition-colors">Book a Visit</a>
+  </nav>
+</header>
+
+<!-- Breadcrumb -->
+<div class="max-w-7xl mx-auto px-6 pt-6 text-xs font-mono text-ink/50">
+  <a href="../" class="hover:text-ember">Home</a> / <a href="../catalog.html" class="hover:text-ember">Catalog</a> / <a href="../catalog.html" class="hover:text-ember">Entoto Collection</a> / <span class="text-ink">Entoto Lounge Chair</span>
+</div>
+
+<!-- Main -->
+<section class="max-w-7xl mx-auto px-6 py-10 grid lg:grid-cols-2 gap-14">
+
+  <!-- Gallery -->
+  <div>
+    <div id="mainImage" class="wood-panel cane-texture rounded-2xl aspect-square relative overflow-hidden mb-4">
+      <span class="absolute top-5 left-5 bg-bone text-ink text-[11px] font-mono px-2.5 py-1 rounded-full z-10 shadow-sm">In Stock</span>
+      <img id="mainImg" src="https://colamylab.com/cdn/shop/files/COLAMY_NUVRA_Modern_Minimalist_Style_Lounge_Chair1-3.jpg?v=1770279018" alt="Entoto Lounge Chair" class="absolute inset-0 w-full h-full object-cover" />
+    </div>
+    <div class="grid grid-cols-4 gap-3">
+      <button class="thumb active wood-panel cane-texture rounded-xl aspect-square relative overflow-hidden group" data-view="https://colamylab.com/cdn/shop/files/COLAMY_NUVRA_Modern_Minimalist_Style_Lounge_Chair1-3.jpg?v=1770279018">
+        <img src="https://colamylab.com/cdn/shop/files/COLAMY_NUVRA_Modern_Minimalist_Style_Lounge_Chair1-3.jpg?v=1770279018" alt="Front view" class="absolute inset-0 w-full h-full object-cover transition-transform group-hover:scale-105" />
+        <span class="absolute bottom-1 inset-x-0 text-center text-[9px] font-mono text-bone/90 bg-ink/50 py-0.5 z-10 tracking-wider">FRONT</span>
+      </button>
+      <button class="thumb wood-panel cane-texture rounded-xl aspect-square relative overflow-hidden group" data-view="https://images.unsplash.com/photo-1592078615290-033ee584e267?auto=format&fit=crop&w=800&q=80">
+        <img src="https://images.unsplash.com/photo-1592078615290-033ee584e267?auto=format&fit=crop&w=800&q=80" alt="Side view" class="absolute inset-0 w-full h-full object-cover transition-transform group-hover:scale-105" />
+        <span class="absolute bottom-1 inset-x-0 text-center text-[9px] font-mono text-bone/90 bg-ink/50 py-0.5 z-10 tracking-wider">SIDE</span>
+      </button>
+      <button class="thumb wood-panel cane-texture rounded-xl aspect-square relative overflow-hidden group" data-view="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=800&q=80">
+        <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=800&q=80" alt="Back view" class="absolute inset-0 w-full h-full object-cover transition-transform group-hover:scale-105" />
+        <span class="absolute bottom-1 inset-x-0 text-center text-[9px] font-mono text-bone/90 bg-ink/50 py-0.5 z-10 tracking-wider">BACK</span>
+      </button>
+      <button class="thumb wood-panel cane-texture rounded-xl aspect-square relative overflow-hidden group" data-view="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80">
+        <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80" alt="Weave detail" class="absolute inset-0 w-full h-full object-cover transition-transform group-hover:scale-105" />
+        <span class="absolute bottom-1 inset-x-0 text-center text-[9px] font-mono text-bone/90 bg-ink/50 py-0.5 z-10 tracking-wider">WEAVE</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Info -->
+  <div>
+    <p class="font-mono text-[11px] tracking-widest text-brass mb-2">ENTOTO COLLECTION</p>
+    <h1 class="font-display text-4xl sm:text-5xl font-medium tracking-tight">Entoto Lounge Chair</h1>
+    <p class="text-ink/60 mt-3 max-w-md">A low, wide-armed lounge chair with a hand-woven cane back and seat, framed in solid Zigba wood. Named for the eucalyptus forest above the city.</p>
+
+    <div class="mt-6 flex items-center gap-4">
+      <p class="font-display text-3xl text-ember">ETB 18,500 – 24,000</p>
+      <span class="bg-teal text-bone text-xs font-mono px-3 py-1 rounded-full">In Stock</span>
+    </div>
+    <p class="text-xs text-ink/50 mt-1 font-mono">Final price depends on finish, cane color and any customization</p>
+
+    <div class="weave rounded-full my-7"></div>
+
+    <!-- Colors -->
+    <div class="mb-7">
+      <h3 class="font-semibold mb-3">Frame finish <span id="colorName" class="text-ink/50 font-normal font-mono text-sm">— Natural Zigba</span></h3>
+      <div class="flex gap-3" id="colorSwatches">
+        <button class="color-dot active w-10 h-10 rounded-full border border-ink/10" style="background:#C69A5C" data-name="Natural Zigba"></button>
+        <button class="color-dot w-10 h-10 rounded-full border border-ink/10" style="background:#5A3A22" data-name="Espresso Wanza"></button>
+        <button class="color-dot w-10 h-10 rounded-full border border-ink/10" style="background:#8C5A2E" data-name="Amber Oil"></button>
+        <button class="color-dot w-10 h-10 rounded-full border border-ink/10" style="background:#2E2620" data-name="Charcoal Ebonized"></button>
+      </div>
+    </div>
+
+    <!-- Cane color -->
+    <div class="mb-7">
+      <h3 class="font-semibold mb-3">Cane weave</h3>
+      <div class="flex gap-2 flex-wrap">
+        <button class="border border-ink/20 rounded-full px-4 py-1.5 text-sm font-medium bg-ink text-bone">Natural</button>
+        <button class="border border-ink/20 rounded-full px-4 py-1.5 text-sm font-medium hover:border-ink">Smoked</button>
+      </div>
+    </div>
+
+    <!-- Quantity + CTA -->
+    <div class="flex flex-wrap gap-4 items-center mb-4">
+      <div class="flex items-center border border-ink/20 rounded-full overflow-hidden">
+        <button id="qtyMinus" class="px-4 py-3 hover:bg-ink/5">−</button>
+        <span id="qtyVal" class="px-4 font-mono">1</span>
+        <button id="qtyPlus" class="px-4 py-3 hover:bg-ink/5">+</button>
+      </div>
+      <a href="../contact.html" class="flex-1 text-center bg-ember text-bone px-7 py-3.5 rounded-full font-medium hover:bg-emberdark transition-colors">Enquire About This Piece</a>
+    </div>
+    <p class="text-xs text-ink/50 font-mono">Ready-made units ship within 3–5 days · Custom finishes take 6–8 weeks</p>
+
+    <div class="weave rounded-full my-7"></div>
+
+    <!-- Tabs -->
+    <div class="flex gap-6 border-b border-ink/10 text-sm font-medium">
+      <button class="tab-btn active pb-3 border-b-2 border-transparent" data-tab="desc">Description</button>
+      <button class="tab-btn pb-3 border-b-2 border-transparent" data-tab="dims">Dimensions</button>
+      <button class="tab-btn pb-3 border-b-2 border-transparent" data-tab="materials">Materials &amp; Care</button>
+    </div>
+
+    <div class="py-6">
+      <div class="tab-panel active" id="tab-desc">
+        <p class="text-ink/70 leading-relaxed">The Entoto Lounge Chair takes its low seat height and wide arms from the reading chairs found in older Addis Ababa sitting rooms, rebuilt in solid Zigba wood with a hand-woven cane seat and backrest. Each chair is joined with mortise-and-tenon construction — no screws into end grain, no particle board — and finished with a hard-wax oil that deepens with age. Woven by the same artisans who make our dining chairs, so the weave pattern matches across a full room set.</p>
+      </div>
+      <div class="tab-panel" id="tab-dims">
+        <table class="w-full text-sm font-mono">
+          <tbody class="divide-y divide-ink/10">
+            <tr><td class="py-2.5 text-ink/60">Width</td><td class="py-2.5 text-right">78 cm</td></tr>
+            <tr><td class="py-2.5 text-ink/60">Depth</td><td class="py-2.5 text-right">82 cm</td></tr>
+            <tr><td class="py-2.5 text-ink/60">Height</td><td class="py-2.5 text-right">74 cm</td></tr>
+            <tr><td class="py-2.5 text-ink/60">Seat height</td><td class="py-2.5 text-right">38 cm</td></tr>
+            <tr><td class="py-2.5 text-ink/60">Weight</td><td class="py-2.5 text-right">11.5 kg</td></tr>
+            <tr><td class="py-2.5 text-ink/60">Weight capacity</td><td class="py-2.5 text-right">130 kg</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tab-panel" id="tab-materials">
+        <ul class="text-sm text-ink/70 space-y-2">
+          <li><span class="font-semibold text-ink">Frame —</span> Solid Zigba wood, hard-wax oil finish</li>
+          <li><span class="font-semibold text-ink">Seat &amp; back —</span> Hand-woven natural cane</li>
+          <li><span class="font-semibold text-ink">Hardware —</span> Solid brass fixings</li>
+          <li class="pt-3 border-t border-ink/10 mt-3"><span class="font-semibold text-ink">Care —</span> Wipe with a dry cloth; re-oil the frame yearly. Keep cane out of direct, sustained sun and standing water.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- You may also like -->
+<section class="max-w-7xl mx-auto px-6 py-20">
+  <h2 class="font-display text-3xl font-medium tracking-tight mb-8">Pairs well with</h2>
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <a href="../product.html" class="group">
+      <div class="wood-panel cane-texture rounded-2xl aspect-square relative overflow-hidden mb-4">
+        <svg class="absolute inset-0 w-full h-full p-12" viewBox="0 0 200 200" fill="none"><circle cx="100" cy="110" r="45" stroke="#FAF7F0" stroke-width="2" opacity=".85"/></svg>
+      </div>
+      <p class="font-mono text-[11px] tracking-widest text-brass">KAFFA COLLECTION</p>
+      <h3 class="font-display text-xl mt-1 group-hover:text-ember">Kaffa Coffee Table</h3>
+      <p class="text-sm text-ink/60 mt-1">ETB 9,800 – 14,200</p>
+    </a>
+    <a href="../product.html" class="group">
+      <div class="wood-panel cane-texture rounded-2xl aspect-square relative overflow-hidden mb-4">
+        <svg class="absolute inset-0 w-full h-full p-10" viewBox="0 0 200 200" fill="none"><path d="M60 170 L60 60 L140 60 L140 170" stroke="#FAF7F0" stroke-width="2" opacity=".85"/></svg>
+      </div>
+      <p class="font-mono text-[11px] tracking-widest text-brass">ENTOTO COLLECTION</p>
+      <h3 class="font-display text-xl mt-1 group-hover:text-ember">Entoto Bookshelf</h3>
+      <p class="text-sm text-ink/60 mt-1">ETB 26,500 – 33,000</p>
+    </a>
+    <a href="../product.html" class="group">
+      <div class="wood-panel cane-texture rounded-2xl aspect-square relative overflow-hidden mb-4">
+        <svg class="absolute inset-0 w-full h-full p-12" viewBox="0 0 200 200" fill="none"><path d="M50 160 L50 100 Q50 80 70 80 L130 80 Q150 80 150 100 L150 160" stroke="#FAF7F0" stroke-width="2" opacity=".85"/></svg>
+      </div>
+      <p class="font-mono text-[11px] tracking-widest text-brass">MESKEL COLLECTION</p>
+      <h3 class="font-display text-xl mt-1 group-hover:text-ember">Meskel 3-Seat Sofa</h3>
+      <p class="text-sm text-ink/60 mt-1">ETB 58,000 – 82,000</p>
+    </a>
+  </div>
+</section>
+
+<footer class="bg-ink text-bone"  <div class="weave-dark"></div>
+  <div class="max-w-7xl mx-auto px-6 py-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+    <div>
+      <div class="font-display font-semibold text-xl mb-2">PHOENIX</div>
+      <p class="text-sm text-bone/60 max-w-xs">Handcrafted furniture from Addis Ababa — Ethiopian hardwood, brass and hand-woven cane.</p>
+    </div>
+    <div>
+      <p class="font-mono text-xs tracking-widest text-brass mb-4">EXPLORE</p>
+      <ul class="space-y-2 text-sm text-bone/70">
+        <li><a href="../" class="hover:text-bone">Home</a></li>
+        <li><a href="../catalog.html" class="hover:text-bone">Catalog</a></li>
+        <li><a href="../about.html" class="hover:text-bone">About Us</a></li>
+        <li><a href="../contact.html" class="hover:text-bone">Inquiries &amp; Support</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="font-mono text-xs tracking-widest text-brass mb-4">COLLECTIONS</p>
+      <ul class="space-y-2 text-sm text-bone/70">
+        <li>Meskel — Living Room</li>
+        <li>Sheger — Dining</li>
+        <li>Entoto — Outdoor</li>
+        <li>Merkato — Storage</li>
+      </ul>
+    </div>
+    <div>
+      <p class="font-mono text-xs tracking-widest text-brass mb-4">VISIT</p>
+      <ul class="space-y-2 text-sm text-bone/70 font-mono">
+        <li>Bole Road, Addis Ababa</li>
+        <li>+251 91 234 5678</li>
+        <li>hello@phoenixfurniture.et</li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-bone/10 py-6 text-center text-xs text-bone/50 font-mono">© 2026 Phoenix Furniture · Addis Ababa, Ethiopia</div>
+</footer>
+
+<script>
+  // Thumbnail switching
+  document.querySelectorAll('.thumb').forEach(t => {
+    t.addEventListener('click', () => {
+      document.querySelectorAll('.thumb').forEach(x => x.classList.remove('active'));
+      t.classList.add('active');
+      document.getElementById('mainImg').src = t.dataset.view;
+    });
+  });
+  // Color swatches
+  document.querySelectorAll('.color-dot').forEach(d => {
+    d.addEventListener('click', () => {
+      document.querySelectorAll('.color-dot').forEach(x => x.classList.remove('active'));
+      d.classList.add('active');
+      document.getElementById('colorName').textContent = '— ' + d.dataset.name;
+    });
+  });
+  // Tabs
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+    });
+  });
+  // Quantity
+  let qty = 1;
+  document.getElementById('qtyPlus').addEventListener('click', () => { qty++; document.getElementById('qtyVal').textContent = qty; });
+  document.getElementById('qtyMinus').addEventListener('click', () => { if (qty>1){ qty--; document.getElementById('qtyVal').textContent = qty; } });
+</script>
+</body>
+</html>
