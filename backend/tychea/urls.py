@@ -9,7 +9,7 @@ urlpatterns = [
     path('sites/<uuid:uid>/', linker_view, name='linker-page'),
     path('sites/<uuid:uid>/<str:page>/', linker_view_subpage, name='linker-subpage'),
     path('admin/', admin.site.urls),
-    path('', include('home.urls')),
-    path('designs/', include('designs.urls')),
+    # path('', include('home.urls')),
+    # path('designs/', include('designs.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) \
   + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
