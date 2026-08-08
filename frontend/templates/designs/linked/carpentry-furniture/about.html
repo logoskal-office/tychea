@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us — {{linker.full_name}}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink:'#1B1815', inksoft:'#2A241D', parchment:'#EEE7D8',
+          ember:'#B8420F', emberdark:'#8F3309', brass:'#A9873F',
+          teal:'#1E4842', tealdeep:'#132F2B', bone:'#FAF7F0',
+        },
+        fontFamily: {
+          display: ['Fraunces','serif'], body: ['Inter','sans-serif'], mono: ['"IBM Plex Mono"','monospace'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html{ scroll-behavior:smooth; }
+  body{ background:#EEE7D8; }
+  .weave{ height:16px; background: repeating-linear-gradient(45deg,#A9873F 0 2px,transparent 2px 9px), repeating-linear-gradient(-45deg,#A9873F 0 2px,transparent 2px 9px); opacity:.55; }
+  .weave-dark{ height:16px; background: repeating-linear-gradient(45deg,#B8420F 0 2px,transparent 2px 9px), repeating-linear-gradient(-45deg,#B8420F 0 2px,transparent 2px 9px); opacity:.35; }
+  .wood-panel{ background: radial-gradient(120% 140% at 15% 10%, rgba(184,66,15,.35), transparent 55%), radial-gradient(120% 140% at 90% 90%, rgba(169,135,63,.35), transparent 55%), linear-gradient(160deg,#2A241D 0%,#1B1815 60%,#241d15 100%); }
+  .cane-texture{ background-image: repeating-linear-gradient(60deg, rgba(250,247,240,.06) 0px, rgba(250,247,240,.06) 1px, transparent 1px, transparent 10px), repeating-linear-gradient(-60deg, rgba(250,247,240,.06) 0px, rgba(250,247,240,.06) 1px, transparent 1px, transparent 10px); }
+  ::selection{ background:#B8420F; color:#FAF7F0; }
+
+  /* Hero glow animation */
+  .ember-glow {
+    background: radial-gradient(circle at 30% 30%, rgba(184,66,15,.5), transparent 60%),
+                radial-gradient(circle at 70% 70%, rgba(169,135,63,.35), transparent 55%);
+    animation: pulse 6s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:.7;} 50%{opacity:1;} }
+
+  .big-word { font-size: clamp(3.2rem, 11vw, 9rem); line-height: .92; }
+
+  .founder-quote { font-size: clamp(1.6rem, 3vw, 2.4rem); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ember-glow{ animation:none; }
+  }
+</style>
+</head>
+<body class="font-body text-ink antialiased">
+
+<div class="bg-ink text-bone text-center text-xs sm:text-sm py-2 px-4 font-mono tracking-wide">
+  Free delivery across Addis Ababa on orders over ETB 25,000 &nbsp;•&nbsp; Showroom open daily in {{linker.address}}
+</div>
+
+<header class="sticky top-0 z-50 bg-parchment/90 backdrop-blur border-b border-ink/10">
+  <nav class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+    <a href="../" class="flex items-center gap-2">
+      <svg width="34" height="34" viewBox="0 0 34 34" fill="none"><path d="M17 3.5C13.5 9 9 12.5 9 19a8 8 0 0016 0c0-4.2-2.1-6.7-4.4-8.6.7 3.4-.9 5.8-2.9 5.8-2.4 0-3.1-2.5-1.9-6.4 1-3.4-.9-5.4-2.8-6.3z" fill="none" stroke="#B8420F" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      <div class="leading-none">
+        <div class="font-display font-semibold text-xl tracking-tight">{{linker.name}}</div>
+        <div class="font-mono text-[10px] tracking-[0.25em] text-brass">FURNITURE · ADDIS ABABA</div>
+      </div>
+    </a>
+    <div class="hidden md:flex items-center gap-8 font-medium text-sm">
+      <a href="../index.html" class="hover:text-ember transition-colors">Home</a>
+      <a href="../catalog.html" class="hover:text-ember transition-colors">Catalog</a>
+      <a href="../about.html" class="text-ember">About</a>
+      <a href="../contact.html" class="hover:text-ember transition-colors">Inquiries &amp; Support</a>
+    </div>
+    <a href="../contact.html" class="hidden md:inline-block bg-ink text-bone text-sm font-medium px-5 py-2.5 rounded-full hover:bg-ember transition-colors">Book a Visit</a>
+  </nav>
+</header>
+
+<!-- Big statement hero -->
+<section class="relative bg-ink text-bone overflow-hidden">
+  <div class="absolute inset-0 ember-glow"></div>
+  <div class="relative max-w-7xl mx-auto px-6 pt-24 pb-20">
+    <p class="font-mono text-xs tracking-[0.35em] text-brass uppercase mb-6">Est. 2014 · Addis Ababa</p>
+    <h1 class="font-display big-word font-medium tracking-tight">
+      Built from<br><span class="italic text-ember">what we chose</span><br>to become.
+    </h1>
+    <p class="mt-10 max-w-lg text-bone/70 text-lg">In 2014, we walked away from factory furniture and started over with hand tools, solid wood, and a single workbench. {{linker.name}} began as a choice to build things that last.</p>
+  </div>
+  <div class="weave-dark"></div>
+</section>
+
+<!-- Founder statement -->
+<section class="max-w-4xl mx-auto px-6 py-24">
+  <p class="font-display italic founder-quote leading-snug text-ink">
+    "We didn't want to keep building furniture that gets thrown away in five years. We wanted to make pieces that would still be standing — still be repairable — in fifty. That's the only thing worth calling craft."
+  </p>
+  <div class="mt-8 flex items-center gap-4">
+    <div class="w-14 h-14 rounded-full wood-panel cane-texture"></div>
+    <div>
+      <p class="font-semibold">Yonas Bekele</p>
+      <p class="text-sm text-ink/50 font-mono">Founder &amp; Master Joiner</p>
+    </div>
+  </div>
+</section>
+
+<div class="weave max-w-7xl mx-auto rounded-full"></div>
+
+<!-- Story grid -->
+<section class="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-16 items-center">
+  <div class="wood-panel cane-texture rounded-[2rem] aspect-[4/5] relative overflow-hidden shadow-xl">
+    <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80" alt="Carpentry workshop" class="absolute inset-0 w-full h-full object-cover" />
+  </div>
+  <div>
+    <p class="font-mono text-xs tracking-[0.3em] text-ember uppercase mb-3">Our story</p>
+    <h2 class="font-display text-4xl font-medium tracking-tight mb-6">From a single bench in Merkato</h2>
+    <div class="space-y-4 text-ink/70 leading-relaxed">
+      <p>{{linker.name}} began as a two-person cabinet shop near Merkato, repairing furniture for hotels along {{linker.address}} Road. In 2014, the founder left a factory job producing flat-pack furniture by the container load — trading volume for the right to build things properly, by hand, one piece at a time.</p>
+      <p>We moved to a larger space, brought on artisans trained in traditional cane-weaving, and made a decision that still shapes every piece we sell: no particle board, no staples, nothing we can't repair ourselves in twenty years. The name came from that first year — a fresh start, a working promise to do things differently.</p>
+      <p>Today the workshop employs fourteen people across joinery, weaving and finishing, and the showroom on {{linker.address}} Road holds a piece of everything we've ever made in production.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Values -->
+<section class="bg-teal text-bone">
+  <div class="weave-dark"></div>
+  <div class="max-w-7xl mx-auto px-6 py-24">
+    <p class="font-mono text-xs tracking-[0.3em] text-brass uppercase mb-3">What we hold to</p>
+    <h2 class="font-display text-4xl font-medium tracking-tight max-w-lg mb-14">Three rules that don't bend, whatever the order</h2>
+    <div class="grid md:grid-cols-3 gap-10">
+      <div class="border-t border-brass/40 pt-6">
+        <h3 class="font-display text-2xl mb-3">Solid wood, always</h3>
+        <p class="text-bone/70 text-sm leading-relaxed">No plywood carcasses, no veneer over particle board. If a piece is wood, it is wood all the way through — which is also why it can be sanded and refinished instead of replaced.</p>
+      </div>
+      <div class="border-t border-brass/40 pt-6">
+        <h3 class="font-display text-2xl mb-3">Joined, not glued</h3>
+        <p class="text-bone/70 text-sm leading-relaxed">Mortise-and-tenon joinery on every frame. It takes longer at the bench and it's the reason a {{linker.name}} chair can take a hard-tiled Addis floor for decades.</p>
+      </div>
+      <div class="border-t border-brass/40 pt-6">
+        <h3 class="font-display text-2xl mb-3">We keep the pattern</h3>
+        <p class="text-bone/70 text-sm leading-relaxed">Every piece we've made is logged by design and weave pattern, so a repair or a replacement seat matches the original — even a decade later.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Numbers -->
+<section class="max-w-7xl mx-auto px-6 py-24">
+  <div class="grid sm:grid-cols-4 gap-8 text-center">
+    <div>
+      <p class="font-display text-5xl text-ember">11</p>
+      <p class="font-mono text-xs tracking-widest text-ink/50 mt-2 uppercase">Years in {{linker.address}}</p>
+    </div>
+    <div>
+      <p class="font-display text-5xl text-ember">14</p>
+      <p class="font-mono text-xs tracking-widest text-ink/50 mt-2 uppercase">Artisans on staff</p>
+    </div>
+    <div>
+      <p class="font-display text-5xl text-ember">4,200+</p>
+      <p class="font-mono text-xs tracking-widest text-ink/50 mt-2 uppercase">Pieces delivered</p>
+    </div>
+    <div>
+      <p class="font-display text-5xl text-ember">3 yr</p>
+      <p class="font-mono text-xs tracking-widest text-ink/50 mt-2 uppercase">Structural warranty</p>
+    </div>
+  </div>
+</section>
+
+<div class="weave max-w-7xl mx-auto rounded-full"></div>
+
+<!-- Team -->
+<section class="max-w-7xl mx-auto px-6 py-24">
+  <p class="font-mono text-xs tracking-[0.3em] text-ember uppercase mb-3">The workshop</p>
+  <h2 class="font-display text-4xl font-medium tracking-tight mb-14 max-w-lg">The hands behind every piece</h2>
+  <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+    <div>
+      <div class="wood-panel cane-texture rounded-2xl aspect-[3/4] mb-4 relative overflow-hidden shadow-md group">
+        <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80" alt="Yonas Bekele" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+      </div>
+      <p class="font-semibold">Yonas Bekele</p>
+      <p class="text-sm text-ink/50 font-mono">Founder &amp; Master Joiner</p>
+    </div>
+    <div>
+      <div class="wood-panel cane-texture rounded-2xl aspect-[3/4] mb-4 relative overflow-hidden shadow-md group">
+        <img src="https://images.unsplash.com/photo-1594744803329-e58b31de215f?auto=format&fit=crop&w=600&q=80" alt="Meron Alemu" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+      </div>
+      <p class="font-semibold">Meron Alemu</p>
+      <p class="text-sm text-ink/50 font-mono">Head of Weaving</p>
+    </div>
+    <div>
+      <div class="wood-panel cane-texture rounded-2xl aspect-[3/4] mb-4 relative overflow-hidden shadow-md group">
+        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80" alt="Biniam Tesfaye" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+      </div>
+      <p class="font-semibold">Biniam Tesfaye</p>
+      <p class="text-sm text-ink/50 font-mono">Workshop Manager</p>
+    </div>
+    <div>
+      <div class="wood-panel cane-texture rounded-2xl aspect-[3/4] mb-4 relative overflow-hidden shadow-md group">
+        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" alt="Sara Getachew" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+      </div>
+      <p class="font-semibold">Sara Getachew</p>
+      <p class="text-sm text-ink/50 font-mono">Showroom &amp; Design</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="bg-ink text-bone text-center">
+  <div class="weave-dark"></div>
+  <div class="max-w-3xl mx-auto px-6 py-24">
+    <h2 class="font-display text-4xl sm:text-5xl font-medium tracking-tight mb-6">Come see the grain for yourself</h2>
+    <p class="text-bone/70 mb-9 max-w-lg mx-auto">The showroom on {{linker.address}} Road keeps every finish and weave pattern on hand — no appointment required.</p>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="../contact.html" class="bg-ember text-bone px-7 py-3.5 rounded-full font-medium hover:bg-emberdark transition-colors">Plan Your Visit</a>
+      <a href="../catalog.html" class="border border-bone/30 px-7 py-3.5 rounded-full font-medium hover:border-bone transition-colors">Browse the Catalog</a>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-ink text-bone">
+  <div class="max-w-7xl mx-auto px-6 py-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-10 border-t border-bone/10">
+    <div>
+      <div class="font-display font-semibold text-xl mb-2">{{linker.name}}</div>
+      <p class="text-sm text-bone/60 max-w-xs">Handcrafted furniture from Addis Ababa — Ethiopian hardwood, brass and hand-woven cane.</p>
+    </div>
+    <div>
+      <p class="font-mono text-xs tracking-widest text-brass mb-4">EXPLORE</p>
+      <ul class="space-y-2 text-sm text-bone/70">
+        <li><a href="../" class="hover:text-bone">Home</a></li>
+        <li><a href="../catalog.html" class="hover:text-bone">Catalog</a></li>
+        <li><a href="../about.html" class="hover:text-bone">About Us</a></li>
+        <li><a href="../contact.html" class="hover:text-bone">Inquiries &amp; Support</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="font-mono text-xs tracking-widest text-brass mb-4">COLLECTIONS</p>
+      <ul class="space-y-2 text-sm text-bone/70">
+        <li>Meskel — Living Room</li>
+        <li>Sheger — Dining</li>
+        <li>Entoto — Outdoor</li>
+        <li>Merkato — Storage</li>
+      </ul>
+    </div>
+    <div>
+      <p class="font-mono text-xs tracking-widest text-brass mb-4">VISIT</p>
+      <ul class="space-y-2 text-sm text-bone/70 font-mono">
+        <li>{{linker.address}} Road, Addis Ababa</li>
+        <li>+251 91 234 5678</li>
+        <li>hello@{{linker.name}}furniture.et</li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-bone/10 py-6 text-center text-xs text-bone/50 font-mono">© 2026 {{linker.fullname}} · Addis Ababa, Ethiopia</div>
+</footer>
+
+</body>
+</html>

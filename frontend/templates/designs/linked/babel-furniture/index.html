@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hearthwood &amp; Co. — Handmade Wooden Furniture</title>
+<script src="https://cdn.tailwindcss.com/"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Work+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1C1712;
+    --walnut-dark:#3D2B1F;
+    --walnut:#8B5A2B;
+    --oak:#C9A876;
+    --linen:#FAF6EF;
+    --linen-deep:#F1E9DA;
+    --rust:#A8471F;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--linen);
+    color: var(--ink);
+    font-family: 'Work Sans', sans-serif;
+  }
+  .font-display { font-family: 'Fraunces', serif; }
+  .font-mono { font-family: 'JetBrains Mono', monospace; }
+
+  /* wood grain texture, generated purely with layered gradients */
+  .grain {
+    background-image:
+      repeating-linear-gradient(92deg, rgba(0,0,0,0.05) 0px, rgba(0,0,0,0.05) 1px, transparent 1px, transparent 7px),
+      repeating-linear-gradient(88deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 2px, transparent 2px, transparent 14px);
+  }
+  .grain-dark {
+    background-image:
+      repeating-linear-gradient(91deg, rgba(255,255,255,0.045) 0px, rgba(255,255,255,0.045) 1px, transparent 1px, transparent 9px),
+      repeating-linear-gradient(89deg, rgba(0,0,0,0.15) 0px, rgba(0,0,0,0.15) 2px, transparent 2px, transparent 16px);
+  }
+
+  .stamp {
+    border: 1.5px solid currentColor;
+    border-radius: 9999px;
+  }
+
+  .plate-card { transition: transform .35s ease, box-shadow .35s ease; }
+  .plate-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px -20px rgba(28,23,18,0.35); }
+
+  .underline-grow {
+    background-image: linear-gradient(var(--rust), var(--rust));
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size .3s ease;
+  }
+  .underline-grow:hover { background-size: 100% 2px; }
+
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  ::selection { background: var(--rust); color: var(--linen); }
+
+  input:focus, textarea:focus, select:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--linen), 0 0 0 4px var(--walnut);
+  }
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--rust);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+    html { scroll-behavior: auto; }
+  }
+
+  .ring-notch {
+    background:
+      radial-gradient(circle at center, transparent 0 42%, var(--oak) 42% 44%, transparent 44% 62%, var(--walnut) 62% 64%, transparent 64%);
+  }
+</style>
+</head>
+<body class="antialiased">
+
+<!-- ============ NAV ============ -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-[var(--linen)]/90 backdrop-blur-sm border-b border-[var(--walnut)]/15">
+  <div class="max-w-7xl mx-auto px-6 md:px-10 h-20 flex items-center justify-between">
+    <a href="#top" class="flex items-center gap-3 group">
+      <span class="w-10 h-10 rounded-full stamp text-[var(--walnut-dark)] flex items-center justify-center font-display text-lg">H&amp;C</span>
+      <span class="font-display text-xl tracking-tight text-[var(--walnut-dark)]">Hearthwood <span class="italic font-normal text-[var(--walnut)]">&amp; Co.</span></span>
+    </a>
+    <nav class="hidden md:flex items-center gap-9 font-mono text-[13px] uppercase tracking-wider text-[var(--walnut-dark)]">
+      <a href="#collection" class="underline-grow pb-1">Collection</a>
+      <a href="#process" class="underline-grow pb-1">The Craft</a>
+      <a href="#about" class="underline-grow pb-1">Workshop</a>
+      <a href="#order" class="underline-grow pb-1">Order</a>
+    </nav>
+    <a href="#order" class="hidden md:inline-block bg-[var(--walnut-dark)] text-[var(--linen)] text-sm font-medium px-5 py-2.5 rounded-sm hover:bg-[var(--rust)] transition-colors">
+      Request a Build
+    </a>
+    <button id="menuBtn" class="md:hidden text-[var(--walnut-dark)]" aria-label="Open menu" aria-expanded="false">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+  <div id="mobileMenu" class="hidden md:hidden border-t border-[var(--walnut)]/15 bg-[var(--linen)] px-6 py-5 flex flex-col gap-4 font-mono text-sm uppercase tracking-wider text-[var(--walnut-dark)]">
+    <a href="#collection">Collection</a>
+    <a href="#process">The Craft</a>
+    <a href="#about">Workshop</a>
+    <a href="#order" class="text-[var(--rust)]">Request a Build →</a>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section id="top" class="relative pt-40 pb-24 md:pt-32 md:pb-32 overflow-hidden grain">
+  <div class="absolute inset-0 pointer-events-none opacity-[0.08]" style="background: radial-gradient(ellipse at 20% 10%, var(--walnut) 0%, transparent 55%);"></div>
+  <div class="max-w-7xl mx-auto px-6 md:px-10 relative">
+    <div class="max-w-3xl">
+      <p class="font-mono text-xs md:text-sm uppercase tracking-[0.25em] text-[var(--walnut)] -mb-6"></p>
+      <h1 class="font-display text-[15vw] leading-[0.95] md:text-8xl md:leading-[0.95] tracking-tight text-[var(--walnut-dark)]">
+        Furniture cut,
+        <br>
+        <span class="italic text-[var(--rust)]">joined,</span> and finished
+        <br>
+        by hand.
+      </h1>
+      <p class="mt-8 text-lg md:text-xl text-[var(--ink)]/75 max-w-xl leading-relaxed">
+        We're a small workshop building solid wood chairs, beds, tables, and cabinetry to order — no particleboard, no assembly line, no two pieces exactly alike.
+      </p>
+      <div class="mt-10 flex flex-wrap items-center gap-5">
+        <a href="#order" class="inline-flex items-center gap-2 bg-[var(--walnut-dark)] text-[var(--linen)] px-7 py-4 rounded-sm text-sm font-medium tracking-wide hover:bg-[var(--rust)] transition-colors">
+          Request a Build
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#collection" class="text-sm font-medium text-[var(--walnut-dark)] underline-grow pb-1">
+          See the collection
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- species strip -->
+  <div class="mt-20 border-y border-[var(--walnut)]/20">
+    <div class="max-w-7xl mx-auto px-6 md:px-10 py-4 flex flex-wrap gap-x-10 gap-y-2 font-mono text-xs uppercase tracking-widest text-[var(--walnut-dark)]/70">
+      <span>White Oak</span>
+      <span>Black Walnut</span>
+      <span>Ash</span>
+      <span>Cherry</span>
+      <span>Reclaimed Pine</span>
+      <span>Maple</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COLLECTION ============ -->
+<section id="collection" class="py-24 md:py-32 max-w-7xl mx-auto px-6 md:px-10">
+  <div class="reveal flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
+    <div>
+      <p class="font-mono text-xs uppercase tracking-[0.25em] text-[var(--walnut)] mb-4">What we build</p>
+      <h2 class="font-display text-5xl md:text-6xl text-[var(--walnut-dark)] tracking-tight">The Collection</h2>
+    </div>
+    <p class="max-w-sm text-[var(--ink)]/70 leading-relaxed">
+      Every piece below is a starting plate — a base design we adjust to your wood, finish, and dimensions. Nothing ships until it's exactly yours.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    <!-- Card: Chairs -->
+    <div class="plate-card bg-[var(--linen-deep)] border border-[var(--walnut)]/20 rounded-sm overflow-hidden">
+      <div class="h-56 grain-dark bg-[var(--walnut-dark)] flex items-center justify-center relative">
+        <svg viewBox="0 0 120 120" class="w-24 h-24 text-[var(--oak)]" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M30 20 L30 65 M90 20 L90 100 M30 65 L90 65 M30 100 L30 65 M30 100 L20 110 M90 100 L100 110 M30 65 L20 55"/>
+        </svg>
+        <span class="absolute top-4 right-4 font-mono text-[10px] uppercase tracking-widest text-[var(--oak)]/70">Plate 01</span>
+      </div>
+      <div class="p-6">
+        <h3 class="font-display text-2xl text-[var(--walnut-dark)] mb-2">Dining &amp; Side Chairs</h3>
+        <p class="text-sm text-[var(--ink)]/70 leading-relaxed mb-4">Steam-bent or straight-joined frames, woven or solid-plank seats, built to hold up to daily use for decades.</p>
+        <div class="flex flex-wrap gap-2 font-mono text-[11px] uppercase tracking-wide text-[var(--walnut)]">
+          <span class="border border-[var(--walnut)]/30 rounded-full px-3 py-1">Oak · Ash · Walnut</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card: Bed Frames -->
+    <div class="plate-card bg-[var(--linen-deep)] border border-[var(--walnut)]/20 rounded-sm overflow-hidden">
+      <div class="h-56 grain-dark bg-[var(--walnut-dark)] flex items-center justify-center relative">
+        <svg viewBox="0 0 120 120" class="w-24 h-24 text-[var(--oak)]" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M15 55 H105 M15 55 V95 M105 55 V95 M15 40 L15 55 M15 40 H45 M45 40 V55 M15 70 H105"/>
+        </svg>
+        <span class="absolute top-4 right-4 font-mono text-[10px] uppercase tracking-widest text-[var(--oak)]/70">Plate 02</span>
+      </div>
+      <div class="p-6">
+        <h3 class="font-display text-2xl text-[var(--walnut-dark)] mb-2">Bed Frames</h3>
+        <p class="text-sm text-[var(--ink)]/70 leading-relaxed mb-4">Platform, panel, and four-poster frames in twin through king, with hidden joinery instead of visible hardware.</p>
+        <div class="flex flex-wrap gap-2 font-mono text-[11px] uppercase tracking-wide text-[var(--walnut)]">
+          <span class="border border-[var(--walnut)]/30 rounded-full px-3 py-1">Walnut · Cherry · Pine</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card: Tables -->
+    <div class="plate-card bg-[var(--linen-deep)] border border-[var(--walnut)]/20 rounded-sm overflow-hidden">
+      <div class="h-56 grain-dark bg-[var(--walnut-dark)] flex items-center justify-center relative">
+        <svg viewBox="0 0 120 120" class="w-24 h-24 text-[var(--oak)]" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10 35 H110 M10 35 V45 M110 35 V45 M25 45 V95 M95 45 V95"/>
+        </svg>
+        <span class="absolute top-4 right-4 font-mono text-[10px] uppercase tracking-widest text-[var(--oak)]/70">Plate 03</span>
+      </div>
+      <div class="p-6">
+        <h3 class="font-display text-2xl text-[var(--walnut-dark)] mb-2">Dining &amp; Coffee Tables</h3>
+        <p class="text-sm text-[var(--ink)]/70 leading-relaxed mb-4">Live-edge slabs, breadboard tops, and trestle bases — sized to your room, not a showroom floor.</p>
+        <div class="flex flex-wrap gap-2 font-mono text-[11px] uppercase tracking-wide text-[var(--walnut)]">
+          <span class="border border-[var(--walnut)]/30 rounded-full px-3 py-1">Walnut · Oak · Maple</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card: TV Stands -->
+    <div class="plate-card bg-[var(--linen-deep)] border border-[var(--walnut)]/20 rounded-sm overflow-hidden">
+      <div class="h-56 grain-dark bg-[var(--walnut-dark)] flex items-center justify-center relative">
+        <svg viewBox="0 0 120 120" class="w-24 h-24 text-[var(--oak)]" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="15" y="45" width="90" height="35" rx="1"/>
+          <path d="M15 62 H105 M40 45 V80 M80 45 V80"/>
+        </svg>
+        <span class="absolute top-4 right-4 font-mono text-[10px] uppercase tracking-widest text-[var(--oak)]/70">Plate 04</span>
+      </div>
+      <div class="p-6">
+        <h3 class="font-display text-2xl text-[var(--walnut-dark)] mb-2">TV &amp; Media Stands</h3>
+        <p class="text-sm text-[var(--ink)]/70 leading-relaxed mb-4">Low consoles with cable routing, soft-close doors, and cord-friendly backs — built for the wall you actually have.</p>
+        <div class="flex flex-wrap gap-2 font-mono text-[11px] uppercase tracking-wide text-[var(--walnut)]">
+          <span class="border border-[var(--walnut)]/30 rounded-full px-3 py-1">Oak · Walnut</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card: Kitchen Cabinets -->
+    <div class="plate-card bg-[var(--linen-deep)] border border-[var(--walnut)]/20 rounded-sm overflow-hidden">
+      <div class="h-56 grain-dark bg-[var(--walnut-dark)] flex items-center justify-center relative">
+        <svg viewBox="0 0 120 120" class="w-24 h-24 text-[var(--oak)]" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="20" y="15" width="80" height="90" rx="1"/>
+          <path d="M60 15 V105 M35 55 h-4 M89 55 h-4"/>
+        </svg>
+        <span class="absolute top-4 right-4 font-mono text-[10px] uppercase tracking-widest text-[var(--oak)]/70">Plate 05</span>
+      </div>
+      <div class="p-6">
+        <h3 class="font-display text-2xl text-[var(--walnut-dark)] mb-2">Kitchen Cabinets</h3>
+        <p class="text-sm text-[var(--ink)]/70 leading-relaxed mb-4">Face-frame or slab-front cabinetry, built to your cabinet run's exact measurements and installed on site.</p>
+        <div class="flex flex-wrap gap-2 font-mono text-[11px] uppercase tracking-wide text-[var(--walnut)]">
+          <span class="border border-[var(--walnut)]/30 rounded-full px-3 py-1">Maple · Ash · Oak</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card: Wardrobes -->
+    <div class="plate-card bg-[var(--linen-deep)] border border-[var(--walnut)]/20 rounded-sm overflow-hidden">
+      <div class="h-56 grain-dark bg-[var(--walnut-dark)] flex items-center justify-center relative">
+        <svg viewBox="0 0 120 120" class="w-24 h-24 text-[var(--oak)]" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="20" y="10" width="80" height="100" rx="1"/>
+          <path d="M60 10 V110 M52 55 h-3 M71 55 h-3"/>
+        </svg>
+        <span class="absolute top-4 right-4 font-mono text-[10px] uppercase tracking-widest text-[var(--oak)]/70">Plate 06</span>
+      </div>
+      <div class="p-6">
+        <h3 class="font-display text-2xl text-[var(--walnut-dark)] mb-2">Wardrobes</h3>
+        <p class="text-sm text-[var(--ink)]/70 leading-relaxed mb-4">Freestanding or built-in wardrobes with adjustable shelving, hanging rails, and optional drawer banks.</p>
+        <div class="flex flex-wrap gap-2 font-mono text-[11px] uppercase tracking-wide text-[var(--walnut)]">
+          <span class="border border-[var(--walnut)]/30 rounded-full px-3 py-1">Walnut · Pine · Cherry</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section id="process" class="py-24 md:py-32 bg-[var(--walnut-dark)] grain-dark text-[var(--linen)] relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6 md:px-10">
+    <div class="reveal max-w-2xl mb-16">
+      <p class="font-mono text-xs uppercase tracking-[0.25em] text-[var(--oak)] mb-4">How a piece gets made</p>
+      <h2 class="font-display text-5xl md:text-6xl tracking-tight">From rough board to finished piece</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-6">
+      <div class="reveal border-t border-[var(--oak)]/30 pt-6">
+        <p class="font-mono text-xs text-[var(--oak)] mb-3">Board Selection</p>
+        <p class="text-[var(--linen)]/80 leading-relaxed">We hand-pick every board for grain and stability before it ever touches a blade.</p>
+      </div>
+      <div class="reveal border-t border-[var(--oak)]/30 pt-6">
+        <p class="font-mono text-xs text-[var(--oak)] mb-3">Milling &amp; Joinery</p>
+        <p class="text-[var(--linen)]/80 leading-relaxed">Mortise-and-tenon, dovetail, and draw-bore joints — cut for strength that outlasts screws and staples.</p>
+      </div>
+      <div class="reveal border-t border-[var(--oak)]/30 pt-6">
+        <p class="font-mono text-xs text-[var(--oak)] mb-3">Sanding &amp; Fit</p>
+        <p class="text-[var(--linen)]/80 leading-relaxed">Progressive hand-sanding and a dry fit of every joint before glue-up begins.</p>
+      </div>
+      <div class="reveal border-t border-[var(--oak)]/30 pt-6">
+        <p class="font-mono text-xs text-[var(--oak)] mb-3">Oil &amp; Finish</p>
+        <p class="text-[var(--linen)]/80 leading-relaxed">Hardwax oil or hand-rubbed finish, applied in coats, cured before it ever leaves the shop.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT / WORKSHOP ============ -->
+<section id="about" class="py-24 md:py-32 max-w-7xl mx-auto px-6 md:px-10">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+    <div class="reveal">
+      <p class="font-mono text-xs uppercase tracking-[0.25em] text-[var(--walnut)] mb-4">The workshop</p>
+      <h2 class="font-display text-5xl md:text-6xl text-[var(--walnut-dark)] tracking-tight mb-8">Three people. One bench. No factory.</h2>
+      <p class="text-lg text-[var(--ink)]/75 leading-relaxed mb-6">
+        Hearthwood &amp; Co. is a small joinery shop — not a warehouse. Every chair, bed, table, and cabinet is built to order by the same three woodworkers who answer your emails, which means we can talk through wood species, dimensions, and finish before a single board is cut.
+      </p>
+      <p class="text-lg text-[var(--ink)]/75 leading-relaxed mb-10">
+        We keep our order book small on purpose. It's the only way to hand-fit every joint and stand behind every piece that leaves the shop.
+      </p>
+      <div class="grid grid-cols-3 gap-6 font-mono">
+        <div>
+          <p class="text-3xl font-display text-[var(--rust)]">12+</p>
+          <p class="text-xs uppercase tracking-wide text-[var(--ink)]/60 mt-1">Years at the bench</p>
+        </div>
+        <div>
+          <p class="text-3xl font-display text-[var(--rust)]">6–8</p>
+          <p class="text-xs uppercase tracking-wide text-[var(--ink)]/60 mt-1">Wk lead time</p>
+        </div>
+        <div>
+          <p class="text-3xl font-display text-[var(--rust)]">1:1</p>
+          <p class="text-xs uppercase tracking-wide text-[var(--ink)]/60 mt-1">Maker to client</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal relative">
+      <div class="aspect-[4/5] rounded-sm grain bg-[var(--linen-deep)] border border-[var(--walnut)]/20 flex items-center justify-center relative overflow-hidden">
+        <div class="ring-notch w-64 h-64 opacity-60"></div>
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="w-28 h-28 rounded-full stamp text-[var(--walnut-dark)] flex flex-col items-center justify-center bg-[var(--linen)]">
+            <span class="font-display text-sm leading-none">HEARTHWOOD</span>
+            <span class="font-mono text-[8px] tracking-widest mt-1">MADE BY HAND</span>
+          </div>
+        </div>
+      </div>
+      <p class="font-mono text-xs text-[var(--ink)]/50 mt-4 text-center">Every piece leaves the shop carrying this mark, branded into the underside.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ORDER FORM ============ -->
+<section id="order" class="py-24 md:py-32 bg-[var(--linen-deep)] border-t border-[var(--walnut)]/15">
+  <div class="max-w-4xl mx-auto px-6 md:px-10">
+    <div class="reveal text-center mb-14">
+      <p class="font-mono text-xs uppercase tracking-[0.25em] text-[var(--walnut)] mb-4">Start a build</p>
+      <h2 class="font-display text-5xl md:text-6xl text-[var(--walnut-dark)] tracking-tight mb-5">Request an order</h2>
+      <p class="text-[var(--ink)]/70 max-w-xl mx-auto leading-relaxed">
+        Tell us what you're picturing. We'll reply within two business days with rough pricing and a timeline before anything is confirmed.
+      </p>
+    </div>
+
+    <form class="reveal bg-[var(--linen)] border border-[var(--walnut)]/20 rounded-sm p-8 md:p-12" onsubmit="return handleSubmit(event)">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label for="name" class="block font-mono text-xs uppercase tracking-wide text-[var(--walnut-dark)] mb-2">Full Name</label>
+          <input id="name" name="name" type="text" required class="w-full bg-transparent border border-[var(--walnut)]/30 rounded-sm px-4 py-3 text-[var(--ink)] placeholder:text-[var(--ink)]/35" placeholder="Jordan Miles">
+        </div>
+        <div>
+          <label for="email" class="block font-mono text-xs uppercase tracking-wide text-[var(--walnut-dark)] mb-2">Email</label>
+          <input id="email" name="email" type="email" required class="w-full bg-transparent border border-[var(--walnut)]/30 rounded-sm px-4 py-3 text-[var(--ink)] placeholder:text-[var(--ink)]/35" placeholder="jordan@email.com">
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+        <div>
+          <label for="piece" class="block font-mono text-xs uppercase tracking-wide text-[var(--walnut-dark)] mb-2">Piece Type</label>
+          <select id="piece" name="piece" required class="w-full bg-transparent border border-[var(--walnut)]/30 rounded-sm px-4 py-3 text-[var(--ink)]">
+            <option value="">Select a piece</option>
+            <option>Dining or side chairs</option>
+            <option>Bed frame</option>
+            <option>Table</option>
+            <option>TV / media stand</option>
+            <option>Kitchen cabinets</option>
+            <option>Wardrobe</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div>
+          <label for="wood" class="block font-mono text-xs uppercase tracking-wide text-[var(--walnut-dark)] mb-2">Preferred Wood</label>
+          <select id="wood" name="wood" class="w-full bg-transparent border border-[var(--walnut)]/30 rounded-sm px-4 py-3 text-[var(--ink)]">
+            <option value="">No preference / not sure</option>
+            <option>White oak</option>
+            <option>Black walnut</option>
+            <option>Ash</option>
+            <option>Cherry</option>
+            <option>Reclaimed pine</option>
+            <option>Maple</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="mt-6">
+        <label for="dimensions" class="block font-mono text-xs uppercase tracking-wide text-[var(--walnut-dark)] mb-2">Rough Dimensions <span class="text-[var(--ink)]/40 normal-case">(if known)</span></label>
+        <input id="dimensions" name="dimensions" type="text" class="w-full bg-transparent border border-[var(--walnut)]/30 rounded-sm px-4 py-3 text-[var(--ink)] placeholder:text-[var(--ink)]/35" placeholder="e.g. 72&quot; L x 38&quot; W table">
+      </div>
+
+      <div class="mt-6">
+        <label for="details" class="block font-mono text-xs uppercase tracking-wide text-[var(--walnut-dark)] mb-2">Tell us about the piece</label>
+        <textarea id="details" name="details" rows="5" required class="w-full bg-transparent border border-[var(--walnut)]/30 rounded-sm px-4 py-3 text-[var(--ink)] placeholder:text-[var(--ink)]/35" placeholder="Room it's for, style you like, any reference photos you can describe, timeline, budget range..."></textarea>
+      </div>
+
+      <button type="submit" class="mt-8 w-full md:w-auto inline-flex items-center justify-center gap-2 bg-[var(--walnut-dark)] text-[var(--linen)] px-8 py-4 rounded-sm text-sm font-medium tracking-wide hover:bg-[var(--rust)] transition-colors">
+        Send Request
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+
+      <p id="formNote" class="font-mono text-xs text-[var(--ink)]/50 mt-5"></p>
+    </form>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-[var(--ink)] text-[var(--linen)]/80 py-16">
+  <div class="max-w-7xl mx-auto px-6 md:px-10">
+    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-10">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-9 h-9 rounded-full stamp text-[var(--oak)] flex items-center justify-center font-display text-sm">H&amp;C</span>
+          <span class="font-display text-lg text-[var(--linen)]">Hearthwood &amp; Co.</span>
+        </div>
+        <p class="text-sm max-w-xs leading-relaxed">Solid wood furniture, built to order, one shop at a time.</p>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-10 font-mono text-xs uppercase tracking-wide">
+        <div class="flex flex-col gap-3">
+          <span class="text-[var(--oak)]">Shop</span>
+          <a href="#collection" class="hover:text-[var(--linen)]">Collection</a>
+          <a href="#process" class="hover:text-[var(--linen)]">The Craft</a>
+          <a href="#about" class="hover:text-[var(--linen)]">Workshop</a>
+        </div>
+        <div class="flex flex-col gap-3">
+          <span class="text-[var(--oak)]">Contact</span>
+          <a href="mailto:hello@hearthwoodco.com" class="hover:text-[var(--linen)]">hello@hearthwoodco.com</a>
+          <a href="#order" class="hover:text-[var(--linen)]">Request a Build</a>
+        </div>
+        <div class="flex flex-col gap-3">
+          <span class="text-[var(--oak)]">Visit</span>
+          <span>Open by appointment</span>
+          <span>Tue–Sat, 9–5</span>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-[var(--linen)]/10 mt-12 pt-6 text-xs text-[var(--linen)]/40 font-mono">
+      © 2026 Hearthwood &amp; Co. — Built by hand, shown on screen.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // mobile menu
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('hidden');
+    menuBtn.setAttribute('aria-expanded', String(!open));
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    mobileMenu.classList.add('hidden');
+    menuBtn.setAttribute('aria-expanded', 'false');
+  }));
+
+  // scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => io.observe(el));
+
+  // form
+  function handleSubmit(e) {
+    e.preventDefault();
+    const note = document.getElementById('formNote');
+    note.textContent = "Thanks — your request has been noted. We'll reply by email within two business days.";
+    note.classList.add('text-[var(--rust)]');
+    e.target.reset();
+    return false;
+  }
+</script>
+
+</body>
+</html>

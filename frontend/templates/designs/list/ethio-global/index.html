@@ -1,0 +1,542 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>{{CLIENT_NAME}}</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-bright": "#f8f9fa",
+                        "error-container": "#ffdad6",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#00201a",
+                        "tertiary-container": "#3a4454",
+                        "on-background": "#191c1d",
+                        "on-secondary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "secondary-fixed": "#ffdf9a",
+                        "surface-container-highest": "#e1e3e4",
+                        "outline-variant": "#bfc9c4",
+                        "on-tertiary-fixed-variant": "#3d4757",
+                        "surface-container-lowest": "#ffffff",
+                        "background": "#f8f9fa",
+                        "surface-container": "#edeeef",
+                        "tertiary": "#242e3d",
+                        "inverse-surface": "#2e3132",
+                        "on-secondary-container": "#6d5200",
+                        "surface-container-high": "#e7e8e9",
+                        "surface-container-low": "#f3f4f5",
+                        "secondary": "#785a00",
+                        "primary-container": "#004d40",
+                        "on-primary-container": "#7ebdac",
+                        "on-surface-variant": "#3f4945",
+                        "on-surface": "#191c1d",
+                        "asphalt-gray": "#374151",
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "#fdc425",
+                        "tertiary-fixed": "#d9e3f7",
+                        "primary": "#00342b",
+                        "on-primary": "#ffffff",
+                        "outline": "#707975",
+                        "on-secondary-fixed-variant": "#5a4300",
+                        "primary-fixed-dim": "#94d3c1",
+                        "inverse-on-surface": "#f0f1f2",
+                        "deep-teal": "#004D40",
+                        "on-tertiary-container": "#a7b1c4",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#121c2a",
+                        "surface-tint": "#29695b",
+                        "ethio-gold": "#EAB308",
+                        "primary-fixed": "#afefdd",
+                        "surface-dim": "#d9dadb",
+                        "secondary-fixed-dim": "#f7be1d",
+                        "on-secondary-fixed": "#251a00",
+                        "tertiary-fixed-dim": "#bdc7db",
+                        "surface-variant": "#e1e3e4",
+                        "success-emerald": "#10B981",
+                        "inverse-primary": "#94d3c1",
+                        "on-primary-fixed-variant": "#065043",
+                        "surface": "#f8f9fa"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Hanken Grotesk"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "label-sm": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "label-md": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .shadow-lift {
+            box-shadow: 0 4px 14px 0 rgba(0, 77, 64, 0.15);
+        }
+        .bento-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px -5px rgba(0, 77, 64, 0.15);
+        }
+        .bg-pattern-subtle {
+            background-image: radial-gradient(rgba(0, 77, 64, 0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .ethio-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0l20 20-20 20L0 20 20 0zm0 10l10 10-10 10-10-10 10-10z' fill='%23004d40' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+        
+        .connecting-line {
+            position: absolute;
+            top: 50%;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(0, 77, 64, 0.2), transparent);
+            z-index: 0;
+            transform: translateY(-50%);
+        }
+
+        @media (max-width: 768px) {
+            .connecting-line {
+                top: 10%;
+                bottom: 10%;
+                left: 50%;
+                right: auto;
+                width: 2px;
+                height: auto;
+                background: linear-gradient(180deg, transparent, rgba(0, 77, 64, 0.2), transparent);
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="bg-surface/95 backdrop-blur-sm shadow-sm docked full-width top-0 sticky z-50 transition-all duration-300 border-b border-surface-variant/50" id="main-nav">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-4">
+<a class="text-headline-md font-headline-md font-bold text-deep-teal hover:opacity-80 transition-opacity" href="#">
+                {{CLIENT_NAME}}
+            </a>
+<div class="hidden md:flex items-center space-x-8">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-deep-teal transition-colors" href="#about">About Us</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-deep-teal transition-colors" href="#employers">Employers</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-deep-teal transition-colors" href="#workers">Workers</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-deep-teal transition-colors" href="#news">News</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-deep-teal transition-colors" href="#contact">Contact</a>
+</div>
+<a class="hidden md:inline-flex bg-deep-teal text-white font-label-md text-label-md px-6 py-2.5 rounded hover:bg-surface-tint shadow-lift transition-all hover:-translate-y-0.5" href="#contact">
+                Apply Now
+            </a>
+<button class="md:hidden text-deep-teal p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[700px] flex items-center pt-12 pb-16 overflow-hidden bg-surface-container-lowest bg-pattern-subtle"><!-- Abstract background shape -->
+<div class="absolute top-0 right-0 w-2/3 h-full bg-surface-container-low rounded-l-[100px] -z-10 transform translate-x-20 opacity-50 bg-gradient-to-br from-surface-container-low to-primary-fixed/10"></div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop w-full grid md:grid-cols-2 gap-gutter items-center">
+<div class="max-w-xl z-10">
+<div class="inline-flex items-center px-3 py-1 rounded-full bg-primary-container/10 text-deep-teal font-label-sm text-label-sm mb-4 border border-primary-container/20 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-success-emerald mr-2"></span>
+                        Licensed Foreign Employment Agency
+                    </div>
+<h1 class="font-display-lg text-display-lg text-on-surface mb-4">
+                        Connecting Ethiopian Excellence to <span class="text-deep-teal bg-clip-text text-transparent bg-gradient-to-r from-deep-teal to-primary">Global Opportunities</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6 max-w-lg">
+                        We bridge the gap between highly skilled Ethiopian professionals and leading employers across the Gulf, ensuring ethical recruitment and career success.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<a class="bg-deep-teal text-white font-label-md text-label-md px-8 py-3 rounded hover:bg-surface-tint shadow-lift transition-all hover:-translate-y-0.5 inline-flex items-center" href="#workers">
+                            I'm Looking for Work
+                            <span class="material-symbols-outlined ml-2 text-lg">arrow_forward</span>
+</a>
+<a class="bg-surface-container-lowest text-deep-teal border-2 border-deep-teal font-label-md text-label-md px-8 py-3 rounded hover:bg-surface-container-low transition-all shadow-sm" href="#employers">
+                            Hire Talent
+                        </a>
+</div>
+</div>
+<div class="relative z-10 hidden md:block">
+<div class="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/5] transform translate-y-4 ring-1 ring-black/5">
+<img alt="Professional Ethiopian woman in hijab" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALXcFSFg4KpFpkynDKBRiJtfytIsVbw7LWGG2NU3qnmSM03awZRSFttet82DOBPJc4MYP9nuA0F9uKATK4qx4xuZ8pnB5N25nCHW5EIwx0tKbhYXzdUKZ-GCZ_VyvZ5BuZbMTrE8KPTv6qT6-CfSEx1TkQzYWdUavXd3KEuQ1bUTv9Kw4ZvyGN7Wd_9ZbbvNWygQkCoj7dSnOmcnQZt7NRp2X_dTGCTp5-eF1ilkR5r_T1kAgy3PYpww">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<div class="bg-white/95 backdrop-blur-md p-4 rounded-lg inline-block shadow-lg border border-white/20">
+<p class="font-headline-md text-headline-md text-deep-teal mb-1">5,000+</p>
+<p class="font-label-sm text-label-sm text-asphalt-gray uppercase tracking-wider">Successful Placements</p>
+</div>
+</div>
+</div>
+</div>
+</div></section>
+<!-- Impact by the Numbers Section -->
+<section class="py-12 bg-deep-teal text-white relative overflow-hidden">
+<div class="absolute inset-0 opacity-10 bg-pattern-subtle mix-blend-overlay"></div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-white/20">
+<div class="py-4 md:py-0">
+<p class="font-display-lg text-4xl md:text-5xl font-bold text-primary-fixed mb-2">5,000+</p>
+<p class="font-label-md text-label-md text-primary-fixed-dim uppercase tracking-wider">Placements Made</p>
+</div>
+<div class="py-4 md:py-0">
+<p class="font-display-lg text-4xl md:text-5xl font-bold text-primary-fixed mb-2">10+</p>
+<p class="font-label-md text-label-md text-primary-fixed-dim uppercase tracking-wider">Partner Countries</p>
+</div>
+<div class="py-4 md:py-0">
+<p class="font-display-lg text-4xl md:text-5xl font-bold text-primary-fixed mb-2">98%</p>
+<p class="font-label-md text-label-md text-primary-fixed-dim uppercase tracking-wider">Satisfaction Rate</p>
+</div>
+<div class="py-4 md:py-0">
+<p class="font-display-lg text-4xl md:text-5xl font-bold text-primary-fixed mb-2">15</p>
+<p class="font-label-md text-label-md text-primary-fixed-dim uppercase tracking-wider">Industry Sectors</p>
+</div>
+</div>
+</div>
+</section>
+<!-- About Us Bento Grid -->
+<section class="py-16 bg-surface ethio-pattern relative" id="about">
+<div class="absolute inset-0 bg-gradient-to-b from-surface/80 to-surface-container-lowest/90 z-0"></div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
+<div class="mb-12 max-w-2xl">
+<h2 class="font-headline-lg text-headline-lg text-deep-teal mb-4">Bridging Continents, Building Futures</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        {{CLIENT_NAME}} was founded on a simple mission: to provide a transparent, ethical, and highly efficient pathway for Ethiopian talent to thrive internationally while providing global employers with reliable, skilled professionals.
+                    </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px]">
+<!-- Mission Statement Card - Now Split Screen -->
+<div class="md:col-span-3 bg-white rounded-xl overflow-hidden shadow-lg flex flex-col md:flex-row h-auto min-h-[300px] border border-surface-variant">
+<div class="md:w-1/2 relative min-h-[250px] md:min-h-full">
+<img alt="Ethiopian Professionals" class="w-full h-full object-cover absolute inset-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5ZqJUrKMVI8jXyIPiboEcUryDZLRkLOk17PkT0IcSKgvPqEohFla2WUsLjTYXUC-NI2nV4A7uDgJdiPZIKZ_RdYBmTKOH1hpbOuM1FenNFf85Hyk7VovSQQB4cOsV2P7NXSOPJKgH2tuVXYhq2u86SVkwmisq7k7wf71pGfcDKsxJI3DJzEwD3jCwcKULNlaGgQBUL714siHsjrWbeLCDH07CzSnClUKYsDn2-1QJeq0tcpASBShq-g">
+<div class="absolute inset-0 bg-deep-teal/20"></div>
+</div>
+<div class="md:w-1/2 p-10 bg-gradient-to-br from-primary-container to-deep-teal text-white flex flex-col justify-center relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
+<span class="material-symbols-outlined text-4xl mb-6 text-ethio-gold">public</span>
+<h3 class="font-headline-md text-headline-md mb-4">Our Mission</h3>
+<p class="font-body-lg text-body-lg text-primary-fixed-dim max-w-xl relative z-10">
+                            To facilitate mutually beneficial employment relationships by matching verified Ethiopian skills with reputable international employers, prioritizing worker welfare and client satisfaction.
+                        </p>
+</div>
+</div>
+<!-- Stat Card -->
+<div class="bg-surface-container-lowest border border-surface-variant rounded-xl p-8 flex flex-col justify-center items-center text-center shadow-sm bento-hover transition-all bg-gradient-to-b from-white to-surface-container-lowest">
+<span class="material-symbols-outlined text-5xl text-deep-teal mb-4">verified</span>
+<p class="font-display-lg text-display-lg text-deep-teal mb-2">10+</p>
+<p class="font-label-md text-label-md text-on-surface-variant">Years of Ethical Recruitment</p>
+</div>
+<!-- Ministry Approval -->
+<div class="bg-surface-container-lowest border border-surface-variant rounded-xl p-8 flex flex-col justify-between bento-hover transition-all shadow-sm"><div class="h-24 w-full mb-4 rounded overflow-hidden"><img alt="Agency Personnel" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmq_rhCnNArUKUKzunwD2VK9YwBHROZC6uvxXnXCLVsJ-7D8AvyYgSS2BMTmxd6JJxaKI-qrYb01Lrg7DI0DhfCoqE98lZLgIEustxOkkRJ5bqZDnAbapvGiy3Ylikq8jg0d8kKPq-niIfJ1qidV_ZwPj6kgJ09vBDTUr0Gzigi8HC4EHVJSZdHZGJzuGOrNBTzaAcMKcG4aee1VUJM_nCcPv2tICzGaGxfeCTE9tV40XtR627DsddfQ"></div>
+<span class="material-symbols-outlined text-3xl text-asphalt-gray mb-4">gavel</span>
+<div>
+<h4 class="font-headline-md text-label-md text-on-surface mb-2">Fully Licensed</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Authorized by the Ethiopian Ministry of Labor and Skills.</p>
+</div>
+</div>
+<!-- Image Card -->
+<div class="rounded-xl overflow-hidden relative group shadow-md hidden md:block">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A modern office environment in Ethiopia showing a recruitment consultation in progress. A professional consultant is speaking with an eager candidate. Natural light pours in through large windows. The scene conveys trust, professionalism, and the clean aesthetic of a high-end corporate service." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAN_4XJGxMllrU3jZjUtnGGCEPVNd6FFXfn4C0GBiJAGd_NnTOpZwoVRRs77CgnywSZLE_LxXqK22enWNPt-RJbEOZlQl0W8ElINaAPGxiRPBwRkuXRxyGurGzMiwWDQsY_hDBq-lFC5ag2JGD87h54xSK0hrSMxOVzDe539IaKnJgkZVRZsqUEo1ZqlJFyLIH1MZ0Tjxsu2Xd1BG98ZtVqIqrwakXGeU7NJajE0OI2L1Ku9GEdycCong">
+<div class="absolute inset-0 bg-deep-teal/20 group-hover:bg-deep-teal/10 transition-colors"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Skyline Divider -->
+<div class="w-full h-24 md:h-32 relative bg-surface-container-low border-y border-surface-variant">
+<div class="absolute inset-0 bg-deep-teal/80 mix-blend-multiply z-10"></div>
+<img alt="Addis Ababa Skyline" class="w-full h-full object-cover absolute inset-0 z-0 grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxOyZRo_1VQui5C5PDoZcAExM38Vigi9wuNpao3NsbpGOJ03WiC2ohORBHpcaKl2B2kLOIQwvYcysO52VCOwlrcN-hOjz1rBJTlSTjOvQWHoW6ifPSX6XDf1fBVC4jWXiA2-_upyjcg3H4fnBCwTW-KO2NPXSCYfgHR2b94I9xgbYScL8ihEO5UznPrERN5rMJ4HlPEWobTK6GBuQfgqS1vou6A1MT-xQ7zdbsvih51WNjbhwMiWec_w">
+<div class="absolute inset-0 z-20 flex items-center justify-center">
+<h2 class="text-white font-headline-lg text-xl md:text-2xl text-center px-4 drop-shadow-md">Connecting Global Markets to Ethiopian Potential</h2>
+</div>
+</div>
+<!-- How It Works Section -->
+<section class="py-20 bg-surface-container-lowest relative"><div class="absolute top-0 right-0 w-1/3 h-1/3 bg-[url('data:image/svg+xml,%3Csvg width=\'20\' height=\'20\' viewBox=\'0 0 20 20\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Ccircle cx=\'2\' cy=\'2\' r=\'2\' fill=\'%23004d40\' fill-opacity=\'0.05\'/%3E%3C/svg%3E')] z-0"></div>
+<div class="max-w-5xl mx-auto px-margin-mobile md:px-margin-desktop relative z-10 py-12">
+<div class="text-center mb-8">
+<h2 class="font-headline-lg text-headline-lg text-deep-teal mb-2">How It Works</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">A streamlined, transparent process for both employers and candidates.</p>
+</div>
+<div class="relative">
+<div class="connecting-line hidden md:block"></div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10"><div class="relative text-center group bg-surface p-6 rounded-2xl border border-surface-variant shadow-sm bento-hover transition-all bg-gradient-to-b from-white to-surface-container-low"><div class="w-20 h-20 mx-auto mb-6 rounded-full flex items-center justify-center relative z-10 overflow-hidden bg-white shadow-inner border-4 border-surface-container-lowest"><img alt="Vetting" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCUhesm9tJLDUldQAhZwkGsEtIPE23T30bLcwq36ejD9UYucxc-NmgwlBRmNqm7KJd2W1O5RAA1XkPIhvwLDEsesfEaBHLOhArinFxyg0Ox35pVqGExXOVo8y3xxB6FISMOr_NjZiAFRbhENmb6QxnPqM-T4kPNMbZh3iD11wVch0qT4FydWQ3aJyAHbZWhxddCq4X1JD5exs8FUXSRJg5FQpNz-znHfdFf1TFaTy_yM82drSWYiZgLg" style="object-position: 0% 0%; scale: 2;"></div><h3 class="font-headline-md text-lg text-on-surface mb-2">1. Vetting &amp; Verification</h3><p class="font-body-md text-sm text-on-surface-variant">Rigorous background checks and skill assessments for all candidates.</p></div><div class="relative text-center group bg-surface p-6 rounded-2xl border border-surface-variant shadow-sm bento-hover transition-all bg-gradient-to-b from-white to-surface-container-low"><div class="w-20 h-20 mx-auto mb-6 rounded-full flex items-center justify-center relative z-10 overflow-hidden bg-white shadow-inner border-4 border-surface-container-lowest"><img alt="Training" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCUhesm9tJLDUldQAhZwkGsEtIPE23T30bLcwq36ejD9UYucxc-NmgwlBRmNqm7KJd2W1O5RAA1XkPIhvwLDEsesfEaBHLOhArinFxyg0Ox35pVqGExXOVo8y3xxB6FISMOr_NjZiAFRbhENmb6QxnPqM-T4kPNMbZh3iD11wVch0qT4FydWQ3aJyAHbZWhxddCq4X1JD5exs8FUXSRJg5FQpNz-znHfdFf1TFaTy_yM82drSWYiZgLg" style="object-position: 33.33% 0%; scale: 2;"></div><h3 class="font-headline-md text-lg text-on-surface mb-2">2. Training &amp; Orientation</h3><p class="font-body-md text-sm text-on-surface-variant">Pre-departure cultural and professional readiness programs.</p></div><div class="relative text-center group bg-surface p-6 rounded-2xl border border-surface-variant shadow-sm bento-hover transition-all bg-gradient-to-b from-white to-surface-container-low"><div class="w-20 h-20 mx-auto mb-6 rounded-full flex items-center justify-center relative z-10 overflow-hidden bg-white shadow-inner border-4 border-surface-container-lowest"><img alt="Placement" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCUhesm9tJLDUldQAhZwkGsEtIPE23T30bLcwq36ejD9UYucxc-NmgwlBRmNqm7KJd2W1O5RAA1XkPIhvwLDEsesfEaBHLOhArinFxyg0Ox35pVqGExXOVo8y3xxB6FISMOr_NjZiAFRbhENmb6QxnPqM-T4kPNMbZh3iD11wVch0qT4FydWQ3aJyAHbZWhxddCq4X1JD5exs8FUXSRJg5FQpNz-znHfdFf1TFaTy_yM82drSWYiZgLg" style="object-position: 66.66% 0%; scale: 2;"></div><h3 class="font-headline-md text-lg text-on-surface mb-2">3. Placement &amp; Contracting</h3><p class="font-body-md text-sm text-on-surface-variant">Transparent matching and legally compliant contract signing.</p></div><div class="relative text-center group bg-surface p-6 rounded-2xl border border-surface-variant shadow-sm bento-hover transition-all bg-gradient-to-b from-white to-surface-container-low"><div class="w-20 h-20 mx-auto mb-6 rounded-full flex items-center justify-center relative z-10 overflow-hidden bg-white shadow-inner border-4 border-surface-container-lowest"><img alt="Support" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCUhesm9tJLDUldQAhZwkGsEtIPE23T30bLcwq36ejD9UYucxc-NmgwlBRmNqm7KJd2W1O5RAA1XkPIhvwLDEsesfEaBHLOhArinFxyg0Ox35pVqGExXOVo8y3xxB6FISMOr_NjZiAFRbhENmb6QxnPqM-T4kPNMbZh3iD11wVch0qT4FydWQ3aJyAHbZWhxddCq4X1JD5exs8FUXSRJg5FQpNz-znHfdFf1TFaTy_yM82drSWYiZgLg" style="object-position: 100% 0%; scale: 2;"></div><h3 class="font-headline-md text-lg text-on-surface mb-2">4. Deployment &amp; Support</h3><p class="font-body-md text-sm text-on-surface-variant">Travel logistics and ongoing welfare monitoring abroad.</p></div></div>
+</div>
+</div></section>
+<!-- Our Values Section -->
+<section class="py-24 bg-surface ethio-pattern border-y border-surface-variant relative overflow-hidden bg-pattern-subtle"><div class="absolute inset-0 bg-gradient-to-b from-surface/90 to-surface-container-low/90 z-0"></div>
+<div class="max-w-6xl mx-auto px-margin-mobile md:px-margin-desktop relative z-10 py-12">
+<div class="text-center mb-12">
+<h2 class="font-headline-lg text-headline-lg text-deep-teal mb-2">Core Values</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">The principles that guide our operations and commitment to excellence.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-center">
+<div class="bg-surface-container-lowest p-10 rounded-2xl border border-surface-variant shadow-md bento-hover transition-all text-center relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-24 h-24 bg-ethio-gold/5 rounded-bl-full transition-transform group-hover:scale-150 duration-500"></div>
+<span class="material-symbols-outlined text-4xl text-ethio-gold mb-6 inline-block p-5 bg-surface-container-low rounded-full relative z-10 border border-surface-variant/50">handshake</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3 relative z-10">Integrity</h3>
+<p class="font-body-md text-body-md text-on-surface-variant relative z-10">Transparent processes and ethical recruitment practices that protect both employers and workers.</p>
+</div>
+<div class="bg-surface-container-lowest p-10 rounded-2xl border border-surface-variant shadow-md bento-hover transition-all text-center relative overflow-hidden group md:-translate-y-4">
+<div class="absolute top-0 right-0 w-24 h-24 bg-deep-teal/5 rounded-bl-full transition-transform group-hover:scale-150 duration-500"></div>
+<span class="material-symbols-outlined text-4xl text-deep-teal mb-6 inline-block p-5 bg-surface-container-low rounded-full relative z-10 border border-surface-variant/50">star</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3 relative z-10">Excellence</h3>
+<p class="font-body-md text-body-md text-on-surface-variant relative z-10">Rigorous screening and training to ensure we deliver highly capable professionals.</p>
+</div>
+<div class="bg-surface-container-lowest p-10 rounded-2xl border border-surface-variant shadow-md bento-hover transition-all text-center relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-24 h-24 bg-ethio-gold/5 rounded-bl-full transition-transform group-hover:scale-150 duration-500"></div>
+<span class="material-symbols-outlined text-4xl text-ethio-gold mb-6 inline-block p-5 bg-surface-container-low rounded-full relative z-10 border border-surface-variant/50">psychology</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3 relative z-10">Empowerment</h3>
+<p class="font-body-md text-body-md text-on-surface-variant relative z-10">Providing opportunities for Ethiopian talent to grow, succeed, and improve their livelihoods.</p>
+</div>
+</div>
+</div></section>
+<!-- Trusted Partners Section -->
+<section class="py-12 bg-white border-b border-surface-variant"><div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center py-6">
+<p class="font-label-sm text-label-sm text-asphalt-gray uppercase tracking-wider mb-6">Trusted by Leading Global Employers</p>
+<div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+<div class="text-xl font-bold font-display-lg text-asphalt-gray flex items-center"><span class="material-symbols-outlined mr-2">flight</span> Gulf Airways</div>
+<div class="text-xl font-bold font-display-lg text-asphalt-gray flex items-center"><span class="material-symbols-outlined mr-2">local_hospital</span> CareMed Int'l</div>
+<div class="text-xl font-bold font-display-lg text-asphalt-gray flex items-center"><span class="material-symbols-outlined mr-2">apartment</span> Emirates Hotels</div>
+<div class="text-xl font-bold font-display-lg text-asphalt-gray flex items-center"><span class="material-symbols-outlined mr-2">local_shipping</span> Global Logistics Co.</div>
+<div class="text-xl font-bold font-display-lg text-asphalt-gray flex items-center hidden md:flex"><span class="material-symbols-outlined mr-2">storefront</span> Retail Group ME</div>
+</div>
+</div></section>
+<!-- Detailed Services Section -->
+<section class="py-16 bg-surface" id="services">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-deep-teal mb-4">Comprehensive Services</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Tailored solutions for global businesses and aspiring professionals.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Employers Block -->
+<div class="bg-surface-container-lowest p-10 rounded-2xl shadow-md border border-surface-variant">
+<div class="flex items-center mb-8">
+<span class="material-symbols-outlined text-4xl text-deep-teal mr-4">business</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface">For Employers</h3>
+</div>
+<ul class="space-y-6">
+<li class="flex items-start">
+<span class="material-symbols-outlined text-success-emerald mr-4 mt-1">check_circle</span>
+<div>
+<h4 class="font-headline-md text-label-md text-on-surface mb-1">Pre-screening &amp; Vetting</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Rigorous background checks and skills assessments to ensure quality candidates.</p>
+</div>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-success-emerald mr-4 mt-1">check_circle</span>
+<div>
+<h4 class="font-headline-md text-label-md text-on-surface mb-1">Recruitment Solutions</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">End-to-end hiring process management tailored to your specific industry needs.</p>
+</div>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-success-emerald mr-4 mt-1">check_circle</span>
+<div>
+<h4 class="font-headline-md text-label-md text-on-surface mb-1">HR Consulting</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Expert advice on integration, retention, and cross-cultural management.</p>
+</div>
+</li>
+</ul>
+</div>
+<!-- Workers Block -->
+<div class="bg-gradient-to-br from-primary-container to-deep-teal text-white p-10 rounded-2xl shadow-md relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
+<div class="flex items-center mb-8 relative z-10">
+<span class="material-symbols-outlined text-4xl text-ethio-gold mr-4">badge</span>
+<h3 class="font-headline-lg text-headline-lg">For Workers</h3>
+</div>
+<ul class="space-y-6 relative z-10">
+<li class="flex items-start">
+<span class="material-symbols-outlined text-ethio-gold mr-4 mt-1">task_alt</span>
+<div>
+<h4 class="font-headline-md text-label-md mb-1">Visa &amp; Documentation</h4>
+<p class="font-body-md text-body-md text-primary-fixed-dim">Streamlined assistance with passports, visas, and all legal requirements.</p>
+</div>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-ethio-gold mr-4 mt-1">task_alt</span>
+<div>
+<h4 class="font-headline-md text-label-md mb-1">Pre-departure Training</h4>
+<p class="font-body-md text-body-md text-primary-fixed-dim">Cultural orientation, basic language skills, and workplace expectations.</p>
+</div>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-ethio-gold mr-4 mt-1">task_alt</span>
+<div>
+<h4 class="font-headline-md text-label-md mb-1">Job Placement Support</h4>
+<p class="font-body-md text-body-md text-primary-fixed-dim">Matching your skills with verified employers and ongoing support abroad.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Success Stories (Testimonials) -->
+<section class="py-20 bg-surface-container-low border-y border-surface-variant bg-pattern-subtle">
+<div class="max-w-5xl mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-deep-teal mb-4">Success Stories</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Hear from those who have built their futures with us.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="bg-surface-container-lowest p-8 rounded-xl border border-surface-variant relative shadow-md">
+<span class="material-symbols-outlined text-6xl text-surface-variant absolute top-4 right-4 opacity-50">format_quote</span>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6 italic relative z-10">"{{CLIENT_NAME_SOLO}} made my transition to working in Dubai seamless. They handled all my paperwork and ensured I was fully prepared for my new role."</p>
+<div class="flex items-center">
+<div class="w-12 h-12 rounded-full overflow-hidden mr-4 shadow-sm border border-surface-variant"><img alt="Alemayehu T." class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9O_hlDTRcts1BTqp5G1OzzcuKZgvPp--lj4Urkmg-SSOVDqdbhJDCAXaRqtSuUXBcHuik7CFg6R8iWwDp6K3PrxCj04bQvZmYiXDDjd207zkxi6WNQPRp2b46g0AXWgUS-0RAjKjKU1RmyAeODmTz7mYhct204KR-ASxSJlrOurySwZE7Ra6q4G_-hoJIHXILNU5A62JzV3FeBjgFlGbXRkYbW4-kgaLYDhxueKdLT2hS9urwbBlyyw"></div>
+<div>
+<h4 class="font-headline-md text-label-md text-on-surface">Alemayehu T.</h4>
+<p class="font-body-md text-label-sm text-on-surface-variant">Hospitality Professional, UAE</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-xl border border-surface-variant relative shadow-md">
+<span class="material-symbols-outlined text-6xl text-surface-variant absolute top-4 right-4 opacity-50">format_quote</span>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6 italic relative z-10">"We have partnered with {{CLIENT_NAME_SOLO}} for over three years. The quality of candidates and their ethical approach to recruitment is unmatched."</p>
+<div class="flex items-center">
+<div class="w-12 h-12 rounded-full overflow-hidden mr-4 shadow-sm border border-surface-variant"><img alt="Sarah K." class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBp4tAT0hn4Dj-2drA-GJDvomBVMKN7hahWCtXpfo6F4mEaIjLB5Rog9iMHEKL83eWwCi5kOBBTJZcU8INHn3ND_3FFLDUfEwtpNI_RGjqHyBRebgIEYiRo_4ko0iBvnDQglVIgZOXCn4Nn4n7fEsceat_TR8YyCLctVrKS3ycIwqHBM8kzhp85Qwt18QWXQKRyZFPqqpQzHh6Hnic6COBUpZsQYuA-CwmsoIll64PRa4qLdWJwjlYhdw"></div>
+<div>
+<h4 class="font-headline-md text-label-md text-on-surface">Sarah K.</h4>
+<p class="font-body-md text-label-sm text-on-surface-variant">HR Director, Global Logistics Corp</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Latest Insights (Mini Blog) -->
+<section class="py-16 bg-surface" id="news">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-deep-teal mb-2">Latest Insights</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">News, guides, and updates from the recruitment world.</p>
+</div>
+<a class="hidden md:inline-flex items-center text-deep-teal font-label-md hover:underline" href="#">
+                        View All <span class="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<article class="bg-surface-container-lowest rounded-xl overflow-hidden border border-surface-variant shadow-sm bento-hover transition-all group">
+<div class="h-48 overflow-hidden"><img alt="Navigating Gulf Employment" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoyfbriJrzFTMfKJI8aygJ8rCJ3Pyn63a_aGU6FnqbYnjsQQOrP8FAiElBLE0JsyjChbZrfwJGh7xIKkj0WFMVhHKJE0UlnvH04LqNK6xYoV3QOX6InVa6FpBv8FN4xLTH6jWVgx7K2vb5hAA6dHzGZWK0pQw8ONP_Av1VGKreeIkgzxGTRkx4PdXnBteOb-edlg0LfV6XkpyB78ZumGlZZ9z7QXAg-Qpsc8NWrHODHhCWlFJoHlu4lA"></div>
+<div class="p-6">
+<span class="text-label-sm text-ethio-gold font-bold uppercase tracking-wider mb-2 block">Guide</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3 group-hover:text-deep-teal transition-colors line-clamp-2">Navigating Gulf Employment: A Starter Guide</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3 mb-4">Essential tips for Ethiopian professionals preparing for their first contract in the Middle East.</p>
+<a class="text-deep-teal font-label-md text-sm inline-flex items-center hover:underline" href="#">Read More <span class="material-symbols-outlined ml-1 text-xs">arrow_forward</span></a>
+</div>
+</article>
+<article class="bg-surface-container-lowest rounded-xl overflow-hidden border border-surface-variant shadow-sm bento-hover transition-all group">
+<div class="h-48 overflow-hidden"><img alt="Understanding Worker Rights" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhoqr3cwiVFf_c-QfBBqbgVmBf_yX_Nw28atDXnfxTVc-3HAPfT-cPQeJdmuve51hBbCMBzQ0sUqXoUyYMF63z5uFdueszIDEIICJh-pAC-jcWS5eGJrvFpcxdXkqC6lUk4m8qmicHHe6WX2ddc5w7yNLT3FBsVSkvQ8tw7NAPXh-fIjdP2vADfsneBbTyAuNLDTr_Wl0rDrygbSNFWaX2eR4n3pUV0NpZudog8qMUZeE1SXRjve574Q"></div>
+<div class="p-6">
+<span class="text-label-sm text-ethio-gold font-bold uppercase tracking-wider mb-2 block">Policy</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3 group-hover:text-deep-teal transition-colors line-clamp-2">Understanding Worker Rights Abroad</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3 mb-4">A comprehensive overview of your legal protections and rights as an international worker.</p>
+<a class="text-deep-teal font-label-md text-sm inline-flex items-center hover:underline" href="#">Read More <span class="material-symbols-outlined ml-1 text-xs">arrow_forward</span></a>
+</div>
+</article>
+<article class="bg-surface-container-lowest rounded-xl overflow-hidden border border-surface-variant shadow-sm bento-hover transition-all group">
+<div class="h-48 overflow-hidden"><img alt="Top Skills in Demand" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDp-crRuPkzYXxpMo1-WCU8JwQaURokCQWny4T4F6BaDWFFLeRCPBuiO9C-Nrai17vMSZsV76tPKTCPUwKtU__UT2UMhygP453NiRPSkBiUAhvNFmrz63OoXBx4ppED7kvNo6TjDp9o7d0NKh4j19d1SKTxjsIkzXIY9N6omKt9mXIuaPrKFoxD86NeRZGfKEh3j28hlBzS68SrBTklsPd5trfe_ry4kYC0_wUeVQOcvdlxRjzbS5unjA"></div>
+<div class="p-6">
+<span class="text-label-sm text-ethio-gold font-bold uppercase tracking-wider mb-2 block">Industry News</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3 group-hover:text-deep-teal transition-colors line-clamp-2">Top Skills in Demand for 2024</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3 mb-4">Discover which professions are seeing the highest growth in international recruitment markets.</p>
+<a class="text-deep-teal font-label-md text-sm inline-flex items-center hover:underline" href="#">Read More <span class="material-symbols-outlined ml-1 text-xs">arrow_forward</span></a>
+</div>
+</article>
+</div>
+<div class="mt-8 text-center md:hidden">
+<a class="inline-flex items-center text-deep-teal font-label-md border border-deep-teal px-6 py-2 rounded hover:bg-surface-container-low transition-colors" href="#">
+                        View All <span class="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-tertiary text-on-tertiary">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12">
+<div class="col-span-1 md:col-span-2">
+<h3 class="text-headline-md font-headline-md font-bold text-on-tertiary mb-4">{{CLIENT_NAME}}</h3>
+<p class="font-body-md text-body-md text-on-tertiary-container max-w-sm mb-6">
+                        Connecting Ethiopian talent with global opportunities through ethical, transparent, and professional recruitment services.
+                    </p>
+</div>
+<div>
+<h4 class="font-label-md text-label-md font-bold mb-4 uppercase tracking-wider text-ethio-gold">Legal</h4>
+<ul class="space-y-3">
+<li class=""><a class="font-body-md text-body-md text-on-tertiary-container hover:text-on-tertiary transition-colors hover:opacity-80" href="#">Privacy Policy</a></li>
+<li class=""><a class="font-body-md text-body-md text-on-tertiary-container hover:text-on-tertiary transition-colors hover:opacity-80" href="#">Terms of Service</a></li>
+<li class=""><a class="font-body-md text-body-md text-on-tertiary-container hover:text-on-tertiary transition-colors hover:opacity-80" href="#">Legal Notices</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-label-md font-bold mb-4 uppercase tracking-wider text-ethio-gold">Support</h4>
+<ul class="space-y-3">
+<li class=""><a class="font-body-md text-body-md text-on-tertiary-container hover:text-on-tertiary transition-colors hover:opacity-80" href="#">Documentation Support</a></li>
+<li class=""><a class="font-body-md text-body-md text-on-tertiary-container hover:text-on-tertiary transition-colors hover:opacity-80" href="#">Worker Rights</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-on-tertiary-fixed-variant">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-6 text-center md:text-left flex flex-col md:flex-row justify-between items-center">
+<p class="font-body-md text-body-md text-on-tertiary-container">
+                        © 2024 {{CLIENT_NAME}}. All rights reserved. Licensed by the Ministry of Labor and Skills.
+                    </p>
+</div>
+</div>
+</footer>
+</main>
+<script>
+        // Simple nav shadow on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('main-nav');
+            if (window.scrollY > 10) {
+                nav.classList.add('shadow-md');
+                nav.classList.remove('shadow-sm');
+                nav.classList.add('bg-surface/95');
+                nav.classList.remove('bg-surface');
+            } else {
+                nav.classList.remove('shadow-md');
+                nav.classList.add('shadow-sm');
+                nav.classList.add('bg-surface');
+                nav.classList.remove('bg-surface/95');
+            }
+        });
+    </script>
+
+
+</body></html>
