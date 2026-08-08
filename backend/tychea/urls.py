@@ -1,3 +1,6 @@
+from django.urls import re_path
+from django.views.static import serve
+from django.urls import re_path
 from designs.views import linker_view_subpage
 from designs.views import linker_view
 from django.contrib import admin
@@ -13,3 +16,7 @@ urlpatterns = [
     # path('designs/', include('designs.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) \
   + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+if not settings.DEBUG:
+    urlpatterns += [
+        re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
+    ]
