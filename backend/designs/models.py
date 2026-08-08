@@ -42,7 +42,7 @@ class Linker(models.Model):
     address = models.CharField(max_length=200, null=True, blank=True)
     phone = models.CharField(max_length=200, null=True, blank=True)
     slug = models.SlugField(max_length=40, null=True, blank=True)
-    uid = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
+    uid = models.UUIDField(default=uuid.uuid4, editable=True, unique=True)
 
     class Meta:
         verbose_name = 'Linker'
